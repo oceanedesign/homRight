@@ -1,8 +1,8 @@
 {
   "name": "homright",
-  "app_id": "",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "app_id": "51c09ff5"
 }
