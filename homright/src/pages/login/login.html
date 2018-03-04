@@ -1,0 +1,37 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="assets/logo/logo.svg">
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div>
+
+
+<ion-content padding>
+	<h1 style="margin-top: 50px;">Place de la mascotte</h1>
+	<ion-list>
+		<ion-item>
+	    	<ion-label color="dark" floating>Pseudo</ion-label>
+	    	<ion-input></ion-input>
+	  	</ion-item>
+	  	<ion-item>
+	    	<ion-label color="dark" floating>Mot de passe</ion-label>
+	    	<ion-input type="password"></ion-input>
+	  	</ion-item>
+	</ion-list>
+	<div padding>
+		<button ion-button block color="dark" (click)="connexion()">Se connecter</button>
+	</div>
+	<div style="margin-top: 100px" padding>
+		<button ion-button block>Se connecter avec facebook</button>
+
+		<button ion-button block color="light" (click)="signup()">Créer un compte</button>
+	</div>
+</ion-content>

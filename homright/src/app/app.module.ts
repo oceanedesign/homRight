@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { LoginPage } from '../pages/login/login';
+import { SignupPage } from '../pages/signup/signup';
+import { SynchroPage } from '../pages/synchro/synchro';
+
 import { ConsoPage } from '../pages/conso/conso';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
@@ -15,6 +19,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
+    LoginPage,
+    SignupPage,
+    SynchroPage,
     ConsoPage,
     ContactPage,
     HomePage,
@@ -28,6 +35,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LoginPage,
+    SignupPage,
+    SynchroPage,
     ConsoPage,
     ContactPage,
     HomePage,
