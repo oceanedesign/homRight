@@ -4,6 +4,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import{SignupPage} from "../signup/signup";
 import { TabsPage } from '../tabs/tabs';
+
+import { LottieAnimationViewModule } from 'ng-lottie';
 /**
  * Generated class for the LoginPage page.
  *
@@ -19,15 +21,22 @@ import { TabsPage } from '../tabs/tabs';
 export class LoginPage {
 
   tabBarElement: any;
+  public lottieConfig:Object;
   splash = true;
 
   constructor(public navCtrl: NavController) {
+  	this.lottieConfig={
+  		path:'assets/imgs/splashScreen/data.json',
+  		autoplay: true,
+  		loopt: true
+
+  	}
   }
 
   ionViewDidLoad() {
-    setTimeout(() => {
-      this.splash = false;
-    }, 5000);
+    //setTimeout(() => {
+    //  this.splash = false;
+    //}, 20000);
   }
 
   signup(){
