@@ -86,3 +86,51 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+@font-face{
+	font-family: 'Futura';
+	font-style: normal;
+	font-weight: 200;
+	src : url('../assets/fonts/futura/FuturaLight.ttf')
+}
+
+@font-face{
+	font-family: 'Futura';
+	font-style: normal;
+	font-weight: 300;
+	src : url('../assets/fonts/futura/FuturaMedium.ttf')
+}
+
+@font-face{
+	font-family: 'Futura';
+	font-style: normal;
+	font-weight: 700;
+	src : url('../assets/fonts/futura/FuturaBold.ttf')
+}
+
+@font-face{
+	font-family: 'Futura Cd';
+	font-style: normal;
+	font-weight: 200;
+	src : url('../assets/fonts/futura/FuturaLightCd.ttf')
+}
+
+@font-face{
+	font-family: 'Futura Cd';
+	font-style: normal;
+	font-weight: 300;
+	src : url('../assets/fonts/futura/FuturaMediumCd.ttf')
+}
+
+@font-face{
+	font-family: 'Futura Cd';
+	font-style: normal;
+	font-weight: 700;
+	src : url('../assets/fonts/futura/FuturaBoldCd.ttf')
+}
+
+$font-family-base:"Futura";
+body{
+	font-family: "Futura" !important;
+	font-weight: 300 !important;
+}

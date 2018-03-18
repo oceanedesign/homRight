@@ -15,13 +15,12 @@ page-login {
   z-index: 100000;
   width:100%;
   background-color: #FFFFFF;
+  animation: disparition 0.25s linear 5s forwards;
 }
 
 .flb {
-  //height:100%;
-  //width:100%;
   display: block;
-  margin: auto;
+  margin: 50px auto;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -31,7 +30,9 @@ page-login {
   position: absolute;
   bottom: 0;
   left: 50%;
-  animation: pulse 2s linear forwards;
+  animation: pulse 2s ease-in forwards;
+  font-family: "Futura";
+  font-weight: 300;
 }
 
 .bottom-center{
@@ -46,5 +47,14 @@ page-login {
   }
   100% {
     opacity:1;
+  }
+}
+
+@keyframes disparition {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
   }
 }

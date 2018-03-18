@@ -34,9 +34,9 @@ export class LoginPage {
   }
 
   ionViewDidLoad() {
-    //setTimeout(() => {
-    //  this.splash = false;
-    //}, 20000);
+    setTimeout(() => {
+      this.splash = false;
+    }, 5500);
   }
 
   signup(){
