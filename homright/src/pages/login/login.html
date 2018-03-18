@@ -14,24 +14,113 @@
 </div>
 
 
-<ion-content padding>
-	<h1 style="margin-top: 50px;">Place de la mascotte</h1>
-	<ion-list>
-		<ion-item>
-	    	<ion-label color="dark" floating>Pseudo</ion-label>
-	    	<ion-input></ion-input>
-	  	</ion-item>
-	  	<ion-item>
-	    	<ion-label color="dark" floating>Mot de passe</ion-label>
-	    	<ion-input type="password"></ion-input>
-	  	</ion-item>
-	</ion-list>
-	<div padding>
-		<button ion-button block color="dark" (click)="connexion()">Se connecter</button>
-	</div>
-	<div style="margin-top: 100px" padding>
-		<button ion-button block>Se connecter avec facebook</button>
+<ion-content padding overflow-scroll="false">
+	<ion-grid>
+  		<ion-row>
+      		<img class="mascotte" alt="Homie dit bonjour" src="../assets/imgs/homie_connexion.png"/>
+      	</ion-row>
 
-		<button ion-button block color="light" (click)="signup()">Créer un compte</button>
-	</div>
+		<ion-toolbar>
+    		<ion-segment [(ngModel)]="connexionType">
+      			<ion-segment-button value="connexion">
+        		Se connecter
+      			</ion-segment-button>
+      			<ion-segment-button value="inscription">
+        		Créer un compte
+      			</ion-segment-button>
+    	</ion-segment>
+ 		</ion-toolbar>
+
+	  	<div [ngSwitch]="connexionType" class="card">
+	    	<div *ngSwitchCase="'connexion'" class="container">
+	      
+		      	<ion-row class="reseaux">
+		    		<ion-col col-6>
+		    			<button ion-button block class="bouton-contour">facebook</button>
+		    		</ion-col>
+		    		<ion-col col-6>
+		    			<button ion-button block class="bouton-contour">google</button>
+		    		</ion-col>
+		    	</ion-row>
+
+		  		<ion-row>
+		    		<ion-col col-12>
+		    			<span class="line1"></span>
+		      			<p class="center">ou</p>
+		      			<span class="line2"></span>
+		      		</ion-col>
+		      	</ion-row>
+
+				<ion-list>
+					<ion-item>
+				    	<ion-label color="primary" floating>Pseudo</ion-label>
+				    	<ion-input></ion-input>
+				  	</ion-item>
+				  	<ion-item>
+				    	<ion-label color="primary" floating>Mot de passe</ion-label>
+				    	<ion-input type="password"></ion-input>
+				    </ion-item>
+				</ion-list>
+				<ion-row>
+		    		<ion-col col-12>
+		      			<p class="right">Mot de passe oublié ?</p>
+		      		</ion-col>
+		      	</ion-row>
+
+				<ion-row>
+		    		<ion-col col-12>
+						<button ion-button block class="bouton-principal" (click)="connexion()">Se connecter</button>
+		      		</ion-col>
+		      	</ion-row>
+		    </div>
+
+		    <div *ngSwitchCase="'inscription'" class="container">
+		      	<ion-row class="reseaux">
+		    		<ion-col col-6>
+		    			<button ion-button block class="bouton-contour">facebook</button>
+		    		</ion-col>
+		    		<ion-col col-6>
+		    			<button ion-button block class="bouton-contour">google</button>
+		    		</ion-col>
+		    	</ion-row>
+
+		  		<ion-row>
+		    		<ion-col col-12>
+		    			<span class="line1"></span>
+		      			<p class="center">ou</p>
+		      			<span class="line2"></span>
+		      		</ion-col>
+		      	</ion-row>
+
+				<ion-list>
+					<ion-item>
+				    	<ion-label color="primary" floating>Prénom</ion-label>
+				    	<ion-input></ion-input>
+				  	</ion-item>
+					<ion-item>
+				    	<ion-label color="primary" floating>Nom</ion-label>
+				    	<ion-input></ion-input>
+				  	</ion-item>
+					<ion-item>
+				    	<ion-label color="primary" floating>Pseudo</ion-label>
+				    	<ion-input></ion-input>
+				  	</ion-item>
+				  	<ion-item>
+  						<ion-label color="primary" floating>Email</ion-label>
+  						<ion-input type="email"></ion-input>
+					</ion-item>
+				  	<ion-item>
+				    	<ion-label color="primary" floating>Mot de passe</ion-label>
+				    	<ion-input type="password"></ion-input>
+				    </ion-item>
+				</ion-list>
+				<ion-row>
+		    		<ion-col col-12>
+						<button ion-button block class="bouton-principal inscription">S'inscrire</button>
+		      		</ion-col>
+		      	</ion-row>
+
+		    </div>
+	  	</div>		
+	</ion-grid>
 </ion-content>

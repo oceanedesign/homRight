@@ -14,3 +14,71 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+ion-app.md{
+	font-family: "Futura";
+	font-weight: 300;	
+}
+
+.list-ios > .item-block:first-child {
+    border-top: 0.55px solid transparent;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+::-scrollbar { 
+    display: none; 
+}
+
+.mascotte{
+	display: block;
+	margin: 0 auto;
+}
+
+.bouton-contour{
+	color: #A675FF;
+	font-family: "Futura";
+	font-weight: 300;
+	border-radius: 30px;
+	background: white;
+	box-shadow: 10px 10px 8px 10px transparent;
+	border: 1px solid #A675FF;
+	text-transform: lowercase;
+}
+
+.bouton-contour:hover:not(.disable-hover), .bouton-contour:active{
+	color:white;
+	box-shadow: 10px 10px 8px 10px transparent;
+	background: linear-gradient(275.97deg, #5790FF -46.25%, #DF61FF 191.58%);
+}
+
+.bouton-principal{
+	color: #FFFFFF;
+	font-family: "Futura";
+	font-weight: 300;
+	border-radius: 30px;
+	background: linear-gradient(275.97deg, #5790FF -46.25%, #DF61FF 191.58%);
+	box-shadow: 10px 10px 8px 10px transparent;
+	border: 1px solid #A675FF;
+	width: 65%;
+	height: 45px;
+	margin: 0 auto;
+}
+
+.bouton-principal:hover:not(.disable-hover), .bouton-principal:active{
+	color:white;
+	box-shadow: 10px 10px 8px 10px transparent;
+	background: linear-gradient(275.97deg, #5790FF -46.25%, #DF61FF 191.58%);
+}
+
+.center{
+	text-align: center;
+    margin: 0px;
+}
+
+.right{
+	text-align: right;
+    margin: 5px 0 10px 0;
+}
