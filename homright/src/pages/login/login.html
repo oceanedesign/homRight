@@ -95,15 +95,15 @@
 				<ion-list>
 					<ion-item>
 				    	<ion-label color="primary" floating>Prénom</ion-label>
-				    	<ion-input></ion-input>
+				    	<ion-input type="text"></ion-input>
 				  	</ion-item>
 					<ion-item>
 				    	<ion-label color="primary" floating>Nom</ion-label>
-				    	<ion-input></ion-input>
+				    	<ion-input type="text"></ion-input>
 				  	</ion-item>
 					<ion-item>
 				    	<ion-label color="primary" floating>Pseudo</ion-label>
-				    	<ion-input></ion-input>
+				    	<ion-input type="text"></ion-input>
 				  	</ion-item>
 				  	<ion-item>
   						<ion-label color="primary" floating>Email</ion-label>
@@ -116,7 +116,7 @@
 				</ion-list>
 				<ion-row>
 		    		<ion-col col-12>
-						<button ion-button block class="bouton-principal inscription">S'inscrire</button>
+						<button ion-button block class="bouton-principal inscription" (click)="signup()">S'inscrire</button>
 		      		</ion-col>
 		      	</ion-row>
 

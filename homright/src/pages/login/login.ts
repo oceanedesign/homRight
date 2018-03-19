@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 
-
 import{SignupPage} from "../signup/signup";
 import { TabsPage } from '../tabs/tabs';
+
+
 
 //import { LottieAnimationViewModule } from 'ng-lottie';
 /**
@@ -22,9 +23,10 @@ import { TabsPage } from '../tabs/tabs';
 })
 export class LoginPage {
 	tabBarElement: any;
-  	public lottieConfig:Object;
-  	splash = true;
+  public lottieConfig:Object;
+  splash = true;
 	connexionType: string ="connexion";
+
 
   	constructor(public navCtrl: NavController) {
   		this.lottieConfig={
@@ -42,8 +44,9 @@ export class LoginPage {
   }
 
   signup(){
-  	this.navCtrl.push(SignupPage);
+    this.navCtrl.push(SignupPage);
   }
+
 
   connexion(){
   	this.navCtrl.push(TabsPage);

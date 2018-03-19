@@ -2,6 +2,8 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { HttpModule } from '@angular/http';
+import {HttpClientModule} from "@angular/common/http";
 
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
@@ -18,6 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { LottieAnimationViewModule } from 'ng-lottie';
 
+import { SQLite } from '@ionic-native/sqlite';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -31,7 +35,7 @@ import { LottieAnimationViewModule } from 'ng-lottie';
     TabsPage
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, HttpModule,HttpClientModule, 
     IonicModule.forRoot(MyApp),
     LottieAnimationViewModule.forRoot()
   ],
@@ -50,6 +54,7 @@ import { LottieAnimationViewModule } from 'ng-lottie';
   providers: [
     StatusBar,
     SplashScreen,
+    SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
