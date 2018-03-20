@@ -1,20 +1,22 @@
 <?php
 	include("../db.php");
 
-	header("Access-Control-Allow-Origin:*");
+	header('Access-Control-Allow-Origin:*');
 
-header('Content-Type: application/json;charset=UTF-8');
-header('Access-Control-Allow-Methods: DELETE, HEAD, GET, OPTIONS, POST, PUT');
-header('Access-Control-Allow-Headers: Content-Type, Content-Range, Content-Disposition, Content-Description');
-header('Access-Control-Max-Age: 1728000');
+	header('Content-Type: application/json;charset=UTF-8');
+	header('Access-Control-Allow-Methods: DELETE, HEAD, GET, OPTIONS, POST, PUT');
+	header('Access-Control-Allow-Headers: : Origin, Content-Type, X-Auth-Token , Authorization');
+	headers('Access-Control-Allow-Credentials : true');
+	header('Access-Control-Max-Age: 1728000');
+
 
 	//$request= file_get_contents('test.json');
 	$request= file_get_contents('php://input');
 
 	var_dump ($request);
     //$data = json_decode(file_get_contents('php://input'), true);
-    $k= utf8_encode($request);
-    $data= json_decode($k, true);
+    //$k= utf8_encode($request);
+    $data= json_decode($request, true);
 
     
   	$email = $data['email'];
