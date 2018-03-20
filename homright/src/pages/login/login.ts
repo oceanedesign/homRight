@@ -23,8 +23,6 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
   templateUrl: 'login.html',
 })
 export class LoginPage {
-
-
 	tabBarElement: any;
   public lottieConfig:Object;
   splash = true;
@@ -33,7 +31,6 @@ export class LoginPage {
   users: String;
 
   regData = {"pseudo":"", "password":"", "nom": "", "prenom": "","email": ""};
-  netResponse:any;
 
 
   	constructor(public navCtrl: NavController, public authServiceProvider : AuthServiceProvider) {

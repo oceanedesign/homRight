@@ -3,10 +3,9 @@
 
 	header('Access-Control-Allow-Origin:*');
 
-	header('Content-Type: application/json;charset=UTF-8');
+	//header('Content-Type: application/json;charset=UTF-8');
 	header('Access-Control-Allow-Methods: DELETE, HEAD, GET, OPTIONS, POST, PUT');
 	header('Access-Control-Allow-Headers: : Origin, Content-Type, X-Auth-Token , Authorization');
-	headers('Access-Control-Allow-Credentials : true');
 	header('Access-Control-Max-Age: 1728000');
 
 
