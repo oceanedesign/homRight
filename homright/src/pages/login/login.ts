@@ -4,6 +4,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 import{SignupPage} from "../signup/signup";
 import { TabsPage } from '../tabs/tabs';
 
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 
 //import { LottieAnimationViewModule } from 'ng-lottie';
@@ -22,13 +23,20 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+
+
 	tabBarElement: any;
   public lottieConfig:Object;
   splash = true;
 	connexionType: string ="connexion";
 
+  users: String;
 
-  	constructor(public navCtrl: NavController) {
+  regData = {"pseudo":"", "password":"", "nom": "", "prenom": "","email": ""};
+  netResponse:any;
+
+
+  	constructor(public navCtrl: NavController, public authServiceProvider : AuthServiceProvider) {
   		this.lottieConfig={
   			path:'assets/imgs/splashScreen/data.json',
   			autoplay: true,
@@ -37,6 +45,29 @@ export class LoginPage {
   		}
   }
 
+  ngOnInit(){
+    this.authServiceProvider.getUsers().subscribe(
+      data=>{
+        this.users=data.users;
+        console.log(data);
+      },
+      error=>{
+        console.log(error);
+      })
+  }
+
+
+  doSignup() {
+    console.log(this.regData);
+    this.authServiceProvider.postData(this.regData,'signup/').then((result) => {
+      console.log("ça maaarche");
+       this.navCtrl.push(TabsPage);
+    }, (error) => {
+        console.log("ça ne marche pas");
+    });
+  }
+
+
   ionViewDidLoad() {
     setTimeout(() => {
       this.splash = false;
@@ -44,7 +75,6 @@ export class LoginPage {
   }
 
   signup(){
-    this.navCtrl.push(SignupPage);
   }
 
 

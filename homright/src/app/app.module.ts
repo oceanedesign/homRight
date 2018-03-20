@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 import {HttpClientModule} from "@angular/common/http";
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
@@ -53,7 +54,7 @@ import { SQLite } from '@ionic-native/sqlite';
   ],
   providers: [
     StatusBar,
-    SplashScreen,
+    SplashScreen, AuthServiceProvider,
     SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

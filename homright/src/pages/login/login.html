@@ -92,34 +92,45 @@
 		      		</ion-col>
 		      	</ion-row>
 
+		      	<form >
 				<ion-list>
 					<ion-item>
 				    	<ion-label color="primary" floating>Prénom</ion-label>
-				    	<ion-input type="text"></ion-input>
+				    	<ion-input [(ngModel)]="regData.prenom" name="prenom"  type="text"></ion-input>
 				  	</ion-item>
 					<ion-item>
 				    	<ion-label color="primary" floating>Nom</ion-label>
-				    	<ion-input type="text"></ion-input>
+				    	<ion-input [(ngModel)]="regData.nom" name="nom" type="text"></ion-input>
 				  	</ion-item>
 					<ion-item>
 				    	<ion-label color="primary" floating>Pseudo</ion-label>
-				    	<ion-input type="text"></ion-input>
+				    	<ion-input [(ngModel)]="regData.pseudo" name="pseudo" type="text"></ion-input>
 				  	</ion-item>
 				  	<ion-item>
   						<ion-label color="primary" floating>Email</ion-label>
-  						<ion-input type="email"></ion-input>
+  						<ion-input [(ngModel)]="regData.email" name="email"  type="email"></ion-input>
 					</ion-item>
 				  	<ion-item>
 				    	<ion-label color="primary" floating>Mot de passe</ion-label>
-				    	<ion-input type="password"></ion-input>
+				    	<ion-input [(ngModel)]="regData.password" name="password" type="password"></ion-input>
 				    </ion-item>
 				</ion-list>
 				<ion-row>
 		    		<ion-col col-12>
-						<button ion-button block class="bouton-principal inscription" (click)="signup()">S'inscrire</button>
+						<button ion-button block class="bouton-principal inscription" type="submit" (click)="doSignup()">S'inscrire</button>
 		      		</ion-col>
 		      	</ion-row>
-
+		      </form>
+				<ion-row>
+		    		<ion-col col-12>
+						<p>{{users[0].nom}}</p>
+		      		</ion-col>
+		      	</ion-row>
+				<ion-row>
+		    		<ion-col col-12>
+						<p>{{users}}</p>
+		      		</ion-col>
+		      	</ion-row>
 		    </div>
 	  	</div>		
 	</ion-grid>
