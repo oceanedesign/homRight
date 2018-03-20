@@ -3,7 +3,7 @@
 
 	header('Access-Control-Allow-Origin:*');
 
-	//header('Content-Type: application/json;charset=UTF-8');
+	header('Content-Type: application/json;charset=UTF-8');
 	header('Access-Control-Allow-Methods: DELETE, HEAD, GET, OPTIONS, POST, PUT');
 	header('Access-Control-Allow-Headers: : Origin, Content-Type, X-Auth-Token , Authorization');
 	header('Access-Control-Max-Age: 1728000');
@@ -33,7 +33,7 @@
     $test = mysqli_query($db, $sql1);
 						
 	//Si la requete fonctionne
-	if($test) echo "<p class='infoRequete'>Ajout effectué</p>"; 
+	//if($test) echo "<p class='infoRequete'>Ajout effectué</p>"; 
 	// Si la requete ne fonctionne pas
-	else echo "<p class='infoRequete'>Erreur de la requête</p>"; 
+	//else echo "<p class='infoRequete'>Erreur de la requête</p>"; 
     
