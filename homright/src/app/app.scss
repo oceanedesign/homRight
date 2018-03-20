@@ -48,10 +48,10 @@ ion-app.md{
 	text-transform: lowercase;
 }
 
-.bouton-contour:hover:not(.disable-hover), .bouton-contour:active{
-	color:white;
+.bouton-contour:hover:not(.disable-hover), .bouton-contour:active, .button-ios.activated{
+	color:#A675FF;
 	box-shadow: 10px 10px 8px 10px transparent;
-	background: linear-gradient(275.97deg, #5790FF -46.25%, #DF61FF 191.58%);
+	background: white;
 }
 
 .bouton-principal{
@@ -81,4 +81,8 @@ ion-app.md{
 .right{
 	text-align: right;
     margin: 5px 0 10px 0;
+}
+
+.back-button-text-ios{
+	display:none;
 }

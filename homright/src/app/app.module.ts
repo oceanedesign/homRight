@@ -8,6 +8,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
+import { RejoindreMaisonPage } from '../pages/rejoindre-maison/rejoindre-maison';
 import { SynchroPage } from '../pages/synchro/synchro';
 
 import { ConsoPage } from '../pages/conso/conso';
@@ -27,7 +28,7 @@ import { SQLite } from '@ionic-native/sqlite';
   declarations: [
     MyApp,
     LoginPage,
-    SignupPage,
+    SignupPage, RejoindreMaisonPage,
     SynchroPage,
     ConsoPage,
     ContactPage,
@@ -44,7 +45,7 @@ import { SQLite } from '@ionic-native/sqlite';
   entryComponents: [
     MyApp,
     LoginPage,
-    SignupPage,
+    SignupPage, RejoindreMaisonPage,
     SynchroPage,
     ConsoPage,
     ContactPage,

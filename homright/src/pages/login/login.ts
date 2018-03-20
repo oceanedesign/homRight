@@ -58,7 +58,7 @@ export class LoginPage {
     console.log(this.regData);
     this.authServiceProvider.postData(this.regData,'signup/').then((result) => {
       console.log("ça maaarche");
-       this.navCtrl.push(TabsPage);
+       this.navCtrl.push(SignupPage);
     }, (error) => {
         console.log("ça ne marche pas");
     });
