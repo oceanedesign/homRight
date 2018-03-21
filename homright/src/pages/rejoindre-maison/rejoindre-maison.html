@@ -15,4 +15,27 @@
 
 <ion-content padding>
 
+	<ion-grid>
+  		<ion-row>
+      		<img class="mascotte" alt="Homie dit bonjour" src="../assets/imgs/Homie_choix_maison.png"/>
+      	</ion-row>
+      	<form >
+		<ion-list>
+			<ion-item>
+		    	<ion-label color="primary" floating>Code postal</ion-label>
+		    	<ion-input name="cp"  type="text"></ion-input>
+		  	</ion-item>
+		  	<ion-item>
+		    	<ion-label color="primary" floating>Nom de la maison</ion-label>
+		    	<ion-input name="maison"  type="text"></ion-input>
+		  	</ion-item>
+		</ion-list>
+		<ion-row>
+    		<ion-col col-12>
+				<button ion-button block class="bouton-principal valider" type="submit">Rejoindre</button>
+      		</ion-col>
+      	</ion-row>
+      </form>
+	</ion-grid>
+
 </ion-content>

@@ -1,3 +1,24 @@
 page-rejoindre-maison {
+	ion-content{
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+    position:relative !important;
+    padding-top : 0px ;
+    padding-bottom : 0px ;
+  }
 
+  .mascotte {
+    width: 60%;
+    height: 60%;
+    margin-bottom: 20px;
+	}
+
+	.grid{
+		padding : 0px 25px;
+	}
+
+	.content-md .valider{
+		margin-top: 40px;
+	}
 }

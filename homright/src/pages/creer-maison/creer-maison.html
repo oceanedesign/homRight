@@ -7,12 +7,41 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>CreerMaison</ion-title>
+    <ion-title>Créer une maison</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+	<ion-grid>
+  		<ion-row>
+      		<img class="mascotte" alt="Homie dit bonjour" src="../assets/imgs/Homie_choix_maison.png"/>
+      	</ion-row>
+      	<form >
+		<ion-list>
+			<ion-item>
+		    	<ion-label color="primary" floating>Nom de la maison</ion-label>
+		    	<ion-input name="maison"  type="text"></ion-input>
+		  	</ion-item>
+		</ion-list>
+		<ion-row>
+    		<ion-col col-12>
+				<h3>Inviter des membres à rejoindre la maison</h3>
+      		</ion-col>
+      	</ion-row>
+		<ion-list>
+			<ion-item>
+		    	<ion-input name="mail_membre"  type="text" placeholder="membre@contact.com"></ion-input>
+		  	</ion-item>
+		</ion-list>
+		<ion-row>
+    		<ion-col col-12>
+				<button ion-button block class="bouton-principal valider" type="submit">Valider</button>
+      		</ion-col>
+      	</ion-row>
+      </form>
+	</ion-grid>
 
 </ion-content>
