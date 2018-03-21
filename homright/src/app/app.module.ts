@@ -9,6 +9,7 @@ import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
 import { RejoindreMaisonPage } from '../pages/rejoindre-maison/rejoindre-maison';
+import { CreerMaisonPage } from '../pages/creer-maison/creer-maison';
 import { SynchroPage } from '../pages/synchro/synchro';
 
 import { ConsoPage } from '../pages/conso/conso';
@@ -17,6 +18,7 @@ import { HomePage } from '../pages/home/home';
 import { ProfilPage } from '../pages/profil/profil';
 import { TabsPage } from '../pages/tabs/tabs';
 
+import { Geolocation } from '@ionic-native/geolocation';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -28,7 +30,7 @@ import { SQLite } from '@ionic-native/sqlite';
   declarations: [
     MyApp,
     LoginPage,
-    SignupPage, RejoindreMaisonPage,
+    SignupPage, RejoindreMaisonPage,CreerMaisonPage,
     SynchroPage,
     ConsoPage,
     ContactPage,
@@ -45,7 +47,7 @@ import { SQLite } from '@ionic-native/sqlite';
   entryComponents: [
     MyApp,
     LoginPage,
-    SignupPage, RejoindreMaisonPage,
+    SignupPage, RejoindreMaisonPage, CreerMaisonPage,
     SynchroPage,
     ConsoPage,
     ContactPage,
@@ -56,6 +58,7 @@ import { SQLite } from '@ionic-native/sqlite';
   providers: [
     StatusBar,
     SplashScreen, AuthServiceProvider,
+    Geolocation, 
     SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

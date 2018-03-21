@@ -24,12 +24,14 @@
     $pseudo= $data['pseudo'];
     $password= $data['password'];
     $date_creation = date("Y-m-d H:i:s");
+    $longitude= $data['lng'];
+    $latitude= $data['lat'];
 
     var_dump ($email);
     echo $email;
 
 	// //Formulation de la requête SQL pour insérer les données dans la table
-    $sql1="INSERT INTO user(pseudo, nom, prenom, password, email, date_creation, point, point_niv, email_n, push) VALUES('$pseudo', '$nom', '$prenom', '$password', '$email', '$date_creation', 50, 50, 1, 1)";
+    $sql1="INSERT INTO user(pseudo, nom, prenom, password, email, date_creation, longitude, latitude, point, point_niv, email_n, push) VALUES('$pseudo', '$nom', '$prenom', '$password', '$email', '$date_creation','$longitude','$latitude', 50, 50, 1, 1)";
 
     $test = mysqli_query($db, $sql1);
 						

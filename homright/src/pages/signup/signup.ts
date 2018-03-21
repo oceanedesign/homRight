@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import{RejoindreMaisonPage} from "../rejoindre-maison/rejoindre-maison";
+import { CreerMaisonPage } from '../creer-maison/creer-maison';
+
 /**
  * Generated class for the SignupPage page.
  *
@@ -17,11 +19,15 @@ import{RejoindreMaisonPage} from "../rejoindre-maison/rejoindre-maison";
 })
 export class SignupPage {
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SignupPage');
+  }
+
+  creerMaison(){
+  	this.navCtrl.push(CreerMaisonPage);
   }
 
   rejoindreMaison(){

@@ -5,7 +5,7 @@ import{SignupPage} from "../signup/signup";
 import { TabsPage } from '../tabs/tabs';
 
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
-
+import { Geolocation } from '@ionic-native/geolocation';
 
 //import { LottieAnimationViewModule } from 'ng-lottie';
 /**
@@ -28,12 +28,14 @@ export class LoginPage {
   splash = true;
 	connexionType: string ="connexion";
 
+  regData = {"pseudo":"", "password":"", "nom": "", "prenom": "","email": "","lat": "","lng": ""};
+  lat : any;
+  lng : any;
+
   users: String;
 
-  regData = {"pseudo":"", "password":"", "nom": "", "prenom": "","email": ""};
 
-
-  	constructor(public navCtrl: NavController, public authServiceProvider : AuthServiceProvider) {
+  	constructor(public navCtrl: NavController, public authServiceProvider : AuthServiceProvider, public geo: Geolocation) {
   		this.lottieConfig={
   			path:'assets/imgs/splashScreen/data.json',
   			autoplay: true,
@@ -54,7 +56,20 @@ export class LoginPage {
   }
 
 
+  ionViewDidLoad() {
+    setTimeout(() => {
+      this.splash = false;
+    }, 5500);
+      this.geo.getCurrentPosition().then(pos=>{
+      this.lat = pos.coords.latitude;     
+      this.lng = pos.coords.longitude;
+    }).catch(err => console.log(err));
+  }
+
   doSignup() {
+    console.log("test dans doSignup " + this.lng +" pour la lattitude "+ this.lat);
+    this.regData.lat = this.lat;
+    this.regData.lng = this.lng;
     console.log(this.regData);
     this.authServiceProvider.postData(this.regData,'signup/').then((result) => {
       console.log("ça maaarche");
@@ -63,17 +78,6 @@ export class LoginPage {
         console.log("ça ne marche pas");
     });
   }
-
-
-  ionViewDidLoad() {
-    setTimeout(() => {
-      this.splash = false;
-    }, 5500);
-  }
-
-  signup(){
-  }
-
 
   connexion(){
   	this.navCtrl.push(TabsPage);
