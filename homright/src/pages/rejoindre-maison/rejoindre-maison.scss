@@ -21,4 +21,10 @@ page-rejoindre-maison {
 	.content-md .valider{
 		margin-top: 40px;
 	}
+
+    .item-ios.item-label-stacked .text-input, .item-ios.item-label-floating .text-input,
+    .item-label-stacked .text-input-md, .item-label-floating .text-input-md {
+    margin-bottom: -6px;
+    padding-bottom: 14px;
+    }
 }

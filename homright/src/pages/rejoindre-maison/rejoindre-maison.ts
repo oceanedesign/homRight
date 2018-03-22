@@ -18,9 +18,11 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 export class RejoindreMaisonPage {
 
   users: String;
-
+  namesHouse: string[];
+  hideElement: false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authServiceProvider : AuthServiceProvider) {
+   this.initializeNamesHouse();
   }
 
 
@@ -38,5 +40,32 @@ export class RejoindreMaisonPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RejoindreMaisonPage');
+  }
+
+
+
+    initializeNamesHouse() {
+    this.namesHouse = [
+      'PerfectHouse',
+      'TheBigThree',
+      'TheBigHouse',
+      'SuperMaison',
+      'ThePlaceToBe'
+    ];
+  }
+
+  getNameHouse(ev: any) {
+    // Reset items back to all of the namesHouse
+    this.initializeNamesHouse();
+
+    // set val to the value of the searchbar
+    let val = ev.target.value;
+
+    // if the value is an empty string don't filter the items
+    if (val && val.trim() != '') {
+      this.namesHouse = this.namesHouse.filter((nameHouse) => {
+        return (nameHouse.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      })
+    }
   }
 }

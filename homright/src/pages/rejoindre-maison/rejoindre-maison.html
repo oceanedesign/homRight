@@ -26,9 +26,14 @@
 		    	<ion-input name="cp"  type="text"></ion-input>
 		  	</ion-item>
 		  	<ion-item>
-		    	<ion-label color="primary" floating>Nom de la maison</ion-label>
-		    	<ion-input name="maison"  type="text"></ion-input>
-		  	</ion-item>
+		  	<ion-label color="primary" floating>Nom de la maison</ion-label>
+		  	<ion-input name="nomMaison" list="maison" type="text"></ion-input></ion-item>
+  			<datalist id="maison"> 
+  				<div *ngFor="let nameHouse of namesHouse">
+  					<option value="{{ nameHouse }}"></option>
+  				</div>
+  			</datalist>
+  		
 		</ion-list>
 		<ion-row>
     		<ion-col col-12>

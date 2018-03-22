@@ -15,6 +15,9 @@ import { Geolocation } from '@ionic-native/geolocation';
  * Ionic pages and navigation.
  */
 
+declare var jquery:any;
+declare var $:any;
+
 @IonicPage({
 	name:'page-login'
 	})

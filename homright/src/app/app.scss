@@ -46,6 +46,7 @@ ion-app.md{
 	box-shadow: 10px 10px 8px 10px transparent;
 	border: 1px solid #A675FF;
     text-transform: initial;
+    font-size: 18px;
 }
 
 .bouton-contour:hover:not(.disable-hover), .bouton-contour:active, .bouton-contour.button-ios.activated{
@@ -66,6 +67,7 @@ ion-app.md{
 	height: 45px;
 	margin: 0 auto;
 	text-transform: initial;
+	font-size: 18px;
 }
 
 .bouton-principal:hover:not(.disable-hover), .bouton-principal:active{
@@ -142,7 +144,7 @@ h3{
 	font-weight: 700;
 	text-transform: uppercase;
 	color: #333333;
-	font-size: 2.5rem;
+	font-size: 2.2rem;
 }
 
 [col-12] {

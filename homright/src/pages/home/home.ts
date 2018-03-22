@@ -14,4 +14,9 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
   }
 
+  creerScene(){
+  	//this.navCtrl.push(creerScenePage);
+  }
+
+
 }
