@@ -22,4 +22,9 @@ export class CreerMaisonPage {
     console.log('ionViewDidLoad CreerMaisonPage');
   }
 
+
+ajoutMembres(){
+	console.log("test ajout membres");
+}
+
 }

@@ -31,12 +31,12 @@
 				<h3>Inviter des membres à rejoindre la maison</h3>
       		</ion-col>
       		<ion-col col-3>
-				<button ion-button block class="bouton-rond" color="light" >+</button>
+				<button ion-button block class="bouton-rond" color="light" (click)="ajoutMembres()">+</button>
       		</ion-col>
       	</ion-row>
-		<ion-list>
+		<ion-list id="list-membre">
 			<ion-item>
-		    	<ion-input name="mail_membre"  type="text" placeholder="membre@contact.com"></ion-input>
+		    	<ion-input name="mail_membre" type="text" placeholder="membre@contact.com"></ion-input>
 		  	</ion-item>
 		</ion-list>
 		<ion-row>
