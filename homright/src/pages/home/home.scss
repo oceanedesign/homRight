@@ -1,3 +1,26 @@
 page-home {
-
+  .text-center {
+    text-align: center;
+  }
+  .title{
+    h1{
+      font-family: 'Futura';
+      margin-bottom: 5px;
+    }
+    p{
+      margin: 0;
+    }
+  }
+  .flex-center{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+  h3{
+    margin: auto;
+  }
+  .button-event{
+    border-radius: 20px;
+    box-shadow: none;
+  }
 }

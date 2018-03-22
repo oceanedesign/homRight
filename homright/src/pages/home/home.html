@@ -1,16 +1,31 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
 
 <ion-content padding overflow-scroll="true">
-  <h2>Hello World !!</h2>
-  <p>
-    L'informatique c'est trop cool.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-grid>
+      <ion-row>
+          <button ion-button block class="button-event" (click)="rejoindreMaison()">Energie verte | 10:02</button>
+      </ion-row>
+      <ion-row padding class="title">
+          <h1>Hom'right,</h1>
+          <p>Homie analyse votre consommation</p>
+      </ion-row>
+  		<ion-row>
+      		<img class="mascotte" alt="Homie dit bonjour" src="../assets/imgs/Homie_choix_maison.png"/>
+      </ion-row>
+      <ion-row>
+		    <ion-col col-12 class="text-center">
+				  <p>Analyse en cours...</p> <p>Vos premières données seront disponibles dans une heure.</p>
+		    </ion-col>
+		  </ion-row>
+      <ion-row padding>
+        <ion-col col-6 class="flex-center">
+          <h3>Mes routines</h3>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button block class="bouton-contour" (click)="rejoindreMaison()">Créer Scènes</button>
+        </ion-col>
+        <ion-col col-12>
+          <p>Créez vos routines quotidiennes pour économiser du temps et de l’argent.</p>
+        </ion-col>
+      </ion-row>
+	</ion-grid>
 </ion-content>
