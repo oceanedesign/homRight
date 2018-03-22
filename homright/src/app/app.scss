@@ -45,7 +45,7 @@ ion-app.md{
 	background: white;
 	box-shadow: 10px 10px 8px 10px transparent;
 	border: 1px solid #A675FF;
-	text-transform: lowercase;
+    text-transform: initial;
 }
 
 .bouton-contour:hover:not(.disable-hover), .bouton-contour:active, .bouton-contour.button-ios.activated{
@@ -65,6 +65,7 @@ ion-app.md{
 	width: 65%;
 	height: 45px;
 	margin: 0 auto;
+	text-transform: initial;
 }
 
 .bouton-principal:hover:not(.disable-hover), .bouton-principal:active{
@@ -138,9 +139,25 @@ ion-title, .toolbar-ios ion-title {
 
 h3{
 	font-family: "Futura Cd";
-	font-weight: 300;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #333333;
+	font-size: 2.5rem;
 }
 
 [col-12] {
     padding: 0;
+}
+
+
+.bouton-rond{
+    width: 50px;
+    height: 50px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.17);
+    border-radius: 50px;
+    float:right;
+    margin:0px;
+    color: #709CFF;
+    font-size: 20px;
 }

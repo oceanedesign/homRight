@@ -66,7 +66,7 @@ export class LoginPage {
     }).catch(err => console.log(err));
   }
 
-  doSignup() {
+  register() {
     console.log("test dans doSignup " + this.lng +" pour la lattitude "+ this.lat);
     this.regData.lat = this.lat;
     this.regData.lng = this.lng;
