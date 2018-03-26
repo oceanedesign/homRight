@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SynchroFaitePage } from '../synchro-faite/synchro-faite';
+
 /**
- * Generated class for the SynchroPage page.
+ * Generated class for the SynchroFaitePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,20 +10,17 @@ import { SynchroFaitePage } from '../synchro-faite/synchro-faite';
 
 @IonicPage()
 @Component({
-  selector: 'page-synchro',
-  templateUrl: 'synchro.html',
+  selector: 'page-synchro-faite',
+  templateUrl: 'synchro-faite.html',
 })
-export class SynchroPage {
+export class SynchroFaitePage {
+regData = {"compteur":"15987465"};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SynchroPage');
-  }
-
-  synchronisationFaiteCompteur(){
-        this.navCtrl.push(SynchroFaitePage);
+    console.log('ionViewDidLoad SynchroFaitePage');
   }
 
 }

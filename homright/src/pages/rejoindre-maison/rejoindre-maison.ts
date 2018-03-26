@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
-
+import{SynchroFaitePage} from "../synchro-faite/synchro-faite";
 
 /**
  * Generated class for the RejoindreMaisonPage page.
@@ -68,4 +68,10 @@ export class RejoindreMaisonPage {
       })
     }
   }
+
+  synchronisationFaiteCompteur(){
+        this.navCtrl.push(SynchroFaitePage);
+  }
+
+  
 }

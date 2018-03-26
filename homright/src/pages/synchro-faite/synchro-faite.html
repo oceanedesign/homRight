@@ -1,5 +1,5 @@
 <!--
-  Generated template for the SynchroPage page.
+  Generated template for the SynchroFaitePage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -13,7 +13,7 @@
 		<h2>Homie</h2>
 	</ion-row>
 	<ion-row col-12>
-		<p>recherche votre compteur</p>
+		<p>est prêt</p>
 	</ion-row>
 
 </ion-header>
@@ -21,21 +21,27 @@
 
 <ion-content padding>
 	<ion-grid class="container">
-		<ion-row>
-    		<ion-col col-12>
-				<h4>Entrer votre numéro de compteur</h4>
-      		</ion-col>
-    	</ion-row>
       	<form>
 			<ion-list>
 				<ion-item>
 		    	<ion-label color="primary" floating>N° du compteur linky</ion-label>
-			    	<ion-input name="num_compteur"  type="text"></ion-input>
+			    	<ion-input [(value)]="regData.compteur" name="num_compteur" disabled type="text"></ion-input>
 			  	</ion-item>
+				<ion-item class="inactif">
+
+		    		<ion-label color="primary">Adresse postale</ion-label>
+			    	
+			  	</ion-item>
+	    			<button class="navigation" ion-item (click)="openNavDetailsPage(item)" icon-start>
+    	  				<p>Résidence Arc-en-ciel</p>
+						<p>Appartement 220</p>
+						<p>41 rue Guynemer 93200 Saint Denis</p>
+    				</button>
+
 			</ion-list>
 			<ion-row>
 	    		<ion-col col-12>
-					<button ion-button block class="bouton-principal valider" type="submit" (click)="synchronisationFaiteCompteur()">Valider</button>
+					<button ion-button block class="bouton-principal valider" type="submit">Valider</button>
 	      		</ion-col>
       		</ion-row>
       	</form>

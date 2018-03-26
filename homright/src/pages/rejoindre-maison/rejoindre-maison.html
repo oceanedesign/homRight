@@ -15,7 +15,7 @@
 
 <ion-content padding>
 
-	<ion-grid>
+	<ion-grid class="container">
   		<ion-row>
       		<img class="mascotte" alt="Homie dit bonjour" src="../assets/imgs/Homie_choix_maison.png"/>
       	</ion-row>
@@ -37,7 +37,7 @@
 		</ion-list>
 		<ion-row>
     		<ion-col col-12>
-				<button ion-button block class="bouton-principal valider" type="submit">Rejoindre</button>
+				<button ion-button block class="bouton-principal valider" type="submit" (click)="synchronisationFaiteCompteur()">Rejoindre</button>
       		</ion-col>
       	</ion-row>
       </form>

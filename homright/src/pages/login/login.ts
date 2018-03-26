@@ -19,8 +19,9 @@ declare var jquery:any;
 declare var $:any;
 
 @IonicPage({
-	name:'page-login'
-	})
+  name: 'page-login',
+  segment: 'page-login'
+})
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',

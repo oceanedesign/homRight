@@ -1,0 +1,67 @@
+page-synchro-faite {
+	.container{
+    display: block;
+    max-width: 400px;
+    margin: 10px auto auto auto;
+    position:relative !important;
+    padding : 0px 28px;
+
+  }
+
+  .header{
+  	background: linear-gradient(287.72deg, #5790FF -32.69%, #DF61FF 181.36%);
+  }
+
+  .mascotte{
+  	position: relative;
+	top: 30px;
+	z-index: -99;
+	left: -70px;
+  }
+
+  ion-header h2{
+  	font-family: "Futura";
+  	font-weight: 800;
+	font-size: 65px;
+	text-align: center;
+	color: #FFFFFF;
+	margin: -50px auto;
+	z-index: 800;
+  }
+
+  ion-header p{
+  	font-family: "Futura";
+  	font-weight: 800;
+  	font-size: 22px;
+	text-align: center;
+	color: #FFFFFF;
+	margin: 30px auto;	
+  	}
+
+  	.valider{
+  		margin-top: 30px;
+  	}
+
+   	ion-item.inactif, .list-md .item-input.inactif, .list-md .item-block .item-inner,
+   .list-ios .item-block.inactif .item-inner{
+  		border-bottom: 1px solid white;
+  	}
+
+  	button p, button.item-md p, button.item-ios p{
+  		font-family: "Futura";
+  		font-weight: 700;
+  		color:black;
+  	}
+
+	.inactif .label-md, .inactif .label-ios {
+    	margin: 40px 8px 0px 0;
+	}
+
+	 .list-md > button.item-block:last-child .item-inner,
+	 .list-ios button.item-block .item-inner, .list-ios > button.item-block:last-child .item-inner{
+		border-bottom:1px solid black;
+		padding-bottom: 10px;
+	}
+
+
+}

@@ -109,6 +109,13 @@ $colors: (
 }
 
 @font-face{
+	font-family: 'Futura';
+	font-style: normal;
+	font-weight: 800;
+	src : url('../assets/fonts/futura/FuturaExtraBlack.ttf')
+}
+
+@font-face{
 	font-family: 'Futura Cd';
 	font-style: normal;
 	font-weight: 200;

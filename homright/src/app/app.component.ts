@@ -6,12 +6,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { SynchroPage } from '../pages/synchro/synchro';
 import { SignupPage } from '../pages/signup/signup';
+import { JeuModelisationPage } from '../pages/jeu-modelisation/jeu-modelisation';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = SignupPage;
+    //rootPage:any = JeuModelisationPage;
   //rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {

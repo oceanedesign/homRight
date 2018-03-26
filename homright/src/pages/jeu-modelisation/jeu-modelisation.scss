@@ -1,0 +1,35 @@
+page-jeu-modelisation {
+	.contenu{
+		min-width: 350px;
+		max-width: 40%;
+	}
+
+	.segment-button {
+    overflow: initial;
+    text-overflow: inherit;
+    white-space: nowrap;
+}
+
+	ion-segment{display: block;}
+
+	.segment-md .segment-button{
+		width:100%;
+    	border-bottom-width: 2px;
+    	border-bottom-style: solid;
+    	border-bottom-color: rgba(0, 0, 0, 0.1);
+    	font-size: 18px;
+		font-family: 'Futura Cd';
+		font-weight: 200;
+    	line-height: 4rem;
+    	text-transform: lowercase;
+    	color: black;
+    	text-align: left;
+    	opacity: 1;
+	}
+
+.toolbar{
+	display: initial;
+	    contain: initial;
+}
+
+}

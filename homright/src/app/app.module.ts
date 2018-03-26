@@ -11,6 +11,8 @@ import { SignupPage } from '../pages/signup/signup';
 import { RejoindreMaisonPage } from '../pages/rejoindre-maison/rejoindre-maison';
 import { CreerMaisonPage } from '../pages/creer-maison/creer-maison';
 import { SynchroPage } from '../pages/synchro/synchro';
+import { SynchroFaitePage } from '../pages/synchro-faite/synchro-faite';
+import { JeuModelisationPage } from '../pages/jeu-modelisation/jeu-modelisation';
 
 import { ConsoPage } from '../pages/conso/conso';
 import { ContactPage } from '../pages/contact/contact';
@@ -31,6 +33,8 @@ import { SQLite } from '@ionic-native/sqlite';
     MyApp,
     LoginPage,
     SignupPage, RejoindreMaisonPage,CreerMaisonPage,
+    SynchroFaitePage,
+    JeuModelisationPage,
     SynchroPage,
     ConsoPage,
     ContactPage,
@@ -48,6 +52,8 @@ import { SQLite } from '@ionic-native/sqlite';
     MyApp,
     LoginPage,
     SignupPage, RejoindreMaisonPage, CreerMaisonPage,
+    SynchroFaitePage,
+    JeuModelisationPage,
     SynchroPage,
     ConsoPage,
     ContactPage,
