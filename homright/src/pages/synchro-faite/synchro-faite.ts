@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import{EditAdressePostalePage} from "../edit-adresse-postale/edit-adresse-postale";
 /**
  * Generated class for the SynchroFaitePage page.
  *
@@ -21,6 +21,10 @@ regData = {"compteur":"15987465"};
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SynchroFaitePage');
+  }
+
+  editionAdresseP(){
+  	this.navCtrl.push(EditAdressePostalePage);  	
   }
 
 }

@@ -1,0 +1,24 @@
+page-edit-adresse-postale {
+	.container{
+    display: block;
+    max-width: 400px;
+    margin: 0 auto;
+    position:relative !important;
+    padding-top : 0px ;
+    padding-bottom : 0px ;
+  }
+
+	.grid{
+		padding : 0px 25px;
+	}
+
+	.content-md .valider{
+		margin-top: 40px;
+	}
+
+    .item-ios.item-label-stacked .text-input, .item-ios.item-label-floating .text-input,
+    .item-label-stacked .text-input-md, .item-label-floating .text-input-md {
+    margin-bottom: -6px;
+    padding-bottom: 14px;
+    }
+}
