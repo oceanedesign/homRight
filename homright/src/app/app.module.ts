@@ -13,6 +13,7 @@ import { CreerMaisonPage } from '../pages/creer-maison/creer-maison';
 import { SynchroPage } from '../pages/synchro/synchro';
 import { SynchroFaitePage } from '../pages/synchro-faite/synchro-faite';
 import { EditAdressePostalePage } from '../pages/edit-adresse-postale/edit-adresse-postale';
+import { PointsClesPage } from '../pages/points-cles/points-cles';
 import { JeuModelisationPage } from '../pages/jeu-modelisation/jeu-modelisation';
 
 import { ConsoPage } from '../pages/conso/conso';
@@ -34,7 +35,7 @@ import { SQLite } from '@ionic-native/sqlite';
     MyApp,
     LoginPage,
     SignupPage, RejoindreMaisonPage,CreerMaisonPage,
-    SynchroFaitePage, EditAdressePostalePage,
+    SynchroFaitePage, EditAdressePostalePage, PointsClesPage,
     JeuModelisationPage,
     SynchroPage,
     ConsoPage,
@@ -53,7 +54,7 @@ import { SQLite } from '@ionic-native/sqlite';
     MyApp,
     LoginPage,
     SignupPage, RejoindreMaisonPage, CreerMaisonPage,
-    SynchroFaitePage, EditAdressePostalePage,
+    SynchroFaitePage, EditAdressePostalePage, PointsClesPage,
     JeuModelisationPage,
     SynchroPage,
     ConsoPage,
