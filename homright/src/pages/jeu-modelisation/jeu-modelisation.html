@@ -10,7 +10,7 @@
 		<ion-row id="contenuPrincipal" class="contenu">
 			<ion-col id="elements" col-7 class="elements">
 		  		<div [ngSwitch]="objetType" class="card">
-			    	<div *ngSwitchCase="'ouverture'" class="container">
+			    	<div *ngSwitchCase="'ouverture'" class="container-actif container">
 			    		<h1>Ouverture</h1>
 						<ion-list>
 							<ion-item>
@@ -20,7 +20,7 @@
 						</ion-list>
 				    </div>
 
-			    	<div *ngSwitchCase="'eclairage'" class="container">
+			    	<div *ngSwitchCase="'eclairage'" class="container-actif container">
 			    		<h1>éclairage</h1>
 						<ion-list>
 							<ion-item>
@@ -34,7 +34,7 @@
 						</ion-list>
 				    </div>
 
-			    	<div *ngSwitchCase="'temperature'" class="container">
+			    	<div *ngSwitchCase="'temperature'" class="container-actif container">
 			    		<h1>temperature</h1>
 						<ion-list>
 							<ion-item>
@@ -44,7 +44,7 @@
 						</ion-list>
 				    </div>
 
-			    	<div *ngSwitchCase="'appareils'" class="container">
+			    	<div *ngSwitchCase="'appareils'" class="container-actif container">
 			    		<h1>appareils électriques</h1>
 						<ion-list>
 							<ion-item>
@@ -54,7 +54,7 @@
 						</ion-list>
 				    </div>
 
-			    	<div *ngSwitchCase="'decoration'" class="container">
+			    	<div *ngSwitchCase="'decoration'" class="container-actif container">
 			    		<h1>Décoration</h1>
 			    		
 						<ion-list>
@@ -117,6 +117,8 @@
 	  	</ion-row>
 	  	<ion-row class="modelisation" (click)="desactiveBoutton()">
 	  		<img alt="modélisation" src="../assets/imgs/modelisation.png"/>
-	  	</ion-row>	
+	  	</ion-row>
+		<button ion-button block class="bouton-principal bouton">v</button>
+		<button ion-button block class="bouton-contour bouton bouton-annuler">x</button>
 	</ion-grid>
 </ion-content>

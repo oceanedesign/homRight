@@ -58,6 +58,9 @@ export class JeuModelisationPage {
   	 $('#contenuPrincipal').addClass('contenu-actif');
   	 $('#contenuPrincipal').removeClass('contenu');
 
+  	 $('.container').removeClass('container-inactif');
+  	 $('.container').addClass('container-actif');
+
   	 $('.activated').addClass('segment-activated');
   }
 
@@ -67,7 +70,10 @@ export class JeuModelisationPage {
 
   	 $('#contenuPrincipal').addClass('contenu');
   	 $('#contenuPrincipal').removeClass('contenu-actif');
-  	
+
+  	 $('.container').removeClass('container-actif');
+  	 $('.container').addClass('container-inactif');
+
   	$('.segment-button').removeClass('segment-activated');
   	$('.segment-button').attr('aria-pressed', 'false');
   }

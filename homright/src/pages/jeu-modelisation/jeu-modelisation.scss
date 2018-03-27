@@ -1,11 +1,28 @@
 page-jeu-modelisation {
+
+	.bouton{
+		margin: 0 auto;
+		width: 60px;
+    	height: 60px;
+    	border-radius: 8px;
+	    z-index: 100;
+    	position: absolute;
+		right: 20px;
+    	bottom: 20px;
+	}
+
+	.bouton-annuler{
+		right:100px;
+	}
+
 	.contenu{
 		position: absolute;
-    	left: -18%;
+    	left: -20%;
 		min-width: 350px;
 		max-width: 33%;
 		height: 100%;
     	width: 100%;
+    	transition: left 1s;
 	}
 
 	.contenu-actif{
@@ -15,6 +32,7 @@ page-jeu-modelisation {
 		max-width: 33%;
 		height: 100%;
     	width: 100%;
+    	transition: left 1s;
 	}
 
 	.scroll-content{
@@ -73,6 +91,16 @@ page-jeu-modelisation {
 
 	.container{
 		padding: 0 10px;
+	}
+
+	.container-actif {
+		visibility:visible;
+		//transition: visibility 1s;		
+	}
+
+	.container-inactif{
+		visibility:hidden;
+		//transition: visibility 1s;
 	}
 
 	.container .item-block{
@@ -185,6 +213,26 @@ page-jeu-modelisation {
 	}
 
 	@media only screen and (min-width: 1200px) {
+
+		.bouton{
+			margin: 0 auto;
+			width: 80px;
+	    	height: 80px;
+	    	border-radius: 8px;
+	    	z-index: 100;
+	    	position: absolute;
+			right: 50px;
+	    	bottom: 50px;
+		}
+
+		.bouton-annuler{
+			right:150px;
+		}
+
+		.contenu{
+	    	left: -18%;
+		}
+
     	.segment-md .segment-button {
         	font-size: 25px;
     	}
