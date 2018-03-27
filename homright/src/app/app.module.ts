@@ -5,6 +5,8 @@ import { MyApp } from './app.component';
 import { HttpModule } from '@angular/http';
 import {HttpClientModule} from "@angular/common/http";
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
+
 
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
@@ -68,7 +70,7 @@ import { SQLite } from '@ionic-native/sqlite';
     StatusBar,
     SplashScreen, AuthServiceProvider,
     Geolocation,
-    SQLite,
+    SQLite,ScreenOrientation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

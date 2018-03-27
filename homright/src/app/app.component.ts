@@ -17,8 +17,8 @@ import { ModelisationBienvenuePage } from '../pages/modelisation-bienvenue/model
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = ModelisationBienvenuePage;
-  //rootPage:any = LoginPage;
+  //rootPage:any = ModelisationBienvenuePage;
+  rootPage:any = JeuModelisationPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

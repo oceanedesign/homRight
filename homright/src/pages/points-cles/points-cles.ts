@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { ModelisationBienvenuePage } from '../modelisation-bienvenue/modelisation-bienvenue';
 /**
  * Generated class for the PointsClesPage page.
  *
@@ -22,6 +22,8 @@ export class PointsClesPage {
     console.log('ionViewDidLoad PointsClesPage');
   }
 
-  modelisationBienvenue(){}
+  modelisationBienvenue(){
+  	this.navCtrl.push(ModelisationBienvenuePage);
+  }
 
 }
