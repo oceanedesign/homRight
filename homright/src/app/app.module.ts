@@ -15,6 +15,7 @@ import { SynchroFaitePage } from '../pages/synchro-faite/synchro-faite';
 import { EditAdressePostalePage } from '../pages/edit-adresse-postale/edit-adresse-postale';
 import { PointsClesPage } from '../pages/points-cles/points-cles';
 import { JeuModelisationPage } from '../pages/jeu-modelisation/jeu-modelisation';
+import { ModelisationBienvenuePage } from '../pages/modelisation-bienvenue/modelisation-bienvenue';
 
 import { ConsoPage } from '../pages/conso/conso';
 import { ContactPage } from '../pages/contact/contact';
@@ -35,7 +36,7 @@ import { SQLite } from '@ionic-native/sqlite';
     MyApp,
     LoginPage,
     SignupPage, RejoindreMaisonPage,CreerMaisonPage,
-    SynchroFaitePage, EditAdressePostalePage, PointsClesPage,
+    SynchroFaitePage, EditAdressePostalePage, PointsClesPage, ModelisationBienvenuePage,
     JeuModelisationPage,
     SynchroPage,
     ConsoPage,
@@ -45,7 +46,7 @@ import { SQLite } from '@ionic-native/sqlite';
     TabsPage
   ],
   imports: [
-    BrowserModule, HttpModule,HttpClientModule, 
+    BrowserModule, HttpModule,HttpClientModule,
     IonicModule.forRoot(MyApp),
     LottieAnimationViewModule.forRoot()
   ],
@@ -54,7 +55,7 @@ import { SQLite } from '@ionic-native/sqlite';
     MyApp,
     LoginPage,
     SignupPage, RejoindreMaisonPage, CreerMaisonPage,
-    SynchroFaitePage, EditAdressePostalePage, PointsClesPage,
+    SynchroFaitePage, EditAdressePostalePage, PointsClesPage, ModelisationBienvenuePage,
     JeuModelisationPage,
     SynchroPage,
     ConsoPage,
@@ -66,7 +67,7 @@ import { SQLite } from '@ionic-native/sqlite';
   providers: [
     StatusBar,
     SplashScreen, AuthServiceProvider,
-    Geolocation, 
+    Geolocation,
     SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

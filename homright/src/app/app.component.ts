@@ -8,12 +8,16 @@ import { SynchroPage } from '../pages/synchro/synchro';
 import { SignupPage } from '../pages/signup/signup';
 import { JeuModelisationPage } from '../pages/jeu-modelisation/jeu-modelisation';
 
+import { HomePage } from '../pages/home/home';
+
+import { PointsClesPage } from '../pages/points-cles/points-cles';
+import { ModelisationBienvenuePage } from '../pages/modelisation-bienvenue/modelisation-bienvenue';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = SignupPage;
-    //rootPage:any = JeuModelisationPage;
+  rootPage:any = ModelisationBienvenuePage;
   //rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {

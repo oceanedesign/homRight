@@ -1,0 +1,10 @@
+page-modelisation-bienvenue {
+  p{
+    color: map-get($colors, medium);
+    text-align: center;
+  }
+  h1{
+    text-align: center;
+    text-transform: uppercase;
+  }
+}
