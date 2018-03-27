@@ -51,4 +51,25 @@ export class JeuModelisationPage {
   	this.screenOrientation.unlock();
   }
 
+  activationBoutton(){
+  	 $('#elements').addClass('elements-active');
+  	 $('#elements').removeClass('elements');
+
+  	 $('#contenuPrincipal').addClass('contenu-actif');
+  	 $('#contenuPrincipal').removeClass('contenu');
+
+  	 $('.activated').addClass('segment-activated');
+  }
+
+  desactiveBoutton(){
+  	$('#elements').removeClass('elements-active');
+  	$('#elements').addClass('elements');
+
+  	 $('#contenuPrincipal').addClass('contenu');
+  	 $('#contenuPrincipal').removeClass('contenu-actif');
+  	
+  	$('.segment-button').removeClass('segment-activated');
+  	$('.segment-button').attr('aria-pressed', 'false');
+  }
+
 }
