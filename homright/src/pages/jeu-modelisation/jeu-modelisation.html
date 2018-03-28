@@ -116,7 +116,29 @@
 			</ion-col>
 	  	</ion-row>
 	  	<ion-row class="modelisation" (click)="desactiveBoutton()">
-	  		<img alt="modélisation" src="../assets/imgs/modelisation.png"/>
+	  		    <div class="gestion-range">
+        	Ligne : <input type="range" id="ligne-totale" min="1" max="20" step="1" value="3" /><label for="ligne-totale">3</label>
+       		<br />
+        	Colonne : <input type="range" id="colonne-totale" min="1" max="20" step="1" value="3" /><label for="colonne-totale">3</label>
+        
+    		</div>
+		    <div class="container-maison" >   
+		      <div class="sol" id="sol-maison">
+		          <div class="ligne-sol">
+		              <div class="case-sol">
+		                  <div class="objet grape"></div>
+		              </div>
+		              <div class="case-sol">
+		              </div>
+		              <div class="case-sol">
+		              </div>
+		          </div>
+		          <div class="ligne-sol">
+		              <div class="case-sol"></div>
+		              <div class="case-sol"></div>
+		          </div>
+		      </div>
+		    </div>
 	  	</ion-row>
 		<button ion-button block class="bouton-principal bouton">v</button>
 		<button ion-button block class="bouton-contour bouton bouton-annuler">x</button>

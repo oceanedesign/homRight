@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { Platform } from 'ionic-angular';
-
 /**
  * Generated class for the JeuModelisationPage page.
  *
@@ -10,10 +9,12 @@ import { Platform } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-declare var jquery:any;
+declare var JQuery:any;
 declare var $:any;
-
-
+import 'jquery-ui-dist/jquery-ui';
+declare var lignes;
+declare var colonnes;
+declare var test;
 @IonicPage()
 @Component({
   selector: 'page-jeu-modelisation',
@@ -34,7 +35,11 @@ export class JeuModelisationPage {
       // uniquement affiché pour le desktop
       console.log('I am a core device!');
     }
+      console.log(colonnes);
+     test;  
+  }
 
+  changeLigneColonne(){
 
   }
 
@@ -81,5 +86,4 @@ export class JeuModelisationPage {
   	$('.segment-button').removeClass('segment-activated');
   	$('.segment-button').attr('aria-pressed', 'false');
   }
-
 }
