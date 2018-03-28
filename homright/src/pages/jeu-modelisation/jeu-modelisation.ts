@@ -10,6 +10,10 @@ import { Platform } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
+declare var jquery:any;
+declare var $:any;
+
+
 @IonicPage()
 @Component({
   selector: 'page-jeu-modelisation',
