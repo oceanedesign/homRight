@@ -1,3 +1,8 @@
+$( document ).ready(function() {
+    defColonne();
+    defLigne();
+});
+
 jQuery.fn.extend({
     AjoutSuppressionCase: function(nbCaseLigneOuColonne) {
         return this.each(function() {
@@ -26,7 +31,7 @@ jQuery.fn.extend({
     },
 });
 
-var test = function DefinirPositionXY()
+function DefinirPositionXY()
 {
     $('.case-sol').each(function() {
         $(this).attr('position-x', $(this).prevAll('.case-sol').length+1);
@@ -34,7 +39,8 @@ var test = function DefinirPositionXY()
     });
 }
 
-var lignes = $('#ligne-totale').on('input propertychange change', function() {
+function defLigne(){
+$('#ligne-totale').on('input propertychange change', function() {
 
     var nbLignesTotales = $(this).val();
     //console.log('nombre de lignes : ' + nbLignesTotales);
@@ -43,8 +49,10 @@ var lignes = $('#ligne-totale').on('input propertychange change', function() {
     DefinirPositionXY();
 
 }).trigger('change');
+}
 
-var colonnes = $('#colonne-totale').on('input propertychange change', function() {
+function defColonne(){
+$('#colonne-totale').on('input propertychange change', function() {
 
     var nbColonnesTotales = $(this).val();
     console.log('nombre de colonnes : ' + nbColonnesTotales);
@@ -53,6 +61,7 @@ var colonnes = $('#colonne-totale').on('input propertychange change', function()
     DefinirPositionXY();
 
 }).trigger('change');
+}
 
 
 

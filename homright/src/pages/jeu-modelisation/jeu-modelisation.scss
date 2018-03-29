@@ -15,6 +15,15 @@ page-jeu-modelisation {
 		right:100px;
 	}
 
+
+	#draggable5, .draggable{
+		background: white;
+		height:80px;
+		width: 80px;
+		border:1px solid grey;
+		position: relative;
+	}
+
 	.contenu{
 		position: absolute;
     	left: -20%;
@@ -213,7 +222,15 @@ page-jeu-modelisation {
 	}
 
 
+	.container-maison::-webkit-scrollbar { 
+	    display: block; 
+	    background-color: #aaa;
+	}
 
+	.container-maison::-scrollbar { 
+	    display: block; 
+	    background-color: #aaa;
+	}
 
 
 html {
@@ -222,15 +239,16 @@ html {
 
 
 .gestion-range{
-    position: fixed;
+    position: absolute;
     top:0;
-    right: 0;
+    right: 20px;
     z-index: 5;
+    width: 350px;
 }
 
 input[type="range"]
 {
-    width: 400px;
+    width: 200px;
 
 }
 
@@ -241,18 +259,19 @@ input[type="range"]
     height: 100%;
     left: 0px;
     top: 0px;
-
+overflow-x: scroll;
+    overflow-y: scroll;
 }
 
 .sol{
     position: relative;
     left: 30%;
-    top: 40%;
     width: 100%;
     height: 100%;
     display: block;
     vertical-align: middle;
-    transform: rotateX(40deg) rotateZ(45deg);
+    margin: 50px 0;
+    //transform: rotateX(40deg) rotateZ(45deg);
 }
 
 .ligne-sol
@@ -267,17 +286,22 @@ input[type="range"]
 
 .case-sol
 {
-    width: 60px;
-    height: 60px;   
-    flex-shrink: 0;    
-    display: flex;
-    flex-direction: row;
-    justify-content: center; 
-    align-items: center; 
-    align-content: center;     
-    background: #CCCCCC;
+    width: 80px;
+    height: 80px;   
+    flex-shrink: 0;        
+    background-image: url("../../assets/imgs/case.png");
     border: 1px solid white;
-    background-position: -229px -331px;
+    background-position: 0px 0px;
+    background-size: 80px 80px;
+}
+
+.case-preview{
+	width: 160px;
+    height: 160px; 
+    background: #CCCCCC;
+    position: fixed;
+    right: 20px;
+    bottom : 100px;
 }
 
 .case-sol:hover {
