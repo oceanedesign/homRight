@@ -17,6 +17,10 @@ import { ModelisationBienvenuePage } from '../pages/modelisation-bienvenue/model
   templateUrl: 'app.html'
 })
 export class MyApp {
+<<<<<<< Updated upstream
+=======
+  //rootPage:any = SignupPage;
+>>>>>>> Stashed changes
   rootPage:any = JeuModelisationPage;
   //rootPage:any = SignupPage;
 
