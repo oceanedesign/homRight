@@ -146,13 +146,14 @@ page-jeu-modelisation {
     	line-height: 100%;
     	text-transform: lowercase;
     	color: black;
-    	text-align: left;
+    	text-align: center;
     	opacity: 1;
     	height:65px;
     	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
 		border-radius: 0px 8px 8px 0px;
 		background: white;
 		padding: 0px;
+		margin: 10px auto;
 	}
 
 
@@ -167,9 +168,9 @@ page-jeu-modelisation {
 	}
 
 	.segment-md .segment-button p, .segment-ios .segment-button p{
-		display: block;
+		display: inline-block;
     	text-align: center;
-        padding: 20px 0px 0px 0px;
+        padding: 5px 0px 0px 0px;
 	}
 
 	.toolbar-ios .segment-button{
@@ -372,7 +373,7 @@ overflow-x: scroll;
 		}
 
 		.segment-md .segment-button p, .segment-ios .segment-button p{
-	        padding: 30px 0px 0px 0px;
+	        //padding: 30px 0px 0px 0px;
 		}
 
 		.container {

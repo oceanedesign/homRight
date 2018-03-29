@@ -1,5 +1,5 @@
 // http://ionicframework.com/docs/theming/
-
+@import "../theme/icons";
 
 // App Global Sass
 // --------------------------------------------------
@@ -62,7 +62,7 @@ ion-app.md{
 	border-radius: 30px;
 	background: linear-gradient(275.97deg, #5790FF -46.25%, #DF61FF 191.58%);
 	box-shadow: 10px 10px 8px 10px transparent;
-	border: 1px solid #A675FF;
+	//border: 1px solid #A675FF;
 	width: 65%;
 	height: 45px;
 	margin: 0 auto;
