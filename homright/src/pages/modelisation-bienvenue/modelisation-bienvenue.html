@@ -12,19 +12,27 @@
     		<p  col-12><img class="mascotte" alt="Homie dit bonjour" src="../assets/imgs/Homie_choix_maison.png"/></p>
         <h1 col-12>Allons modéliser votre maison !</h1>
         <p  col-12>Cette étape peut prendre quelques minutes.</p>
+				<ion-col col-12 padding>
+						<button ion-button block class="bouton-principal" type="submit" (click)="modeliserMaison()">En route !</button>
+						<button ion-button block class="bouton-principal" type="submit" (click)="plusTard()">Plus tard !</button>
+				</ion-col>
     	</ion-row>
-    	<form>
-        <ion-row padding>
-          <ion-col col-12>
-              <button ion-button block class="bouton-principal" type="submit" (click)="synchronisationCompteur()">En route !</button>
-          </ion-col>
-        </ion-row>
-		    <ion-row>
-      		<ion-col col-12>
-  				    <button ion-button block class="bouton-principal" type="submit" (click)="synchronisationCompteur()">Plus tard !</button>
-        	</ion-col>
-    	  </ion-row>
-      </form>
+			<ion-row>
+				<div class="fond-cache">
+					<div class="lightbox">
+						<div col-12 class="lightbox-content">
+						  <div class="arrow-return" (click)="returnChoose()"><<</div>
+							<p><img class="mascotte" alt="Homie dit bonjour" src="../assets/imgs/Homie_choix_maison.png"/></p>
+							<p>Sans cette modélisation, nous ne pouvons pas vous fournir une analyse précise de votre consommation.</p>
+							<h2>Avez-vous changé d’avis ?!</h2>
+							<div>
+								<button ion-button block class="not-selected" type="submit" (click)="pasModeliserMaison()">X</button>
+								<button ion-button block class="" type="submit" (click)="modeliserMaison()">V</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</ion-row>
 	</ion-grid>
 
 </ion-content>
