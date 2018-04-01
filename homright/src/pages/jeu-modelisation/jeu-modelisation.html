@@ -11,10 +11,8 @@
 			<ion-col id="elements" col-7 class="elements">
 		  		<div [ngSwitch]="objetType" class="card">
 			    	<div *ngSwitchCase="'ouverture'" class="container-actif container">
-			    		<h1>Ouverture</h1>					
-				    	<div id="draggable5" draggable="true" class="draggable ui-widget-content" (click)="changeLigneColonne()">
-							I snap to a 80 x 80 grid
-						</div>						  	
+			    		<h1>Ouverture</h1>
+			    		<div class="objets-presentation item" (click)="changeLigneColonne()"></div>
 				    </div>
 
 
@@ -95,7 +93,6 @@
 				<ion-toolbar>
 		    		<ion-segment [(ngModel)]="objetType">
 		      			<ion-segment-button value="ouverture" (click)="activationBoutton()">
-						<ion-icon name="icon-air-conditioning-indoor"></ion-icon> 
 		        		<p>ouverture</p>
 		      			</ion-segment-button>
 		      			<ion-segment-button value="eclairage" (click)="activationBoutton()">
@@ -116,31 +113,37 @@
 	  	</ion-row>
 	  	<ion-row class="modelisation" (click)="desactiveBoutton()">
 	  		
-	  	<div class="gestion-range">
-        Ligne : <input type="range" id="ligne-totale" min="1" max="20" step="1" value="3" /><label for="ligne-totale">3</label>
-        <br />
-        Colonne : <input type="range" id="colonne-totale" min="1" max="20" step="1" value="3" /><label for="colonne-totale">3</label>
+			
+		    <div class="container-maison" >   
+		      <div class="sol" id="sol-maison">
+		          <div class="ligne-sol">
 
-    	</div>
-    <div class="container-maison" >   
-      <div class="sol" id="sol-maison">
-          <div class="ligne-sol">
-              <div class="case-sol">
-                  <div class="item grape"></div>
-              </div>
-              <div class="case-sol">
-              </div>
-              <div class="case-sol">
-              </div>
-          </div>
-          <div class="ligne-sol">
-              <div class="case-sol"></div>
-              <div class="case-sol"></div>
-          </div>
-      </div>
-    </div>
+		          		<div class="actions item-container">
+		          		</div>
 
-
+		              	<div id="snaptarget" class="case-sol droptarget ui-widget-header" >
+		              	<div id="preview2"></div>
+		              </div>
+		          </div>
+		    </div>
+		                
+		    </div>
+    		<div class="gestion-range">
+    		<ion-list>
+    			<ion-item>
+      				<ion-range min="1" max="20" [(ngModel)]="ligne" color="secondary" (ionChange)="tailleSol()">
+        				<ion-label range-left class="small-text">ligne</ion-label>
+        				<ion-label range-right>{{ligne}}</ion-label>
+      				</ion-range>
+    			</ion-item>
+    			<ion-item>
+      				<ion-range min="1" max="20" [(ngModel)]="colonne" color="secondary" (ionChange)="tailleSol()">
+        				<ion-label range-left class="small-text">colonne</ion-label>
+        				<ion-label range-right>{{colonne}}</ion-label>
+      				</ion-range>
+    			</ion-item>
+    		</ion-list>
+    		</div>
 	  	</ion-row>
 		<button ion-button block class="bouton-principal bouton">v</button>
 		<button ion-button block class="bouton-contour bouton bouton-annuler">x</button>

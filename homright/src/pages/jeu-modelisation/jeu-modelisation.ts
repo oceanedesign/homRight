@@ -39,27 +39,119 @@ colonne:number=5;
       console.log('I am a core device!');
     }
      // console.log("test .js : "+colonnes);
-    //this.tailleSol();
+    this.tailleSol();
+    this.MaisonDeplace();
+    this.ActiveDraggable();
+
   }
   
-  changeLigneColonne(){
-      //$('.case-sol').find('.draggable').remove(); 
-      //$( "#draggable5" ).draggable({snap:true, grid: [ 80, 80 ], zIndex: 1000, drag: function( event, ui ) {
-      //console.log("x : "+ui.position.left + "et y : "+ui.position.top + "et le z-index : " + $( this ).css("z-index"));
-      //}});
 
-      $( "#draggable5" ).clone().attr('id', 'id'+ this.cloneCount++).appendTo(".droptarget").css({top: this.ligne*80, left: this.colonne*80});
-      //$( '.draggable' ).draggable({ grid: [ 80, 80 ]});
-      $( '.draggable' ).draggable({ grid: [ 80, 80 ] });
-      $( ".droptarget" ).droppable();
-      //.draggable({ grid: [ 80, 80 ] ,  opacity: 0.7, helper: "clone" });
-      console.log("essai click")
+  MaisonDeplace(){
+    $(".case-sol")
+      .draggable({ grid: [ 60, 60] })
+      
+      .on("mouseover", function(){
+        $( this ).addClass("move-cursor")
+      })
+
+      .on("mousedown", function(){
+        $( this )
+          .removeClass("move-cursor")
+          .addClass("grab-cursor")
+          .addClass("opac");
+      
+      })
+
+      .on("mouseup", function(){
+        $( this )
+          .removeClass("grab-cursor")
+          .removeClass("opac")
+          .addClass("move-cursor");
+      });
+  }
+
+
+
+  ActiveDraggable(){
+
+    $( ".spare-item" ).draggable({
+        grid: [ 10, 10 ],
+        containment: "#preview",
+        
+        cursor: "grab",
+        revert: 'invalid',
+        stop: function(){
+        $(this).draggable('option','revert','invalid');
+    },
+       start: function (event, ui) { 
+      //if (outside==true) {
+        $(this).removeClass("spare-item");
+        $(this).addClass("spare-item2");
+      //}
+    }});
+                 
+    $('.spare-item2').droppable({
+      greedy: true,
+      tolerance: 'intersect',
+      drop: function(event,ui){
+          ui.draggable.draggable('option','revert',true);
+      }
+    });
+            
+    $( "#snaptarget" ).droppable({
+      accept: ".spare-item2",
+      over: function(event, ui) {
+          $(".spare-item2").draggable({
+              grid: [10, 10]
+          });
+      },    
+      drop: function( event, ui ) {
+          var pos = ui.draggable.offset(), dPos = $(this).offset();
+          console.log(pos.top - dPos.top, pos.left - dPos.left);
+      }
+    });            
+  }; 
+
+
+
+
+  changeLigneColonne(){
+    var enfantCaseSolPreview = $('.actions').find('.spare-item'); //Definit la variable
+    if(enfantCaseSolPreview.length > 0) //
+      { 
+        $('.actions').find('.spare-item').remove(); // Suppression de l'enfant
+      }
+
+    $( ".objets-presentation" ).clone().removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item").draggable({
+      //grid: [ 10, 10 ],
+      // containment: "#preview",
+      cursor: "grab",
+      revert: 'invalid',
+      stop: function(){
+        $(this).draggable('option','revert','invalid');
+      },
+      start: function (event, ui) { 
+        //if (outside==true) {
+        $(this).removeClass("spare-item");
+        $(this).addClass("spare-item2").droppable({
+          greedy: true,
+          tolerance: 'intersect',
+          drop: function(event,ui){
+            ui.draggable.draggable('option','revert',true);
+          }
+        });
+      //}
+      }
+    });
+
+      //$( "#draggable5" ).clone().attr('id', 'id'+ this.cloneCount++).appendTo(".droptarget").css({top: this.ligne*80, left: this.colonne*80});
+      
   }
 
   tailleSol(){
     console.log("colonne : "+ this.colonne);
-    $('.case-sol').width(this.colonne*80-2+"px");
-    $('.case-sol').height(this.ligne*80-2+"px");
+    $('.case-sol').width(this.colonne*60-2+"px");
+    $('.case-sol').height(this.ligne*60-2+"px");
 
   }
 
