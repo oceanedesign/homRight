@@ -12,7 +12,7 @@
 		  		<div [ngSwitch]="objetType" class="card">
 			    	<div *ngSwitchCase="'ouverture'" class="container-actif container">
 			    		<h1>Ouverture</h1>
-			    		<div class="objets-presentation item" (click)="changeLigneColonne()"></div>
+			    		<div class="objets-presentation item" (click)="previewObjet()">test</div>
 				    </div>
 
 
@@ -121,8 +121,8 @@
 		          		<div class="actions item-container">
 		          		</div>
 
-		              	<div id="snaptarget" class="case-sol droptarget ui-widget-header" >
-		              	<div id="preview2"></div>
+		              	<div id="snaptarget" class="case-sol droptarget ui-widget-header">
+		              	<div id="preview"></div>
 		              </div>
 		          </div>
 		    </div>

@@ -10,7 +10,7 @@ page-jeu-modelisation {
 	    right: 20px;
     	top: 150px;
 	    z-index:5;
-	    position:absolute;
+	    position: fixed;
 	}
 
 	.objets-presentation{
@@ -24,9 +24,10 @@ page-jeu-modelisation {
     display: inline-block;
     width: 26px;
     height: 26px;
+        float: left;
     margin: 0 0;
     z-index:5;
-    position: relative;
+    position:absolute;
 }
 
 
@@ -316,7 +317,6 @@ input[type="range"]
     display: block;
     vertical-align: middle;
     //margin: 50px 0;
-    //transform: rotateX(40deg) rotateZ(45deg);
 }
 
 .ligne-sol
@@ -329,18 +329,25 @@ input[type="range"]
 	height: 100%;
 }
 
+	.case-sol, .actions
+	{
+	    width: 160px;
+	    height: 60px;   
+	    flex-shrink: 0;        
+	    margin:auto;
+	    position: absolute;
+	}
 
-.case-sol
-{
-    width: 60px;
-    height: 60px;   
-    flex-shrink: 0;        
-    background-image: url("../../assets/imgs/case.png");
-    border: 1px solid white;
-    background-position: 0px 0px;
-    background-size: 60px 60px;
-    margin:auto;
-}
+	#preview{
+		transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
+		background-image: url("../../assets/imgs/case.png");
+	    border: 1px solid white;
+	    background-position: 0px 0px;
+	    background-size: 60px 60px;
+		width: 60px;
+	    height: 60px;
+	    margin: auto;
+	}
 
 .case-preview{
 	width: 160px;
@@ -349,10 +356,6 @@ input[type="range"]
     position: fixed;
     right: 20px;
     bottom : 100px;
-}
-
-.case-sol:hover {
-  background-color: red;
 }
 
 /* ITEMS */
