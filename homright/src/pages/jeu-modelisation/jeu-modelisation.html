@@ -6,8 +6,37 @@
 -->
 
 <ion-content class="no-scroll">
+	<div class="parcours">
+		<div><p>chambre ≈ {{superficie}} m<sup>2</sup></div>
+		<div>
+			<ion-icon name="resize"></ion-icon>
+			<ion-icon name="cube"></ion-icon>
+		</div>
+	</div>
 	<ion-grid>
-		<ion-row id="contenuPrincipal" class="contenu">
+	<ion-row id="" class="contenu-taille">
+			<ion-col id="elements-taille" col-7 class="elements-taille">
+			<h1 class="titre-taille">Définir la taille de la pièce</h1>
+    		<div class="gestion-range">
+    			<div class="container-gestion">
+    				<p>longueur : {{longueur}}m</p>
+      				<ion-range min="1" max="20" [(ngModel)]="ligne" color="secondary" (ionChange)="tailleSol()">
+      				</ion-range>
+    			</div>
+    			<div  class="container-gestion">
+    				<p>largeur : {{largeur}}m</p>
+      				<ion-range min="1" max="20" [(ngModel)]="colonne" color="secondary" (ionChange)="tailleSol()">
+      				</ion-range>
+      			</div>
+    		</div>
+    		<div class="bouton-taille">
+    			<button ion-button block class="bouton-principal" (click)="validerTaille()"><ion-icon name="icon-check"></ion-icon></button>
+				<button ion-button block class="bouton-contour"><ion-icon name="icon-cancel"></ion-icon></button>
+			</div>
+		  	</ion-col>
+	  	</ion-row>
+
+		<ion-row id="contenuPrincipal" class="contenu fond-cache">
 			<ion-col id="elements" col-7 class="elements">
 		  		<div [ngSwitch]="objetType" class="card">
 			    	<div *ngSwitchCase="'ouverture'" class="container-actif container">
@@ -122,30 +151,14 @@
 		          		</div>
 
 		              	<div id="snaptarget" class="case-sol droptarget ui-widget-header">
-		              	<div id="preview"></div>
+		              	<div id="preview" class=""></div>
 		              </div>
 		          </div>
 		    </div>
 		                
 		    </div>
-    		<div class="gestion-range">
-    		<ion-list>
-    			<ion-item>
-      				<ion-range min="1" max="20" [(ngModel)]="ligne" color="secondary" (ionChange)="tailleSol()">
-        				<ion-label range-left class="small-text">ligne</ion-label>
-        				<ion-label range-right>{{ligne}}</ion-label>
-      				</ion-range>
-    			</ion-item>
-    			<ion-item>
-      				<ion-range min="1" max="20" [(ngModel)]="colonne" color="secondary" (ionChange)="tailleSol()">
-        				<ion-label range-left class="small-text">colonne</ion-label>
-        				<ion-label range-right>{{colonne}}</ion-label>
-      				</ion-range>
-    			</ion-item>
-    		</ion-list>
-    		</div>
 	  	</ion-row>
-		<button ion-button block class="bouton-principal bouton">v</button>
-		<button ion-button block class="bouton-contour bouton bouton-annuler">x</button>
+		<button ion-button block class="bouton-principal bouton fond-cache">v</button>
+		<button ion-button block class="bouton-contour bouton bouton-annuler fond-cache">x</button>
 	</ion-grid>
 </ion-content>

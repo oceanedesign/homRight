@@ -25,6 +25,9 @@ cloneCount = 1;
 ligne: number = 5;
 colonne:number=5;
 PosTotal:any;
+superficie =0;
+largeur =0;
+longueur =0;
 
   constructor(public plt: Platform, private screenOrientation : ScreenOrientation, public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -45,9 +48,20 @@ PosTotal:any;
     this.tailleSol();
     this.MaisonDeplace();
     this.ActiveDraggable();
+    this.InitCache();
         
   }
   
+  InitCache(){
+    $(".fond-cache").css("display", "none");
+  }
+
+  superficiePiece(){
+    this.largeur = Math.round(this.colonne*0.6);
+    this.longueur = Math.round(this.ligne*0.6);
+    this.superficie = Math.round(this.largeur * this.longueur);
+
+  }
 
   MaisonDeplace(){
     $(".ligne-sol")
@@ -80,8 +94,6 @@ PosTotal:any;
 
   }
 
-
-
   ActiveDraggable(){           
     $( "#snaptarget" ).droppable({
       accept: ".spare-item2",
@@ -95,8 +107,11 @@ PosTotal:any;
 
   }; 
 
-
-
+  validerTaille(){
+    $(".fond-cache").css("display", "flex");
+    $(".contenu-taille").css("display", "none");
+    $("#preview").addClass("preview3d");
+  }
 
   previewObjet(){
     var enfantCaseSolPreview = $('.actions').find('.spare-item'); //Definit la variable
@@ -111,21 +126,16 @@ PosTotal:any;
       //grid: [ 10, 10 ],
       // containment: "#preview",
       cursor: "grab",
-      cursorAt: { left: 0, top:0 },
+      cursorAt: { left: 10, top:10 },
       revert: 'invalid',
       drag: function (event, ui) {
         //$(this).draggable( "option", "refreshPositions", true );
         //console.log("top : "+ui.offset.top+" + left : "+ui.offset.left);
-       if(countDrag==1){
-        this.PosTotal = $(".ligne-sol").offset();
-        ui.position.left = ui.position.left - this.PosTotal.left;   
-        ui.position.top = ui.position.top - this.PosTotal.top;
-      }      
-        //$(this).offset({
-        //top : ui.offset.top -80,
-        //left:  ui.offset.left -80
-      //});
-
+         if(countDrag==1){
+          this.PosTotal = $(".ligne-sol").offset();
+          ui.position.left = ui.position.left - this.PosTotal.left;   
+          ui.position.top = ui.position.top - this.PosTotal.top;
+        }      
 
       },
       start: function (event, ui) { 
@@ -133,13 +143,6 @@ PosTotal:any;
         //if (outside==true) {
         $(this).removeClass("spare-item");
         $(this).addClass("spare-item2");
-
-       // $(this).css({
-        //  left: $(this).position().left - this.PosTotal.left,
-        //  top: $(this).position().top - this.PosTotal.top
-        //});
-        //
-      //}
 
         //$(event.target).data('offset-x', "+" + ui.offset.left);
        // $(event.target).data('offset-y', "+" + ui.offset.top);      
@@ -164,6 +167,7 @@ PosTotal:any;
     $('.case-sol, .actions').width(this.colonne*160-2+"px");
     $('.case-sol, #preview, .actions').height(this.ligne*60-2+"px");
     $('#preview').width(this.colonne*60-2+"px");
+    this.superficiePiece();
     //$('#preview').height(this.ligne*60-2+"px");
   }
 

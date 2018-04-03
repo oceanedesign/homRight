@@ -1,6 +1,44 @@
 page-jeu-modelisation {
+	.parcours{
+		position: fixed;
+	    right: 20px;
+	    top: 5px;
+	    text-align: center;
+	    ion-icon{
+	    	border: 1px solid black;
+    		border-radius: 50%;
+    		width: 40px;
+    		height: 40px;
+    		margin: auto;
+    		text-align: center;
+    		padding: 9px;
+    		margin:0 10px;
+	    }
 
+	}
 
+	.gestion-range{
+		p{
+	    	margin: 0px;
+	    }
+	    .container-gestion{
+	    	margin: 30px 0px;
+	    }
+	    .range-md{
+	    	padding: 0px;
+	    }
+	}
+
+	.bouton-taille{
+		text-align: center;
+			button{
+		    margin: 5px;
+	    	width: 60px;
+	    	height: 60px;
+	    	border-radius: 8px;
+	   		display: inline-block;
+		}
+	}
 	.spare-item{
 	    background: red;
 	    display: inline-block;
@@ -79,7 +117,11 @@ page-jeu-modelisation {
     	transition: left 1s;
 	}
 
-	.contenu-actif{
+	.elements-taille{
+		padding: 0 20px;
+	}
+
+	.contenu-actif, .contenu-taille{
 		position: absolute;
     	left: 0%;
 		min-width: 350px;
@@ -105,6 +147,11 @@ page-jeu-modelisation {
 	font-size: 20px;
 	}
 
+	h1.titre-taille{
+		font-size: 28px;
+		color:black;
+	}
+
 	ion-label[fixed] {
     flex: initial;
     width: initial;
@@ -124,7 +171,7 @@ page-jeu-modelisation {
 	ion-segment{display: block;}
 
 
-	.elements{
+	.elements, .elements-taille{
 		background: white;
 		box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
 		overflow: scroll;
@@ -259,14 +306,6 @@ page-jeu-modelisation {
 
 	}
 
-	.modelisation img{
-		position: relative;
-		height:80%;
-    	left: 30%;
-    	top:5%;
-       	display: block;
-	}
-
 
 	.container-maison::-webkit-scrollbar { 
 	    display: block; 
@@ -284,13 +323,6 @@ html {
 }
 
 
-.gestion-range{
-    position: absolute;
-    top:0;
-    right: 20px;
-    z-index: 5;
-    width: 350px;
-}
 
 input[type="range"]
 {
@@ -305,6 +337,8 @@ input[type="range"]
     height: 100%;
     left: 0px;
     top: 0px;
+    left: 50%;
+    top: 20%;
 	//overflow-x: scroll;
     //overflow-y: scroll;
 }
@@ -339,24 +373,21 @@ input[type="range"]
 	}
 
 	#preview{
-		transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
 		background-image: url("../../assets/imgs/case.png");
 	    border: 1px solid white;
 	    background-position: 0px 0px;
 	    background-size: 60px 60px;
 		width: 60px;
 	    height: 60px;
-	    margin: auto;
+	    -webkit-transition: 1000ms transform linear;
+    	transition: 1000ms transform linear;
 	}
 
-.case-preview{
-	width: 160px;
-    height: 160px; 
-    background: #CCCCCC;
-    position: fixed;
-    right: 20px;
-    bottom : 100px;
-}
+	.preview3d{
+		transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
+		-webkit-transition: 1000ms transform linear;
+    	transition: 1000ms transform linear;
+	}
 
 /* ITEMS */
 
@@ -431,7 +462,78 @@ input[type="range"]
 
 		h1{
 		font-size: 25px;
-		}		
+		}
+		
+	}
+	@media only screen and (max-width: 1200px) {
+		.contenu{
+			left:-18%;
+		}
+		h1.titre-taille{
+			font-size: 20px;
+		}
 	}
 
+
+	@media only screen and (max-width: 900px) {
+		.contenu{
+			left:-22%;
+		}
+
+		.segment-md .segment-button, .segment-ios .segment-button, .segment-ios .segment-button:first-of-type, 
+		.segment-ios .segment-button:last-of-type{
+			height: 60px;
+			margin: 8px 0;
+		}
+	}
+
+
+	@media only screen and (max-width: 800px) {
+		.contenu{
+			left:-25%;
+		}
+		.case-sol, .actions{
+			left: 35%;
+    		top: 21%;
+		}
+	}
+
+	@media only screen and (max-width: 700px) {
+		.contenu{
+			left:-28%;
+		}
+
+		.segment-md .segment-button, .segment-ios .segment-button, .segment-ios .segment-button:first-of-type, 
+		.segment-ios .segment-button:last-of-type{
+			height: 60px;
+			margin: 8px 0;
+		}
+
+		.bouton{
+			width: 50px;
+    		height: 50px;
+		}
+
+	}
+
+	@media only screen and (max-width: 600px) {
+		.contenu{
+			left:-33%;
+		}
+
+		.segment-md .segment-button, .segment-ios .segment-button, .segment-ios .segment-button:first-of-type, 
+		.segment-ios .segment-button:last-of-type{
+			height: 55px;
+			margin: 5px 0;
+		}
+
+		.segment-md .segment-button p, .segment-ios .segment-button p{
+			padding: 0px;
+		}
+
+	}
+
+
+
 }
+
