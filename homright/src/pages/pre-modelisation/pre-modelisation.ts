@@ -29,7 +29,6 @@ export class PreModelisationPage {
     $( ".swiper-pagination::before" ).click(function() {
       console.log('ok');
     });
-
   }
   onChange(){
     $( "ion-list.transparency" ).removeClass("transparency");
@@ -37,14 +36,32 @@ export class PreModelisationPage {
 
   goToPrev() {
     this.slides.slidePrev();
+
+    let currentIndex = this.slides.getActiveIndex();
+    if(currentIndex == 0){
+      $( ".pagination span" ).replaceWith( "<span>4</span>" );
+    }
+    else{
+      currentIndex -1;
+      $( ".pagination span" ).replaceWith( "<span>"+currentIndex+"</span>" );
+    }
   }
   goToNext() {
     this.slides.slideNext();
+
+    let currentIndex = this.slides.getActiveIndex();
+    if(currentIndex == 5){
+      $( ".pagination span" ).replaceWith( "<span>1</span>" );
+    }
+    else{
+      currentIndex +1;
+      $( ".pagination span" ).replaceWith( "<span>"+currentIndex+"</span>" );
+    }
   }
 
   slideChanged() {
-    let currentIndex = this.slides.getActiveIndex();
-    $( ".pagination span" ).replaceWith( "<span>"+currentIndex+"</span>" );
+    // let currentIndex = this.slides.getActiveIndex();
+    // $( ".pagination span" ).replaceWith( "<span>"+currentIndex+"</span>" );
     // if(currentIndex == 5){
     //   $( ".pagination span" ).replaceWith( "<span>4</span>" );
     // }
