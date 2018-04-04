@@ -1,20 +1,56 @@
 page-jeu-modelisation {
 	.parcours{
 		position: fixed;
-	    right: 20px;
-	    top: 5px;
+	    right: 10px;
+	    top: 10px;
 	    text-align: center;
-	    ion-icon{
-	    	border: 1px solid black;
-    		border-radius: 50%;
-    		width: 40px;
-    		height: 40px;
-    		margin: auto;
-    		text-align: center;
-    		padding: 9px;
-    		margin:0 10px;
-	    }
-
+	    text-transform: uppercase;
+	    font-family: "Futura";
+	    font-weight: 800;
+	    font-size: 15px;
+	    z-index: 80;
+		.prev{
+			background: white;
+			border: 2px solid black;
+	    	display: inline-block;
+	    	width: 120px;
+	    	height: 120px;
+	    	margin: 0 0;
+	    	float: right;
+		    p{
+		    	text-align: center;
+		    }
+		}
+		div:first-child{
+			display: inline-block;
+			margin: 0px 10px;
+		    ion-icon{
+		    	border: 1px solid black;
+	    		border-radius: 50%;
+	    		font-size: 18px;
+	    		width: 40px;
+	    		height: 40px;
+	    		margin: auto;
+	    		text-align: center;
+	    		padding: 9px;
+	    		margin:0 10px;
+	    		&.active{
+	    			background-color:  map-get($colors, secondary);
+	    			color: white;
+	    			border-color:  map-get($colors, secondary);
+	    		}
+	    		&.inactive{
+	    			opacity: 0.5;
+	    		}
+	    		p{
+	    		width: 100px;
+	    		color: black;
+	    		text-align: center;
+	   		 	font-size: 16px;
+	   			margin: 12px -40px;
+	    		}
+		    }
+		}
 	}
 
 	.gestion-range{
@@ -40,29 +76,18 @@ page-jeu-modelisation {
 		}
 	}
 	.spare-item{
-	    background: red;
 	    display: inline-block;
-	    width: 60px;
-	    height: 60px;
 	    margin: 0 0;
-	    right: 20px;
-    	top: 150px;
-	    z-index:5;
+	    right: 38px;
+    	top: 40px;
+	    z-index:81;
 	    position: fixed;
 	}
 
-	.objets-presentation{
-	  	width: 60px;
-	    height: 60px;
-	    background:blue;
-	}
 
 .spare-item2{
-    background: red;
     display: inline-block;
-    width: 26px;
-    height: 26px;
-        float: left;
+    float: left;
     margin: 0 0;
     z-index:5;
     position:absolute;
@@ -196,8 +221,11 @@ page-jeu-modelisation {
 
 	.container-actif {
 		visibility:visible;
-		//transition: visibility 1s;		
-	}
+		//transition: visibility 1s;
+		h2, p{
+    		color: white;
+		}		
+	}	
 
 	.container-inactif{
 		visibility:hidden;
@@ -208,17 +236,6 @@ page-jeu-modelisation {
 		margin-top: 20px;
 	}
 
-	.text-input{
-	text-align: right;
-    color: white;
-	}
-
-	.container .list-ios .item-block .item-inner, .container > .item-block:last-child .item-inner,
-	.container > .item-wrapper:last-child .item-block .item-inner, .container .item-input:last-child, .container .item-input,
-	.container .item-input:first-child{
-	border-bottom: 1px solid white;
-	}
-
 	.choix{
 		padding: 0px;
 	}
@@ -227,8 +244,8 @@ page-jeu-modelisation {
 	.segment-ios .segment-button:last-of-type{
 		z-index: 80;
 		width:100%;
-		max-width: 200px;
-		min-width: 130px;
+    	max-width: 100px;
+    	min-width: 90px;
     	border-bottom-width: 2px;
     	border-style: none;
     	border-color: rgba(0, 0, 0, 0.1);
@@ -262,12 +279,15 @@ page-jeu-modelisation {
 	.segment-md .segment-button p, .segment-ios .segment-button p{
 		display: inline-block;
     	text-align: center;
-        padding: 5px 0px 0px 0px;
+        padding: 25px 0px 0px 0px;
+        margin: 0px;
+        &.titre-compose{
+        	padding: 15px 0px 0px 0px;
+        }
 	}
 
-	.toolbar-ios .segment-button{
-		max-width: 100%;
-	}
+
+
 
 	.toolbar-background-ios {
     background: transparent;
@@ -337,7 +357,7 @@ input[type="range"]
     height: 100%;
     left: 0px;
     top: 0px;
-    left: 50%;
+    left: 30%;
     top: 20%;
 	//overflow-x: scroll;
     //overflow-y: scroll;
@@ -372,7 +392,7 @@ input[type="range"]
 	    position: absolute;
 	}
 
-	#preview{
+	#case-maison{
 		background-image: url("../../assets/imgs/case.png");
 	    border: 1px solid white;
 	    background-position: 0px 0px;
@@ -381,49 +401,56 @@ input[type="range"]
 	    height: 60px;
 	    -webkit-transition: 1000ms transform linear;
     	transition: 1000ms transform linear;
+    	transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
+    	margin: auto;
 	}
 
-	.preview3d{
+	.case-maison3d{
 		transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
 		-webkit-transition: 1000ms transform linear;
     	transition: 1000ms transform linear;
 	}
 
-/* ITEMS */
+/* ITEMES */
 
-.objet
-{
-    width: 34px;
-    height: 34px;
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8709/item-atlas.png');
-    background-repeat: no-repeat;
-    
-    cursor: hand;
-    cursor: pointer;
-    
-    -webkit-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease;
-}
+	.item-md ion-avatar ion-img, .item-md ion-avatar div.objets-presentation{
+		border-radius: 0px;
+		width: 60px;
+		height: 100%;
+	}
 
-.objet-sortable-placeholder
-{
-    display: none;
-}
+	.item-fenetre{
+		background-image: url("../../assets/isometrie/symbole/fenetre.png");
+		width: 50px;
+		height: 50px;
+	    background-size: 50px 50px;
+	}
 
-.objet.ui-sortable-helper, .item.ui-draggable-dragging
-{
-    opacity: .6;
-}
-
-.objet.grape
-{
-    background-position: 0px 0px;
-}
+	.item-fenetre.spare-item, .item-fenetre.spare-item2{
+		background-image: url("../../assets/isometrie/fenetre.png");
+		width: 60px;
+	    height: 60px;
+	    background-size: 60px 60px;
+	}
 
 
+	@media only screen and (min-width: 1300px) {
+		.container {
+	    padding: 10px 40px;
+		}
 
-	@media only screen and (min-width: 1200px) {
+	}
 
+
+	@media only screen and (min-width: 1200px) 
+	{
+		.segment-md .segment-button, .segment-ios .segment-button, .segment-ios .segment-button:first-of-type, 
+		.segment-ios .segment-button:last-of-type{
+			z-index: 80;
+			width:100%;
+	    	max-width: 130px;
+	    	min-width: 90px;
+		}
 		.bouton{
 			margin: 0 auto;
 			width: 80px;
@@ -456,9 +483,7 @@ input[type="range"]
 	        //padding: 30px 0px 0px 0px;
 		}
 
-		.container {
-	    padding: 10px 50px;
-		}
+
 
 		h1{
 		font-size: 25px;
@@ -485,16 +510,21 @@ input[type="range"]
 			height: 60px;
 			margin: 8px 0;
 		}
+
+
+		.segment-md .segment-button p, .segment-ios .segment-button p{
+			padding: 20px 0px 0px 0px;
+			&.titre-compose{
+				padding: 10px 0px 0px 0px;
+			}
+		}
+
 	}
 
 
 	@media only screen and (max-width: 800px) {
 		.contenu{
 			left:-25%;
-		}
-		.case-sol, .actions{
-			left: 35%;
-    		top: 21%;
 		}
 	}
 
@@ -528,7 +558,10 @@ input[type="range"]
 		}
 
 		.segment-md .segment-button p, .segment-ios .segment-button p{
-			padding: 0px;
+			padding: 18px 0px 0px 0px;
+			&.titre-compose{
+				padding: 10px 0px 0px 0px;
+			}
 		}
 
 	}

@@ -7,14 +7,20 @@
 
 <ion-content class="no-scroll">
 	<div class="parcours">
-		<div><p>chambre ≈ {{superficie}} m<sup>2</sup></div>
 		<div>
-			<ion-icon name="resize"></ion-icon>
-			<ion-icon name="cube"></ion-icon>
+			<div><p>chambre ≈ {{superficie}} m<sup>2</sup></p></div>
+			<div >
+				<ion-icon name="resize" class="resize active"><!-- <p>taille</p> --></ion-icon>
+				>
+				<ion-icon name="cube" class="cube inactive"><!-- <p>modélisation</p> --></ion-icon>
+			</div>
 		</div>
+		<div class="prev">
+			<p> Aperçu</p>
+	  	</div>
 	</div>
 	<ion-grid>
-	<ion-row id="" class="contenu-taille">
+<!-- 	<ion-row id="" class="contenu-taille">
 			<ion-col id="elements-taille" col-7 class="elements-taille">
 			<h1 class="titre-taille">Définir la taille de la pièce</h1>
     		<div class="gestion-range">
@@ -35,13 +41,31 @@
 			</div>
 		  	</ion-col>
 	  	</ion-row>
-
-		<ion-row id="contenuPrincipal" class="contenu fond-cache">
+		<ion-row id="contenuPrincipal" class="contenu fond-cache"> -->
+		<ion-row id="contenuPrincipal" class="contenu">
 			<ion-col id="elements" col-7 class="elements">
 		  		<div [ngSwitch]="objetType" class="card">
 			    	<div *ngSwitchCase="'ouverture'" class="container-actif container">
 			    		<h1>Ouverture</h1>
-			    		<div class="objets-presentation item" (click)="previewObjet()">test</div>
+
+			    		<ion-list>
+							<ion-item>
+								<div item-end>
+									<div id="fenetre" class="objets-presentation item-fenetre" (click)="caseMaisonObjet($event);"></div>
+								</div>
+								<h2>Fenêtre</h2>
+								<p>Utilisée nb fois </p>
+							</ion-item>
+
+							<ion-item>
+								<div item-end>
+									<div id="porte" class="objets-presentation item-fenetre" (click)="caseMaisonObjet($event);"></div>
+								</div>
+								<h2>Porte</h2>
+								<p>Utilisée nb fois </p>
+							</ion-item>
+						</ion-list>
+
 				    </div>
 
 
@@ -131,7 +155,7 @@
 		        		<p>température</p>
 		      			</ion-segment-button>
 		      			<ion-segment-button value="appareils" (click)="activationBoutton()">
-		        		<p>appareils électriques</p>
+		        		<p class="titre-compose">appareils électriques</p>
 		      			</ion-segment-button>
 		      			<ion-segment-button value="decoration" (click)="activationBoutton()">
 		        		<p>décoration</p>
@@ -141,7 +165,6 @@
 			</ion-col>
 	  	</ion-row>
 	  	<ion-row class="modelisation" (click)="desactiveBoutton()">
-	  		
 			
 		    <div class="container-maison" >   
 		      <div class="sol" id="sol-maison">
@@ -151,14 +174,14 @@
 		          		</div>
 
 		              	<div id="snaptarget" class="case-sol droptarget ui-widget-header">
-		              	<div id="preview" class=""></div>
+		              	<div id="case-maison" class=""></div>
 		              </div>
 		          </div>
 		    </div>
 		                
 		    </div>
 	  	</ion-row>
-		<button ion-button block class="bouton-principal bouton fond-cache">v</button>
-		<button ion-button block class="bouton-contour bouton bouton-annuler fond-cache">x</button>
+		<button ion-button block class="bouton-contour bouton fond-cache"><ion-icon name="icon-cancel"></ion-icon></button>
+		<button ion-button block class="bouton-principal bouton bouton-annuler fond-cache"><ion-icon name="icon-check"></ion-icon></button>
 	</ion-grid>
 </ion-content>

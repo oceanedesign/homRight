@@ -110,23 +110,25 @@ longueur =0;
   validerTaille(){
     $(".fond-cache").css("display", "flex");
     $(".contenu-taille").css("display", "none");
-    $("#preview").addClass("preview3d");
+    $("#case-maison").addClass("case-maison3d");
+    $(".resize").addClass("inactive");
+    $(".cube").removeClass("inactive").addClass("active");    
   }
 
-  previewObjet(){
-    var enfantCaseSolPreview = $('.actions').find('.spare-item'); //Definit la variable
+  caseMaisonObjet(event){
+    var enfantCaseSol = $('.actions').find('.spare-item'); //Definit la variable
     var countDrag =0;
-    if(enfantCaseSolPreview.length > 0) //
+    if(enfantCaseSol.length > 0) //
       { 
         $('.actions').find('.spare-item').remove(); // Suppression de l'enfant
       }
-
-    $( ".objets-presentation" ).clone().removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item")
+      console.log(event.target.id);
+    $( "#"+event.target.id ).clone().removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item")
     .draggable({
       //grid: [ 10, 10 ],
-      // containment: "#preview",
+      // containment: "#case-maison",
       cursor: "grab",
-      cursorAt: { left: 10, top:10 },
+      //cursorAt: { left: 10, top:10 },
       revert: 'invalid',
       drag: function (event, ui) {
         //$(this).draggable( "option", "refreshPositions", true );
@@ -153,7 +155,7 @@ longueur =0;
       },
 
       stop: function(){
-        $(this).insertBefore("#preview");
+        $(this).insertBefore("#case-maison");
         $(this).draggable('option','revert','invalid');
         
       }
@@ -165,10 +167,10 @@ longueur =0;
   tailleSol(){
     console.log("colonne : "+ this.colonne);
     $('.case-sol, .actions').width(this.colonne*160-2+"px");
-    $('.case-sol, #preview, .actions').height(this.ligne*60-2+"px");
-    $('#preview').width(this.colonne*60-2+"px");
+    $('.case-sol, #case-maison, .actions').height(this.ligne*60-2+"px");
+    $('#case-maison').width(this.colonne*60-2+"px");
     this.superficiePiece();
-    //$('#preview').height(this.ligne*60-2+"px");
+    //$('#case-maison').height(this.ligne*60-2+"px");
   }
 
   getCurrentScreenOrientation(){
