@@ -12,6 +12,7 @@ import { HomePage } from '../pages/home/home';
 
 import { PointsClesPage } from '../pages/points-cles/points-cles';
 import { ModelisationBienvenuePage } from '../pages/modelisation-bienvenue/modelisation-bienvenue';
+import { PreModelisationPage } from '../pages/pre-modelisation/pre-modelisation';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,7 +21,8 @@ export class MyApp {
 
   rootPage:any = JeuModelisationPage;
   //rootPage:any = SignupPage;
-  
+  //  rootPage:any = PreModelisationPage;
+
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
