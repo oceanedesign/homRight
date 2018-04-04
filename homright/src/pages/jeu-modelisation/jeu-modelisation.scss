@@ -8,7 +8,7 @@ page-jeu-modelisation {
 	    font-family: "Futura";
 	    font-weight: 800;
 	    font-size: 15px;
-	    z-index: 80;
+	    z-index: 7;
 		.prev{
 			background: white;
 			border: 2px solid black;
@@ -78,9 +78,9 @@ page-jeu-modelisation {
 	.spare-item{
 	    display: inline-block;
 	    margin: 0 0;
-	    right: 38px;
+	    right: 40px;
     	top: 40px;
-	    z-index:81;
+	    z-index:8;
 	    position: fixed;
 	}
 
@@ -89,7 +89,7 @@ page-jeu-modelisation {
     display: inline-block;
     float: left;
     margin: 0 0;
-    z-index:5;
+    z-index:8;
     position:absolute;
 }
 
@@ -113,7 +113,7 @@ page-jeu-modelisation {
 		width: 60px;
     	height: 60px;
     	border-radius: 8px;
-	    z-index: 100;
+	    z-index: 7;
     	position: absolute;
 		right: 20px;
     	bottom: 20px;
@@ -200,14 +200,14 @@ page-jeu-modelisation {
 		background: white;
 		box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
 		overflow: scroll;
-		z-index: 99;
+		z-index: 7;
 	}
 
 	.elements-active{
 		background: linear-gradient(-115deg, #5790FF 5.52%, #DF61FF 152.58%);
 		box-shadow:none;
 		overflow: scroll;
-		z-index: 99;
+		z-index: 7;
 	}
 
 	.elements-active .item-md, .elements-active .item-ios,
@@ -233,7 +233,15 @@ page-jeu-modelisation {
 	}
 
 	.container .item-block{
-		margin-top: 20px;
+		padding: 15px 0;
+		border-bottom: 1px solid white;
+	}
+
+	.list-ios .item-block .item-inner, .list-ios > .item-block:last-child .item-inner,
+	.list-ios > .item-wrapper:last-child .item-block .item-inner, .list-md .item-input:last-child, .list-md .item-input,
+	.list-md .item-input:first-child, .list-ios > .item-wrapper:last-child .item-block,
+	.list-md .item-block .item-inner{
+		border-color: transparent;
 	}
 
 	.choix{
@@ -242,7 +250,7 @@ page-jeu-modelisation {
 
 	.segment-md .segment-button, .segment-ios .segment-button, .segment-ios .segment-button:first-of-type, 
 	.segment-ios .segment-button:last-of-type{
-		z-index: 80;
+		z-index: 6;
 		width:100%;
     	max-width: 100px;
     	min-width: 90px;
@@ -413,26 +421,77 @@ input[type="range"]
 
 /* ITEMES */
 
-	.item-md ion-avatar ion-img, .item-md ion-avatar div.objets-presentation{
-		border-radius: 0px;
-		width: 60px;
-		height: 100%;
+
+	@mixin makeIsometrie60x60($nom) {
+		.item-#{$nom}{
+			background-image: url("../../assets/isometrie/symbole/#{$nom}.png");
+			width: 50px;
+			height: 50px;
+		    background-size: 50px 50px;
+		}
+
+		.item-#{$nom}.spare-item, .item-#{$nom}.spare-item2{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 60px;
+		    height: 60px;
+		    background-size: 60px 60px;
+		}
 	}
 
-	.item-fenetre{
-		background-image: url("../../assets/isometrie/symbole/fenetre.png");
-		width: 50px;
-		height: 50px;
-	    background-size: 50px 50px;
+	@mixin makeIsometrie180x180($nom) {
+		.item-#{$nom}{
+			background-image: url("../../assets/isometrie/symbole/#{$nom}.png");
+			width: 50px;
+			height: 50px;
+		    background-size: 50px 50px;
+		}
+
+		.item-#{$nom}.spare-item{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 60px;
+		    height: 60px;
+		    background-size: 60px 60px;			
+		}
+
+		.item-#{$nom}.spare-item2{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 140px;
+		    height: 140px;
+		    background-size: 140px 140px;
+		}
 	}
 
-	.item-fenetre.spare-item, .item-fenetre.spare-item2{
-		background-image: url("../../assets/isometrie/fenetre.png");
-		width: 60px;
-	    height: 60px;
-	    background-size: 60px 60px;
+
+	@mixin makeIsometrie180x140($nom) {
+		.item-#{$nom}{
+			background-image: url("../../assets/isometrie/symbole/#{$nom}.png");
+			width: 50px;
+			height: 50px;
+		    background-size: 50px 50px;
+		}
+
+
+		.item-#{$nom}.spare-item{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 80px;
+		    height: 60px;
+		    background-size: 80px 60px;
+		    right: 30px;
+		}
+
+		.item-#{$nom}.spare-item2{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 198px;
+		    height: 154px;
+		    background-size: 198px 154px;
+		}
 	}
 
+	@include makeIsometrie60x60(fenetre);
+	@include makeIsometrie60x60(halogene);
+	@include makeIsometrie60x60(led);
+	@include makeIsometrie180x140(lit);
+	@include makeIsometrie180x180(ordi-fixe);
 
 	@media only screen and (min-width: 1300px) {
 		.container {
@@ -446,7 +505,7 @@ input[type="range"]
 	{
 		.segment-md .segment-button, .segment-ios .segment-button, .segment-ios .segment-button:first-of-type, 
 		.segment-ios .segment-button:last-of-type{
-			z-index: 80;
+			z-index: 6;
 			width:100%;
 	    	max-width: 130px;
 	    	min-width: 90px;
@@ -456,7 +515,7 @@ input[type="range"]
 			width: 80px;
 	    	height: 80px;
 	    	border-radius: 8px;
-	    	z-index: 100;
+	    	z-index: 7;
 	    	position: absolute;
 			right: 50px;
 	    	bottom: 50px;

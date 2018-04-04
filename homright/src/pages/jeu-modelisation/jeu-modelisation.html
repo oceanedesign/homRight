@@ -16,7 +16,7 @@
 			</div>
 		</div>
 		<div class="prev">
-			<p> Aperçu</p>
+			
 	  	</div>
 	</div>
 	<ion-grid>
@@ -47,22 +47,13 @@
 		  		<div [ngSwitch]="objetType" class="card">
 			    	<div *ngSwitchCase="'ouverture'" class="container-actif container">
 			    		<h1>Ouverture</h1>
-
 			    		<ion-list>
 							<ion-item>
 								<div item-end>
 									<div id="fenetre" class="objets-presentation item-fenetre" (click)="caseMaisonObjet($event);"></div>
 								</div>
 								<h2>Fenêtre</h2>
-								<p>Utilisée nb fois </p>
-							</ion-item>
-
-							<ion-item>
-								<div item-end>
-									<div id="porte" class="objets-presentation item-fenetre" (click)="caseMaisonObjet($event);"></div>
-								</div>
-								<h2>Porte</h2>
-								<p>Utilisée nb fois </p>
+								<p>double vitrage</p>
 							</ion-item>
 						</ion-list>
 
@@ -71,16 +62,25 @@
 
 			    	<div *ngSwitchCase="'eclairage'" class="container-actif container">
 			    		<h1>éclairage</h1>
-						<ion-list>
+
+			    		<ion-list>
 							<ion-item>
-						    	<ion-label color="light" fixed>Halogène</ion-label>
-    							<ion-input type="number" placeholder="0"></ion-input>
-						  	</ion-item>
-						  	<ion-item>
-						    	<ion-label color="light" fixed>LED</ion-label>
-    							<ion-input type="number" placeholder="0"></ion-input>
-						  	</ion-item>
+								<div item-end>
+									<div id="halogene" class="objets-presentation item-halogene" (click)="caseMaisonObjet($event);"></div>
+								</div>
+								<h2>Halogène</h2>
+								<p>Utilisée nb fois </p>
+							</ion-item>
+
+							<ion-item>
+								<div item-end>
+									<div id="led" class="objets-presentation item-led" (click)="caseMaisonObjet($event);"></div>
+								</div>
+								<h2>LED</h2>
+								<p>Utilisée nb fois </p>
+							</ion-item>
 						</ion-list>
+
 				    </div>
 
 			    	<div *ngSwitchCase="'temperature'" class="container-actif container">
@@ -95,46 +95,30 @@
 
 			    	<div *ngSwitchCase="'appareils'" class="container-actif container">
 			    		<h1>appareils électriques</h1>
-						<ion-list>
+			    		<ion-list>
 							<ion-item>
-						    	<ion-label color="light" fixed>Télévision</ion-label>
-    							<ion-input type="number" placeholder="0"></ion-input>
-						  	</ion-item>
+								<div item-end>
+									<div id="ordi-fixe" class="objets-presentation item-ordi-fixe" (click)="caseMaisonObjet($event);"></div>
+								</div>
+								<h2>Ordinateur fixe</h2>
+								<p>Utilisée nb fois </p>
+							</ion-item>
+
 						</ion-list>
 				    </div>
 
 			    	<div *ngSwitchCase="'decoration'" class="container-actif container">
 			    		<h1>Décoration</h1>
 			    		
-						<ion-list>
+			    		<ion-list>
 							<ion-item>
-						    	<ion-label color="light" fixed>lit</ion-label>
-    							<ion-input type="number" placeholder="0"></ion-input>
-						  	</ion-item>
-							<ion-item>
-						    	<ion-label color="light" fixed>armoire</ion-label>
-    							<ion-input type="number" placeholder="0"></ion-input>
-						  	</ion-item>
-							<ion-item>
-						    	<ion-label color="light" fixed>table de chevet</ion-label>
-    							<ion-input type="number" placeholder="0"></ion-input>
-						  	</ion-item>
-							<ion-item>
-						    	<ion-label color="light" fixed>tabe</ion-label>
-    							<ion-input type="number" placeholder="0"></ion-input>
-						  	</ion-item>
-							<ion-item>
-						    	<ion-label color="light" fixed>table basse</ion-label>
-    							<ion-input type="number" placeholder="0"></ion-input>
-						  	</ion-item>
-							<ion-item>
-						    	<ion-label color="light" fixed>bureau</ion-label>
-    							<ion-input type="number" placeholder="0"></ion-input>
-						  	</ion-item>
-							<ion-item>
-						    	<ion-label color="light" fixed>chaise</ion-label>
-    							<ion-input type="number" placeholder="0"></ion-input>
-						  	</ion-item>
+								<div item-end>
+									<div id="lit" class="objets-presentation item-lit" (click)="caseMaisonObjet($event);"></div>
+								</div>
+								<h2>Lit simple</h2>
+								
+							</ion-item>
+
 						</ion-list>
 
 				    </div>

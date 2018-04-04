@@ -49,7 +49,7 @@ longueur =0;
     this.MaisonDeplace();
     this.ActiveDraggable();
     this.InitCache();
-        
+    this.symetrie();
   }
   
   InitCache(){
@@ -107,6 +107,12 @@ longueur =0;
 
   }; 
 
+  symetrie(){  
+      $('.changePosition').click(function(){
+        console.log( "Change position" );
+      })
+  }
+
   validerTaille(){
     $(".fond-cache").css("display", "flex");
     $(".contenu-taille").css("display", "none");
@@ -145,7 +151,10 @@ longueur =0;
         //if (outside==true) {
         $(this).removeClass("spare-item");
         $(this).addClass("spare-item2");
-
+        var positionP = $(this).find('.changePosition'); //Definit la variable
+        if(positionP.length == 0){
+          //$(this).append("<p class='changePosition'"+">test</p>");
+        }
         //$(event.target).data('offset-x', "+" + ui.offset.left);
        // $(event.target).data('offset-y', "+" + ui.offset.top);      
       },
@@ -159,6 +168,7 @@ longueur =0;
         $(this).draggable('option','revert','invalid');
         
       }
+
 
     });
       //$( "#draggable5" ).clone().attr('id', 'id'+ this.cloneCount++).appendTo(".droptarget").css({top: this.ligne*80, left: this.colonne*80});
