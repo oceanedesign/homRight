@@ -18,6 +18,7 @@ import { EditAdressePostalePage } from '../pages/edit-adresse-postale/edit-adres
 import { PointsClesPage } from '../pages/points-cles/points-cles';
 import { JeuModelisationPage } from '../pages/jeu-modelisation/jeu-modelisation';
 import { ModelisationBienvenuePage } from '../pages/modelisation-bienvenue/modelisation-bienvenue';
+import { PreModelisationPage } from '../pages/pre-modelisation/pre-modelisation';
 
 import { ConsoPage } from '../pages/conso/conso';
 import { ContactPage } from '../pages/contact/contact';
@@ -38,7 +39,7 @@ import { SQLite } from '@ionic-native/sqlite';
     MyApp,
     LoginPage,
     SignupPage, RejoindreMaisonPage,CreerMaisonPage,
-    SynchroFaitePage, EditAdressePostalePage, PointsClesPage, ModelisationBienvenuePage,
+    SynchroFaitePage, EditAdressePostalePage, PointsClesPage, ModelisationBienvenuePage, PreModelisationPage,
     JeuModelisationPage,
     SynchroPage,
     ConsoPage,
@@ -57,7 +58,7 @@ import { SQLite } from '@ionic-native/sqlite';
     MyApp,
     LoginPage,
     SignupPage, RejoindreMaisonPage, CreerMaisonPage,
-    SynchroFaitePage, EditAdressePostalePage, PointsClesPage, ModelisationBienvenuePage,
+    SynchroFaitePage, EditAdressePostalePage, PointsClesPage, ModelisationBienvenuePage, PreModelisationPage,
     JeuModelisationPage,
     SynchroPage,
     ConsoPage,
