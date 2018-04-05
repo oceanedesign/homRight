@@ -147,11 +147,12 @@ longueur =0;
         $(this).addClass("spare-item2");
         var positionP = $(this).find('.buttonSymetrie'); //Definit la variable
         if(positionP.length == 0){
-          $(this).append("<div class='buttonSymetrie'>position</div>").promise().done(
+          $(".cache").css("display", "none");
+          $(this).append("<img class='buttonSymetrie cache' src='../../assets/button/rotate.png'/>").promise().done(
             function(){
               $(this).on('click', '.buttonSymetrie', function() {
-                  console.log('test');
-
+                  console.log('Activation symetrie');
+                  $(".cache").css("display", "block");
                   var matrice1 = $(this).parent().css("transform");
                   var scx =parseInt(matrice1.split(",")[0].substring(7))*(-1) ;
                   if(scx== -1 || scx == 1){
@@ -239,5 +240,6 @@ longueur =0;
 
   	$('.segment-button').removeClass('segment-activated');
   	$('.segment-button').attr('aria-pressed', 'false');
+    $(".cache").css("display", "none");
   }
 }
