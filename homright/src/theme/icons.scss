@@ -37,6 +37,18 @@
 }
 
 
+@include makeIcon(bain, '\e922');
+@include makeIcon(bureau, '\e924');
+@include makeIcon(canape, '\e9da');
+@include makeIcon(cuisine, '\e9db');
+@include makeIcon(douche, '\e9dc');
+@include makeIcon(garage, '\e9dd');
+@include makeIcon(lave_linge, '\e9de');
+@include makeIcon(lit, '\e9df');
+@include makeIcon(placard, '\e9e0');
+@include makeIcon(porte, '\e9e1');
+@include makeIcon(table, '\e9e2');
+@include makeIcon(vase, '\e9e3');
 @include makeIcon(air-conditioning-indoor, '\e900');
 @include makeIcon(air-conditioning-outdoor, '\e901');
 @include makeIcon(alarm, '\e902');
@@ -48,7 +60,7 @@
 @include makeIcon(drop, '\e908');
 @include makeIcon(electric-range, '\e909');
 @include makeIcon(eye, '\e90a');
-@include makeIcon(garage, '\e90b');
+@include makeIcon(garage2, '\e90b');
 @include makeIcon(heater, '\e90c');
 @include makeIcon(houseplant, '\e90d');
 @include makeIcon(ip-camera, '\e90e');
@@ -71,9 +83,7 @@
 @include makeIcon(solar-panel, '\e91f');
 @include makeIcon(sun, '\e920');
 @include makeIcon(temperature, '\e921');
-@include makeIcon(thermostat, '\e922');
 @include makeIcon(tv, '\e923');
-@include makeIcon(vacuum-cleaning-robot, '\e924');
 @include makeIcon(ventilation, '\e925');
 @include makeIcon(washer, '\e926');
 @include makeIcon(weather, '\e927');
@@ -84,7 +94,7 @@
 @include makeIcon(couch, '\e992');
 @include makeIcon(washing-machine, '\e993');
 @include makeIcon(door, '\e994');
-@include makeIcon(garage2, '\e995');
+@include makeIcon(garage22, '\e995');
 @include makeIcon(desk, '\e996');
 @include makeIcon(dinner-table, '\e997');
 @include makeIcon(monitor, '\e928');
