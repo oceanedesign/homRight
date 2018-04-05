@@ -2,12 +2,12 @@
 	<ion-grid class="container">
 	  	<ion-slides loop="true" speed="2000" pager="true" paginationType="fraction" options="swiper.options" (ionSlideDidChange)="slideChanged()">
 
-			    <ion-slide id="1">
-			        <p class="icon-slider"><ion-icon name="icon-thunderbolt"></ion-icon></p>
+			    <ion-slide id="un">
+			        <p class="icon-slider"><ion-icon name="icon-thunderbolt" class="circle"></ion-icon></p>
 							<ion-list>
 							  <ion-item>
 							    <ion-label><ion-icon name="icon-plug"></ion-icon><h4>Mon fournissseur <p>Sélectionnez dans la liste</p></h4></ion-label>
-							    <ion-select [(ngModel)]="gaming" (ionChange)="onChange()">
+							    <ion-select [(ngModel)]="fournissseur" (ionChange)="onChange()">
 							      <ion-option value="engie">ENGIE</ion-option>
 							      <ion-option value="edf">EDF</ion-option>
 							      <ion-option value="eni">ENI</ion-option>
@@ -21,7 +21,7 @@
 							<ion-list class="transparency">
 								<ion-item>
 									<ion-label><ion-icon name="icon-copy"></ion-icon><h4>Mon contrat <p>Sélectionnez dans la liste</p></h4></ion-label>
-									<ion-select [(ngModel)]="gaming">
+									<ion-select [(ngModel)]="contrat">
 										<ion-option value="contrat1">contrat1</ion-option>
 										<ion-option value="contrat2">contrat2</ion-option>
 									</ion-select>
@@ -30,21 +30,52 @@
 
 
 			    </ion-slide>
-	        <ion-slide id="2">
-	            <p class="icon-slider"><ion-icon name="icon-thunderbolt"></ion-icon></p>
-							<p>slide 2</p>
+	        <ion-slide id="deux">
+	            <p class="icon-slider"><ion-icon name="icon-cube"></ion-icon><ion-icon name="icon-cube"></ion-icon></p>
+							<ion-list class="superficie">
+								<ion-row col-12>
+									<h4>Superficie</h4>
+								  <ion-item>
+								    <ion-input placeholder="35"></ion-input><div item-end class="item-end">m2</div>
+								  </ion-item>
+								</ion-row>
+								<ion-row>
+									<h4>Nombre d'habitants</h4>
+									<ion-item col-12>
+										<ion-label>Adulte(s)</ion-label>
+										<ion-input type="number" min="1" value="1"></ion-input>
+									</ion-item>
+
+									<ion-item col-12>
+										<ion-label>Enfant(s)</ion-label>
+										<ion-input type="number" min="0" value="0"></ion-input>
+									</ion-item>
+								</ion-row>
+							</ion-list>
 	        </ion-slide>
-	        <ion-slide id="3">
-	            <p class="icon-slider"><ion-icon name="icon-thunderbolt"></ion-icon></p>
-							<p>slide 3</p>
+	        <ion-slide id="trois">
+	            <p class="icon-slider"><ion-icon class="circle"></ion-icon></p>
+							<ion-row col-12>
+								<p>Je ferme mes volets la nuit</p>
+							</ion-row>
+							<ion-row col-12>
+								<ion-list class="volets" radio-group [(ngModel)]="relationship">
+									<ion-item>
+										<ion-radio value="oui"></ion-radio>
+									</ion-item>
+									<ion-item>
+										<ion-radio value="non"></ion-radio>
+									</ion-item>
+								</ion-list>
+							</ion-row>
 	        </ion-slide>
-	        <ion-slide id="4">
+	        <ion-slide id="quatre">
 	            <p class="icon-slider"><ion-icon name="icon-thunderbolt"></ion-icon></p>
-							<p>slide 4</p>
+							<ion-row></ion-row>
 	        </ion-slide>
 	  	</ion-slides>
 
-			<div class="pagination"><ion-icon name="icon-left-arrow-1" (click)="goToPrev()"></ion-icon><span>1</span>/4<ion-icon name="icon-right-arrow" (click)="goToNext()"></ion-icon></div>
+			<ion-row class="pagination"><ion-icon name="icon-left-arrow-1" (click)="goToPrev()"></ion-icon><span>1</span>/4<ion-icon name="icon-right-arrow" (click)="goToNext()"></ion-icon></ion-row>
 
 	</ion-grid>
 </ion-content>
