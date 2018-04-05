@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { JeuModelisationPage } from '../jeu-modelisation/jeu-modelisation';
 
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
