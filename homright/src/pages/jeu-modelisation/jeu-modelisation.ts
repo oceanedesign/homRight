@@ -93,7 +93,7 @@ longueur =0;
 
   }
 
-  ActiveDraggable(){           
+  ActiveDraggable(){
     $( "#snaptarget" ).droppable({
       accept: ".spare-item2",
       over: function(event, ui) {
@@ -106,6 +106,8 @@ longueur =0;
 
   }; 
 
+
+
   validerTaille(){
     $(".fond-cache").css("display", "flex");
     $(".contenu-taille").css("display", "none");
@@ -117,11 +119,12 @@ longueur =0;
   caseMaisonObjet(event){
     var enfantCaseSol = $('.actions').find('.spare-item'); //Definit la variable
     var countDrag =0;
+
     if(enfantCaseSol.length > 0) //
       { 
         $('.actions').find('.spare-item').remove(); // Suppression de l'enfant
       }
-      console.log(event.target.id);
+    console.log(event.target.id);
     $( "#"+event.target.id ).clone().removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item")
     .draggable({
       //grid: [ 10, 10 ],
@@ -145,14 +148,15 @@ longueur =0;
         //if (outside==true) {
         $(this).removeClass("spare-item");
         $(this).addClass("spare-item2");
+
         var positionP = $(this).find('.buttonSymetrie'); //Definit la variable
         if(positionP.length == 0){
-          $(".cache").css("display", "none");
           $(this).append("<img class='buttonSymetrie cache' src='../../assets/button/rotate.png'/>").promise().done(
+
             function(){
+
               $(this).on('click', '.buttonSymetrie', function() {
                   console.log('Activation symetrie');
-                  $(".cache").css("display", "block");
                   var matrice1 = $(this).parent().css("transform");
                   var scx =parseInt(matrice1.split(",")[0].substring(7))*(-1) ;
                   if(scx== -1 || scx == 1){
@@ -240,6 +244,17 @@ longueur =0;
 
   	$('.segment-button').removeClass('segment-activated');
   	$('.segment-button').attr('aria-pressed', 'false');
-    $(".cache").css("display", "none");
+
+    // $(".spare-item2").click(function () {
+    //   console.log("test click sur item2");
+    //       if( $(this).children().is( ':visible' ) ){
+    //           $(this).children().hide(); 
+    //       }else{
+    //           $(this).children().show(); 
+    //       }
+    //   });
+    
   }
+
+
 }
