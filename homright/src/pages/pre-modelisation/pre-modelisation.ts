@@ -26,37 +26,44 @@ export class PreModelisationPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PreModelisationPage');
-    $( ".swiper-pagination::before" ).click(function() {
-      console.log('ok');
-    });
+    // $( ".swiper-pagination::before" ).click(function() {
+    //   console.log('ok');
+    // });
   }
-  onChange(){
+  onChangeFournisseur(){
     $( "ion-list.transparency" ).removeClass("transparency");
+  }
+  onChangeContrat(){
+    $( ".right-arrow" ).removeClass("transparency");
   }
 
   goToPrev() {
     this.slides.slidePrev();
 
     let currentIndex = this.slides.getActiveIndex();
-    if(currentIndex == 0){
-      $( ".pagination span" ).replaceWith( "<span>4</span>" );
+    console.log(currentIndex);
+    if(currentIndex == 1){
+      $( ".left-arrow" ).addClass("transparency");
     }
-    else{
-      currentIndex -1;
-      $( ".pagination span" ).replaceWith( "<span>"+currentIndex+"</span>" );
+    if(currentIndex == 3){
+      $( ".right-arrow" ).removeClass("transparency");
     }
+    currentIndex -1;
+    $( ".pagination span" ).replaceWith( "<span>"+currentIndex+"</span>" );
+
   }
   goToNext() {
     this.slides.slideNext();
 
     let currentIndex = this.slides.getActiveIndex();
-    if(currentIndex == 5){
-      $( ".pagination span" ).replaceWith( "<span>1</span>" );
+    if(currentIndex == 4){
+      $( ".right-arrow" ).addClass("transparency");
     }
-    else{
+    if(currentIndex == 2){
+      $( ".left-arrow" ).removeClass("transparency");
+    }
       currentIndex +1;
       $( ".pagination span" ).replaceWith( "<span>"+currentIndex+"</span>" );
-    }
   }
 
   slideChanged() {
@@ -68,6 +75,10 @@ export class PreModelisationPage {
     // if(currentIndex == 0){
     //   $( ".pagination span" ).replaceWith( "<span>1</span>" );
     // }
+  }
+
+  modeliserMaison(){
+    this.navCtrl.push(JeuModelisationPage);
   }
 
 }
