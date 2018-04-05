@@ -21,7 +21,7 @@ export class MyApp {
 
   rootPage:any = JeuModelisationPage;
   //rootPage:any = SignupPage;
-  //  rootPage:any = PreModelisationPage;
+  //rootPage:any = PreModelisationPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

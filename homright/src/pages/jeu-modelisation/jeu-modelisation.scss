@@ -113,7 +113,7 @@ page-jeu-modelisation {
 		width: 60px;
     	height: 60px;
     	border-radius: 8px;
-	    z-index: 7;
+	    z-index: 10;
     	position: absolute;
 		right: 20px;
     	bottom: 20px;
@@ -207,7 +207,7 @@ page-jeu-modelisation {
 		background: linear-gradient(-115deg, #5790FF 5.52%, #DF61FF 152.58%);
 		box-shadow:none;
 		overflow: scroll;
-		z-index: 7;
+		z-index: 10;
 	}
 
 	.elements-active .item-md, .elements-active .item-ios,
@@ -250,7 +250,7 @@ page-jeu-modelisation {
 
 	.segment-md .segment-button, .segment-ios .segment-button, .segment-ios .segment-button:first-of-type, 
 	.segment-ios .segment-button:last-of-type{
-		z-index: 6;
+		z-index: 10;
 		width:100%;
     	max-width: 100px;
     	min-width: 90px;
@@ -409,14 +409,16 @@ input[type="range"]
 	    height: 60px;
 	    -webkit-transition: 1000ms transform linear;
     	transition: 1000ms transform linear;
-    	transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
     	margin: auto;
+    	//transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
+    	
 	}
 
 	.case-maison3d{
 		transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
 		-webkit-transition: 1000ms transform linear;
     	transition: 1000ms transform linear;
+    	//
 	}
 
 /* ITEMES */
@@ -505,7 +507,7 @@ input[type="range"]
 	{
 		.segment-md .segment-button, .segment-ios .segment-button, .segment-ios .segment-button:first-of-type, 
 		.segment-ios .segment-button:last-of-type{
-			z-index: 6;
+			z-index: 10;
 			width:100%;
 	    	max-width: 130px;
 	    	min-width: 90px;
@@ -515,7 +517,7 @@ input[type="range"]
 			width: 80px;
 	    	height: 80px;
 	    	border-radius: 8px;
-	    	z-index: 7;
+	    	z-index: 10;
 	    	position: absolute;
 			right: 50px;
 	    	bottom: 50px;

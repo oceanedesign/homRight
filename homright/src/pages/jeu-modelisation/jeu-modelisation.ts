@@ -49,7 +49,6 @@ longueur =0;
     this.MaisonDeplace();
     this.ActiveDraggable();
     this.InitCache();
-    this.symetrie();
   }
   
   InitCache(){
@@ -107,12 +106,6 @@ longueur =0;
 
   }; 
 
-  symetrie(){  
-      $('.changePosition').click(function(){
-        console.log( "Change position" );
-      })
-  }
-
   validerTaille(){
     $(".fond-cache").css("display", "flex");
     $(".contenu-taille").css("display", "none");
@@ -135,7 +128,7 @@ longueur =0;
       // containment: "#case-maison",
       cursor: "grab",
       //cursorAt: { left: 10, top:10 },
-      revert: 'invalid',
+      //revert: 'invalid',
       drag: function (event, ui) {
         //$(this).draggable( "option", "refreshPositions", true );
         //console.log("top : "+ui.offset.top+" + left : "+ui.offset.left);
@@ -148,12 +141,33 @@ longueur =0;
       },
       start: function (event, ui) { 
         countDrag++;
+        
         //if (outside==true) {
         $(this).removeClass("spare-item");
         $(this).addClass("spare-item2");
-        var positionP = $(this).find('.changePosition'); //Definit la variable
+        var positionP = $(this).find('.buttonSymetrie'); //Definit la variable
         if(positionP.length == 0){
-          //$(this).append("<p class='changePosition'"+">test</p>");
+          $(this).append("<div class='buttonSymetrie'>position</div>").promise().done(
+            function(){
+              $(this).on('click', '.buttonSymetrie', function() {
+                  console.log('test');
+
+                  var matrice1 = $(this).parent().css("transform");
+                  var scx =parseInt(matrice1.split(",")[0].substring(7))*(-1) ;
+                  if(scx== -1 || scx == 1){
+                    $(this).parent().css({
+                      "transform": "scaleX("+scx+")"
+                      });
+                  }else{
+                     $(this).parent().css(
+                      {
+                      "transform": "scaleX(-1)"
+                      }
+                  );
+                }
+
+              })
+            });
         }
         //$(event.target).data('offset-x', "+" + ui.offset.left);
        // $(event.target).data('offset-y', "+" + ui.offset.top);      
@@ -165,7 +179,7 @@ longueur =0;
 
       stop: function(){
         $(this).insertBefore("#case-maison");
-        $(this).draggable('option','revert','invalid');
+        //$(this).draggable('option','revert','invalid');
         
       }
 
