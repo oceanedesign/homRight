@@ -129,19 +129,19 @@
 				<ion-toolbar>
 		    		<ion-segment [(ngModel)]="objetType">
 		      			<ion-segment-button value="ouverture" (click)="activationBoutton()">
-		        		<p>ouverture</p>
+		        		<ion-icon col-4 col-xl-5 name="icon-placard"></ion-icon><p col-8 col-xl-7>ouverture</p>
 		      			</ion-segment-button>
 		      			<ion-segment-button value="eclairage" (click)="activationBoutton()">
-		        		<p>éclairage</p>
+		        		<ion-icon col-4 col-xl-5 name="icon-bulb"></ion-icon><p col-8 col-xl-7>éclairage</p>
 		      			</ion-segment-button>
 		      			<ion-segment-button value="temperature" (click)="activationBoutton()">
-		        		<p>température</p>
+		        		<ion-icon col-4 col-xl-5 name="icon-thermometer"></ion-icon><p col-8 col-xl-7>température</p>
 		      			</ion-segment-button>
-		      			<ion-segment-button value="appareils" (click)="activationBoutton()">
-		        		<p class="titre-compose">appareils électriques</p>
+		      			<ion-segment-button value="appareils" (click)="activationBoutton()" >
+		        		<ion-icon col-4 col-xl-5 name="icon-plug" style="vertical-align: initial;"></ion-icon><p col-8 col-xl-7 class="titre-compose">appareils électriques</p>
 		      			</ion-segment-button>
 		      			<ion-segment-button value="decoration" (click)="activationBoutton()">
-		        		<p>décoration</p>
+		        		<ion-icon col-4 col-xl-5 name="icon-vase"></ion-icon><p col-8 col-xl-7>décoration</p>
 		      			</ion-segment-button>
 		    		</ion-segment>
 		 		</ion-toolbar>

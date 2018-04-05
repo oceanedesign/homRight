@@ -38,19 +38,19 @@ ion-app.md{
 }
 
 .bouton-contour{
-	color: #A675FF;
+	color: #F5AF47;
 	font-family: "Futura";
 	font-weight: 300;
 	border-radius: 30px;
 	background: white;
 	box-shadow: 10px 10px 8px 10px transparent;
-	border: 1px solid #A675FF;
+	border: 1px solid #F5AF47;
     text-transform: initial;
     font-size: 18px;
 }
 
 .bouton-contour:hover:not(.disable-hover), .bouton-contour:active, .bouton-contour.button-ios.activated{
-	color:#A675FF;
+	color:#F5AF47;
 	box-shadow: 10px 10px 8px 10px transparent;
 	background: white;
 }
@@ -60,9 +60,9 @@ ion-app.md{
 	font-family: "Futura";
 	font-weight: 300;
 	border-radius: 30px;
-	background: linear-gradient(275.97deg, #5790FF -46.25%, #DF61FF 191.58%);
+	background: #F5AF47;
 	box-shadow: 10px 10px 8px 10px transparent;
-	//border: 1px solid #A675FF;
+	//border: 1px solid #F5AF47;
 	width: 65%;
 	height: 45px;
 	margin: 0 auto;
@@ -73,7 +73,7 @@ ion-app.md{
 .bouton-principal:hover:not(.disable-hover), .bouton-principal:active{
 	color:white;
 	box-shadow: 10px 10px 8px 10px transparent;
-	background: linear-gradient(275.97deg, #5790FF -46.25%, #DF61FF 191.58%);
+	background: #F5AF47;
 }
 
 .center{
