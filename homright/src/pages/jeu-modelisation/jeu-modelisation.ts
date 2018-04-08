@@ -201,8 +201,14 @@ longueur =0;
     $('.case-sol, #case-maison, .actions').height(this.ligne*60-2+"px");
     $('#case-maison').width(this.colonne*60-2+"px");
     $('.mur').width(this.ligne*50-10+"px");
-    $('.mur').css({"left": (-((this.ligne-1)*25)-16)+(((this.colonne-1)*7.9))+"px"});
+
+    $('.mur').css({"left": (-((this.ligne-1)*25)-15)+(((this.colonne-1)*8))+"px"});
     $('.mur').css({"top": (((this.ligne-1)*29.85)-283)-(((this.colonne-1)*12.7))+"px"});
+
+
+    $('.mur2').width(this.colonne*50-10+this.colonne*3+"px");
+    $('.mur2').css({"left": (((this.colonne-1)*3.55)+24)+((this.ligne-1)*20.45)+"px"});
+    $('.mur2').css({"top": (((this.ligne-1)*17.5)-283)+"px"});
     this.superficiePiece();
     //$('#case-maison').height(this.ligne*60-2+"px");
   }

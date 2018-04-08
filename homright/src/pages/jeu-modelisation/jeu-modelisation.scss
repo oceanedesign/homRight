@@ -435,6 +435,19 @@ input[type="range"]
     	top: -283px;
     	left: -16px;
     	transform: rotateX(60deg) rotateY(-35deg) rotateZ(0deg);
+    	border-right: 3px solid #F5F5F5;
+	}
+
+	.mur2{
+		border: 5px solid #E6E6E6;
+    	height: 400px;
+    	width: 50px;
+    	z-index: -1;
+    	position: absolute;
+    	top: -283px;
+    	left: 25px;
+    	transform: rotateX(-60deg) rotateY(-33.7deg) rotateZ(0deg);
+    	border-left: 3px solid #F5F5F5;
 	}
 
 	#case-maison{
