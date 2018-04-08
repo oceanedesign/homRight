@@ -86,9 +86,13 @@
 			    		<h1>temperature</h1>
 						<ion-list>
 							<ion-item>
-						    	<ion-label color="light" fixed>Radiateur électrique</ion-label>
-    							<ion-input type="number" placeholder="0"></ion-input>
-						  	</ion-item>
+								<div item-end>
+									<div id="radiateur" class="objets-presentation item-radiateur" (click)="caseMaisonObjet($event);"></div>
+								</div>
+								<h2>Radiateur</h2>
+								<p>électrique </p>
+							</ion-item>
+
 						</ion-list>
 				    </div>
 
