@@ -56,9 +56,9 @@ longueur =0;
   }
 
   superficiePiece(){
-    this.largeur = Math.round(this.colonne*0.6);
-    this.longueur = Math.round(this.ligne*0.6);
-    this.superficie = Math.round(this.largeur * this.longueur);
+    this.largeur = Number((this.colonne*0.6).toFixed(2));
+    this.longueur = Number((this.ligne*0.6).toFixed(2));
+    this.superficie = Number((this.largeur * this.longueur).toFixed(2));
 
   }
 
@@ -195,9 +195,13 @@ longueur =0;
 
   tailleSol(){
     console.log("colonne : "+ this.colonne);
+
     $('.case-sol, .actions').width(this.colonne*160-2+"px");
+
     $('.case-sol, #case-maison, .actions').height(this.ligne*60-2+"px");
     $('#case-maison').width(this.colonne*60-2+"px");
+    $('.mur').width(this.ligne*50-10+"px");
+    $('.mur').css({"left": -((this.ligne-1)*30)-16+"px"});
     this.superficiePiece();
     //$('#case-maison').height(this.ligne*60-2+"px");
   }

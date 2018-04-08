@@ -426,6 +426,17 @@ input[type="range"]
 	    position: absolute;
 	}
 
+	.mur{
+		border: 5px solid #E6E6E6;
+    	height: 400px;
+    	width: 50px;
+    	z-index: -1;
+    	position: absolute;
+    	top: -283px;
+    	left: -16px;
+    	transform: rotateX(60deg) rotateY(-35deg) rotateZ(0deg);
+	}
+
 	#case-maison{
 		background-image: url("../../assets/imgs/case.png");
 	    border: 1px solid white;
@@ -435,13 +446,12 @@ input[type="range"]
 	    height: 60px;
 	    -webkit-transition: 1000ms transform linear;
     	transition: 1000ms transform linear;
-    	margin: auto;
-    	//transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
+    	transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
     	
 	}
 
 	.case-maison3d{
-		transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
+		//transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
 		-webkit-transition: 1000ms transform linear;
     	transition: 1000ms transform linear;
     	//
