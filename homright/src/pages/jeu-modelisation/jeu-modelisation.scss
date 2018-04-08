@@ -426,6 +426,20 @@ input[type="range"]
 	    position: absolute;
 	}
 
+	.mur-cache{
+		opacity: 0;
+	    -webkit-transition: 500ms opacity linear;
+    	transition: 500ms opacity linear;
+    	transition-delay: 1000ms;
+	}
+
+	.mur-visible{
+    	opacity: 1;
+	    -webkit-transition: 500ms opacity linear;
+    	transition: 500ms opacity linear;	
+    	transition-delay: 1000ms;	
+	}
+
 	.mur{
 		border: 5px solid #E6E6E6;
     	height: 400px;
@@ -436,6 +450,7 @@ input[type="range"]
     	left: -16px;
     	transform: rotateX(60deg) rotateY(-35deg) rotateZ(0deg);
     	border-right: 3px solid #F5F5F5;
+
 	}
 
 	.mur2{
@@ -459,12 +474,12 @@ input[type="range"]
 	    height: 60px;
 	    -webkit-transition: 1000ms transform linear;
     	transition: 1000ms transform linear;
-    	transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
+    	//transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
     	
 	}
 
 	.case-maison3d{
-		//transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
+		transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
 		-webkit-transition: 1000ms transform linear;
     	transition: 1000ms transform linear;
     	//

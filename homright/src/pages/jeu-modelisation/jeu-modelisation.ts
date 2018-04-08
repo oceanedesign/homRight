@@ -113,7 +113,8 @@ longueur =0;
     $(".contenu-taille").css("display", "none");
     $("#case-maison").addClass("case-maison3d");
     $(".resize").addClass("inactive");
-    $(".cube").removeClass("inactive").addClass("active");    
+    $(".cube").removeClass("inactive").addClass("active");
+    $(".mur, .mur2").removeClass("mur-cache").addClass("mur-visible");   
   }
 
   caseMaisonObjet(event){
