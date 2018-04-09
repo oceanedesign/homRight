@@ -72,8 +72,10 @@ longueur =0;
       .draggable({
       grid: [ 60, 60],
         stop: function( event, ui ) {       
-        this.PosTotal = $(this).offset();                
+        this.PosTotal = $(this).position();                
         console.log("top : "+this.PosTotal.top+" + left : "+ this.PosTotal.left);
+        $(this).attr('position-x', + this.PosTotal.left);
+        $(this).attr('position-y', +this.PosTotal.top);
      }    
       })
       
@@ -118,7 +120,7 @@ longueur =0;
     $("#case-maison").addClass("case-maison3d");
     $(".resize").addClass("inactive");
     $(".cube").removeClass("inactive").addClass("active");
-    $(".mur, .mur2").removeClass("mur-cache").addClass("mur-visible");   
+    $(".mur, .mur2").removeClass("mur-cache").addClass("mur-visible");  
   }
 
   caseMaisonObjet(event){
@@ -130,7 +132,7 @@ longueur =0;
         $('.actions').find('.spare-item').remove(); // Suppression de l'enfant
       }
     console.log(event.target.id);
-    $( "#"+event.target.id ).clone().attr('id', this.cloneCount++).removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item")
+    $( "#"+event.target.id ).clone().attr('id', this.cloneCount++).removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item") 
     .draggable({
       //grid: [ 10, 10 ],
       // containment: "#case-maison",
@@ -149,7 +151,7 @@ longueur =0;
       },
       start: function (event, ui) { 
         countDrag++;
-        
+        $(this).attr('symetrie', + "1");
         //if (outside==true) {
         $(this).removeClass("spare-item");
         $(this).addClass("spare-item2");
@@ -171,42 +173,51 @@ longueur =0;
                     $(this).parent().css({
                       "transform": "scaleX("+scx+")"
                       });
+                      $(this).parent().attr('symetrie', + scx);
                   }else{
                      $(this).parent().css(
                       {
                       "transform": "scaleX(-1)"
-                      }
-                  );
-                }
-
-              })
+                      });
+                     $(this).parent().attr('symetrie', + "-1");
+                }})
             });}
         }
-        //$(event.target).data('offset-x', "+" + ui.offset.left);
-       // $(event.target).data('offset-y', "+" + ui.offset.top);      
+           
       },
       beforeStop:function(event,ui){
         
        // console.log("test");
       },
 
-      stop: function(){
+      stop: function(event,ui){
         $(this).insertBefore("#case-maison");
+        $(this).attr('position-x', + ui.position.left);
+        $(this).attr('position-y', + ui.position.top);
+
         //$(this).draggable('option','revert','invalid');
         
       }
 
-
-    });
+    })
+    .on('click', function() {
+      console.log( $(this));
+      // if( $(this).children().is( ':visible' ) ){
+      //   $(this).find('.cache').hide(); 
+      // }else{
+      //   $(this).find('.cache').show(); 
+      // }
+      $(this).find('.cache').show(); 
+    }) 
 
   }
 
   tailleSol(){
     console.log("colonne : "+ this.colonne);
-
+    $('.case-sol').attr('colonne', + this.colonne).attr('ligne', +this.ligne);
     $('.case-sol, .actions').width(this.colonne*160-2+"px");
 
-    $('.case-sol, #case-maison, .actions').height(this.ligne*60-2+"px");
+    $('.case-sol, #case-maison, .actions').height(this.ligne*60-2+"px"); 
     $('#case-maison').width(this.colonne*60-2+"px");
     $('.mur').width(this.ligne*50-10+"px");
 
@@ -249,6 +260,7 @@ longueur =0;
   	 $('.container').addClass('container-actif');
 
   	 $('.activated').addClass('segment-activated');
+     $(".spare-item2").find('.cache').hide();
   }
 
   desactiveBoutton(){
@@ -263,16 +275,6 @@ longueur =0;
 
   	$('.segment-button').removeClass('segment-activated');
   	$('.segment-button').attr('aria-pressed', 'false');
-
-    // $(".spare-item2").click(function () {
-    //   console.log("test click sur item2");
-    //       if( $(this).children().is( ':visible' ) ){
-    //           $(this).children().hide(); 
-    //       }else{
-    //           $(this).children().show(); 
-    //       }
-    //   });
-    
   }
 
 

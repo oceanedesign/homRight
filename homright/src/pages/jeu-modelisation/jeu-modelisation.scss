@@ -419,6 +419,10 @@ input[type="range"]
 	    position: absolute;
 	}
 
+	.case-sol{
+		z-index: 7;
+	}
+
 	.mur-cache{
 		opacity: 0;
 	    -webkit-transition: 500ms opacity linear;
