@@ -130,7 +130,7 @@ longueur =0;
         $('.actions').find('.spare-item').remove(); // Suppression de l'enfant
       }
     console.log(event.target.id);
-    $( "#"+event.target.id ).clone().removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item")
+    $( "#"+event.target.id ).clone().attr('id', this.cloneCount++).removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item")
     .draggable({
       //grid: [ 10, 10 ],
       // containment: "#case-maison",
@@ -198,7 +198,7 @@ longueur =0;
 
 
     });
-      //$( "#draggable5" ).clone().attr('id', 'id'+ this.cloneCount++).appendTo(".droptarget").css({top: this.ligne*80, left: this.colonne*80});
+
   }
 
   tailleSol(){
