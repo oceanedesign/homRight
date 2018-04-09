@@ -417,6 +417,7 @@ input[type="range"]
 	height: 100%;
 }
 
+
 	.case-sol, .actions
 	{
 	    width: 160px;
@@ -444,7 +445,7 @@ input[type="range"]
 		border: 5px solid #E6E6E6;
     	height: 500px;
     	width: 50px;
-    	z-index: -1;
+    	z-index: 1;
     	position: absolute;
     	top: -358px;
     	left: -16px;
@@ -457,7 +458,7 @@ input[type="range"]
 		border: 5px solid #E6E6E6;
     	height: 500px;
     	width: 50px;
-    	z-index: -1;
+    	z-index: 1;
     	position: absolute;
     	top: -283px;
     	left: 25px;

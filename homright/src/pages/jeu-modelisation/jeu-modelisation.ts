@@ -66,14 +66,15 @@ longueur =0;
   }
 
   MaisonDeplace(){
-    this.touchJquery();
+    // Fonction qui permet à la maison d'etre déplacée
+    this.touchJquery(); //Déplacement sur telephone possible
     $(".ligne-sol")
       .draggable({
       grid: [ 60, 60],
-       stop: function( event, ui ) {       
+        stop: function( event, ui ) {       
         this.PosTotal = $(this).offset();                
         console.log("top : "+this.PosTotal.top+" + left : "+ this.PosTotal.left);
-      }
+     }    
       })
       
       .on("mouseover", function(){
@@ -94,7 +95,6 @@ longueur =0;
           .removeClass("opac")
           .addClass("move-cursor");
       });
-
   }
 
   ActiveDraggable(){
@@ -153,7 +153,7 @@ longueur =0;
         //if (outside==true) {
         $(this).removeClass("spare-item");
         $(this).addClass("spare-item2");
-
+        //$(this).insertBefore("#case-maison");
         var positionP = $(this).find('.buttonSymetrie'); //Definit la variable
         if(positionP.length == 0){
           $(this).append("<img class='buttonSymetrie cache' src='../../assets/button/rotate.png'/>").promise().done(
