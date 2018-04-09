@@ -657,7 +657,7 @@ input[type="range"]
 	}
 
 
-	@include makeIsometrie60x60(fenetre);
+
 	@include makeIsometrie60x60(halogene);
 	@include makeIsometrie60x60(led);
 	@include makeIsometrie60x60(radiateur);
@@ -670,6 +670,7 @@ input[type="range"]
 
 	@include makeIsometrie180x180(ordi-fixe);
 	@include makeIsometrie180x180(ecran-plat);
+	@include makeIsometrie180x180(fenetre);
 
 	@include makeIsometrie180x360(placard);
 

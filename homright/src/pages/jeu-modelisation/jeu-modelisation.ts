@@ -76,6 +76,7 @@ longueur =0;
         console.log("top : "+this.PosTotal.top+" + left : "+ this.PosTotal.left);
         $(this).attr('position-x', + this.PosTotal.left);
         $(this).attr('position-y', +this.PosTotal.top);
+        $('.cache').hide();
      }    
       })
       
@@ -126,7 +127,7 @@ longueur =0;
   caseMaisonObjet(event){
     var enfantCaseSol = $('.actions').find('.spare-item'); //Definit la variable
     var countDrag =0;
-
+    $('.cache').hide();
     if(enfantCaseSol.length > 0) //
       { 
         $('.actions').find('.spare-item').remove(); // Suppression de l'enfant
@@ -150,6 +151,7 @@ longueur =0;
 
       },
       start: function (event, ui) { 
+        $(".cache").hide(); 
         countDrag++;
         $(this).attr('symetrie', + "1");
         //if (outside==true) {
@@ -207,6 +209,7 @@ longueur =0;
       // }else{
       //   $(this).find('.cache').show(); 
       // }
+      $(".cache").not($(this)).hide(); 
       $(this).find('.cache').show(); 
     }) 
 
