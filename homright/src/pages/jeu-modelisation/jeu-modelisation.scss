@@ -53,14 +53,6 @@ page-jeu-modelisation {
 		}
 	}
 
-	.buttonSymetrie{
-		width: 40px;
-		position: absolute;
-    	top: -15px;
-    	left: -10px;
-    	z-index: 20;
-	}
-
 	.gestion-range{
 		p{
 	    	margin: 0px;
@@ -492,6 +484,58 @@ input[type="range"]
 		cursor: pointer;
 	}
 
+	.buttonSymetrie{
+	width: 40px;
+    padding: 10px;
+    position: absolute;
+    top: -15px;
+    left: -10px;
+    z-index: 20;
+    background: #7686FF;
+    border-radius: 50%;
+	}
+
+	.buttonVoir{
+	width: 40px;
+    padding: 10px;
+    position: absolute;
+    top: -42px;
+    left: 40px;
+    z-index: 20;
+    background: #7686FF;
+    border-radius: 50%;
+	}
+
+
+	.item-radiateur{
+		.buttonSymetrie{
+			top: -15px;
+    		left: -10px;
+		}
+		.buttonVoir{
+			top: -31px;
+    		left: 35px;
+		}
+	}
+
+	.item-led, .item-halogene{
+		.buttonSymetrie{
+			top: -28px;
+    		left: -10px;
+		}
+		.buttonVoir{
+			top: -35px;
+    		left: 37px;
+		}
+	}
+
+	.item-lampadaire-halo, .item-lampadaire-led{
+		.buttonVoir{		
+			top: -50px;
+    		left: 10px;
+    	}
+	}
+
 	@mixin makeIsometrie60x60($nom) {
 		.item-#{$nom}{
 			background-image: url("../../assets/isometrie/symbole/#{$nom}.png");
@@ -616,6 +660,7 @@ input[type="range"]
 	@include makeIsometrie60x60(prise);
 
 	@include makeIsometrie60x120(lampadaire-halo);
+	@include makeIsometrie60x120(lampadaire-led);
 
 	@include makeIsometrie180x140(lit);
 

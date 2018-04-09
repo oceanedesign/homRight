@@ -156,7 +156,10 @@ longueur =0;
         //$(this).insertBefore("#case-maison");
         var positionP = $(this).find('.buttonSymetrie'); //Definit la variable
         if(positionP.length == 0){
-          $(this).append("<img class='buttonSymetrie cache' src='../../assets/button/rotate.png'/>").promise().done(
+          if( $(this).hasClass( "sans-symetrie" )==true){
+             $(this).append("<img class='buttonVoir cache' src='../../assets/button/see.png'/>");
+          }else{
+          $(this).append("<img class='buttonSymetrie cache' src='../../assets/button/rotate.png'/><img class='buttonVoir cache' src='../../assets/button/see.png'/>").promise().done(
 
             function(){
 
@@ -177,7 +180,7 @@ longueur =0;
                 }
 
               })
-            });
+            });}
         }
         //$(event.target).data('offset-x', "+" + ui.offset.left);
        // $(event.target).data('offset-y', "+" + ui.offset.top);      
