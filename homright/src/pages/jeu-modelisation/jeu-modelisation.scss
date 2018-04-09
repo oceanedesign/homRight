@@ -68,7 +68,7 @@ page-jeu-modelisation {
 	    .container-gestion{
 	    	margin: 30px 0px;
 	    }
-	    .range-md{
+	    .range-md, .range-ios{
 	    	padding: 0px;
 	    }
 	}
@@ -756,6 +756,10 @@ input[type="range"]
 		.segment-ios .segment-button:last-of-type{
 			height: 60px;
 			margin: 8px 0;
+		}
+
+		h1.titre-taille {
+    		font-size: 18px;
 		}
 
 		.bouton{
