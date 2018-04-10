@@ -105,7 +105,7 @@ longueur =0;
       accept: ".spare-item2",
       over: function(event, ui) {
           $(".spare-item2").draggable({
-              grid: [10, 10]
+              grid: [5, 5]
           });
       }
 
