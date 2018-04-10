@@ -700,9 +700,12 @@ input[type="range"]
 	@include makeIsometrie180x300(micro-onde);
 	@include makeIsometrie180x300(cafetiere);
 	@include makeIsometrie180x300(plan-travail);
+	@include makeIsometrie180x300(four);
 	@include makeIsometrie180x300(cuisiniere);
 	@include makeIsometrie180x300(lave-vaisselle);
-
+	@include makeIsometrie180x300(plaques-induction);
+	@include makeIsometrie180x300(vitroceramique);
+	
 	@include makeIsometrie180x360(placard);
 
 
