@@ -9,7 +9,7 @@ import { Platform } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-declare var JQuery:any;
+declare var jQuery:any;
 declare var $:any;
 import 'jquery-ui-dist/jquery-ui';
 //declare var lignes;
