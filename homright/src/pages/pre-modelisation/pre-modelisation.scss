@@ -1,11 +1,54 @@
 page-pre-modelisation {
 
+ion-content.content-md{
+  ion-grid.grid{
+    padding: 0;
+    ion-slides{
+      ion-slide{
+        padding: 0px;
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.header-icon{
+  .icon-slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: map-get($colors, secondary);
+  }
+}
+
+.background-app{
+  background-image: url("../assets/imgs/fond-app.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  width: 100%;
+  min-height: 300px;
+  position: absolute;
+  margin-top: -150px;
+  // img{
+  //   width: 100%;
+  //   max-height: 300px;
+  // }
+}
+
   .transparency{
     opacity: 0.4;
     pointer-events: none;
   }
 
   #un{
+    background-image: url("../assets/imgs/fond-app.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 -200px;
+
     h4{
       display: inline-block;
       color: black;
@@ -19,6 +62,13 @@ page-pre-modelisation {
      padding: 5px 10px;
      max-width: 600px;
      margin: 20px auto;
+   }
+   .select-md .select-icon .select-icon-inner{
+     border-top-color: map-get($colors, secondary);
+     border-width: 10px;
+   }
+   .select-md .select-icon{
+     width: 18px;
    }
 
   }
@@ -53,10 +103,11 @@ page-pre-modelisation {
 
   .icon-slider{
     ion-icon{
-      color: map-get($colors, primary);
+      color: map-get($colors, secondary);
       &.circle{
         border-radius: 50%;
-        border: 3px solid map-get($colors, primary);
+        // border: 3px solid white;
+        background: white;
         padding: 25px;
         margin: 20px auto;
         &::before{
@@ -173,11 +224,13 @@ page-pre-modelisation {
         max-width: 300px;
         font-weight: bold;
         margin: auto;
-        padding: 20px 0;
+        padding: 0 0 20px 0;
       }
     }
+
     ion-list{
       width:100%;
+      margin-bottom: 0;
       ion-item{
         display: inline-block;
         width: auto;
@@ -265,6 +318,8 @@ page-pre-modelisation {
       height: 100px;
       margin: 0 auto 24px auto;
       padding: 0;
+      position: relative;
+      pointer-events: auto;
       .button-inner{
         display: block;
         p{
@@ -279,6 +334,220 @@ page-pre-modelisation {
           color: map-get($colors, primary);
         }
       }
+    }
+  }
+
+  .fond-cache{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    padding: 20px;
+    display: flex;
+    display: none;
+    z-index: 100;
+
+    .lightbox{
+      margin: auto;
+    }
+    .lightbox-content{
+      background: white;
+      width: 100%;
+      padding: 15px;
+      min-width: 250px;
+      h2, div{
+        text-align: center;
+      }
+      ion-list{
+        p{
+          color: map-get($colors, secondary);
+          text-align: left!important;
+          font-size: 15px;
+        }
+      }
+      .input-wrapper{
+        display: block;
+        ion-label{
+          color: map-get($colors, secondary);
+          text-align: left!important;
+          font-size: 15px;
+          margin-bottom: 5px;
+        }
+        ion-input{
+          color: black;
+          input.text-input-md{
+            width: 100%;
+          }
+          input::placeholder{
+            color: black;
+            opacity: 1;
+          }
+        }
+      }
+      ion-list.icon-scene{
+        text-align: center;
+        ion-item{
+          display: inline-block;
+          width: auto;
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+          border-radius: 6px;
+          ion-checkbox{
+            width: auto;
+            margin: auto;
+
+            .checkbox-icon{
+              width: 50px;
+              height: 50px;
+              font-size: 35px;
+              border: 0px;
+              border-radius: 6px;
+              padding-top: 5px;
+              background-color: white;
+              &::before{
+                  font-family: 'homright' !important;
+                  speak: none;
+                  font-style: normal;
+                  font-weight: normal;
+                  font-variant: normal;
+                  text-transform: none;
+                  line-height: 1;
+                  color: map-get($colors, secondary);
+              }
+            }
+          }
+          .item-inner{
+            display: none;
+          }
+          .cuisine .checkbox-icon::before{
+            content: '\e9db';
+          }
+          .lit .checkbox-icon::before{
+            content: '\e9df';
+          }
+          .bureau .checkbox-icon::before{
+            content: '\e924';
+          }
+          .douche .checkbox-icon::before{
+            content: '\e9dc';
+          }
+          .canape .checkbox-icon::before{
+            content: '\e9da';
+          }
+          .porte .checkbox-icon::before{
+            content: '\e9e1';
+          }
+          .table .checkbox-icon::before{
+            content: '\e9e2';
+          }
+          .garage .checkbox-icon::before{
+            content: '\e9dd';
+          }
+          &.item-checkbox-checked{
+            .checkbox-icon{
+              background-color: map-get($colors, secondary)!important;
+              color: white;
+              &::before{
+                color: white!important;
+              }
+            }
+          }
+        }
+      }
+      ion-list.temperature{
+        p{
+          margin-bottom: 0;
+        }
+        margin-bottom: 0;
+        .range-md{
+          padding-top: 0;
+          .range-bar{
+            top: 5px;
+          }
+          .range-has-pin{
+            padding-top: 0;
+          }
+          .range-knob-handle{
+            top: 5px;
+          }
+        }
+        .range-slider{
+          height: 10px;
+        }
+        ion-label.label-range{
+          float: right;
+          color: black;
+          font-size: 18px;
+          margin-top: 4px;
+          margin-bottom: 0;
+        }
+      }
+      ion-list.temperatureInconnue{
+        margin-bottom: 4px;
+        ion-item{
+          margin-top: -6px;
+        }
+        ion-label{
+          color: black;
+        }
+        ion-checkbox{
+          margin-right: 8px;
+        }
+        .checkbox-md{
+          .checkbox-checked{
+            background-color: map-get($colors, secondary)!important;
+          }
+          .checkbox-icon{
+            border-color: map-get($colors, secondary)!important;
+          }
+        }
+      }
+
+
+      button{
+        width: 35px;
+        height: 35px;
+        display: inline-block;
+        margin: 0px 8px;
+        box-shadow: none;
+        border-radius: 8px;
+        .icon::before{
+          font-size: 18px!important;
+        }
+        &.not-selected{
+          border: 1.5px solid map-get($colors, primary);
+          background: none;
+          color: map-get($colors, primary);
+        }
+      }
+      .arrow-return{
+        // float: left;
+        cursor: pointer;
+        display: block;
+        p{
+          display: inline-block;
+          vertical-align: super;
+          padding-right: 8px;
+          text-transform: uppercase;
+          margin: 0;
+          &::after{
+          content: "Editer une pièce";
+          }
+        }
+        ion-icon{
+          text-align: right;
+          color: map-get($colors, secondary);
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 500px) {
+    .header-icon{
+        img{
+          margin-top: -50%;
+        }
     }
   }
 }

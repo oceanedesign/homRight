@@ -19,6 +19,8 @@ import 'jquery-ui-dist/jquery-ui';
 })
 export class PreModelisationPage {
 
+  temperature: number= 20;
+
   @ViewChild(Slides) slides: Slides;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -30,6 +32,20 @@ export class PreModelisationPage {
     //   console.log('ok');
     // });
   }
+
+
+  modeliserMaison(){
+    this.navCtrl.push(JeuModelisationPage);
+  }
+
+  editerScene(){
+    console.log('ok');
+    $(".fond-cache").css("display", "flex");
+  }
+  returnChoose(){
+    $(".fond-cache").css("display", "none");
+  }
+
   onChangeFournisseur(){
     $( "ion-list.transparency" ).removeClass("transparency");
   }
@@ -41,7 +57,6 @@ export class PreModelisationPage {
     this.slides.slidePrev();
 
     let currentIndex = this.slides.getActiveIndex();
-    console.log(currentIndex);
     if(currentIndex == 1){
       $( ".left-arrow" ).addClass("transparency");
     }
@@ -77,8 +92,5 @@ export class PreModelisationPage {
     // }
   }
 
-  modeliserMaison(){
-    this.navCtrl.push(JeuModelisationPage);
-  }
 
 }
