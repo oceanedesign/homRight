@@ -53,14 +53,6 @@ page-jeu-modelisation {
 		}
 	}
 
-	.buttonSymetrie{
-		width: 40px;
-		position: absolute;
-    	top: -15px;
-    	left: -10px;
-    	z-index: 20;
-	}
-
 	.gestion-range{
 		p{
 	    	margin: 0px;
@@ -68,7 +60,7 @@ page-jeu-modelisation {
 	    .container-gestion{
 	    	margin: 30px 0px;
 	    }
-	    .range-md{
+	    .range-md, .range-ios{
 	    	padding: 0px;
 	    }
 	}
@@ -417,6 +409,7 @@ input[type="range"]
 	height: 100%;
 }
 
+
 	.case-sol, .actions
 	{
 	    width: 160px;
@@ -424,6 +417,49 @@ input[type="range"]
 	    flex-shrink: 0;        
 	    margin:auto;
 	    position: absolute;
+	}
+
+	.case-sol{
+		z-index: 7;
+	}
+
+	.mur-cache{
+		opacity: 0;
+	    -webkit-transition: 500ms opacity linear;
+    	transition: 500ms opacity linear;
+    	transition-delay: 1000ms;
+	}
+
+	.mur-visible{
+    	opacity: 1;
+	    -webkit-transition: 500ms opacity linear;
+    	transition: 500ms opacity linear;	
+    	transition-delay: 1000ms;	
+	}
+
+	.mur{
+		border: 5px solid #E6E6E6;
+    	height: 500px;
+    	width: 50px;
+    	z-index: 1;
+    	position: absolute;
+    	top: -358px;
+    	left: -16px;
+    	transform: rotateX(60deg) rotateY(-35deg) rotateZ(0deg);
+    	border-right: 3px solid #F5F5F5;
+
+	}
+
+	.mur2{
+		border: 5px solid #E6E6E6;
+    	height: 500px;
+    	width: 50px;
+    	z-index: 1;
+    	position: absolute;
+    	top: -283px;
+    	left: 25px;
+    	transform: rotateX(-60deg) rotateY(-33.7deg) rotateZ(0deg);
+    	border-left: 3px solid #F5F5F5;
 	}
 
 	#case-maison{
@@ -435,7 +471,6 @@ input[type="range"]
 	    height: 60px;
 	    -webkit-transition: 1000ms transform linear;
     	transition: 1000ms transform linear;
-    	margin: auto;
     	//transform: rotateX(54deg) rotateY(2deg) rotateZ(43deg);
     	
 	}
@@ -449,6 +484,61 @@ input[type="range"]
 
 /* ITEMES */
 
+	.objets-presentation{
+		cursor: pointer;
+	}
+
+	.buttonSymetrie{
+	width: 40px;
+    padding: 10px;
+    position: absolute;
+    top: -15px;
+    left: -10px;
+    z-index: 20;
+    background: #7686FF;
+    border-radius: 50%;
+	}
+
+	.buttonVoir{
+	width: 40px;
+    padding: 10px;
+    position: absolute;
+    top: -42px;
+    left: 40px;
+    z-index: 20;
+    background: #7686FF;
+    border-radius: 50%;
+	}
+
+
+	.item-radiateur{
+		.buttonSymetrie{
+			top: -15px;
+    		left: -10px;
+		}
+		.buttonVoir{
+			top: -31px;
+    		left: 35px;
+		}
+	}
+
+	.item-led, .item-halogene{
+		.buttonSymetrie{
+			top: -28px;
+    		left: -10px;
+		}
+		.buttonVoir{
+			top: -35px;
+    		left: 37px;
+		}
+	}
+
+	.item-lampadaire-halo, .item-lampadaire-led{
+		.buttonVoir{		
+			top: -50px;
+    		left: 10px;
+    	}
+	}
 
 	@mixin makeIsometrie60x60($nom) {
 		.item-#{$nom}{
@@ -463,6 +553,31 @@ input[type="range"]
 			width: 60px;
 		    height: 60px;
 		    background-size: 60px 60px;
+		}
+	}
+
+	@mixin makeIsometrie60x120($nom) {
+		.item-#{$nom}{
+			background-image: url("../../assets/isometrie/symbole/#{$nom}.png");
+			width: 50px;
+			height: 50px;
+		    background-size: 50px 50px;
+		}
+
+		.item-#{$nom}.spare-item{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 40px;
+		    height: 80px;
+		    right: 53px;
+    		top: 30px;
+		    background-size: 40px 80px;			
+		}
+
+		.item-#{$nom}.spare-item2{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 60px;
+		    height: 120px;
+		    background-size: 60px 120px;
 		}
 	}
 
@@ -515,11 +630,50 @@ input[type="range"]
 		}
 	}
 
-	@include makeIsometrie60x60(fenetre);
+
+	@mixin makeIsometrie180x360($nom) {
+		.item-#{$nom}{
+			background-image: url("../../assets/isometrie/symbole/#{$nom}.png");
+			width: 50px;
+			height: 50px;
+		    background-size: 50px 50px;
+		}
+
+		.item-#{$nom}.spare-item{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 40px;
+		    height: 80px;
+		    background-size: 40px 80px;	
+		    right: 50px;
+    		top: 32px;		
+		}
+
+		.item-#{$nom}.spare-item2{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 120px;
+		    height: 240px;
+		    background-size: 120px 240px;
+		}
+	}
+
+
+
 	@include makeIsometrie60x60(halogene);
 	@include makeIsometrie60x60(led);
+	@include makeIsometrie60x60(radiateur);
+	@include makeIsometrie60x60(prise);
+
+	@include makeIsometrie60x120(lampadaire-halo);
+	@include makeIsometrie60x120(lampadaire-led);
+
 	@include makeIsometrie180x140(lit);
+
 	@include makeIsometrie180x180(ordi-fixe);
+	@include makeIsometrie180x180(ecran-plat);
+	@include makeIsometrie180x180(fenetre);
+
+	@include makeIsometrie180x360(placard);
+
 
 	@media only screen and (min-width: 1300px) {
 		.container {
@@ -653,6 +807,10 @@ input[type="range"]
 		.segment-ios .segment-button:last-of-type{
 			height: 60px;
 			margin: 8px 0;
+		}
+
+		h1.titre-taille {
+    		font-size: 18px;
 		}
 
 		.bouton{
