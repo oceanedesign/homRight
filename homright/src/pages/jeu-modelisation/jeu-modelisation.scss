@@ -420,7 +420,7 @@ input[type="range"]
 	}
 
 	.case-sol{
-		z-index: 7;
+		z-index: 5;
 	}
 
 	.mur-cache{
@@ -481,6 +481,43 @@ input[type="range"]
     	transition: 1000ms transform linear;
     	//
 	}
+
+/*Pop up */
+
+  .lightbox-cache{
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    padding: 20px;
+    display: flex;
+    display: none;
+    .lightbox{
+      margin: auto;
+    }
+    .lightbox-content{
+      background: white;
+      width: 100%;
+      padding: 15px;
+      h2, div{
+        text-align: center;
+      }
+      p{
+        color: black;
+      }
+      ion-icon::before{
+        font-size: 20px;
+      }
+      .arrow-return{
+        float: left;
+        cursor: pointer;
+      }
+    }
+  }
+
 
 /* ITEMES */
 

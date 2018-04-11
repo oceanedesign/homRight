@@ -124,6 +124,11 @@ longueur =0;
     $(".mur, .mur2").removeClass("mur-cache").addClass("mur-visible");  
   }
 
+
+  returnChoose(){
+    $(".lightbox-cache").css("display", "none");
+  } 
+
   caseMaisonObjet(event){
     var enfantCaseSol = $('.actions').find('.spare-item'); //Definit la variable
     var countDrag =0;
@@ -168,6 +173,7 @@ longueur =0;
             function(){
 
               $(this).on('click', '.buttonSymetrie', function() {
+                //Function permettant de changer la symétrie de l'objet
                   console.log('Activation symetrie');
                   var matrice1 = $(this).parent().css("transform");
                   var scx =parseInt(matrice1.split(",")[0].substring(7))*(-1) ;
@@ -182,8 +188,17 @@ longueur =0;
                       "transform": "scaleX(-1)"
                       });
                      $(this).parent().attr('symetrie', + "-1");
-                }})
-            });}
+              }});
+
+              $(this).on('click', '.buttonVoir', function() {
+                //Function permettant d'activer le pop up 
+                  console.log('Activation pop up');
+                  $(".lightbox-cache").css("display", "flex");
+              })
+
+
+            });    
+        }
         }
            
       },
@@ -203,7 +218,6 @@ longueur =0;
 
     })
     .on('click', function() {
-      console.log( $(this));
       // if( $(this).children().is( ':visible' ) ){
       //   $(this).find('.cache').hide(); 
       // }else{

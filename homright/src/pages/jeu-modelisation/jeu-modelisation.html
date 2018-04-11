@@ -274,5 +274,23 @@
 	  	</ion-row>
 		<button ion-button block class="bouton-contour bouton fond-cache"><ion-icon name="icon-cancel"></ion-icon></button>
 		<button ion-button block class="bouton-principal bouton bouton-annuler fond-cache"><ion-icon name="icon-check"></ion-icon></button>
+
+		<ion-row class="lightbox-cache">
+			<div>
+				<div class="lightbox">
+					<div col-12 class="lightbox-content">
+					  <div class="arrow-return" (click)="returnChoose()"><ion-icon name="icon-left-arrow-2"></ion-icon></div>
+						<p><img class="mascotte" alt="Homie dit bonjour" src="../assets/imgs/Homie_choix_maison.png"/></p>
+						<p>Sans cette modélisation, nous ne pouvons pas vous fournir une analyse précise de votre consommation.</p>
+						<h2>Avez-vous changé d’avis ?!</h2>
+						<div>
+							<button ion-button block class="bouton-contour bouton" type="submit" ><ion-icon name="icon-cancel"></ion-icon></button>
+							<button ion-button block class="bouton-principal bouton bouton-annuler" type="submit" ><ion-icon name="icon-check"></ion-icon></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ion-row>
+
 	</ion-grid>
 </ion-content>
