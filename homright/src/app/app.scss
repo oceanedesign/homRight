@@ -163,3 +163,9 @@ h3{
     color: #709CFF;
     font-size: 20px;
 }
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, 
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+	border-bottom-color: black;
+    box-shadow: inset 0 -1px 0 0 transparent;
+}

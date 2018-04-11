@@ -276,17 +276,30 @@
 		<button ion-button block class="bouton-principal bouton bouton-annuler fond-cache"><ion-icon name="icon-check"></ion-icon></button>
 
 		<ion-row class="lightbox-cache">
-			<div>
+			<div class="box-principal">
 				<div class="lightbox">
 					<div col-12 class="lightbox-content">
-					  <div class="arrow-return" (click)="returnChoose()"><ion-icon name="icon-left-arrow-2"></ion-icon></div>
-						<p><img class="mascotte" alt="Homie dit bonjour" src="../assets/imgs/Homie_choix_maison.png"/></p>
-						<p>Sans cette modélisation, nous ne pouvons pas vous fournir une analyse précise de votre consommation.</p>
-						<h2>Avez-vous changé d’avis ?!</h2>
-						<div>
-							<button ion-button block class="bouton-contour bouton" type="submit" ><ion-icon name="icon-cancel"></ion-icon></button>
-							<button ion-button block class="bouton-principal bouton bouton-annuler" type="submit" ><ion-icon name="icon-check"></ion-icon></button>
-						</div>
+					  <div (click)="returnChoose()" class="return"><ion-icon name="icon-left-arrow-2" class="arrow-return" ></ion-icon> Ajouter un appareil</div>
+
+				      <form >
+						<ion-list>
+							<ion-item>
+						    	<ion-label color="primary" floating>Nom de l'appareil</ion-label>
+						    	<ion-input [(ngModel)]="regApp.nomApp" name="nom"  type="text"></ion-input>
+						  	</ion-item>
+						  	<ion-item>
+    							<ion-label>Connecter l'appareil</ion-label>
+    							<ion-checkbox [(ngModel)]="connexion" color="secondary" name="connexion" (ionChange)="updateConnexion()"></ion-checkbox>
+  							</ion-item>
+
+						</ion-list>
+						<ion-row>
+		    			<ion-col col-12>
+							<button ion-button block class="bouton-contour" type="submit" (click)="returnChoose()"><ion-icon name="icon-cancel"></ion-icon></button>
+							<button ion-button block class="bouton-principal" type="submit" (click)="validerItem()"><ion-icon name="icon-check"></ion-icon></button>
+				      		</ion-col>
+				      	</ion-row>
+				      </form>
 					</div>
 				</div>
 			</div>
