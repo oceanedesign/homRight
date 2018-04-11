@@ -21,13 +21,16 @@ import 'jquery-ui-dist/jquery-ui';
   templateUrl: 'jeu-modelisation.html',
 })
 export class JeuModelisationPage {
-cloneCount = 1;
-ligne: number = 5;
-colonne:number=5;
-PosTotal:any;
-superficie =0;
-largeur =0;
-longueur =0;
+
+  ligne: number = 5;
+  colonne:number=5;
+  PosTotal:any;
+  superficie =0;
+  largeur =0;
+  longueur =0;
+  regApp = {"nomApp": "", "connexion":""};
+  connexion: boolean = false;
+
 
   constructor(public plt: Platform, private screenOrientation : ScreenOrientation, public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -53,12 +56,31 @@ longueur =0;
     
   }
 
+  updateConnexion() {
+    //Verifier si l'objet est un objet connecté ou non
+    console.log(this.connexion);
+    this.regApp.connexion = this.connexion.toString();
+  }
+
+  returnChoose(){
+    //Cache le pop up
+    $(".lightbox-cache").css("display", "none");
+  } 
+
+  validerItem() {
+    //Ajoute l'iteme dans la base de données 
+    this.returnChoose();
+    this.updateConnexion();
+    console.log(this.regApp);
+  }
 
   InitCache(){
+    //Cache les éléments ayant pour classe "fond-cache" des le chargement de la page
     $(".fond-cache").css("display", "none");
   }
 
   superficiePiece(){
+    //Calcul la superficie de la piece
     this.largeur = Number((this.colonne*0.6).toFixed(2));
     this.longueur = Number((this.ligne*0.6).toFixed(2));
     this.superficie = Number((this.largeur * this.longueur).toFixed(2));
@@ -113,8 +135,6 @@ longueur =0;
 
   }; 
 
-
-
   validerTaille(){
     $(".fond-cache").css("display", "flex");
     $(".contenu-taille").css("display", "none");
@@ -132,8 +152,11 @@ longueur =0;
       { 
         $('.actions').find('.spare-item').remove(); // Suppression de l'enfant
       }
+
+
     console.log(event.target.id);
-    $( "#"+event.target.id ).clone().attr('id', this.cloneCount++).removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item") 
+    this.regApp.nomApp= event.target.id;
+    $( "#"+event.target.id ).clone().removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item") 
     .draggable({
       //grid: [ 10, 10 ],
       // containment: "#case-maison",
@@ -154,6 +177,7 @@ longueur =0;
         $(".cache").hide(); 
         countDrag++;
         $(this).attr('symetrie', + "1");
+
         //if (outside==true) {
         $(this).removeClass("spare-item");
         $(this).addClass("spare-item2");
@@ -168,6 +192,7 @@ longueur =0;
             function(){
 
               $(this).on('click', '.buttonSymetrie', function() {
+                //Function permettant de changer la symétrie de l'objet
                   console.log('Activation symetrie');
                   var matrice1 = $(this).parent().css("transform");
                   var scx =parseInt(matrice1.split(",")[0].substring(7))*(-1) ;
@@ -182,8 +207,17 @@ longueur =0;
                       "transform": "scaleX(-1)"
                       });
                      $(this).parent().attr('symetrie', + "-1");
-                }})
-            });}
+              }});
+
+              $(this).on('click', '.buttonVoir', function() {
+                //Function permettant d'activer le pop up 
+                  console.log('Activation pop up');
+                  $(".lightbox-cache").css("display", "flex");
+              })
+
+
+            });    
+        }
         }
            
       },
@@ -197,13 +231,16 @@ longueur =0;
         $(this).attr('position-x', + ui.position.left);
         $(this).attr('position-y', + ui.position.top);
 
+        if(countDrag==1){
+          $(this).attr('id', + $('.case-sol').find('.spare-item2').length);
+        }
+
         //$(this).draggable('option','revert','invalid');
         
       }
 
     })
     .on('click', function() {
-      console.log( $(this));
       // if( $(this).children().is( ':visible' ) ){
       //   $(this).find('.cache').hide(); 
       // }else{
