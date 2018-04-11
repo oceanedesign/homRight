@@ -45,8 +45,8 @@ ion-app.md{
 	background: white;
 	box-shadow: 10px 10px 8px 10px transparent;
 	border: 1px solid #F5AF47;
-    text-transform: initial;
-    font-size: 18px;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
 .bouton-contour:hover:not(.disable-hover), .bouton-contour:active, .bouton-contour.button-ios.activated{
@@ -54,6 +54,45 @@ ion-app.md{
 	box-shadow: 10px 10px 8px 10px transparent;
 	background: white;
 }
+
+.text-input{
+	margin-top: 0px;
+}
+
+.item-input-has-focus ion-label[floating], .input-has-focus ion-label[floating], .item-input-has-value ion-label[floating], .input-has-value ion-label[floating]{
+	text-transform: uppercase;
+}
+
+.item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner{
+    border-bottom-color: transparent;
+    box-shadow: none;
+  }
+
+.item-block{
+	margin-top: 10px;
+}
+
+.item-label-floating .text-input{
+	margin-top: 4px;
+	margin-bottom: 5px;
+}
+
+
+.item-input-has-focus .label[floating], 
+.input-has-focus .label[floating],
+.item-input-has-value .label[floating],
+.input-has-value .label[floating] {
+    -webkit-transform: translate3d(0, 0, 0) scale(0.8);
+    transform: translate3d(0, 0, 0) scale(0.7);
+    
+}
+
+
+.list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child {
+    border-bottom-color: black;
+    box-shadow: none;
+}
+
 
 .bouton-principal{
 	color: #FFFFFF;
@@ -66,8 +105,8 @@ ion-app.md{
 	width: 65%;
 	height: 45px;
 	margin: 0 auto;
-	text-transform: initial;
-	font-size: 18px;
+	text-transform: uppercase;
+	font-size: 13px;
 }
 
 .bouton-principal:hover:not(.disable-hover), .bouton-principal:active{

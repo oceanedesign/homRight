@@ -55,8 +55,8 @@ page-login {
   }
 
   .mascotte{
-    width:60%;
-    height: 60%;
+    width:50%;
+    height: 50%;
     margin-bottom: 15px;
   }
 
@@ -66,7 +66,7 @@ page-login {
 
   .container{
     display: block;
-    max-width: 400px;
+    max-width: 350px;
     margin: 0 auto;
     position:relative !important;
     padding-top : 0px ;
@@ -83,8 +83,23 @@ page-login {
     margin: -1px 0 0px;
   }
 
+  ion-list .item-block .item-inner {
+    border-bottom: 1px solid transparent;
+  }
+
+  .list-md .item-input.item-input-has-focus:last-child{
+    border-bottom-color: black;
+    box-shadow: none;
+  }
+
   .bouton-contour{
     height: 35px;
+    color: #7686FF;
+    border-color: #7686FF;
+    text-transform: uppercase;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 700;
   }
 
   .inscription{
@@ -123,9 +138,9 @@ page-login {
   }
 
   .right{
-    color: #7686FF;
-    font-family: "Futura Cd";
-    font-weight: 300;    
+    color: #F5AF47;
+    font-family: "Futura";
+    font-weight: 200;   
   }
 
   .toolbar-md {
@@ -145,22 +160,34 @@ page-login {
   }
 
   .segment-md .segment-button, .segment-ios .segment-button{
-    color: black;
+    color: #919191;
     font-family: "Futura Cd";
     font-weight: 300;
-    font-size: 18px;
+    font-size: 13px;
     text-transform: uppercase;
     border-color: transparent;
   }
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom-color: transparent;
+}
+
+.list-md .item-block .item-inner {
+    border-bottom: 1px solid transparent;
+}
 
   .segment-ios .segment-button:first-of-type, .segment-ios .segment-button:last-of-type{
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
   }
 
+  .segment-md .segment-button{
+    padding: 0px;
+  }
+
   .segment-md .segment-button.activated, .segment-md .segment-button.segment-activated, .segment-ios .segment-button.segment-activated{
-    border-bottom: 2px solid black;
-    color: black;
+    border-bottom: 2px solid transparent;
+    color: #7686FF;
     background: #FFFFFF;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
     border-top-left-radius: 8px;

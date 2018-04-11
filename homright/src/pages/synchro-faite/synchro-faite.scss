@@ -12,6 +12,10 @@ page-synchro-faite {
   	background: linear-gradient(287.72deg, #5790FF -32.69%, #DF61FF 181.36%);
   }
 
+  .ion-page > ion-content, ion-header {
+     position: relative !important; 
+    }
+
   .mascotte{
   	position: relative;
 	top: 30px;
@@ -21,12 +25,12 @@ page-synchro-faite {
 
   ion-header h2{
   	font-family: "Futura";
-  	font-weight: 800;
-	font-size: 65px;
-	text-align: center;
-	color: #FFFFFF;
-	margin: -50px auto;
-	z-index: 800;
+    font-weight: 800;
+    font-size: 65px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: -50px auto;
+    z-index: 800;
   }
 
   ion-header p{
