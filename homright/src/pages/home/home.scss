@@ -1,10 +1,15 @@
 page-home {
 
+  .container{
+    max-width: 370px;
+  }
+
+
 ion-content.HomieGood{
   .title{
     p.analyseMessage{
       &::before{
-        content: "Homie est en forme aujourd'hui";
+        content: "Homie est en forme aujourd'hui !";
       }
     }
   }
@@ -42,14 +47,18 @@ ion-content.HomieBad{
 
   .valeurs-conso{
     display: flex;
-    ion-col{
+    button{
+      position: absolute;
+      background: transparent;
+      right: 30px;
+      top: 35px;
       ion-icon{
         border: solid 2px map-get($colors, primary);
         color: map-get($colors, primary);
-        padding: 12px;
+        padding: 15px;
         border-radius: 50%;
         &::before{
-          font-size: 20px;
+          font-size: 15px;
           font-weight: bold;
         }
       }
@@ -59,6 +68,47 @@ ion-content.HomieBad{
   .text-center {
     text-align: center;
   }
+
+  .conso-nb{
+      font-family: 'Futura';
+    font-weight: 600;
+    .euros{
+      font-size: 50px;
+      span{
+        font-family: 'Assistant';
+        font-size: 30px;
+        font-weight: 300;
+      }
+    }
+    .kwh{
+      font-size: 35px;
+      margin-top: -5px;
+      span{
+        font-family: 'Assistant';
+        font-size: 25px;
+        font-weight: 300;
+      }
+    }
+
+  }
+
+  h3{
+    font-family: 'Futura';
+    font-weight: 600;
+    text-transform: none;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .bouton-principal{
+    width: 120px;
+    text-transform: none;
+    font-weight: 500;
+    height: 35px;
+    font-size: 14px;
+  }
+
+
   .title{
     color: white;
     position: relative;
@@ -66,14 +116,18 @@ ion-content.HomieBad{
     h1{
       font-family: 'Futura';
       margin-bottom: 5px;
+      margin-top: 15px !important;
       position: relative;
       z-index: 10;
       width: 100%;
+      font-weight: 700;
+      font-size: 35px;
     }
     p.analyseMessage{
       margin: 0;
       &::before{
         content: "Homie analyse votre consommation";
+        font-size: 16px;
       }
     }
   }
@@ -91,8 +145,8 @@ ion-content.HomieBad{
   }
   .mascotte{
     img{
-      width: 100px;
-      margin-top: -30px;
+      width: 150px;
+      margin-top: 0px;
       z-index: 10;
       position: relative;
 
@@ -110,15 +164,20 @@ ion-content.HomieBad{
     button.button-md{
       background-color: map-get($colors, primary);
       color: white;
-      margin: 0;
       height: 30px;
     }
     button.button-event{
       background: none;
-      border: 2px solid map-get($colors, white);
+      border: 1px solid map-get($colors, white);
+      height: 35px;
+      width: 85%;
+      margin: auto;
       &:hover{
         background-color: white!important;
         color: map-get($colors, secondary);
+      }
+      span{
+        font-size: 14px;
       }
       ion-icon{
         position: absolute;
@@ -140,7 +199,7 @@ ion-content.HomieBad{
       }
     }
   }
-  ion-row.mesRoutines{
+  .mesRoutines{
     padding-left: 0!important;
     padding-right: 0!important;
     ion-list{
@@ -150,12 +209,13 @@ ion-content.HomieBad{
       // display: flex;
       ion-item{
         display: inline-block;
+        width: 133px;
+        height: 83px;
         width: auto;
         padding: 0;
         box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.17);
         border-radius: 7px;
         background-repeat: no-repeat!important;
-        background-position: center!important;
         margin-right: 10px;
         .item-inner{
           padding: 0!important;
@@ -167,9 +227,9 @@ ion-content.HomieBad{
         }
         .radio-md{
           margin: auto;
-          .radio-icon{
-            width: 120px;
-            height: 70px;
+          .radio-icon, .radio-ios .radio-icon{
+          width: 133px;
+          height: 83px;
             border:0px;
 
             &::after{
@@ -195,10 +255,9 @@ ion-content.HomieBad{
               top: 0;
               left: 0;
               color: map-get($colors, primary);
-              background-color: #C8CFFF;
+              background-color: transparent;
               opacity: 0.7;
               z-index: 10;
-
             }
             &.radio-checked{
               &::after{
@@ -210,22 +269,56 @@ ion-content.HomieBad{
         &.nuit{
           background: url("../assets/imgs/moon.png");
           .radio-md .radio-icon::after{
-            content: 'nuit';
+            content: 'Nuit';
+            color: #93A1FF;
           }
         }
+        &.nuit.item-radio-checked{
+          background: url("../assets/imgs/moon-actif.png");
+          .radio-md .radio-icon::after{
+            content: 'Nuit';
+            color: black;
+        }
+      }
         &.matin{
           background: url("../assets/imgs/sun.png");
           .radio-md .radio-icon::after{
-            content: 'matin';
+            content: 'Matin';
+            color: #93A1FF;
           }
         }
+        &.matin.item-radio-checked{
+          background: url("../assets/imgs/sun-actif.png");
+          .radio-md .radio-icon::after{
+            content: 'Matin';
+            color: black;
+          }
+        }
+
         &.absent{
           background: url("../assets/imgs/sun.png");
           .radio-md .radio-icon::after{
-            content: 'absent';
+            content: 'Absent';
+            color: #93A1FF;
           }
         }
+        &.absent.item-radio-checked{
+          background: url("../assets/imgs/sun-actif.png");
+          .radio-md .radio-icon::after{
+            content: 'Absent';
+            color: black;          
+        }
+        }
+
+
       }
+    }
+  }
+
+    .fond-vague{
+    height: 180px;
+    .vague{
+      top:179px;
     }
   }
 

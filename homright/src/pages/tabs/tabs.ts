@@ -10,7 +10,6 @@ import { ProfilPage } from '../profil/profil';
 })
 export class TabsPage {
 
-	tab1Root = HomePage;
 	tab2Root = ConsoPage;
 	tab3Root = ContactPage;
 	tab4Root = ProfilPage;

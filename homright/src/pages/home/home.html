@@ -1,9 +1,9 @@
 
 <ion-content padding overflow-scroll="true" class="HomieGood">
   <div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
-  <ion-grid>
+  <ion-grid class="container">
       <ion-row>
-          <button ion-button block class="button-event" (click)="rejoindreMaison()"><ion-icon name="icon-wall-clock"></ion-icon> Energie verte | 10:02 <ion-icon name="icon-chevron"></ion-icon></button>
+          <button ion-button block class="button-event" (click)="pushEvent()"><ion-icon name="icon-wall-clock"></ion-icon> Énergie verte | 10:02 <ion-icon name="icon-chevron"></ion-icon></button>
       </ion-row>
       <ion-row padding class="title">
           <h1>Hom'right,</h1>
@@ -16,13 +16,13 @@
       <ion-row>
 		    <ion-col col-12 class="valeurs-conso text-center">
 				  <!-- <p>Analyse en cours...</p> <p>Vos premières données seront disponibles dans une heure.</p> -->
-          <ion-col col-6 class="text-center">
-            <div>7.4€</div>
-            <div>17.2kwh</div>
+          <ion-col col-12 class="text-center conso-nb">
+            <div class="euros">2.6<span>€</span></div>
+            <div class="kwh">17.2<span>kwh</span></div>
           </ion-col>
-          <ion-col col-6 class="text-center">
+          <button class="boutton">
             <ion-icon name="icon-chevron"></ion-icon>
-          </ion-col>
+          </button>
 		    </ion-col>
 		  </ion-row>
       <ion-row padding class="mesRoutines">
@@ -30,22 +30,25 @@
           <h3>Mes routines</h3>
         </ion-col>
         <ion-col col-6>
-          <button ion-button block class="bouton-contour" (click)="creerScene()">Créer Scènes</button>
+          <button ion-button block class="bouton-principal" (click)="creerScene()">Créer Scènes</button>
         </ion-col>
-        <ion-col col-12>
+      </ion-row> 
+      <ion-row class="mesRoutines">      
+        <ion-col col-12 >
           <!-- <p>Créez vos routines quotidiennes pour économiser du temps et de l’argent.</p> -->
-          <ion-list class="volets" radio-group [(ngModel)]="volets">
-            <ion-item  class="nuit">
-              <ion-radio value="nuit"></ion-radio>
-            </ion-item>
+          <ion-list class="volets" radio-group>
             <ion-item class="matin">
-              <ion-radio value="matin"></ion-radio>
+              <ion-radio value="matin" (click)="updateRoutines(matin)" checked="true" ></ion-radio>
             </ion-item>
             <ion-item class="absent">
-              <ion-radio value="absent"></ion-radio>
+              <ion-radio value="absent" (click)="updateRoutines(absent)"></ion-radio>
+            </ion-item>
+            <ion-item  class="nuit">
+              <ion-radio value="nuit" (click)="updateRoutines(nuit)"></ion-radio>
             </ion-item>
           </ion-list>
         </ion-col>
-      </ion-row>
+      </ion-row> 
+      <button class="boutton-menuP"><img  alt="menu principal" src="../assets/button/menu.png"/></button>
 	</ion-grid>
 </ion-content>

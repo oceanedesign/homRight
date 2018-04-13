@@ -105,6 +105,13 @@ $colors: (
 @font-face{
 	font-family: 'Futura';
 	font-style: normal;
+	font-weight: 600;
+	src : url('../assets/fonts/futura/Futura Bold.ttf')
+}
+
+@font-face{
+	font-family: 'Futura';
+	font-style: normal;
 	font-weight: 700;
 	src : url('../assets/fonts/futura/FuturaHeavy.ttf')
 }
@@ -136,6 +143,21 @@ $colors: (
 	font-weight: 700;
 	src : url('../assets/fonts/futura/FuturaBoldCd.ttf')
 }
+
+@font-face{
+	font-family: 'Assistant';
+	font-style: normal;
+	font-weight: 700;
+	src : url('../assets/fonts/assistant/Assistant-Bold.ttf')
+}
+
+@font-face{
+	font-family: 'Assistant';
+	font-style: normal;
+	font-weight: 300;
+	src : url('../assets/fonts/assistant/Assistant-Regular.ttf')
+}
+
 
 $font-family-base:"Futura";
 body{
