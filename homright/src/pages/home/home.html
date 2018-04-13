@@ -14,11 +14,18 @@
           <img alt="Homie dit bonjour" src="../assets/imgs/homie_malade.png"/>
       </ion-row>
       <ion-row>
-		    <ion-col col-12 class="text-center">
-				  <p>Analyse en cours...</p> <p>Vos premières données seront disponibles dans une heure.</p>
+		    <ion-col col-12 class="valeurs-conso text-center">
+				  <!-- <p>Analyse en cours...</p> <p>Vos premières données seront disponibles dans une heure.</p> -->
+          <ion-col col-6 class="text-center">
+            <div>7.4€</div>
+            <div>17.2kwh</div>
+          </ion-col>
+          <ion-col col-6 class="text-center">
+            <ion-icon name="icon-chevron"></ion-icon>
+          </ion-col>
 		    </ion-col>
 		  </ion-row>
-      <ion-row padding>
+      <ion-row padding class="mesRoutines">
         <ion-col col-6 class="flex-center">
           <h3>Mes routines</h3>
         </ion-col>
@@ -26,7 +33,18 @@
           <button ion-button block class="bouton-contour" (click)="creerScene()">Créer Scènes</button>
         </ion-col>
         <ion-col col-12>
-          <p>Créez vos routines quotidiennes pour économiser du temps et de l’argent.</p>
+          <!-- <p>Créez vos routines quotidiennes pour économiser du temps et de l’argent.</p> -->
+          <ion-list class="volets" radio-group [(ngModel)]="volets">
+            <ion-item  class="nuit">
+              <ion-radio value="nuit"></ion-radio>
+            </ion-item>
+            <ion-item class="matin">
+              <ion-radio value="matin"></ion-radio>
+            </ion-item>
+            <ion-item class="absent">
+              <ion-radio value="absent"></ion-radio>
+            </ion-item>
+          </ion-list>
         </ion-col>
       </ion-row>
 	</ion-grid>
