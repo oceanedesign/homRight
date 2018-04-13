@@ -1,12 +1,17 @@
 page-home {
 
   .container{
-    max-width: 370px;
+    max-width: 450px;
   }
 
 
 ion-content.HomieGood{
   .title{
+    h1{
+      &::before{
+        content: "Hom'right,";
+      }
+    }   
     p.analyseMessage{
       &::before{
         content: "Homie est en forme aujourd'hui !";
@@ -27,9 +32,14 @@ ion-content.HomieGood{
 
 ion-content.HomieBad{
   .title{
+    h1{
+      &::before{
+        content: "Oh non !";
+      }
+    } 
     p.analyseMessage{
       &::before{
-        content: "Homie est malade";
+        content: "Homie est malade ! Votre consommation est en hausse depuis 3h.";
       }
     }
   }
@@ -202,10 +212,16 @@ ion-content.HomieBad{
   .mesRoutines{
     padding-left: 0!important;
     padding-right: 0!important;
+    ion-scroll{
+      height: 150px;
+      white-space:nowrap;
+      .scroll-content{
+        padding: 0px !important;
+      }
     ion-list{
       width:100%;
       margin-bottom: 0;
-      width: 1000px;
+      //width: 1000px;
       // display: flex;
       ion-item{
         display: inline-block;
@@ -225,7 +241,7 @@ ion-content.HomieBad{
 
           }
         }
-        .radio-md{
+        .radio-md, .radio-ios{
           margin: auto;
           .radio-icon, .radio-ios .radio-icon{
           width: 133px;
@@ -248,7 +264,7 @@ ion-content.HomieBad{
               // line-height: 1;
               // font-size: 30px;
             }
-            .radio-inner{
+            .radio-inner, .radio-ios .radio-checked .radio-inner{
               width: 100%;
               height: 100%;
               border-radius: 7px;
@@ -256,6 +272,7 @@ ion-content.HomieBad{
               left: 0;
               color: map-get($colors, primary);
               background-color: transparent;
+              border-color: transparent;
               opacity: 0.7;
               z-index: 10;
             }
@@ -313,12 +330,22 @@ ion-content.HomieBad{
 
       }
     }
-  }
+  }}
 
     .fond-vague{
     height: 180px;
     .vague{
       top:179px;
+    }
+  }
+
+    @media only screen and (min-width: 500px) 
+  {
+    ion-row button.button-event{
+      width: 70%;
+    }
+    .valeurs-conso button{
+      right:100px;
     }
   }
 

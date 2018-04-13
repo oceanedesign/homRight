@@ -6,12 +6,12 @@
           <button ion-button block class="button-event" (click)="pushEvent()"><ion-icon name="icon-wall-clock"></ion-icon> Énergie verte | 10:02 <ion-icon name="icon-chevron"></ion-icon></button>
       </ion-row>
       <ion-row padding class="title">
-          <h1>Hom'right,</h1>
+          <h1></h1>
           <p class="analyseMessage"></p>
       </ion-row>
   		<ion-row class="mascotte">
-      		<img alt="Homie dit bonjour" src="../assets/imgs/Homie_connexion.png"/>
-          <img alt="Homie dit bonjour" src="../assets/imgs/homie_malade.png"/>
+      		<img class="en-forme" alt="Homie dit bonjour" src="../assets/imgs/Homie_connexion.png"/>
+          <img class="malade" alt="Homie dit bonjour" src="../assets/imgs/homie_malade.png"/>
       </ion-row>
       <ion-row>
 		    <ion-col col-12 class="valeurs-conso text-center">
@@ -36,6 +36,7 @@
       <ion-row class="mesRoutines">      
         <ion-col col-12 >
           <!-- <p>Créez vos routines quotidiennes pour économiser du temps et de l’argent.</p> -->
+          <ion-scroll scrollX="true">
           <ion-list class="volets" radio-group>
             <ion-item class="matin">
               <ion-radio value="matin" (click)="updateRoutines(matin)" checked="true" ></ion-radio>
@@ -47,8 +48,10 @@
               <ion-radio value="nuit" (click)="updateRoutines(nuit)"></ion-radio>
             </ion-item>
           </ion-list>
+        </ion-scroll>
         </ion-col>
       </ion-row> 
-      <button class="boutton-menuP"><img  alt="menu principal" src="../assets/button/menu.png"/></button>
+
 	</ion-grid>
+  <button class="boutton-menuP"><img  alt="menu principal" src="../assets/button/menu.png"/></button>
 </ion-content>
