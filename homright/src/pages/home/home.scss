@@ -1,8 +1,16 @@
 page-home {
 
-ion-content{
-  background-image: url("../assets/imgs/vague_home.svg");
-  background-repeat: no-repeat;
+ion-content.HomieGood{
+  ion-row.mascotte{
+    img{
+      &:nth-child(2){
+        display: block;
+      }
+      &:nth-child(1){
+        display: none;
+      }
+    }
+  }
 }
 
 
@@ -38,9 +46,20 @@ ion-content{
     box-shadow: none;
   }
   .mascotte{
-    width: 100px;
+    img{
+      width: 100px;
+
+      &:nth-child(1){
+        display: block;
+      }
+      &:nth-child(2){
+        display: none;
+      }
+    }
+
   }
   ion-row{
+
     button.button-md{
       background-color: map-get($colors, primary);
       color: white;
