@@ -73,10 +73,19 @@ page-login {
     padding-bottom : 0px ;
   }
 
+  .toolbar{
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    box-shadow: 0px -2px 15px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+  }
+
   .card{
     background: #FFFFFF;
+    z-index: 110;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
-    border-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
 
   .list-ios, .list-md {
