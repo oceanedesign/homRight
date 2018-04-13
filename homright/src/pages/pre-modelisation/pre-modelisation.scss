@@ -44,10 +44,6 @@ ion-content.content-md{
   }
 
   #un{
-    background-image: url("../assets/imgs/fond-app.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 -350px;
 
     h4{
       display: inline-block;
@@ -71,6 +67,16 @@ ion-content.content-md{
      width: 18px;
    }
 
+  }
+
+  .fond-vague{
+    margin-left: 0px;
+    margin-top: 0px;
+    height: 150px;
+    .vague{
+      top:149px;
+      height: 35px;
+    }
   }
 
   .slide-zoom{
@@ -313,9 +319,12 @@ ion-content.content-md{
     }
     button.button-room{
       background: none;
-      color: map-get($colors, primary);
-      width: 100px;
-      height: 100px;
+      color: map-get($colors, secondary);
+      width: 130px;
+      height: 130px;
+      border: 1px solid #F2F2F2;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
       margin: 0 auto 24px auto;
       padding: 0;
       position: relative;
