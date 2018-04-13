@@ -208,3 +208,19 @@ h3{
 	border-bottom-color: black;
     box-shadow: inset 0 -1px 0 0 transparent;
 }
+
+  .fond-vague{
+    background: #7686FF;
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    margin-left: -16px;
+    margin-top: -16px;
+  }
+
+  .vague{
+    width: 100vw;
+    position: absolute;
+    top: 49px;
+    height: 85px;
+  }
