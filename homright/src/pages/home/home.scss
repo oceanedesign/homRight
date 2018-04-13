@@ -1,6 +1,13 @@
 page-home {
 
 ion-content.HomieGood{
+  .title{
+    p.analyseMessage{
+      &::before{
+        content: "Homie est malade";
+      }
+    }
+  }
   ion-row.mascotte{
     img{
       &:nth-child(2){
@@ -19,16 +26,21 @@ ion-content.HomieGood{
   }
   .title{
     color: white;
+    position: relative;
+    z-index: 10;
     h1{
       font-family: 'Futura';
       margin-bottom: 5px;
+      position: relative;
+      z-index: 10;
+      width: 100%;
     }
-    p{
+    p.analyseMessage{
       margin: 0;
-      &.analysePositive::before{
+      &::before{
         content: "Homie est en forme aujourd'hui";
       }
-      &.analyse::before{
+      &::before{
         content: "Homie analyse votre consommation";
       }
     }
@@ -48,6 +60,9 @@ ion-content.HomieGood{
   .mascotte{
     img{
       width: 100px;
+      margin-top: -30px;
+      z-index: 10;
+      position: relative;
 
       &:nth-child(1){
         display: block;
@@ -63,10 +78,33 @@ ion-content.HomieGood{
     button.button-md{
       background-color: map-get($colors, primary);
       color: white;
+      margin: 0;
     }
     button.button-event{
       background: none;
       border: 2px solid map-get($colors, white);
+      &:hover{
+        background-color: white!important;
+        color: map-get($colors, secondary);
+      }
+      ion-icon{
+        position: absolute;
+        &:first-child{
+          left: 10px;
+        }
+        &:last-child{
+          right: 6px;
+          font-weight: bold;
+          margin-top: -2px;
+          &::before{
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+        &::before{
+          font-size: 20px;
+        }
+      }
     }
   }
 }
