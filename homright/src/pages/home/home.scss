@@ -10,7 +10,7 @@ page-home {
     z-index: 100000;
     width:100%;
     background-color: #FFFFFF;
-    animation: disparition 0.25s linear 5s forwards;
+    animation: disparition 0.3s linear 4s forwards;
   }
 
   .flb {
@@ -30,6 +30,14 @@ page-home {
     font-weight: 300;
   }
 
+  .non-anim{
+  animation: pulse 1s ease-in forwards; 
+  }
+
+  .anim{
+  animation: descente 3s ease-in forwards;     
+  }
+
   .bottom-center{
     position: relative; 
     left: -50%;
@@ -46,6 +54,15 @@ page-home {
     }
   }
 
+    @keyframes descente {
+    0% {
+      top:-300px;
+    }
+    100% {
+      top:0px;
+    }
+  }
+
   @keyframes disparition {
     0% {
       opacity:1;
@@ -57,15 +74,16 @@ page-home {
 
   #custom-overlay{
   .fond-vague{
+    position: absolute;
     margin-left: 0px;
     margin-top: 0px;
-    height: 150px;
+    height: 180px;
     width: 100%;
-    z-index: -1;
+    z-index: 0;
   }
 
     .vague{
-      top: 149px;
+      top: 179px;
     }
   }
 

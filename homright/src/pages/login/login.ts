@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-
+import { LottieAnimationViewModule } from 'ng-lottie';
 import{SignupPage} from "../signup/signup";
 import { TabsPage } from '../tabs/tabs';
 
@@ -28,7 +28,7 @@ declare var $:any;
 })
 export class LoginPage {
 	tabBarElement: any;
-  public lottieConfig:Object;
+  public lottieConfig:any;
   splash = true;
 	connexionType: string ="connexion";
 
@@ -40,12 +40,13 @@ export class LoginPage {
 
 
   	constructor(public navCtrl: NavController, public authServiceProvider : AuthServiceProvider, public geo: Geolocation) {
-  		this.lottieConfig={
-  			path:'assets/imgs/splashScreen/data.json',
-  			autoplay: true,
-  			loopt: true
+    LottieAnimationViewModule.forRoot();
+      this.lottieConfig={
+        path:'assets/imgs/splashScreen/data.json',
+        autoplay: true,
+        loopt: true
 
-  		}
+      }
   }
 
   ngOnInit(){

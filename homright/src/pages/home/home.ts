@@ -28,7 +28,7 @@ export class HomePage {
   ionViewDidLoad() {
     setTimeout(() => {
       this.splash = false;
-    }, 5500);
+    }, 5000);
   	this.updateRoutines;
   }
   creerScene(){

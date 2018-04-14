@@ -1,11 +1,15 @@
-<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
-  <div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
+<ion-content id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="fond-vague anim"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
   <div class="flb">
-      <lottie-animation-view [options]="lottieConfig">
-      </lottie-animation-view>
+<!--       <lottie-animation-view [options]="lottieConfig" [width]="300" [height]="300">
+      </lottie-animation-view> -->
+      <div class="non-anim">
+        <img style="width:70%; max-width: 300px; margin-top: 50px;" alt="Homie dit bonjour" src="../assets/imgs/homie_good.png"/>
+        <p style="font-size: 45px; margin: 5px; font-family: 'Futura'; font-weight: 600;">Hom'right</p>
+      </div>
       <div class="bottom"><p class="bottom-center">en complément avec le compteur linky<p></div>
   </div>
-</div>
+</ion-content>
 
 
 
@@ -20,7 +24,7 @@
           <p class="analyseMessage"></p>
       </ion-row>
   		<ion-row class="mascotte">
-      		<img class="en-forme" alt="Homie dit bonjour" src="../assets/imgs/homie_connexion.png"/>
+      		<img class="en-forme" alt="Homie dit bonjour" src="../assets/imgs/homie_good.png"/>
           <img class="malade" alt="Homie dit bonjour" src="../assets/imgs/homie_malade.png"/>
       </ion-row>
       <ion-row>
