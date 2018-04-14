@@ -52,7 +52,7 @@ import { SQLite } from '@ionic-native/sqlite';
   imports: [
     BrowserModule, HttpModule,HttpClientModule,
     IonicModule.forRoot(MyApp),
-    LottieAnimationViewModule.forRoot()
+    LottieAnimationViewModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
