@@ -246,7 +246,8 @@ ion-content.HomieBad{
   .mascotte{
     img{
       width: 150px;
-      margin-top: 0px;
+      margin-top: -5px;
+      margin-bottom: -5px;
       z-index: 10;
       position: relative;
 
@@ -259,6 +260,8 @@ ion-content.HomieBad{
     }
 
   }
+
+
   ion-row{
 
     button.button-md{
@@ -299,6 +302,23 @@ ion-content.HomieBad{
       }
     }
   }
+
+  .scroll-bord{
+        margin: 0px -21px;
+  }
+
+  .item-cover {
+    left: 93px;
+    top: 43px;
+    background-image: url(../assets/imgs/bouton-edit.png);
+    background-size: 40px 40px;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    /* background: transparent; */
+    cursor: pointer;
+  }
+
   .mesRoutines{
     padding-left: 0!important;
     padding-right: 0!important;
@@ -311,6 +331,8 @@ ion-content.HomieBad{
     ion-list{
       width:100%;
       margin-bottom: 0;
+          margin-top: -10px;
+          margin-left: 20px;
       //width: 1000px;
       // display: flex;
       ion-item{
@@ -403,14 +425,14 @@ ion-content.HomieBad{
         }
 
         &.absent{
-          background: url("../assets/imgs/sun.png");
+          background: url("../assets/imgs/away.png");
           .radio-md .radio-icon::after{
             content: 'Absent';
             color: #93A1FF;
           }
         }
         &.absent.item-radio-checked{
-          background: url("../assets/imgs/sun-actif.png");
+          background: url("../assets/imgs/away-actif.png");
           .radio-md .radio-icon::after{
             content: 'Absent';
             color: black;          
@@ -437,6 +459,15 @@ ion-content.HomieBad{
     .valeurs-conso button{
       right:100px;
     }
+
+  }
+
+      @media only screen and (max-width: 500px) 
+  {
+    .title h1{
+      margin-top: 0px !important;
+    }
+
   }
 
 }
