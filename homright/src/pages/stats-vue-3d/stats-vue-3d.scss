@@ -1,0 +1,32 @@
+page-stats-vue-3d {
+	.ss-menu{
+	max-width: 300px;
+	margin: auto;
+	width: 100%;
+    height: 100%;
+	}
+
+	.maison{
+	max-width: 400px;
+	margin: 50px auto;
+	width: 100%;
+    height: 100%;		
+	}
+
+	.edit{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0%;
+    left: 400px;
+    margin: auto;
+    cursor:pointer;
+}
+
+	.astuces{
+	max-width: 400px;
+	margin: 0px auto 60px auto;
+	width: 100%;
+    height: 100%;		
+	}
+}

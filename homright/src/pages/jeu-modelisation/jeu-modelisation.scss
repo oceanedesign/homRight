@@ -1,4 +1,14 @@
 page-jeu-modelisation {
+
+
+	.maison-debut{
+	max-width: 1200px;
+	margin: auto;
+	width: 100%;
+    height: 100%;
+    cursor: pointer;	
+	}
+
 	.parcours{
 		position: fixed;
 	    right: 10px;
@@ -384,7 +394,7 @@ input[type="range"]
     left: 0px;
     top: 0px;
     left: 30%;
-    top: 20%;
+    top: 40%;
 	//overflow-x: scroll;
     //overflow-y: scroll;
 }
@@ -746,6 +756,31 @@ input[type="range"]
 		}
 	}
 
+	@mixin makeIsometrie125x125($nom) {
+		.item-#{$nom}{
+			background-image: url("../../assets/isometrie/symbole/#{$nom}.png");
+			width: 50px;
+			height: 50px;
+		    background-size: 50px 50px;
+		}
+
+		.item-#{$nom}.spare-item{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 75px;
+    		height: 75px;
+   			background-size: 75px 75px;
+		    right: 30px;
+    		top: 32px;		
+		}
+
+		.item-#{$nom}.spare-item2{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 140px;
+		    height: 140px;
+		    background-size: 140px 140px;
+		}
+	}
+
 	@mixin makeIsometrie180x360($nom) {
 		.item-#{$nom}{
 			background-image: url("../../assets/isometrie/symbole/#{$nom}.png");
@@ -772,6 +807,58 @@ input[type="range"]
 	}
 
 
+	@mixin makeIsometrie60x120($nom) {
+		.item-#{$nom}{
+			background-image: url("../../assets/isometrie/symbole/#{$nom}.png");
+			width: 50px;
+			height: 50px;
+		    background-size: 50px 50px;
+		}
+
+		.item-#{$nom}.spare-item{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 40px;
+		    height: 80px;
+		    background-size: 40px 80px;	
+		    right: 50px;
+    		top: 32px;		
+		}
+
+		.item-#{$nom}.spare-item2{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 90px;
+		    height: 180px;
+		    background-size: 90px 180px;
+		}
+
+	}
+
+		@mixin makeIsometrie300x300($nom) {
+		.item-#{$nom}{
+			background-image: url("../../assets/isometrie/symbole/#{$nom}.png");
+			width: 50px;
+			height: 50px;
+		    background-size: 50px 50px;
+		}
+
+		.item-#{$nom}.spare-item{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 75px;
+    		height: 75px;
+   			background-size: 75px 75px;
+		    right: 30px;
+    		top: 32px;		
+		}
+
+		.item-#{$nom}.spare-item2{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 200px;
+		    height: 200px;
+		    background-size: 200px 200px;
+		}
+	}
+
+
 
 	@include makeIsometrie60x60(halogene);
 	@include makeIsometrie60x60(led);
@@ -782,6 +869,7 @@ input[type="range"]
 	@include makeIsometrie60x120(lampadaire-led);
 
 	@include makeIsometrie180x140(lit);
+
 
 	@include makeIsometrie180x180(ordi-fixe);
 	@include makeIsometrie180x180(ecran-plat);
@@ -795,9 +883,13 @@ input[type="range"]
 	@include makeIsometrie180x300(lave-vaisselle);
 	@include makeIsometrie180x300(plaques-induction);
 	@include makeIsometrie180x300(vitroceramique);
-	
-	@include makeIsometrie180x360(placard);
 
+	@include makeIsometrie125x125(evier);
+
+	@include makeIsometrie300x300(table);	
+
+	@include makeIsometrie180x360(placard);
+	@include makeIsometrie60x120(frigo);
 
 	@media only screen and (min-width: 1300px) {
 		.container {

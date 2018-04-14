@@ -19,6 +19,7 @@ import { PointsClesPage } from '../pages/points-cles/points-cles';
 import { JeuModelisationPage } from '../pages/jeu-modelisation/jeu-modelisation';
 import { ModelisationBienvenuePage } from '../pages/modelisation-bienvenue/modelisation-bienvenue';
 import { PreModelisationPage } from '../pages/pre-modelisation/pre-modelisation';
+import { StatsVue_3dPage } from '../pages/stats-vue-3d/stats-vue-3d';
 
 import { ConsoPage } from '../pages/conso/conso';
 import { ContactPage } from '../pages/contact/contact';
@@ -40,7 +41,7 @@ import { SQLite } from '@ionic-native/sqlite';
     LoginPage,
     SignupPage, RejoindreMaisonPage,CreerMaisonPage,
     SynchroFaitePage, EditAdressePostalePage, PointsClesPage, ModelisationBienvenuePage, PreModelisationPage,
-    JeuModelisationPage,
+    JeuModelisationPage, StatsVue_3dPage,
     SynchroPage,
     ConsoPage,
     ContactPage,
@@ -59,7 +60,7 @@ import { SQLite } from '@ionic-native/sqlite';
     LoginPage,
     SignupPage, RejoindreMaisonPage, CreerMaisonPage,
     SynchroFaitePage, EditAdressePostalePage, PointsClesPage, ModelisationBienvenuePage, PreModelisationPage,
-    JeuModelisationPage,
+    JeuModelisationPage, StatsVue_3dPage,
     SynchroPage,
     ConsoPage,
     ContactPage,

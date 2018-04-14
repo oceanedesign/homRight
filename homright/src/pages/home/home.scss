@@ -1,5 +1,77 @@
 page-home {
 
+
+  #custom-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100000;
+    width:100%;
+    background-color: #FFFFFF;
+    animation: disparition 0.25s linear 5s forwards;
+  }
+
+  .flb {
+    display: block;
+    margin: 50px auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .bottom{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    animation: pulse 2s ease-in forwards;
+    font-family: "Futura";
+    font-weight: 300;
+  }
+
+  .bottom-center{
+    position: relative; 
+    left: -50%;
+    font-size: 16px;
+    color: #7686FF;
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  @keyframes disparition {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+
+  #custom-overlay{
+  .fond-vague{
+    margin-left: 0px;
+    margin-top: 0px;
+    height: 150px;
+    width: 100%;
+    z-index: -1;
+  }
+
+    .vague{
+      top: 149px;
+    }
+  }
+
+
+
+
   .container{
     max-width: 450px;
   }

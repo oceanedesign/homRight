@@ -23,7 +23,7 @@ import 'jquery-ui-dist/jquery-ui';
 export class JeuModelisationPage {
 
   ligne: number = 5;
-  colonne:number=5;
+  colonne:number=11;
   PosTotal:any;
   superficie =0;
   largeur =0;
@@ -53,7 +53,15 @@ export class JeuModelisationPage {
     this.MaisonDeplace();
     this.ActiveDraggable();
     this.InitCache();
-    
+    this.activeDraggableItem();
+  }
+
+
+  activeJeu(){
+    $(".choix-piece").css("display", "none");
+    $(".cacher-totale").css("display", "block");
+    this.validerTaille();
+
   }
 
   updateConnexion() {
@@ -77,6 +85,7 @@ export class JeuModelisationPage {
   InitCache(){
     //Cache les éléments ayant pour classe "fond-cache" des le chargement de la page
     $(".fond-cache").css("display", "none");
+    $(".cacher-totale").css("display", "none");
   }
 
   superficiePiece(){
@@ -251,6 +260,64 @@ export class JeuModelisationPage {
     }) 
 
   }
+
+
+  activeDraggableItem(){
+    $( ".spare-item2").draggable({
+      //grid: [ 10, 10 ],
+      // containment: "#case-maison",
+      cursor: "grab",
+      //cursorAt: { left: 10, top:10 },
+      //revert: 'invalid',
+      start: function (event, ui) { 
+        $(".cache").hide(); 
+        var positionP = $(this).find('.buttonSymetrie'); //Definit la variable
+        if(positionP.length == 0){
+          if( $(this).hasClass( "sans-symetrie" )==true){
+             $(this).append("<img class='buttonVoir cache' src='../../assets/button/see.png'/>");
+          }else{
+          $(this).append("<img class='buttonSymetrie cache' src='../../assets/button/rotate.png'/><img class='buttonVoir cache' src='../../assets/button/see.png'/>")  
+        }
+        }},
+
+      stop: function(event,ui){
+        $(this).insertBefore("#case-maison");
+        $(this).attr('position-x', + ui.position.left);
+        $(this).attr('position-y', + ui.position.top);
+      }
+
+    })
+    .on('click', function() {
+      $(".cache").not($(this)).hide(); 
+      $(this).find('.cache').show(); 
+    }) 
+
+    .on('click', '.buttonSymetrie', function() {
+    //Function permettant de changer la symétrie de l'objet
+      console.log('Activation symetrie');
+      var matrice1 = $(this).parent().css("transform");
+      var scx =parseInt(matrice1.split(",")[0].substring(7))*(-1) ;
+      if(scx== -1 || scx == 1){
+        $(this).parent().css({
+          "transform": "scaleX("+scx+")"
+          });
+          $(this).parent().attr('symetrie', + scx);
+      }else{
+         $(this).parent().css(
+          {
+          "transform": "scaleX(-1)"
+          });
+         $(this).parent().attr('symetrie', + "-1");
+  }})
+
+    .on('click', '.buttonVoir', function() {
+    //Function permettant d'activer le pop up 
+      console.log('Activation pop up');
+      $(".lightbox-cache").css("display", "flex");
+  })
+
+  }
+
 
   tailleSol(){
     console.log("colonne : "+ this.colonne);

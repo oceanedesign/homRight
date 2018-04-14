@@ -6,9 +6,18 @@
 -->
 
 <ion-content class="no-scroll">
+
+	<div class="choix-piece">
+
+		<ion-row>
+			<img class="maison-debut" alt="edition" src="../assets/imgs/temporaires/totale-pieces.png" (click)="activeJeu()"/>
+		</ion-row>
+
+	</div>
+	<div class="cacher-totale">
 	<div class="parcours">
 		<div>
-			<div><p>chambre ≈ {{superficie}} m<sup>2</sup></p></div>
+			<div><p>cuisine ≈ {{superficie}} m<sup>2</sup></p></div>
 			<div >
 				<ion-icon name="resize" class="resize active"><!-- <p>taille</p> --></ion-icon>
 				>
@@ -20,7 +29,7 @@
 	  	</div>
 	</div>
 	<ion-grid>
-	<ion-row id="" class="contenu-taille">
+	<ion-row id="" class="contenu-taille ">
 			<ion-col id="elements-taille" col-7 class="elements-taille">
 			<h1 class="titre-taille">Définir la taille de la pièce</h1>
     		<div class="gestion-range">
@@ -196,6 +205,14 @@
 								<p></p>
 							</ion-item>
 
+							<ion-item>
+								<div item-end>
+									<div id="frigo" class="objets-presentation item-frigo" (click)="caseMaisonObjet($event);"></div>
+								</div>
+								<h2>Refrigérateur</h2>
+								<p></p>
+							</ion-item>
+
 						</ion-list>
 				    </div>
 
@@ -215,6 +232,20 @@
 									<div id="placard" class="objets-presentation item-placard" (click)="caseMaisonObjet($event);"></div>
 								</div>
 								<h2>Placard</h2>
+							</ion-item>
+
+							<ion-item>
+								<div item-end>
+									<div id="evier" class="objets-presentation item-evier" (click)="caseMaisonObjet($event);"></div>
+								</div>
+								<h2>Evier</h2>
+							</ion-item>
+
+							<ion-item>
+								<div item-end>
+									<div id="table" class="objets-presentation item-table" (click)="caseMaisonObjet($event);"></div>
+								</div>
+								<h2>Table</h2>
 							</ion-item>
 
 							<ion-item>
@@ -263,6 +294,24 @@
 		          		</div>
 
 		              	<div id="snaptarget" class="case-sol droptarget ui-widget-header">
+
+
+		              		<div class="item-plan-travail ui-draggable ui-draggable-handle spare-item2" id="3" symetrie="1" style="left: 155.688px; top: -128.15px;" position-x="155.68753051757812" position-y="-128.14999389648438"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
+		              		<div class="item-plan-travail ui-draggable ui-draggable-handle spare-item2" id="4" symetrie="1" style="left: 119.688px; top: -107.15px;" position-x="119.68753051757812" position-y="-107.14999389648438"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
+		              		<div class="item-plan-travail ui-draggable ui-draggable-handle spare-item2" id="5" symetrie="1" style="left: 83.6875px; top: -87.15px;" position-x="83.68753051757812" position-y="-87.14999389648438"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
+		              		<div class="item-four ui-draggable ui-draggable-handle spare-item2" id="2" symetrie="1" style="left: 48.6875px; top: -66.6625px;" position-x="48.6875" position-y="-66.66249084472656"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
+		              		<div class="item-plan-travail ui-draggable ui-draggable-handle spare-item2" id="6" symetrie="-1" style="left: 194.688px; top: -108.15px; transform: scaleX(-1);" position-x="194.68753051757812" position-y="-108.14999389648438"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
+		              		<div class="item-plan-travail ui-draggable ui-draggable-handle spare-item2" id="6" symetrie="1" style="left: 228.688px; top: -87.1375px; transform: scaleX(-1);" position-x="228.68753051757812" position-y="-87.13749694824219"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
+		              		<div class="item-plan-travail ui-draggable ui-draggable-handle spare-item2" id="7" symetrie="-1" style="left: 263.688px; top: -67.15px; transform: scaleX(-1);" position-x="263.6875305175781" position-y="-67.14999389648438"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
+		              		<div class="item-micro-onde ui-draggable ui-draggable-handle spare-item2" id="8" symetrie="1" style="left: 298.688px; top: -47.1375px; transform: scaleX(-1);" position-x="298.6875305175781" position-y="-47.13749694824219"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
+		              		<div class="item-table ui-draggable ui-draggable-handle spare-item2" id="9" symetrie="1" style="left: 118.688px; top: 12.85px;" position-x="118.68753051757812" position-y="12.850006103515625"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
+		              		<div class="item-prise ui-draggable ui-draggable-handle spare-item2" id="10" symetrie="1" style="left: 583.688px; top: 120.85px; transform: scaleX(-1);" position-x="583.6875305175781" position-y="120.85000610351562"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
+		              		<div class="item-evier ui-draggable ui-draggable-handle spare-item2" id="11" symetrie="1" style="left: 318.688px; top: -22.125px; transform: scaleX(-1);" position-x="318.6875305175781" position-y="-22.125"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
+		              		<div class="item-cuisiniere ui-draggable ui-draggable-handle spare-item2" id="12" symetrie="1" style="left: 408.688px; top: 17.85px; transform: scaleX(-1);" position-x="408.6875305175781" position-y="17.850006103515625"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
+		              		<div class="item-frigo ui-draggable ui-draggable-handle spare-item2" id="13" symetrie="1" style="left: 448.688px; top: -7.14999px; transform: scaleX(-1);" position-x="448.6875305175781" position-y="-7.149993896484375"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
+
+
+
 		              		<div id="case-maison" class=""></div>
 		              		<div class="mur mur-cache"></div>
 		              		<div class="mur2 mur-cache"></div>
@@ -304,6 +353,6 @@
 				</div>
 			</div>
 		</ion-row>
-
 	</ion-grid>
+</div>
 </ion-content>

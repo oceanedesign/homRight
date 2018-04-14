@@ -1,3 +1,13 @@
+<div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
+  <div class="flb">
+      <lottie-animation-view [options]="lottieConfig">
+      </lottie-animation-view>
+      <div class="bottom"><p class="bottom-center">en complément avec le compteur linky<p></div>
+  </div>
+</div>
+
+
 
 <ion-content padding overflow-scroll="true" class="HomieGood">
   <div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
@@ -10,7 +20,7 @@
           <p class="analyseMessage"></p>
       </ion-row>
   		<ion-row class="mascotte">
-      		<img class="en-forme" alt="Homie dit bonjour" src="../assets/imgs/Homie_connexion.png"/>
+      		<img class="en-forme" alt="Homie dit bonjour" src="../assets/imgs/homie_connexion.png"/>
           <img class="malade" alt="Homie dit bonjour" src="../assets/imgs/homie_malade.png"/>
       </ion-row>
       <ion-row>
@@ -20,7 +30,7 @@
             <div class="euros">2.6<span>€</span></div>
             <div class="kwh">17.2<span>kwh</span></div>
           </ion-col>
-          <button class="boutton">
+          <button class="boutton" (click)="directionStat3D()">
             <ion-icon name="icon-chevron"></ion-icon>
           </button>
 		    </ion-col>
