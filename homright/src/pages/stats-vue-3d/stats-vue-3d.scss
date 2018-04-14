@@ -14,15 +14,16 @@ page-stats-vue-3d {
 	}
 
 	.edit{
-    width: 30px;
+        width: 30px;
     height: 30px;
     position: absolute;
     right: 0%;
-    left: 400px;
+    left: 250px;
+    top: 70px;
     margin: auto;
-    cursor:pointer;
+    cursor: pointer;
+    z-index: 100;
 }
-
 	.astuces{
 	max-width: 400px;
 	margin: 0px auto 60px auto;

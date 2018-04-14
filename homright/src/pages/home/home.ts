@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import{StatsVue_3dPage} from "../stats-vue-3d/stats-vue-3d";
-
+import { LottieAnimationViewModule } from 'ng-lottie';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 declare var jQuery:any;
@@ -13,9 +13,10 @@ declare var $:any;
 export class HomePage {
 
 	orderBy:string;
-  public lottieConfig:Object;
+  lottieConfig:any;
   splash = true;
   constructor(public navCtrl: NavController) {
+    LottieAnimationViewModule.forRoot();
       this.lottieConfig={
         path:'assets/imgs/splashScreen/data.json',
         autoplay: true,
