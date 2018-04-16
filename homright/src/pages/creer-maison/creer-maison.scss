@@ -8,10 +8,12 @@ page-creer-maison {
     padding-bottom : 0px ;
   }
 
+
   .mascotte {
     width: 60%;
     height: 60%;
     margin-bottom: 20px;
+    z-index: 100;
 	}
 
 	.grid{
@@ -25,4 +27,27 @@ page-creer-maison {
     .bouton-rond{
         float:right;
     }
+
+    
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before,
+    .tabs-md[tabsPlacement="bottom"] > .tabbar::before, .header-ios .toolbar-background-ios,
+    .footer-ios .toolbar-background-ios, .toolbar-background-md{
+        border-color: #7686FF;
+        background: #7686FF;
+    }
+    .toolbar-title{
+        color: white;
+    }
+    ion-header .icon{
+        color: white;
+    }
+
+    h3{
+        font-family: "Futura";
+        font-size: 14px;
+        color: #F5AF47;
+        margin-top: 10px !important;
+        margin-left: -5px;
+    }
+
 }

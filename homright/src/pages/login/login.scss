@@ -1,6 +1,5 @@
 page-login {
 
-
   #custom-overlay {
     position: fixed;
     top: 0;
@@ -10,7 +9,7 @@ page-login {
     z-index: 100000;
     width:100%;
     background-color: #FFFFFF;
-    animation: disparition 0.25s linear 5s forwards;
+    animation: disparition 0.3s linear 4s forwards;
   }
 
   .flb {
@@ -30,6 +29,14 @@ page-login {
     font-weight: 300;
   }
 
+  .non-anim{
+  animation: pulse 1s ease-in forwards; 
+  }
+
+  .anim{
+  animation: descente 3s ease-in forwards;     
+  }
+
   .bottom-center{
     position: relative; 
     left: -50%;
@@ -46,6 +53,15 @@ page-login {
     }
   }
 
+    @keyframes descente {
+    0% {
+      top:-300px;
+    }
+    100% {
+      top:0px;
+    }
+  }
+
   @keyframes disparition {
     0% {
       opacity:1;
@@ -55,6 +71,22 @@ page-login {
     }
   }
 
+  #custom-overlay{
+  .fond-vague{
+    position: absolute;
+    margin-left: 0px;
+    margin-top: 0px;
+    //height: 180px;
+    width: 100%;
+    z-index: -1;
+  }
+
+    .vague{
+      //top: 179px;
+    }
+  }
+
+
   .mascotte{
     width:50%;
     height: 50%;
@@ -62,7 +94,7 @@ page-login {
   }
 
   .content-ios .mascotte{
-    margin:15px auto;
+    //margin:15px auto;
   }
 
   .container{
@@ -112,12 +144,19 @@ page-login {
     font-weight: 700;
   }
 
+  .bouton-contour:hover:not(.disable-hover), .bouton-contour:active, .bouton-contour.button-ios.activated {
+    color: #7686FF;
+    -webkit-box-shadow: 10px 10px 8px 10px transparent;
+    box-shadow: 10px 10px 8px 10px transparent;
+    background: white;
+  }
+
   .inscription{
     margin-top: 20px;
   }
 
   .reseaux{
-    margin : 0 0 5px 0;
+    margin : 0;
   }
 
   .line1{
@@ -207,19 +246,5 @@ page-login {
   input{
       font-family: 'Futura';
       font-weight: 700;
-  }
-
-  #custom-overlay{
-  .fond-vague{
-    margin-left: 0px;
-    margin-top: 0px;
-    height: 150px;
-    width: 100%;
-    z-index: -1;
-  }
-
-    .vague{
-      top: 149px;
-    }
   }
 }

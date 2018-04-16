@@ -9,26 +9,36 @@ page-signup {
   }
 
   .mascotte{
-  	margin: 20px auto;
+  	margin: 110px auto 30px auto;
+    height: 85%;
+    width: 85%;
   }
 
   .bouton-principal{
 	font-family: "Futura";
-	font-weight: 300;
+	font-weight: 700;
 	border-radius: 30px;
 	width: 260px;
-	height: 65px;
+	height: 45px;
 	margin: 0 auto;
 	margin-top: 20px;
 	}
 
   .bouton-contour, .bouton-contour:visited, .bouton-contour:active, .bouton-contour:hover, .bouton-contour:link, .button-ios.activated{
 	font-family: "Futura";
-	font-weight: 300;
+	font-weight: 700;
 	border-radius: 30px;
 	width: 260px;
-	height: 65px;
+	height: 45px;
 	margin: 0 auto;
 	margin-top: 20px;
 	}
+
+	.fond-vague{
+    	height: 180px;
+    	.vague{
+    		top:179px;
+    	}
+  	}
+
 }

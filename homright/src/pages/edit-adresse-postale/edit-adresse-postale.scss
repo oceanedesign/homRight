@@ -6,6 +6,7 @@ page-edit-adresse-postale {
     position:relative !important;
     padding-top : 0px ;
     padding-bottom : 0px ;
+    margin-top: 40px;
   }
 
 	.grid{
@@ -19,6 +20,55 @@ page-edit-adresse-postale {
     .item-ios.item-label-stacked .text-input, .item-ios.item-label-floating .text-input,
     .item-label-stacked .text-input-md, .item-label-floating .text-input-md {
     margin-bottom: -6px;
-    padding-bottom: 14px;
+    padding-bottom: 7px;
+    }
+
+    .list-md .item-block .item-inner {
+    border-bottom: 1px solid white;
+    }
+
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before,
+    .tabs-md[tabsPlacement="bottom"] > .tabbar::before, .header-ios .toolbar-background-ios,
+    .footer-ios .toolbar-background-ios, .toolbar-background-md{
+        border-color: #7686FF;
+        background: #7686FF;
+    }
+    .toolbar-title{
+        color: white;
+    }
+    ion-header .icon{
+        color: white;
+    }
+
+    .fond-vague {
+        background: #7686FF;
+        height: 11px;
+        width: 100%;
+        position: absolute;
+        margin-left: -16px;
+        margin-top: -16px;
+        .vague {
+            width: 100vw;
+            position: absolute;
+            top: 10px;
+            height: 35px;
+        }
+    }
+
+    @media only screen and (min-width: 800px){
+
+        .container{
+            margin-top:70px;
+        }
+    }
+
+    @media only screen and (max-width: 600px){
+        .fond-vague .vague{
+            height: 20px;
+        }
+
+        .container{
+            margin-top:30px;
+        }
     }
 }

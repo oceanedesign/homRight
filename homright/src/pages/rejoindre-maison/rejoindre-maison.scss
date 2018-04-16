@@ -28,5 +28,27 @@ page-rejoindre-maison {
     padding-bottom: 14px;
     }
 
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before,
+    .tabs-md[tabsPlacement="bottom"] > .tabbar::before, .header-ios .toolbar-background-ios,
+    .footer-ios .toolbar-background-ios, .toolbar-background-md{
+        border-color: #7686FF;
+        background: #7686FF;
+    }
+
+    .item-label-floating .text-input {
+        margin-top: 1px;
+    }
+
+    .list-md .item-block .item-inner {
+    border-bottom: 1px solid white;
+    }
+
+    .toolbar-title{
+        color: white;
+    }
+    
+    ion-header .icon{
+        color: white;
+    }
 
 }

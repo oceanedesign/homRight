@@ -13,13 +13,13 @@
 		<h2>Homie</h2>
 	</ion-row>
 	<ion-row col-12>
-		<p>est prêt</p>
+		<p>est prêt ! </p>
 	</ion-row>
-
+	<div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding overflow-scroll="true">
 	<ion-grid class="container">
       	<form>
 			<ion-list>
@@ -32,10 +32,12 @@
 		    		<ion-label color="primary">Adresse postale</ion-label>
 			    	
 			  	</ion-item>
-	    			<button class="navigation" ion-item (click)="editionAdresseP()" icon-start>
+	    			<button class="navigation" ion-item (click)="editionAdresseP()" icon-end>
+	    				<ion-icon name="icon-chevron"></ion-icon>
     	  				<p>Résidence Arc-en-ciel</p>
 						<p>Appartement 220</p>
 						<p>41 rue Guynemer 93200 Saint Denis</p>
+						
     				</button>
 
 			</ion-list>

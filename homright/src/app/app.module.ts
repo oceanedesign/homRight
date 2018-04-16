@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import {HttpClientModule} from "@angular/common/http";
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import {NativePageTransitions} from '@ionic-native/native-page-transitions';
 
 
 import { LoginPage } from '../pages/login/login';
@@ -73,6 +74,7 @@ import { SQLite } from '@ionic-native/sqlite';
     SplashScreen, AuthServiceProvider,
     Geolocation,
     SQLite,ScreenOrientation,
+    NativePageTransitions,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

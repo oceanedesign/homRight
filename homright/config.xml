@@ -93,4 +93,5 @@
     <plugin name="cordova-plugin-screen-orientation" spec="^3.0.1" />
     <engine name="android" spec="~7.0.0" />
     <allow-navigation href="http://10.110.243.82:8100" />
+    <plugin name="com.telerik.plugins.nativepagetransitions" spec="^0.6.5" />
 </widget>
