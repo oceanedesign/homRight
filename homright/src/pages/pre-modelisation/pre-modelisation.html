@@ -1,7 +1,7 @@
 <ion-content padding>
 	<div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
 	<ion-grid class="container">
-	  	<ion-slides loop="true" speed="2000" pager="true" paginationType="fraction" options="swiper.options" (ionSlideDidChange)="slideChanged()">
+	  	<ion-slides class='do_not_swipe' speed="2000" pager="true" paginationType="fraction" options="swiper.options" (ionSlideDidChange)="slideChanged()">
 
 			    <ion-slide id="un">
 						<!-- <div class="header-icon"><div class="icon-slider"><ion-icon name="icon-thunderbolt" class="circle"></ion-icon></div></div> -->
@@ -10,8 +10,8 @@
 							<ion-list class="slide1">
 
 							  <ion-item>
-							    <ion-label><ion-icon name="icon-plug"></ion-icon><h4>Mon fournissseur <p>Sélectionnez dans la liste</p></h4></ion-label>
-							    <ion-select [(ngModel)]="fournissseur" (ionChange)="onChangeFournisseur()">
+							    <ion-label><ion-icon name="icon-plug"></ion-icon><h4>Mon fournisseur <p>Sélectionnez dans la liste</p></h4></ion-label>
+							    <ion-select [(ngModel)]="fournisseur" (ionChange)="onChangeFournisseur()">
 							      <ion-option value="engie">ENGIE</ion-option>
 							      <ion-option value="edf">EDF</ion-option>
 							      <ion-option value="eni">ENI</ion-option>
@@ -26,8 +26,8 @@
 								<ion-item>
 									<ion-label><ion-icon name="icon-copy"></ion-icon><h4>Mon contrat <p>Sélectionnez dans la liste</p></h4></ion-label>
 									<ion-select [(ngModel)]="contrat" (ionChange)="onChangeContrat()">
-										<ion-option value="contrat1">contrat1</ion-option>
-										<ion-option value="contrat2">contrat2</ion-option>
+										<ion-option value="contrat1">Vert électrique </ion-option>
+										<ion-option value="contrat2">Tarif Bleu</ion-option>
 									</ion-select>
 								</ion-item>
 							</ion-list>

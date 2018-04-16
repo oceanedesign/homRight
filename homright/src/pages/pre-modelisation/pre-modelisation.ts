@@ -24,10 +24,15 @@ export class PreModelisationPage {
   @ViewChild(Slides) slides: Slides;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PreModelisationPage');
+    this.slides.lockSwipes(true);
+
     // $( ".swiper-pagination::before" ).click(function() {
     //   console.log('ok');
     // });
@@ -54,32 +59,38 @@ export class PreModelisationPage {
   }
 
   goToPrev() {
+    this.slides.lockSwipes(false);
     this.slides.slidePrev();
 
-    let currentIndex = this.slides.getActiveIndex();
+    let currentIndex = this.slides.getActiveIndex()+1;
     if(currentIndex == 1){
       $( ".left-arrow" ).addClass("transparency");
     }
     if(currentIndex == 3){
       $( ".right-arrow" ).removeClass("transparency");
     }
-    currentIndex -1;
+    
     $( ".pagination span" ).replaceWith( "<span>"+currentIndex+"</span>" );
+    this.slides.lockSwipes(true);
 
   }
   goToNext() {
+    this.slides.lockSwipes(false);
     this.slides.slideNext();
 
-    let currentIndex = this.slides.getActiveIndex();
+    let currentIndex = this.slides.getActiveIndex()+1;
     if(currentIndex == 4){
       $( ".right-arrow" ).addClass("transparency");
     }
     if(currentIndex == 2){
       $( ".left-arrow" ).removeClass("transparency");
     }
-      currentIndex +1;
+      //currentIndex +1;
       $( ".pagination span" ).replaceWith( "<span>"+currentIndex+"</span>" );
+    this.slides.lockSwipes(true);
   }
+
+
 
   slideChanged() {
     // let currentIndex = this.slides.getActiveIndex();
