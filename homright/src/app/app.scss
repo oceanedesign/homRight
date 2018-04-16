@@ -64,7 +64,6 @@ ion-app.md{
 }
 
 .item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner{
-    border-bottom-color: transparent;
     box-shadow: none;
   }
 
@@ -267,6 +266,15 @@ h3{
 		}
 	}
 
+	.alert-md .alert-wrapper, .alert-ios .alert-wrapper {
+		border-radius: 4px;
+		max-width: 288px;
+		.alert-title {
+    		font-size: 20px;
+    		text-align: left;
+    		font-weight: 400;
+  		}
+  	}
 
 	@media only screen and (max-width: 1100px) {
 	  .vague {

@@ -69,7 +69,7 @@ export class PreModelisationPage {
     if(currentIndex == 3){
       $( ".right-arrow" ).removeClass("transparency");
     }
-    
+
     $( ".pagination span" ).replaceWith( "<span>"+currentIndex+"</span>" );
     this.slides.lockSwipes(true);
 

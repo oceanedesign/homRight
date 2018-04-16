@@ -1,102 +1,104 @@
-<ion-content padding>
-	<div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
+<ion-content>
+	<div class="fond-vague"><img class="vague" src="../assets/imgs/pre-modelisation/vague.png"/></div>
 	<ion-grid class="container">
-	  	<ion-slides class='do_not_swipe' speed="2000" pager="true" paginationType="fraction" options="swiper.options" (ionSlideDidChange)="slideChanged()">
+	  	<ion-slides speed="2000" pager="true" paginationType="fraction" (ionSlideDidChange)="slideChanged()">
 
-			    <ion-slide id="un">
-						<!-- <div class="header-icon"><div class="icon-slider"><ion-icon name="icon-thunderbolt" class="circle"></ion-icon></div></div> -->
-						<div padding>
-			        <p class="icon-slider"><ion-icon name="icon-thunderbolt" class="circle"></ion-icon></p>
-							<ion-list class="slide1">
+			<ion-slide id="un">
+		    	<div class="fond-vague"><img class="vague" src="../assets/imgs/pre-modelisation/vague.png"/></div>
+					<div padding>
+		        		<p class="icon-slider"><ion-icon name="icon-thunderbolt" class="circle"></ion-icon></p>
+						<ion-list class="slide1 firstList">
 
-							  <ion-item>
-							    <ion-label><ion-icon name="icon-plug"></ion-icon><h4>Mon fournisseur <p>Sélectionnez dans la liste</p></h4></ion-label>
-							    <ion-select [(ngModel)]="fournisseur" (ionChange)="onChangeFournisseur()">
-							      <ion-option value="engie">ENGIE</ion-option>
-							      <ion-option value="edf">EDF</ion-option>
-							      <ion-option value="eni">ENI</ion-option>
-										<ion-option value="ekwater">EKWATER</ion-option>
-										<ion-option value="alterna">ALTERNA</ion-option>
-							      <ion-option value="proxelia">PROXELIA</ion-option>
-							    </ion-select>
-							  </ion-item>
-							</ion-list>
+						  <ion-item >
+						    <ion-label><ion-icon name="icon-plug"></ion-icon><h4>Mon fournisseur <p>Sélectionnez dans la liste</p></h4></ion-label>
+						    <ion-select [(ngModel)]="fournisseur" (ionChange)="onChangeFournisseur()">
+						      <ion-option value="engie">ENGIE</ion-option>
+						      <ion-option value="edf">EDF</ion-option>
+						      <ion-option value="eni">ENI</ion-option>
+									<ion-option value="ekwater">EKWATER</ion-option>
+									<ion-option value="alterna">ALTERNA</ion-option>
+						      <ion-option value="proxelia">PROXELIA</ion-option>
+						    </ion-select>
+						  </ion-item>
+						</ion-list>
 
-							<ion-list class="transparency slide1">
-								<ion-item>
-									<ion-label><ion-icon name="icon-copy"></ion-icon><h4>Mon contrat <p>Sélectionnez dans la liste</p></h4></ion-label>
-									<ion-select [(ngModel)]="contrat" (ionChange)="onChangeContrat()">
-										<ion-option value="contrat1">Vert électrique </ion-option>
-										<ion-option value="contrat2">Tarif Bleu</ion-option>
-									</ion-select>
-								</ion-item>
-							</ion-list>
-						</div>
-			    </ion-slide>
+						<ion-list class="transparency slide1">
+							<ion-item>
+								<ion-label><ion-icon name="icon-copy"></ion-icon><h4>Mon contrat <p>Sélectionnez dans la liste</p></h4></ion-label>
+								<ion-select [(ngModel)]="contrat" (ionChange)="onChangeContrat()">
+									<ion-option value="contrat1">Vert électrique </ion-option>
+									<ion-option value="contrat2">Tarif Bleu</ion-option>
+								</ion-select>
+							</ion-item>
+						</ion-list>
+					</div>
+			</ion-slide>
 	        <ion-slide id="deux">
-						<!-- <img src="../assets/imgs/vague-slide2.svg"> -->
-						<div padding>
-	            <!-- <p class="icon-slider"><ion-icon name="icon-thunderbolt" class="circle"></ion-icon></p> -->
-							<ion-list class="superficie">
-								<ion-row col-12>
-									<h4>Superficie</h4>
-								  <ion-item>
-								    <ion-input placeholder="35"></ion-input><div item-end class="item-end">m2</div>
-								  </ion-item>
-								</ion-row>
-								<ion-row>
-									<h4>Nombre d'habitants</h4>
-									<ion-item col-12>
-										<ion-label>Adulte(s)</ion-label>
-										<ion-input type="number" min="1" value="1"></ion-input>
-									</ion-item>
-									<ion-item col-12>
-										<ion-label>Enfant(s)</ion-label>
-										<ion-input type="number" min="0" value="0"></ion-input>
-									</ion-item>
-								</ion-row>
-							</ion-list>
-						</div>
+				<div class="fond-vague"><img class="vague" src="../assets/imgs/pre-modelisation/vague.png"/></div>
+				<div padding>
+       				<p class="icon-slider2"><img class="circle" src="../assets/imgs/pre-modelisation/superficie.png"/></p>
+					<ion-list class="superficie firstList">
+						<ion-row col-12>
+							<h4>Superficie</h4>
+						  <ion-item>
+						    <ion-input placeholder="35"></ion-input><div item-end class="item-end">m2</div>
+						  </ion-item>
+						</ion-row>
+						<ion-row>
+							<h4>Nombre d'habitants</h4>
+							<ion-item col-12>
+								<ion-label>Adulte(s)</ion-label>
+								<ion-input type="number" min="1" value="1"></ion-input>
+							</ion-item>
+							<ion-item col-12>
+								<ion-label>Enfant(s)</ion-label>
+								<ion-input type="number" min="0" value="0"></ion-input>
+							</ion-item>
+						</ion-row>
+					</ion-list>
+				</div>
 	        </ion-slide>
 	        <ion-slide id="trois">
-						<div padding>
-	            <!-- <p class="icon-slider"><ion-icon name="icon-thunderbolt" class="circle"></ion-icon></p> -->
-							<ion-row col-12>
-								<p>Je ferme mes volets la nuit</p>
-								<ion-list class="volets" radio-group [(ngModel)]="volets">
-									<ion-item>
-										<ion-radio value="oui"></ion-radio>
-									</ion-item>
-									<ion-item>
-										<ion-radio value="non"></ion-radio>
-									</ion-item>
-								</ion-list>
-							</ion-row>
-							<ion-row col-12>
-								<p>Lors de mes absences, je réduis le chauffage</p>
-								<ion-list class="volets" radio-group [(ngModel)]="chauffage">
-									<ion-item>
-										<ion-radio value="oui"></ion-radio>
-									</ion-item>
-									<ion-item>
-										<ion-radio value="non"></ion-radio>
-									</ion-item>
-								</ion-list>
-							</ion-row>
-						</div>
+    			<div class="fond-vague"><img class="vague" src="../assets/imgs/pre-modelisation/vague.png"/></div>
+				<div padding>
+      				<p class="icon-slider"><ion-icon name="icon-like" class="circle"></ion-icon></p>
+					<ion-row col-12 class="firstList">
+						<p>Je ferme mes volets la nuit</p>
+						<ion-list class="volets" radio-group [(ngModel)]="volets">
+							<ion-item>
+								<ion-radio value="oui"></ion-radio>
+							</ion-item>
+							<ion-item>
+								<ion-radio value="non"></ion-radio>
+							</ion-item>
+						</ion-list>
+					</ion-row>
+					<ion-row col-12>
+						<p>Lors de mes absences, je réduis le chauffage</p>
+						<ion-list class="volets" radio-group [(ngModel)]="chauffage">
+							<ion-item>
+								<ion-radio value="oui"></ion-radio>
+							</ion-item>
+							<ion-item>
+								<ion-radio value="non"></ion-radio>
+							</ion-item>
+						</ion-list>
+					</ion-row>
+				</div>
 	        </ion-slide>
 	        <ion-slide id="quatre">
-						<div padding>
-							<ion-row>
-								<button ion-button block class="button-room" type="submit" (click)="editerScene()"><p><ion-icon name="icon-bed"></ion-icon></p><p>chambre</p></button>
-								<button ion-button block class="button-room" type="submit"><p><ion-icon name="icon-shower"></ion-icon></p><p>salle de bains</p></button>
-								<button ion-button block class="button-room" type="submit"><p><ion-icon name="icon-couch"></ion-icon></p><p>salon</p></button>
-							</ion-row>
-							<ion-row class="end-slider">
-								<button ion-button block class="add-room" type="submit" (click)="modeliserMaison()">Ajouter une pièce</button>
-								<button ion-button block class="valider" type="submit">Valider</button>
-							</ion-row>
-						</div>
+	        	<div class="fond-vague"><img class="vague" src="../assets/imgs/pre-modelisation/vague.png"/></div>
+				<div padding>
+					<ion-row>
+						<button ion-button block class="button-room" type="submit" (click)="editerScene()"><p><ion-icon name="icon-bed"></ion-icon></p><p>chambre</p></button>
+						<button ion-button block class="button-room" type="submit"><p><ion-icon name="icon-shower"></ion-icon></p><p>salle de bains</p></button>
+						<button ion-button block class="button-room" type="submit"><p><ion-icon name="icon-couch"></ion-icon></p><p>salon</p></button>
+					</ion-row>
+					<ion-row class="end-slider">
+						<button ion-button block class="add-room" type="submit" (click)="modeliserMaison()">Ajouter une pièce</button>
+						<button ion-button block class="valider" type="submit">Valider</button>
+					</ion-row>
+				</div>
 	        </ion-slide>
 	  	</ion-slides>
 
