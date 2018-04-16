@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { JeuModelisationPage } from '../jeu-modelisation/jeu-modelisation';
+import { PreModelisationPage } from '../pre-modelisation/pre-modelisation';
 import { HomePage } from '../home/home';
 
 /**
@@ -29,7 +29,7 @@ export class ModelisationBienvenuePage {
     console.log('ionViewDidLoad ModelisationBienvenuePage');
   }
   modeliserMaison(){
-    this.navCtrl.push(JeuModelisationPage);
+    this.navCtrl.push(PreModelisationPage);
   }
   pasModeliserMaison(){
     this.navCtrl.push(HomePage);

@@ -20,7 +20,7 @@ import { PreModelisationPage } from '../pages/pre-modelisation/pre-modelisation'
 export class MyApp {
 
   //rootPage:any = JeuModelisationPage;
-  rootPage:any = SignupPage;
+  rootPage:any = PointsClesPage;
   //rootPage:any = PreModelisationPage;
   //rootPage:any = HomePage;
 

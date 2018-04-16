@@ -2,21 +2,63 @@ page-points-cles {
   header{
     text-align: center;
   }
-  h1{
-    font-weight: bold;
-    padding-left: 20px;
-    max-width: 720px;
-    margin: 20px auto 10px auto;
+  ion-header{
+      background: #7686FF;
+      h1{
+        color:white;
+        font-weight: bold;
+        padding-left: 20px;
+        max-width: 720px;
+        margin: 35px auto 10px auto;
+        font-size: 25px;
+    }
   }
+
+  .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
+    height:0px;
+  }
+
+  .grid{
+    padding: 0px;
+  }
+
+  ion-slide.swiper-slide{
+    .image{
+      background: #7686FF;
+      padding: 30px 0px;
+      height:215px;
+    }
+    .fond-vague{
+      position: initial;
+      height:60px;
+      margin: 0px;
+      .vague{
+        position: initial;
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+    img {
+      width: 40%;
+      max-width: 180px;
+      margin-bottom: 15px;
+    }
+  }
+
   .slide-zoom{
-    max-width: 700px;
     p{
       color: map-get($colors, medium);
-      font-size: 16px;
+      font-size: 17px;
       padding: 0px 15px 10px 15px;
+      max-width: 500px;
+      margin: 0 auto 30px auto;
     }
     h2{
       font-weight: bold;
+      margin-top: 10px;
+      text-transform: uppercase;
+      font-size: 26px;
+      font-weight:600;
     }
   }
   .bouton-principal{
@@ -29,6 +71,57 @@ page-points-cles {
   .swiper-container-horizontal {
     .swiper-pagination-bullets{
       bottom: 0;
+    }
+  }
+
+  .valider{
+    width:180px;
+  }
+
+    @media screen and (min-height: 600px) {
+
+
+    .slide-zoom h2{
+      margin-top: 40px;
+    }
+  }
+
+    @media screen and (min-height: 1000px) {
+
+
+    ion-slide.swiper-slide .fond-vague{
+      height: 100px;
+    }
+    .slide-zoom h2{
+      margin-top: 100px;
+    }
+  }
+
+    @media screen and (max-height: 580px) {
+  ion-slide.swiper-slide{
+    .image{
+      height:190px;
+    }
+
+    img {
+      width: 36%;
+      margin-bottom: 15px;
+    }
+  }
+
+    .slide-zoom h2{
+      margin-top: 30px;
+    }
+  }
+
+    @media screen and (min-width: 900px) {
+
+
+    ion-slide.swiper-slide .fond-vague{
+      height: 100px;
+    }
+    .slide-zoom h2{
+      margin-top: 100px;
     }
   }
 }
