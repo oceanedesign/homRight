@@ -75,6 +75,7 @@ export class JeuModelisationPage {
   activeJeuCuisine(event){
     $(".choix-piece").css("display", "none");
     $(".cacher-totale").css("display", "block");
+    $(".spare-item2").css("display", "block");
     this.validerTaille();
 
      var bouton = event.target.closest('button'); //Définit la variable bouton et attribut le bouton
@@ -87,6 +88,25 @@ export class JeuModelisationPage {
     $(".choix-piece").css("display", "none");
     $(".cacher-totale").css("display", "block");
     $(".spare-item2").css("display", "none");
+
+
+    $(".fond-cache").css("display", "none");
+    $(".contenu-taille").css("display", "flex");
+    if($("#case-maison").hasClass("case-maison3d")){
+      $("#case-maison").removeClass("case-maison3d");
+    }
+    if($(".resize").hasClass("inactive")){
+      $(".resize").removeClass("inactive");
+    }
+    if($(".cube").hasClass("active")){
+      $(".cube").addClass("inactive");
+      $(".cube").removeClass("active");
+    }
+    if($(".mur, .mur2").hasClass("mur-visible")){
+      $(".mur, .mur2").addClass("mur-cache");
+      $(".mur, .mur2").removeClass("mur-visible");
+    }
+
 
     var bouton = event.target.closest('button'); //Définit la variable bouton et attribut le bouton
     console.log($(bouton).attr('value')); //récupération de l'attribut "value" du bouton
