@@ -25,7 +25,7 @@ page-pre-modelisation {
     }
   }
 
-  #un .firstList.list, #deux .firstList.list, #trois .firstList{
+  #un .firstList.list, #deux .firstList.list, #trois .firstList, #quatre .firstList{
     margin-top: 80px;
   }
 
@@ -184,9 +184,10 @@ page-pre-modelisation {
       font-size: 22px;
       text-align: center;
       display: inline-block;
-      position: absolute;
+      position: fixed;
       left: calc(50% - 60px);
       top: 84%;
+      z-index: 50;
       p{
         width: auto;
         margin: auto;
@@ -239,6 +240,14 @@ page-pre-modelisation {
     .superficie .text-input.text-input-md{
       text-align: right;
     }
+    .superficie .text-input-ios{
+      margin: 0;
+      text-align: right;
+    }
+    .superficie .nbHab  .text-input-ios{
+      margin: 0;
+      border-bottom: 1px solid grey;
+    }
     .swiper-slide{
       visibility: hidden;
       transition: 1.5s all ease;
@@ -246,6 +255,9 @@ page-pre-modelisation {
         visibility: visible;
 
       }
+    }
+    .label-ios + ion-input .text-input, .label-ios + ion-textarea .text-input, .label-ios + .input + .cloned-input{
+      width:100%;
     }
 
     input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button, input[type=number] {
@@ -264,41 +276,54 @@ page-pre-modelisation {
           max-width: 300px;
           font-weight: bold;
           margin: auto;
-          padding: 0 0 20px 0;
         }
+      }
+
+      .radio-ios .radio-checked .radio-inner{
+        border-color: transparent;
+        transform:rotate(0deg);
+        color: map-get($colors, secondary);
+        background:  map-get($colors, secondary);
+
+      }
+
+      .radio-md .radio-icon .radio-inner{
+        background:  map-get($colors, secondary);
       }
 
       ion-list{
         width:100%;
-        margin-bottom: 0;
+        margin-bottom: 40px;
+        margin-top: 10px;
         ion-item{
           display: inline-block;
           width: auto;
           padding: 0;
-          .radio-md{
+          .radio-md, .radio-ios{
             margin: auto;
             .radio-icon{
-              width: 100px;
-              height: 40px;
-              border-radius: 20px;
-              border-color: map-get($colors, primary);
+              width: 120px;
+              height: 45px;
+              border-radius: 50px;
+              border: 1px solid map-get($colors, secondary);
               &::after{
                 content: "oui";
                 width: 100%;
                 text-align: center;
                 position: absolute;
-                margin-top: 6px;
+                margin-top: 10px;
                 height: 40px;
-                color: map-get($colors, primary);
+                color: map-get($colors, secondary);
               }
               .radio-inner{
                 width: 100%;
                 height: 100%;
                 border-radius: 16px;
+                margin: auto;
                 top: 0;
                 left: 0;
-                color: map-get($colors, primary);
-
+                color: map-get($colors, secondary);
+                border-radius: 50px;
               }
               &.radio-checked{
                 &::after{
@@ -308,13 +333,15 @@ page-pre-modelisation {
             }
           }
           &:first-child{
-            .radio-md .radio-icon::after{
+            .radio-md .radio-icon::after, .radio-ios .radio-icon::after{
               content: "oui";
+              top: 0px;
             }
           }
           &:last-child{
-            .radio-md .radio-icon::after{
+            .radio-md .radio-icon::after, .radio-ios .radio-icon::after{
               content: "non";
+              top: 0px;
             }
           }
         }
@@ -324,67 +351,99 @@ page-pre-modelisation {
       }
     }
 
+
+
     #quatre{
       ion-row{
-        max-width: 600px;
         margin: auto;
       }
       ion-row.end-slider{
         display: block;
 
         button.add-room{
-          background: none;
+          background: white;
           color: map-get($colors, primary);
-          border: 2px solid map-get($colors, primary);
-          border-radius: 6px;
+          border: 1px solid map-get($colors, primary);
+          border-radius: 50px;
           box-shadow: none;
-          max-width: 200px;
-          margin: auto auto 15px auto;
+          max-width: 215px;
+          width:80%;
+          font-size: 12px;
+          font-weight: 700;
+          margin: 30px auto 15px auto;
           display: block;
         }
         button.valider{
-          background: #F5AF47;
+          background: map-get($colors, primary);
           color: white;
-          border-radius: 6px;
+          border-radius: 50px;
           box-shadow: none;
-          max-width: 200px;
+          max-width: 215px;
+          width:80%;
+          font-size: 12px;
+          font-weight: 700;
           margin: auto;
         }
       }
-      button.button-room{
-        background: none;
-        color: map-get($colors, secondary);
-        width: 130px;
-        height: 130px;
-        border: 1px solid #F2F2F2;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-        border-radius: 8px;
-        margin: 0 auto 24px auto;
-        padding: 0;
-        position: relative;
-        pointer-events: auto;
-        .button-inner{
-          display: block;
-          p{
-            margin: 2px auto;
-            text-transform: lowercase;
-            color: black;
+        ion-scroll{
+          height: 150px;
+          white-space:nowrap;
+          margin: -16px;
+          .scroll-content{
+            padding: 0px !important;
           }
-        }
-        ion-icon{
-          &::before{
-            font-size: 70px;
-            color: map-get($colors, primary);
+        ion-list{
+          width:100%;
+          margin-bottom: 0;
+              margin-top: -10px;
+              margin-left: 20px;
+          //width: 1000px;
+          // display: flex;
+          ion-item{
+            display: inline-block;
+            width: auto;
+            padding: 0;
+            button.button-room{
+              background: white;
+              color: map-get($colors, secondary);
+              width: 120px;
+              height: 120px;
+              border: 1px solid #F2F2F2;
+              box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+              border-radius: 8px;
+              margin: 0 auto 24px auto;
+              padding: 0;
+              position: relative;
+              pointer-events: auto;
+              .button-inner{
+                display: block;
+                p{
+                  margin: auto;
+                  margin-top: 20px;
+                  font-weight: 700;
+                  text-transform: initial;
+                  color: black;
+                }
+              }
+              ion-icon{
+                &::before{
+                  font-size: 60px;
+                  top: 15px;
+                  position: relative;
+                  color: map-get($colors, secondary);
+                }
+              }
+            }
           }
         }
       }
     }
 
-    .fond-cache{
+    .fond-cache, .fond-cache2{
       position: absolute;
       width: 100%;
       height: 100vh;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.9);
       top: 0;
       left: 0;
       padding: 20px;
@@ -400,22 +459,33 @@ page-pre-modelisation {
         width: 100%;
         padding: 15px;
         min-width: 250px;
+        max-width: 340px;
+        border: 1px solid #DFE4EF;
+        box-sizing: border-box;
+        border-radius: 4px;
         h2, div{
           text-align: center;
         }
         ion-list{
           p{
-            color: map-get($colors, secondary);
+            color: map-get($colors, primary);
             text-align: left!important;
-            font-size: 15px;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+          }
+          &.list-md .item-block .item-inner {
+            border-bottom: 1px solid black;
           }
         }
         .input-wrapper{
           display: block;
           ion-label{
-            color: map-get($colors, secondary);
+            color: map-get($colors, primary);
             text-align: left!important;
-            font-size: 15px;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
             margin-bottom: 5px;
           }
           ion-input{
@@ -429,11 +499,21 @@ page-pre-modelisation {
             }
           }
         }
+        ion-list.nmPiece{
+          .item-inner{
+            border-bottom: 1px solid black;
+          }
+          .label-ios + ion-input .text-input, .label-ios + ion-textarea .text-input, .label-ios + .input + .cloned-input{
+            margin-left: 0px;
+          }
+        }
         ion-list.icon-scene{
           text-align: center;
+          margin-top: 25px;
           ion-item{
             display: inline-block;
-            width: auto;
+            width: 65px;
+            height: 65px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
             border-radius: 6px;
             ion-checkbox{
@@ -441,8 +521,8 @@ page-pre-modelisation {
               margin: auto;
 
               .checkbox-icon{
-                width: 50px;
-                height: 50px;
+                width: 65px;
+                height: 65px;
                 font-size: 35px;
                 border: 0px;
                 border-radius: 6px;
@@ -451,6 +531,8 @@ page-pre-modelisation {
                 &::before{
                     font-family: 'homright' !important;
                     speak: none;
+                    top: 10px;
+                    position: relative;
                     font-style: normal;
                     font-weight: normal;
                     font-variant: normal;
@@ -501,10 +583,11 @@ page-pre-modelisation {
         ion-list.temperature{
           p{
             margin-bottom: 0;
+            margin-top: 25px;
           }
           margin-bottom: 0;
-          .range-md{
-            padding-top: 0;
+          .range-md, .range-ios{
+            padding: 0px;
             .range-bar{
               top: 5px;
             }
@@ -516,7 +599,11 @@ page-pre-modelisation {
             }
           }
           .range-slider{
-            height: 10px;
+            height: 25px;
+
+            .range-bar{
+              height: 3px;
+            }
           }
           ion-label.label-range{
             float: right;
@@ -529,10 +616,13 @@ page-pre-modelisation {
         ion-list.temperatureInconnue{
           margin-bottom: 4px;
           ion-item{
-            margin-top: -6px;
+            margin-top: 0px;
           }
           ion-label{
             color: black;
+            text-transform: initial;
+            font-weight: 500;
+            font-size: 15px;
           }
           ion-checkbox{
             margin-right: 8px;
@@ -542,17 +632,25 @@ page-pre-modelisation {
               background-color: map-get($colors, secondary)!important;
             }
             .checkbox-icon{
-              border-color: map-get($colors, secondary)!important;
+              border: 2px solid map-get($colors, secondary)!important;
+              padding: 8px;
             }
           }
+          &.list-md .item-block .item-inner {
+            border-bottom: none;
+          }
+        }
+
+        .checkbox-md .checkbox-checked .checkbox-inner{
+          border: none;
         }
 
 
         button{
-          width: 35px;
-          height: 35px;
+          width: 55px;
+          height: 55px;
           display: inline-block;
-          margin: 0px 8px;
+          margin: 20px 8px;
           box-shadow: none;
           border-radius: 8px;
           .icon::before{
@@ -564,23 +662,36 @@ page-pre-modelisation {
             color: map-get($colors, primary);
           }
         }
-        .arrow-return{
-          // float: left;
+        .return{
+          height: 40px;
+          line-height: 40px;
+          .arrow-return{
           cursor: pointer;
           display: block;
+          float: left;
+          margin-top: 10px;
+          color: map-get($colors, secondary);
+          &::before{
+              font-size: 20px;
+            }
+          }
           p{
-            display: inline-block;
-            vertical-align: super;
+            display: inline;
             padding-right: 8px;
             text-transform: uppercase;
             margin: 0;
-            &::after{
-            content: "Editer une pièce";
-            }
+            font-weight: 700;
+            font-size: 16px;
           }
-          ion-icon{
-            text-align: right;
-            color: map-get($colors, secondary);
+          ion-icon[name='icon-trash-1']{
+            background: map-get($colors, primary);
+            padding: 10px;
+            border-radius: 50px;
+            color: white;
+            float: right;
+            &::before{
+              font-size: 18px;
+            }            
           }
         }
       }
@@ -599,4 +710,11 @@ page-pre-modelisation {
         }
     }
   }
+
+  @media screen and (min-height: 660px) {
+    #un .firstList.list, #deux .firstList.list, #trois .firstList, #quatre .firstList{
+      margin-top: 100px;
+    }
+  }
+
 }

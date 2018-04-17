@@ -20,6 +20,8 @@ import 'jquery-ui-dist/jquery-ui';
 export class PreModelisationPage {
 
   temperature: number= 20;
+  valueObjet: String;
+  regPiece = {"nomPiece": "", "type":"", "temperature":""};
 
   @ViewChild(Slides) slides: Slides;
 
@@ -32,23 +34,65 @@ export class PreModelisationPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PreModelisationPage');
     this.slides.lockSwipes(true);
-
+    this.recupValue();
     // $( ".swiper-pagination::before" ).click(function() {
     //   console.log('ok');
     // });
   }
 
+  recupValue(){
+    let value;
+    var buttonRoom = $('.listButtonRoom').find('.button-room');
+
+    $('.button-room').each(function() {
+    
+    value = $(this).attr('value');
+    let paragraphe = $( this ).find('p');
+    paragraphe.replaceWith( "<p>"+value+"</p>");
+    });
+
+    console.log(value);
+  }
 
   modeliserMaison(){
+    //Fonction permettant d'aller sur l'écran de modélisation de la maison (phase de jeu)
     this.navCtrl.push(JeuModelisationPage);
   }
 
-  editerScene(){
-    console.log('ok');
+  editerPiece(event){
+      //Ouvre la pop up d'édition de la pièce
+
     $(".fond-cache").css("display", "flex");
+
+    var bouton = event.target.closest('button'); //Définit la variable bouton et attribut le bouton
+    console.log($(bouton).attr('value')); //récupération de l'attribut "value" du bouton
+    this.regPiece.nomPiece = $(bouton).attr('value') ; //Attribut la nouvelle valeur
+
   }
+
   returnChoose(){
+    //Ferme la pop up sans validation
     $(".fond-cache").css("display", "none");
+    $(".fond-cache2").css("display", "none");
+  }
+
+  validerChoix(){
+    //Ajout de la piece
+    $(".fond-cache").css("display", "none");
+    
+  }
+
+  ajoutPiece(){
+    $(".fond-cache2").css("display", "flex");
+    this.regPiece.nomPiece="";
+  }
+
+  validerAjoutPiece(){
+    $(".fond-cache2").css("display", "none");
+    this.regPiece.temperature = this.temperature.toString();
+    console.log(this.regPiece.type);
+
+    console.log(this.regPiece.nomPiece);
   }
 
   onChangeFournisseur(){

@@ -1,7 +1,7 @@
 <ion-content>
 	<div class="fond-vague"><img class="vague" src="../assets/imgs/pre-modelisation/vague.png"/></div>
 	<ion-grid class="container">
-	  	<ion-slides speed="2000" pager="true" paginationType="fraction" (ionSlideDidChange)="slideChanged()">
+	  	<ion-slides speed="2000" pager="true" paginationType="fraction">
 
 			<ion-slide id="un">
 		    	<div class="fond-vague"><img class="vague" src="../assets/imgs/pre-modelisation/vague.png"/></div>
@@ -44,15 +44,15 @@
 						    <ion-input placeholder="35"></ion-input><div item-end class="item-end">m2</div>
 						  </ion-item>
 						</ion-row>
-						<ion-row>
+						<ion-row class="nbHab">
 							<h4>Nombre d'habitants</h4>
 							<ion-item col-12>
 								<ion-label>Adulte(s)</ion-label>
-								<ion-input type="number" min="1" value="1"></ion-input>
+								<ion-input type="number" min="1" placeholder="1"></ion-input>
 							</ion-item>
 							<ion-item col-12>
 								<ion-label>Enfant(s)</ion-label>
-								<ion-input type="number" min="0" value="0"></ion-input>
+								<ion-input type="number" min="0" placeholder="0"></ion-input>
 							</ion-item>
 						</ion-row>
 					</ion-list>
@@ -89,58 +89,87 @@
 	        <ion-slide id="quatre">
 	        	<div class="fond-vague"><img class="vague" src="../assets/imgs/pre-modelisation/vague.png"/></div>
 				<div padding>
-					<ion-row>
-						<button ion-button block class="button-room" type="submit" (click)="editerScene()"><p><ion-icon name="icon-bed"></ion-icon></p><p>chambre</p></button>
-						<button ion-button block class="button-room" type="submit"><p><ion-icon name="icon-shower"></ion-icon></p><p>salle de bains</p></button>
-						<button ion-button block class="button-room" type="submit"><p><ion-icon name="icon-couch"></ion-icon></p><p>salon</p></button>
+					<p class="icon-slider"><ion-icon name="icon-settings" class="circle"></ion-icon></p>
+					<ion-row  class="firstList">
+						<ion-col col-12 >
+							<ion-scroll scrollX="true">
+								<ion-list class="listButtonRoom" radio-group>
+            						<ion-item>
+										<button value="Chambre" ion-button block class="button-room" type="submit" (click)="editerPiece($event)">
+											<ion-icon name="icon-bed"></ion-icon>
+											<p >chambre</p>
+										</button>
+									</ion-item>
+            						<ion-item>
+										<button value="Salle de bains" ion-button block class="button-room" type="submit" (click)="editerPiece($event)">
+											<ion-icon name="icon-shower"></ion-icon>
+											<p>salle de bains</p>
+										</button>
+									</ion-item>
+            						<ion-item>
+										<button value="Salon" ion-button block class="button-room" type="submit" (click)="editerPiece($event)">
+											<ion-icon name="icon-couch"></ion-icon>
+											<p>salon</p>
+										</button>
+									</ion-item>
+								</ion-list>
+							</ion-scroll>
+						</ion-col>
 					</ion-row>
 					<ion-row class="end-slider">
-						<button ion-button block class="add-room" type="submit" (click)="modeliserMaison()">Ajouter une pièce</button>
-						<button ion-button block class="valider" type="submit">Valider</button>
+						<button ion-button block class="add-room" type="submit" (click)="ajoutPiece()">Ajouter une pièce</button>
+						<button ion-button block class="valider" type="submit" (click)="modeliserMaison()">Valider</button>
 					</ion-row>
 				</div>
 	        </ion-slide>
 	  	</ion-slides>
 
-			<ion-row class="pagination"><ion-icon name="icon-left-arrow-1" (click)="goToPrev()" class="left-arrow transparency"></ion-icon><p><span>1</span>/4</p><ion-icon name="icon-right-arrow" (click)="goToNext()" class="right-arrow"></ion-icon></ion-row>
+			<ion-row class="pagination">
+				<ion-icon name="icon-left-arrow-1" (click)="goToPrev()" class="left-arrow transparency"></ion-icon>
+				<p><span>1</span>/4</p>
+				<ion-icon name="icon-right-arrow" (click)="goToNext()" class="right-arrow"></ion-icon>
+			</ion-row>
 
-			<ion-row>
-				<div class="fond-cache">
+			<ion-row class="fond-cache">
 					<div class="lightbox">
 						<div col-12 class="lightbox-content">
-						  <div class="arrow-return" (click)="returnChoose()"><p></p><ion-icon name="icon-trash-1"></ion-icon></div>
-							<ion-list class="">
+							<div  class="return">
+								<ion-icon (click)="returnChoose()" name="icon-left-arrow-2" class="arrow-return" ></ion-icon>
+								<p> Editer : {{regPiece.nomPiece}}</p>
+								<ion-icon name="icon-trash-1"></ion-icon>
+							</div>
+							<ion-list class="nmPiece">
 								<ion-row col-12>
 									<ion-item>
 										<ion-label>Nom de la pièce</ion-label>
-										<ion-input placeholder="chambre"></ion-input>
+										<ion-input [(ngModel)]="regPiece.nomPiece"></ion-input>
 									</ion-item>
 								</ion-row>
 							</ion-list>
-							<ion-list class="icon-scene" radio-group [(ngModel)]="icon-scene">
+							<ion-list class="icon-scene" radio-group [(ngModel)]="regPiece.type">
 								<p>Type de pièce (sélection multiple)</p>
-								<ion-item>
+								<ion-item col-3>
 									<ion-checkbox class="lit" [(ngModel)]="lit" checked></ion-checkbox>
 								</ion-item>
-								<ion-item>
+								<ion-item col-3>
 									<ion-checkbox class="cuisine " [(ngModel)]="cuisine"></ion-checkbox>
 								</ion-item>
-								<ion-item>
+								<ion-item col-3>
 									<ion-checkbox class="douche" [(ngModel)]="douche"></ion-checkbox>
 								</ion-item>
-								<ion-item>
+								<ion-item col-3>
 									<ion-checkbox class="bureau" [(ngModel)]="bureau"></ion-checkbox>
 								</ion-item>
-								<ion-item>
+								<ion-item col-3>
 									<ion-checkbox class="canape" [(ngModel)]="canape"></ion-checkbox>
 								</ion-item>
-								<ion-item>
+								<ion-item col-3>
 									<ion-checkbox class="table" [(ngModel)]="table"></ion-checkbox>
 								</ion-item>
-								<ion-item>
+								<ion-item col-3>
 									<ion-checkbox class="porte" [(ngModel)]="porte"></ion-checkbox>
 								</ion-item>
-								<ion-item>
+								<ion-item col-3>
 									<ion-checkbox class="garage" [(ngModel)]="garage"></ion-checkbox>
 								</ion-item>
 							</ion-list>
@@ -148,7 +177,7 @@
 								<p>Température</p>
 							  <ion-item>
 									<ion-label range-right class="label-range">{{temperature}}</ion-label>
-							    <ion-range [(ngModel)]="temperature" color="dark" pin="true" max="35"></ion-range>
+							    <ion-range [(ngModel)]="temperature" color="secondary" max="35"></ion-range>
 							  </ion-item>
 							</ion-list>
 							<ion-list class="temperatureInconnue">
@@ -159,12 +188,76 @@
 							</ion-list>
 							<div>
 								<button ion-button block class="not-selected" type="submit" (click)="returnChoose()"><ion-icon name="icon-cancel"></ion-icon></button>
-								<button ion-button block class="" type="submit" (click)="modeliserMaison()"><ion-icon name="icon-check"></ion-icon></button>
+								<button ion-button block class="" type="submit" (click)="validerChoix()"><ion-icon name="icon-check"></ion-icon></button>
 							</div>
 						</div>
 					</div>
-				</div>
 			</ion-row>
+
+
+			<ion-row class="fond-cache2">
+					<div class="lightbox">
+						<div col-12 class="lightbox-content">
+							<div  class="return">
+								<ion-icon (click)="returnChoose()" name="icon-left-arrow-2" class="arrow-return" ></ion-icon>
+								<p> Ajouter une pièce</p>
+							</div>
+							<ion-list class="nmPiece">
+								<ion-row col-12>
+									<ion-item>
+										<ion-label>Nom de la pièce</ion-label>
+										<ion-input [(ngModel)]="regPiece.nomPiece" placeholder="nom"></ion-input>
+									</ion-item>
+								</ion-row>
+							</ion-list>
+							<ion-list class="icon-scene" radio-group [(ngModel)]="regPiece.type">
+								<p>Type de pièce (sélection multiple)</p>
+								<ion-item col-3>
+									<ion-checkbox class="lit" [(ngModel)]="lit" checked></ion-checkbox>
+								</ion-item>
+								<ion-item col-3>
+									<ion-checkbox class="cuisine " [(ngModel)]="cuisine"></ion-checkbox>
+								</ion-item>
+								<ion-item col-3>
+									<ion-checkbox class="douche" [(ngModel)]="douche"></ion-checkbox>
+								</ion-item>
+								<ion-item col-3>
+									<ion-checkbox class="bureau" [(ngModel)]="bureau"></ion-checkbox>
+								</ion-item>
+								<ion-item col-3>
+									<ion-checkbox class="canape" [(ngModel)]="canape"></ion-checkbox>
+								</ion-item>
+								<ion-item col-3>
+									<ion-checkbox class="table" [(ngModel)]="table"></ion-checkbox>
+								</ion-item>
+								<ion-item col-3>
+									<ion-checkbox class="porte" [(ngModel)]="porte"></ion-checkbox>
+								</ion-item>
+								<ion-item col-3>
+									<ion-checkbox class="garage" [(ngModel)]="garage"></ion-checkbox>
+								</ion-item>
+							</ion-list>
+							<ion-list class="temperature">
+								<p>Température</p>
+							  <ion-item>
+									<ion-label range-right class="label-range">{{temperature}}</ion-label>
+							    <ion-range [(ngModel)]="temperature" color="secondary" max="35"></ion-range>
+							  </ion-item>
+							</ion-list>
+							<ion-list class="temperatureInconnue">
+								<ion-item>
+									<ion-checkbox class="temperatureInconnue" [(ngModel)]="temperatureInconnue"></ion-checkbox>
+									<ion-label class="">Température inconnue</ion-label>
+								</ion-item>
+							</ion-list>
+							<div>
+								<button ion-button block class="not-selected" type="submit" (click)="returnChoose()"><ion-icon name="icon-cancel"></ion-icon></button>
+								<button ion-button block class="" type="submit" (click)="validerAjoutPiece()"><ion-icon name="icon-check"></ion-icon></button>
+							</div>
+						</div>
+					</div>
+			</ion-row>
+
 
 	</ion-grid>
 </ion-content>
