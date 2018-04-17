@@ -8,16 +8,49 @@
 <ion-content class="no-scroll">
 
 	<div class="choix-piece">
-
-		<ion-row>
-			<img class="maison-debut" alt="edition" src="../assets/imgs/temporaires/totale-pieces.png" (click)="activeJeu()"/>
+		<ion-row  class="firstList">
+			<h1>Choisir la pièce à modéliser</h1>
+			<ion-col col-12>
+				<ion-scroll scrollX="true">
+					<ion-list class="listButtonRoom">
+						<ion-item>
+							<button value="Chambre" ion-button block class="button-room" type="submit" (click)="activeJeuIni($event)">
+								<ion-icon name="icon-bed"></ion-icon>
+								<p >Chambre</p>
+							</button>
+						</ion-item>
+						<ion-item>
+							<button value="Salle de bains" ion-button block class="button-room" type="submit" (click)="activeJeuIni($event)">
+								<ion-icon name="icon-shower"></ion-icon>
+								<p>Salle de bains</p>
+							</button>
+						</ion-item>
+						<ion-item>
+							<button value="Salon" ion-button block class="button-room" type="submit" (click)="activeJeuIni($event)">
+								<ion-icon name="icon-couch"></ion-icon>
+								<p>Salon</p>
+							</button>
+						</ion-item>
+						<ion-item>
+							<button value="Cuisine" ion-button block class="button-room" type="submit" (click)="activeJeuCuisine($event)">
+								<ion-icon name="icon-cuisine"></ion-icon>
+								<p name="cuisine">Cuisine</p>
+							</button>
+						</ion-item>
+					</ion-list>
+				</ion-scroll>
+			</ion-col>		
 		</ion-row>
-
+		<ion-row>
+			<ion-col col-12>
+				<button ion-button block class="bouton-principal direct-accueil" type="submit" (click)="directionAccueil()">Terminer</button>
+	      	</ion-col>
+	    </ion-row>
 	</div>
 	<div class="cacher-totale">
 	<div class="parcours">
 		<div>
-			<div><p>cuisine ≈ {{superficie}} m<sup>2</sup></p></div>
+			<div><p>{{nomPiece}} ≈ {{superficie}} m<sup>2</sup></p></div>
 			<div >
 				<ion-icon name="resize" class="resize active"><!-- <p>taille</p> --></ion-icon>
 				>
@@ -46,7 +79,7 @@
     		</div>
     		<div class="bouton-taille">
     			<button ion-button block class="bouton-principal" (click)="validerTaille()"><ion-icon name="icon-check"></ion-icon></button>
-				<button ion-button block class="bouton-contour"><ion-icon name="icon-cancel"></ion-icon></button>
+				<button ion-button block class="bouton-contour" (click)="annulerRetouchePiece()"><ion-icon name="icon-cancel"></ion-icon></button>
 			</div>
 		  	</ion-col>
 	  	</ion-row>
@@ -321,19 +354,21 @@
 		                
 		    </div>
 	  	</ion-row>
-		<button ion-button block class="bouton-contour bouton fond-cache"><ion-icon name="icon-cancel"></ion-icon></button>
-		<button ion-button block class="bouton-principal bouton bouton-annuler fond-cache"><ion-icon name="icon-check"></ion-icon></button>
+		<button ion-button block class="bouton-contour bouton fond-cache" type="submit" (click)="annulerRetouchePiece()"><ion-icon name="icon-cancel"></ion-icon></button>
+		<button ion-button block class="bouton-principal bouton bouton-annuler fond-cache" type="submit" (click)="validerRetouchePiece()"><ion-icon name="icon-check"></ion-icon></button>
 
 		<ion-row class="lightbox-cache">
 			<div class="box-principal">
 				<div class="lightbox">
 					<div col-12 class="lightbox-content">
-					  <div (click)="returnChoose()" class="return"><ion-icon name="icon-left-arrow-2" class="arrow-return" ></ion-icon> Ajouter un appareil</div>
+					  <div  class="return"><ion-icon name="icon-left-arrow-2" class="arrow-return" (click)="returnChoose()"></ion-icon>
+					  	<p>Voir l'objet</p>
+					  	<ion-icon name="icon-trash-1" class="trash" (click)="supprimer()"></ion-icon></div>
 
 				      <form >
 						<ion-list>
 							<ion-item>
-						    	<ion-label color="primary" floating>Nom de l'appareil</ion-label>
+						    	<ion-label color="primary" floating>Nom de l'objet</ion-label>
 						    	<ion-input [(ngModel)]="regApp.nomApp" name="nom"  type="text"></ion-input>
 						  	</ion-item>
 						  	<ion-item>

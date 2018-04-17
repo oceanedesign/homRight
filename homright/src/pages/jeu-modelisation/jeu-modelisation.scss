@@ -1,13 +1,83 @@
 page-jeu-modelisation {
 
 
-	.maison-debut{
-	max-width: 1200px;
-	margin: auto;
-	width: 100%;
-    height: 100%;
-    cursor: pointer;	
+	.direct-accueil{
+	width: 170px;
+    cursor: pointer;
+    position: fixed;
+    bottom: 40px;
+    left:0%;
+    right: 0%;
 	}
+
+
+      ion-row.firstList{
+        margin: auto;
+        h1{
+        	text-align: center;
+        	color:black;
+        	font-size: 26px;
+        	margin: 30px auto;
+        }
+      }
+        ion-scroll{
+          height: 150px;
+          white-space:nowrap;
+          //margin: -16px;
+          .scroll-content{
+            padding: 0px !important;
+          }
+        ion-list.list{
+          width:100%;
+          margin-bottom: 0;
+          margin-left: 40px;
+          text-align: center;
+          ion-item.item-block{
+            display: inline-block;
+            width: auto;
+            padding: 0;
+            button.button-room{
+              background: white;
+              color: map-get($colors, secondary);
+              width: 120px;
+              height: 120px !important;
+              border: 1px solid #F2F2F2;
+              box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+              border-radius: 8px;
+              margin: 0 auto 24px auto;
+              padding: 0;
+              position: relative;
+              pointer-events: auto;
+              .button-inner{
+                display: block;
+                p{
+                  margin: auto;
+                  margin-top: 20px;
+                  font-weight: 700;
+                  text-transform: initial;
+                  color: black;
+                }
+                p[name="Cuisine"]{
+                	margin-top: 35px;
+                }
+              }
+              ion-icon{
+                &::before{
+                  font-size: 60px;
+                  top: 15px;
+                  position: relative;
+                  color: map-get($colors, secondary);
+
+                }
+                &[name="icon-cuisine"]::before{
+                	font-size: 45px;
+                	top:25px;
+                }
+              }
+            }
+          }
+        }
+      }
 
 	.parcours{
 		position: fixed;
@@ -266,7 +336,7 @@ page-jeu-modelisation {
 	.list-ios > .item-wrapper:last-child .item-block .item-inner, .list-md .item-input:last-child, .list-md .item-input,
 	.list-md .item-input:first-child, .list-ios > .item-wrapper:last-child .item-block,
 	.list-md .item-block .item-inner{
-		border-color: transparent;
+	//	border-color: transparent;
 	}
 
 	.choix{
@@ -522,6 +592,37 @@ input[type="range"]
       		text-transform: uppercase;
       		font-size: 16px;
       		text-align: center;
+          height: 40px;
+          line-height: 40px;
+          .arrow-return{
+          cursor: pointer;
+          display: block;
+          float: left;
+          margin-top: 10px;
+          color: map-get($colors, secondary);
+          &::before{
+              font-size: 20px;
+            }
+          }
+          p{
+            display: inline;
+            padding-right: 8px;
+            text-transform: uppercase;
+            margin: 0;
+            font-weight: 700;
+            font-size: 16px;
+          }
+          ion-icon[name='icon-trash-1']{
+            background: map-get($colors, primary);
+            padding: 10px;
+            border-radius: 50px;
+            color: white;
+            float: right;
+            &::before{
+              font-size: 18px;
+            }            
+          }
+       
       }
       form{
       	padding: 10px 40px 35px 40px;

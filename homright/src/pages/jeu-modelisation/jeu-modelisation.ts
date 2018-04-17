@@ -2,12 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { Platform } from 'ionic-angular';
-/**
- * Generated class for the JeuModelisationPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { HomePage } from '../home/home';
+
 
 declare var jQuery:any;
 declare var $:any;
@@ -30,7 +26,7 @@ export class JeuModelisationPage {
   longueur =0;
   regApp = {"nomApp": "", "connexion":""};
   connexion: boolean = false;
-
+  nomPiece: String;
 
   constructor(public plt: Platform, private screenOrientation : ScreenOrientation, public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -54,14 +50,60 @@ export class JeuModelisationPage {
     this.ActiveDraggable();
     this.InitCache();
     this.activeDraggableItem();
+    this.recupNomPiece();
+  }
+
+  directionAccueil(){
+    this.navCtrl.push(HomePage);
+  }
+
+    recupNomPiece(){
+    let value;
+    var buttonRoom = $('.listButtonRoom').find('.button-room');
+
+    $('.button-room').each(function() {
+    
+    value = $(this).attr('value');
+    let paragraphe = $( this ).find('p');
+    paragraphe.replaceWith( "<p name='"+value+"'>"+value+"</p>");
+    });
+
+    console.log(value);
   }
 
 
-  activeJeu(){
+  activeJeuCuisine(event){
     $(".choix-piece").css("display", "none");
     $(".cacher-totale").css("display", "block");
     this.validerTaille();
 
+     var bouton = event.target.closest('button'); //Définit la variable bouton et attribut le bouton
+    console.log($(bouton).attr('value')); //récupération de l'attribut "value" du bouton
+    this.nomPiece = $(bouton).attr('value') ; //Attribut la nouvelle valeur   
+
+  }
+
+  activeJeuIni(event){
+    $(".choix-piece").css("display", "none");
+    $(".cacher-totale").css("display", "block");
+    $(".spare-item2").css("display", "none");
+
+    var bouton = event.target.closest('button'); //Définit la variable bouton et attribut le bouton
+    console.log($(bouton).attr('value')); //récupération de l'attribut "value" du bouton
+    this.nomPiece = $(bouton).attr('value') ; //Attribut la nouvelle valeur
+  }
+
+  annulerRetouchePiece(){
+    //Desactive la zone de retouches de la pièce et active l'écran de choix des pièces
+    this.InitCache();
+    $(".choix-piece").css("display", "block");
+
+  }
+
+  validerRetouchePiece(){
+    //Valide toutes les retouches et active l'écran de choix des pièces
+       this.InitCache();
+    $(".choix-piece").css("display", "block"); 
   }
 
   updateConnexion() {
@@ -220,8 +262,9 @@ export class JeuModelisationPage {
 
               $(this).on('click', '.buttonVoir', function() {
                 //Function permettant d'activer le pop up 
-                  console.log('Activation pop up');
+                  console.log('Activation pop up pas en mode Ini');
                   $(".lightbox-cache").css("display", "flex");
+                  
               })
 
 
@@ -308,17 +351,24 @@ export class JeuModelisationPage {
           "transform": "scaleX(-1)"
           });
          $(this).parent().attr('symetrie', + "-1");
-  }})
+    }})
 
     .on('click', '.buttonVoir', function() {
     //Function permettant d'activer le pop up 
-      console.log('Activation pop up');
+      console.log('Activation pop up ini');
       $(".lightbox-cache").css("display", "flex");
-  })
+       
+    })
 
   }
 
+  supprimer(){
+    console.log("supprimer");
+    let rechercheItem = $( ".spare-item2").find('.cache:visible').closest('div').remove();
+    $(".lightbox-cache").css("display", "none");
+  }
 
+  
   tailleSol(){
     console.log("colonne : "+ this.colonne);
     $('.case-sol').attr('colonne', + this.colonne).attr('ligne', +this.ligne);
