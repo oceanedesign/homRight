@@ -4,6 +4,8 @@ import{StatsVue_3dPage} from "../stats-vue-3d/stats-vue-3d";
 import { LottieAnimationViewModule } from 'ng-lottie';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
+import{TabsPage} from "../tabs/tabs";
+
 declare var jQuery:any;
 declare var $:any;
 @Component({
@@ -34,6 +36,10 @@ export class HomePage {
 
   pushEvent(){
 
+  }
+
+  pushMenu(){
+    this.navCtrl.push(TabsPage);
   }
 
 	updateRoutines(value: string){

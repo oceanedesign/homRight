@@ -1,5 +1,68 @@
-<ion-tabs>
-	<ion-tab [root]="tab2Root" tabTitle="Conso" tabIcon="information-circle"></ion-tab>
-	<ion-tab [root]="tab3Root" tabTitle="Forum" tabIcon="contacts"></ion-tab>
-	<ion-tab [root]="tab4Root" tabTitle="Profil" tabIcon="contacts"></ion-tab>
-</ion-tabs>
+<ion-content padding>
+	<ion-grid class="container">
+						<ion-row class="fond-noir">
+					<div class="lightbox">
+						<div col-12 class="lightbox-content">
+							<div  class="profilSection">
+								<ion-icon name="icon-share" class="partage"></ion-icon>
+								<ion-icon name="icon-edit"></ion-icon>
+							</div>
+							<button ion-item (click)="maMaison()">
+								<ion-icon name="icon-home" icon-start></ion-icon>
+								<ion-icon name="icon-chevron" icon-end></ion-icon>
+								<div>
+    	  							<h1>Ma maison</h1>
+									<p>Configurer et optimiser ma maison</p>
+								</div>							
+    						</button>
+
+							<button ion-item (click)="directionEvent()">
+								<ion-icon name="icon-calendar" icon-start></ion-icon>
+								<ion-icon name="icon-chevron" icon-end></ion-icon>
+								<div>
+    	  							<h1>Je participe</h1>
+									<p>Trouver et participer à un évènement</p>
+								</div>							
+    						</button>
+
+							<button ion-item (click)="directionBoutique()">
+								<ion-icon name="icon-shopping-cart" icon-start></ion-icon>
+								<ion-icon name="icon-chevron" icon-end></ion-icon>
+								<div>
+    	  							<h1>Boutique</h1>
+									<p>Découvrir les dernières nouveautés et utiliser mes coupons</p>
+								</div>							
+    						</button>
+
+							<button ion-item (click)="directionForum()">
+								<ion-icon name="icon-chat" icon-start></ion-icon>
+								<ion-icon name="icon-chevron" icon-end></ion-icon>
+								<div>
+    	  							<h1>Je partage</h1>
+									<p>Echanger sur le forum mes astuces pour une consommation responsable</p>
+								</div>							
+    						</button>
+
+							<button ion-item (click)="directionContact()">
+								<ion-icon name="icon-information" icon-start></ion-icon>
+								<ion-icon name="icon-chevron" icon-end></ion-icon>
+								<div>
+    	  							<h1>Contact</h1>
+									<p>Besoin d’aide ?</p>
+								</div>							
+    						</button>
+
+							<button ion-item (click)="directionParametre()">
+								<ion-icon name="icon-settings" icon-start></ion-icon>
+								<ion-icon name="icon-chevron" icon-end></ion-icon>
+								<div>
+    	  							<h1>Paramètres</h1>
+									<p>Confidentialité, notifications, déconnexion</p>
+								</div>							
+    						</button>
+						</div>
+					</div>
+			</ion-row>
+	</ion-grid>
+	<button class="boutton-menuP" (click)="pushMenu()"><img  alt="menu principal" src="../assets/button/menu.png"/></button>
+</ion-content>

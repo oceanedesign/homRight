@@ -1,0 +1,93 @@
+tabs{
+	.fond-noir{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      top: 0;
+      left: 0;
+      .lightbox{
+        margin: auto;
+        margin-top: 40px;
+        width: 100%;
+        height: 100%;
+        background: white;
+        padding: 20px;
+        box-sizing: border-box;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+      .lightbox-content{
+        
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+        height: 100%;
+        
+		.profilSection{
+          	height: 40px;
+          	line-height: 40px;
+          	.partage{
+	          cursor: pointer;
+	          display: block;
+	          float: left;
+	          color: white;
+	          padding: 10px;
+	          border-radius: 50px;
+	          background: map-get($colors, secondary);
+	          &::before{
+	              font-size: 16px;
+            	}
+          	}
+	        ion-icon[name='icon-edit']{
+	            background: map-get($colors, primary);
+	            padding: 10px;
+	            border-radius: 50px;
+	            color: white;
+	            float: right;
+	            &::before{
+	              	font-size: 16px;
+	            }            
+	          }
+	        }
+    	}
+	}
+	button.item-block.item{
+		margin: 20px 0px;
+	 	.item-inner{
+			font-family: 'Futura';
+			padding: 0px;
+			border-bottom: 1px solid transparent;
+			.label{
+				margin: 0px;
+				white-space: initial;
+			}
+			h1{
+				font-size: 18px;
+				font-weight: 700;
+			}
+			p{
+				font-size: 14px;
+				font-weight: 500;
+				width: 85%;
+			}
+			ion-icon[icon-start]{
+				margin-top: 5px;
+	    		margin-bottom: 20px;
+				float: left;
+				margin-right: 20px;
+				color:: map-get($colors, secondary);
+			}
+		}
+	}
+
+	@media screen and (max-width: 360px) {
+		button.item-block.item .item-inner ion-icon[icon-start]{
+    		margin-bottom: 30px;
+		}
+		.fond-noir .lightbox{
+			margin-bottom: 80px;
+		}
+  	}
+
+}

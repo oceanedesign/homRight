@@ -120,6 +120,32 @@ ion-content.HomieGood{
   }
 }
 
+ion-content.HomieAnalyse{
+  .title{
+    h1{
+      &::before{
+        content: "Hom'right,";
+      }
+    }   
+    p.analyseMessage{
+      &::before{
+        content: "Homie analyse votre consommation";
+      }
+    }
+  }
+  ion-row.mascotte{
+    img{
+      &:nth-child(1){
+        display: block;
+      }
+      &:nth-child(2){
+        display: none;
+      }
+    }
+  }
+}
+
+
 ion-content.HomieBad{
   .title{
     h1{
