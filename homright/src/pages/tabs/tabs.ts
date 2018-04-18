@@ -7,6 +7,9 @@ import { HomePage } from '../home/home';
 import { ProfilPage } from '../profil/profil';
 import{EventsPage} from "../events/events";
 
+declare var jQuery:any;
+declare var $:any;
+
 @Component({
 	selector: 'tabs',
   	templateUrl: 'tabs.html'

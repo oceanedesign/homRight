@@ -8,9 +8,7 @@ import { HomePage } from '../home/home';
 declare var jQuery:any;
 declare var $:any;
 import 'jquery-ui-dist/jquery-ui';
-//declare var lignes;
-//declare var colonnes;
-//declare var test;
+
 @IonicPage()
 @Component({
   selector: 'page-jeu-modelisation',
