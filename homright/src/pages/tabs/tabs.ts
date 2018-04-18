@@ -41,4 +41,8 @@ export class TabsPage {
 
   directionParametre(){}
 
+  popMenu(){
+  	this.navCtrl.pop();
+  }
+
 }

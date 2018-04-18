@@ -76,12 +76,12 @@ export class LoginPage {
     this.regData.lat = this.lat;
     this.regData.lng = this.lng;
     console.log(this.regData);
-    this.authServiceProvider.postData(this.regData,'signup/').then((result) => {
-      console.log("ça maaarche");
+    //this.authServiceProvider.postData(this.regData,'signup/').then((result) => {
+    //  console.log("ça maaarche");
        this.navCtrl.push(SignupPage);
-    }, (error) => {
-        console.log("ça ne marche pas");
-    });
+    //}, (error) => {
+    //    console.log("ça ne marche pas");
+    //});
   }
 
   connexion(){
