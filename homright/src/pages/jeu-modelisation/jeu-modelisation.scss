@@ -319,6 +319,9 @@ page-jeu-modelisation {
 		//transition: visibility 1s;
 		h2, p{
     		color: white;
+		}
+		.list-md .item-block .item-inner {
+    		border-bottom: 1px solid transparent;
 		}		
 	}	
 
@@ -927,6 +930,32 @@ input[type="range"]
 
 		.item-#{$nom}.spare-item2{
 			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 60px;
+		    height: 120px;
+		    background-size: 60px 120px;
+		}
+
+	}
+
+	@mixin makeIsometrie90x180($nom) {
+		.item-#{$nom}{
+			background-image: url("../../assets/isometrie/symbole/#{$nom}.png");
+			width: 50px;
+			height: 50px;
+		    background-size: 50px 50px;
+		}
+
+		.item-#{$nom}.spare-item{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
+			width: 40px;
+		    height: 80px;
+		    background-size: 40px 80px;	
+		    right: 50px;
+    		top: 32px;		
+		}
+
+		.item-#{$nom}.spare-item2{
+			background-image: url("../../assets/isometrie/#{$nom}.png");
 			width: 90px;
 		    height: 180px;
 		    background-size: 90px 180px;
@@ -990,7 +1019,7 @@ input[type="range"]
 	@include makeIsometrie300x300(table);	
 
 	@include makeIsometrie180x360(placard);
-	@include makeIsometrie60x120(frigo);
+	@include makeIsometrie90x180(frigo);
 
 	@media only screen and (min-width: 1300px) {
 		.container {

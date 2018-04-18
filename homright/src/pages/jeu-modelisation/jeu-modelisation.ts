@@ -90,8 +90,8 @@ export class JeuModelisationPage {
 
     $(".fond-cache").css("display", "none");
     $(".contenu-taille").css("display", "flex");
-    if($("#case-maison").hasClass("case-maison3d")){
-      $("#case-maison").removeClass("case-maison3d");
+    if($(".case-maison").hasClass("case-maison3d")){
+        $(".case-maison").removeClass("case-maison3d");
     }
     if($(".resize").hasClass("inactive")){
       $(".resize").removeClass("inactive");
@@ -207,7 +207,7 @@ export class JeuModelisationPage {
   validerTaille(){
     $(".fond-cache").css("display", "flex");
     $(".contenu-taille").css("display", "none");
-    $("#case-maison").addClass("case-maison3d");
+    $(".case-maison").addClass("case-maison3d");
     $(".resize").addClass("inactive");
     $(".cube").removeClass("inactive").addClass("active");
     $(".mur, .mur2").removeClass("mur-cache").addClass("mur-visible");  
@@ -297,7 +297,7 @@ export class JeuModelisationPage {
       },
 
       stop: function(event,ui){
-        $(this).insertBefore("#case-maison");
+        $(this).insertBefore(".case-maison");
         $(this).attr('position-x', + ui.position.left);
         $(this).attr('position-y', + ui.position.top);
 
@@ -342,7 +342,7 @@ export class JeuModelisationPage {
         }},
 
       stop: function(event,ui){
-        $(this).insertBefore("#case-maison");
+        $(this).insertBefore(".case-maison");
         $(this).attr('position-x', + ui.position.left);
         $(this).attr('position-y', + ui.position.top);
       }
@@ -392,8 +392,8 @@ export class JeuModelisationPage {
     $('.case-sol').attr('colonne', + this.colonne).attr('ligne', +this.ligne);
     $('.case-sol, .actions').width(this.colonne*160-2+"px");
 
-    $('.case-sol, #case-maison, .actions').height(this.ligne*60-2+"px"); 
-    $('#case-maison').width(this.colonne*60-2+"px");
+    $('.case-sol, .case-maison, .actions').height(this.ligne*60-2+"px"); 
+    $('.case-maison').width(this.colonne*60-2+"px");
     $('.mur').width(this.ligne*50-10+"px");
 
     $('.mur').css({"left": (-((this.ligne-1)*25)-15)+(((this.colonne-1)*8))+"px"});
@@ -425,11 +425,11 @@ export class JeuModelisationPage {
   }
 
   activationBoutton(){
-  	 $('#elements').addClass('elements-active');
-  	 $('#elements').removeClass('elements');
+  	 $('.elements-ini').addClass('elements-active');
+  	 $('.elements-ini').removeClass('elements');
 
-  	 $('#contenuPrincipal').addClass('contenu-actif');
-  	 $('#contenuPrincipal').removeClass('contenu');
+  	 $('.contenu-ini').addClass('contenu-actif');
+  	 $('.contenu-ini').removeClass('contenu');
 
   	 $('.container').removeClass('container-inactif');
   	 $('.container').addClass('container-actif');
@@ -439,11 +439,11 @@ export class JeuModelisationPage {
   }
 
   desactiveBoutton(){
-  	$('#elements').removeClass('elements-active');
-  	$('#elements').addClass('elements');
+  	$('.elements-ini').removeClass('elements-active');
+  	$('.elements-ini').addClass('elements');
 
-  	 $('#contenuPrincipal').addClass('contenu');
-  	 $('#contenuPrincipal').removeClass('contenu-actif');
+  	 $('.contenu-ini').addClass('contenu');
+  	 $('.contenu-ini').removeClass('contenu-actif');
 
   	 $('.container').removeClass('container-actif');
   	 $('.container').addClass('container-inactif');

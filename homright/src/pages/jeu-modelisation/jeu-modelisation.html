@@ -83,8 +83,8 @@
 			</div>
 		  	</ion-col>
 	  	</ion-row>
-		<ion-row id="contenuPrincipal" class="contenu fond-cache">
-			<ion-col id="elements" col-7 class="elements">
+		<ion-row id="contenuPrincipal" class="contenu-ini contenu fond-cache">
+			<ion-col id="elements" col-7 class="elements-ini elements">
 		  		<div [ngSwitch]="objetType" class="card">
 			    	<div *ngSwitchCase="'ouverture'" class="container-actif container">
 			    		<h1>Ouverture</h1>
@@ -123,7 +123,7 @@
 
 							<ion-item>
 								<div item-end>
-									<div id="lampadaire-halo" class="objets-presentation item-lampadaire-halo sans-symetrie" (click)="caseMaisonObjet($event);"></div>
+									<div id="lampadaire-halo" class="item-lampadaire-halo2 objets-presentation item-lampadaire-halo sans-symetrie" (click)="caseMaisonObjet($event);"></div>
 								</div>
 								<h2>Halogène</h2>
 								<p>lampadaire</p>
@@ -345,7 +345,7 @@
 
 
 
-		              		<div id="case-maison" class=""></div>
+		              		<div id="case-maison" class="case-maison"></div>
 		              		<div class="mur mur-cache"></div>
 		              		<div class="mur2 mur-cache"></div>
 		              </div>
