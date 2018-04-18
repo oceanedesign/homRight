@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Je participe</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-grid class="container">
+		<ion-toolbar>
+    		<ion-segment [(ngModel)]="eventType">
+      			<ion-segment-button value="eventApp">
+        		Hom'right
+      			</ion-segment-button>
+      			<ion-segment-button value="eventVille" >
+        		Autour de moi
+      			</ion-segment-button>
+    		</ion-segment>
+ 		</ion-toolbar>
+
+ 		<div [ngSwitch]="eventType" class="card">
+	    	<div *ngSwitchCase="'eventApp'" class="container">
+		      	<ion-row>
+					<img class="stats" alt="evenements dans l'application" src="../assets/imgs/events/events-app.png"/>
+				</ion-row>
+	    	</div>
+
+	    	<div *ngSwitchCase="'eventVille'" class="container">
+		      	<ion-row>
+					<img class="stats" alt="evenements à l'exterieur" src="../assets/imgs/events/events-ville.png"/>
+				</ion-row>
+	    	</div>
+
+	    </div>
+	</ion-grid>
+		<button class="boutton-menuP" (click)="pushMenu()"><img  alt="menu principal" src="../assets/button/menu.png"/></button>
+</ion-content>

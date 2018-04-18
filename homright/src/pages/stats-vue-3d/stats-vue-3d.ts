@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import{JeuModelisationPage} from "../jeu-modelisation/jeu-modelisation";
 import{TabsPage} from "../tabs/tabs";
+import{ConsoPage} from "../conso/conso";
 
 @IonicPage()
 @Component({
@@ -22,6 +23,12 @@ export class StatsVue_3dPage {
 
   directionJeu(){
 	this.navCtrl.push(JeuModelisationPage);  	
+  }
+  directionConsoTypePiece(typePiece){
+    typePiece = typePiece;
+    this.navCtrl.push(ConsoPage, {
+      data:typePiece
+    });
   }
 
   pushMenu(){

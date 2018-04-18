@@ -5,6 +5,7 @@ import { ConsoPage } from '../conso/conso';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { ProfilPage } from '../profil/profil';
+import{EventsPage} from "../events/events";
 
 @Component({
 	selector: 'tabs',
@@ -25,14 +26,28 @@ export class TabsPage {
   }
 
   maMaison(){
+    $(".menu-principal").css("display", "none");
+    $(".sous-menu").css("display", "block");
+  }
 
+  retour(){
+    $(".menu-principal").css("display", "block");
+    $(".sous-menu, .profilSection.sous-menu").css("display", "none");    
   }
 
   editProfil(){}
 
   directionEvent(){
+    this.navCtrl.push(EventsPage);
+  }
+
+  directionFournisseur(){
 
   }
+
+  directionComparer(){}
+
+  directionBudget(){}
 
   directionBoutique(){
 
@@ -50,6 +65,8 @@ export class TabsPage {
   directionPoints(){}
 
   directionParametre(){}
+
+  directionDemenagement(){}
 
   retourMenu(){
   	this.navCtrl.pop();

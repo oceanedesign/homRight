@@ -1,11 +1,17 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      {{typePiece}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+	<ion-grid class="container">
+		<ion-row>
+			<img class="stats cuisine" alt="Consommation de la cuisine" src="../assets/imgs/vue3D/conso-piece.png"/>
+			<img class="stats autre" alt="Consommation d'une piece sans appareil'" src="../assets/imgs/vue3D/conso-autre.png"/>
+		</ion-row>
+	</ion-grid>
+	<button class="boutton-menuP" (click)="pushMenu()"><img  alt="menu principal" src="../assets/button/menu.png"/></button>
 </ion-content>

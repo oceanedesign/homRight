@@ -186,7 +186,7 @@ page-pre-modelisation {
       display: inline-block;
       position: fixed;
       left: calc(50% - 60px);
-      top: 84%;
+      bottom: 15px;
       z-index: 50;
       p{
         width: auto;
@@ -383,26 +383,27 @@ page-pre-modelisation {
           font-size: 12px;
           font-weight: 700;
           margin: auto;
+          margin-bottom: 50px;
         }
       }
-        ion-scroll{
-          height: 150px;
-          white-space:nowrap;
-          margin: -16px;
-          .scroll-content{
-            padding: 0px !important;
-          }
+
         ion-list{
           width:100%;
           margin-bottom: 0;
-              margin-top: -10px;
-              margin-left: 20px;
-          //width: 1000px;
-          // display: flex;
-          ion-item{
+          //margin-top: -10px;
+          //margin-left: 20px;
+
+          ion-item.item-block{
             display: inline-block;
+            margin-top: 0px;
             width: auto;
             padding: 0;
+            .item-inner{
+              border-bottom: 1px solid transparent;
+              .label{
+                margin:0px;
+              }
+            }
             button.button-room{
               background: white;
               color: map-get($colors, secondary);
@@ -436,13 +437,13 @@ page-pre-modelisation {
             }
           }
         }
-      }
+    
     }
 
     .fond-cache, .fond-cache2{
       position: absolute;
       width: 100%;
-      height: 100vh;
+      height: 100%;
       background-color: rgba(0, 0, 0, 0.9);
       top: 0;
       left: 0;

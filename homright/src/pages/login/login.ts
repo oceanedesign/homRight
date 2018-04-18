@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { LottieAnimationViewModule } from 'ng-lottie';
 import{SignupPage} from "../signup/signup";
-import { TabsPage } from '../tabs/tabs';
+import { HomePage } from '../home/home';
 
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { Geolocation } from '@ionic-native/geolocation';
@@ -85,7 +85,7 @@ export class LoginPage {
   }
 
   connexion(){
-  	this.navCtrl.push(TabsPage);
+  	this.navCtrl.push(HomePage);
   }
 
 }

@@ -5,7 +5,7 @@ import { LottieAnimationViewModule } from 'ng-lottie';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 import{TabsPage} from "../tabs/tabs";
-
+import{EventsPage} from "../events/events";
 declare var jQuery:any;
 declare var $:any;
 @Component({
@@ -35,7 +35,7 @@ export class HomePage {
   }
 
   pushEvent(){
-
+    this.navCtrl.push(EventsPage);
   }
 
   pushMenu(){

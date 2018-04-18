@@ -3,11 +3,11 @@
 						<ion-row class="fond-noir">
 					<div class="lightbox">
 						<div class="lightbox-content">
-							<div  class="profilSection">
+							<div  class="profilSection menu-principal">
 									<ion-icon name="icon-share" class="partage"></ion-icon>
 									<ion-icon name="icon-edit" (click)="editProfil()"></ion-icon>
-								</div>
-							<div col-lg-6 style="text-align: center;">
+							</div>
+							<div col-lg-6 style="text-align: center;" class='menu-principal'>
 								
 								<div class="photo">
 									<p>Pseudo</p>
@@ -22,14 +22,14 @@
 									<p>points</p>
 								</ion-col>
 							</div>
-							<div col-lg-6 class='list-menu'>
+							<div col-lg-6 class='list-menu menu-principal'>
 
 								<button ion-item (click)="directionAccueil()">
 									<img class="homie-icone" alt="Homie direction l'accueil" src="../assets/imgs/homie-icone.png"/>
 									<ion-icon name="icon-chevron" icon-end></ion-icon>
 									<div>
 	    	  							<h1>Accueil</h1>
-										<p>Revenir à l'accueil et consultez l'humeur de Homie</p>
+										<p>Revenir à l'accueil et consulter l'humeur de Homie</p>
 									</div>							
 	    						</button>
 
@@ -87,6 +87,50 @@
 									</div>							
 	    						</button>
     						</div>
+
+							<div  class="profilSection sous-menu">
+									<ion-icon name="icon-left-arrow-2" class="retour" (click)="retour()"></ion-icon>
+									<p>Ma maison</p>
+							</div>
+							<div col-lg-6 class='list-menu sous-menu'>
+
+								<button ion-item (click)="directionFournisseur()">
+									<ion-icon name="icon-thunderbolt" icon-start></ion-icon>
+									<ion-icon name="icon-chevron" icon-end></ion-icon>
+									<div>
+	    	  							<h1>Mon fournisseur d'énergie</h1>
+										<p>Configurer mon fournisseur et mon contrat</p>
+									</div>							
+	    						</button>
+
+								<button ion-item (click)="directionComparer()">
+									<ion-icon name="icon-scale" icon-start></ion-icon>
+									<ion-icon name="icon-chevron" icon-end></ion-icon>
+									<div>
+	    	  							<h1>Me comparer</h1>
+										<p>Comparer ma consommation avec d'autres Hom'rees</p>
+									</div>							
+	    						</button>
+
+								<button ion-item (click)="directionBudget()">
+									<ion-icon name="icon-piggy-bank" icon-start></ion-icon>
+									<ion-icon name="icon-chevron" icon-end></ion-icon>
+									<div>
+	    	  							<h1>Mon budget</h1>
+										<p>Echanger sur le forum mes astuces pour une consommation responsable</p>
+									</div>							
+	    						</button>
+
+								<button ion-item (click)="directionDemenagement()">
+									<ion-icon name="icon-flag" icon-start></ion-icon>
+									<ion-icon name="icon-chevron" icon-end></ion-icon>
+									<div>
+	    	  							<h1>Je déménage</h1>
+										<p>Synchroniser avec mon nouveau compteur Linky</p>
+									</div>							
+	    						</button>
+    						</div>
+
 						</div>
 					</div>
 			</ion-row>

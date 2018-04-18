@@ -1,3 +1,21 @@
 page-conso {
 
+	.container{
+        display: block;
+        max-width: 450px;
+        margin: 0 auto;
+        position:relative !important;
+        padding-top : 0px ;
+        padding-bottom : 0px ;
+    }
+
+	.stats{
+        margin: 0px auto 25px auto;
+        width: 100%;
+        height: 100%;       
+    }
+
+    .cuisine{
+    	display: none;
+    }
 }

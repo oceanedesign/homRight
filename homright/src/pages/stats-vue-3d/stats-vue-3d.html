@@ -91,25 +91,25 @@
 			    	<ion-col col-12 style="text-align: center;">
 			    		<h1>Pièces</h1>
 			    		<ion-col col-6>
-			    			<button value="Cuisine" class="button-room" type="submit">
+			    			<button value="Cuisine" #cuisine class="button-room" type="submit" (click)="directionConsoTypePiece(cuisine.value)">
 								<ion-icon name="icon-cuisine"></ion-icon>
 								<p name="cuisine">Cuisine</p>
 							</button>
 			    		</ion-col>
 			    		<ion-col col-6>
-			    			<button value="Salon" class="button-room">
+			    			<button value="Salon" #salon class="button-room" (click)="directionConsoTypePiece(salon.value)">
 								<ion-icon name="icon-couch"></ion-icon>
 								<p>Salon</p>
 							</button>
 			    		</ion-col>
 			    		<ion-col col-6>
-			    			<button value="Salle de bains" class="button-room">
+			    			<button value="Salle de bains" #sdb class="button-room" (click)="directionConsoTypePiece(sdb.value)">
 								<ion-icon name="icon-shower"></ion-icon>
 								<p>Salle de bains</p>
 							</button>
 			    		</ion-col>
 			    		<ion-col col-6>
-							<button value="Chambre" class="button-room">
+							<button value="Chambre" #chambre class="button-room" (click)="directionConsoTypePiece(chambre.value)">
 								<ion-icon name="icon-bed"></ion-icon>
 								<p>Chambre</p>
 							</button>

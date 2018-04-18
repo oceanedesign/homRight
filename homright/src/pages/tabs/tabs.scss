@@ -1,4 +1,32 @@
 tabs{
+
+	.sous-menu[col-lg-6]{
+		display: none;
+		margin: auto;
+		float: none;
+	}
+	.profilSection.sous-menu{
+		display: none;
+		p{
+			text-align: center;
+			text-transform: uppercase;
+			font-family: "Futura";
+			font-weight: 300;
+			font-size: 16px;
+		}
+        ion-icon[name="icon-left-arrow-2"].partage{
+            background: white;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 0px;
+            color: black;
+            &::before{
+              	font-size: 16px;
+            }            
+          }		
+	}
+	
+
 	.fond-noir{
       position: absolute;
       width: 100%;
