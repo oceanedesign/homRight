@@ -40,6 +40,7 @@ tabs{
 	        ion-icon[name='icon-edit']{
 	            background: map-get($colors, primary);
 	            padding: 10px;
+	            cursor: pointer;
 	            border-radius: 50px;
 	            color: white;
 	            float: right;
@@ -68,6 +69,11 @@ tabs{
 				font-size: 14px;
 				font-weight: 500;
 				width: 85%;
+			}
+			.homie-icone{
+				width: 29px;
+    			float: left;
+    			margin: 0px 18px 20px 0px;
 			}
 			ion-icon[icon-start]{
 				margin-top: 5px;
@@ -108,7 +114,8 @@ tabs{
 		font-weight: 600;
 		text-transform: uppercase;
 		margin: 20px 40px;
-
+		cursor: pointer;
+				
 		h2{
 			margin: 0px;
 			font-size: 25px;
@@ -182,9 +189,10 @@ tabs{
 	}
 
 	@media screen and (max-width: 420px) {
-		button.item-block.item .item-inner ion-icon[icon-start]{
+		button.item-block.item .item-inner ion-icon[icon-start], button.item-block.item .item-inner .homie-icone{
     		margin-bottom: 30px;
 		}
+
 		.fond-noir .lightbox .lightbox-content .list-menu{
 			margin-bottom: 50px;
 		}
@@ -199,7 +207,7 @@ tabs{
 		.badges, .points{
         	margin: 20px 10px;
         } 
-		button.item-block.item .item-inner ion-icon[icon-start]{
+		button.item-block.item .item-inner ion-icon[icon-start], button.item-block.item .item-inner .homie-icone{
     		margin-bottom: 50px;
 		}
 

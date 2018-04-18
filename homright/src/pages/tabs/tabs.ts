@@ -20,9 +20,15 @@ export class TabsPage {
     console.log('ionViewDidLoad TabsPage');
   }
 
+  directionAccueil(){
+    this.navCtrl.push(HomePage);
+  }
+
   maMaison(){
 
   }
+
+  editProfil(){}
 
   directionEvent(){
 
@@ -39,9 +45,13 @@ export class TabsPage {
   	
   }
 
+  directionBadges(){}
+
+  directionPoints(){}
+
   directionParametre(){}
 
-  popMenu(){
+  retourMenu(){
   	this.navCtrl.pop();
   }
 

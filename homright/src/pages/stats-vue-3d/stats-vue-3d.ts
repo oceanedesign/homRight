@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import{JeuModelisationPage} from "../jeu-modelisation/jeu-modelisation";
-/**
- * Generated class for the StatsVue_3dPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import{TabsPage} from "../tabs/tabs";
 
 @IonicPage()
 @Component({
@@ -14,6 +9,9 @@ import{JeuModelisationPage} from "../jeu-modelisation/jeu-modelisation";
   templateUrl: 'stats-vue-3d.html',
 })
 export class StatsVue_3dPage {
+  consoType: string ="vue3D";
+  statsType: string ="jour";
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -24,5 +22,9 @@ export class StatsVue_3dPage {
 
   directionJeu(){
 	this.navCtrl.push(JeuModelisationPage);  	
+  }
+
+  pushMenu(){
+    this.navCtrl.push(TabsPage);
   }
 }

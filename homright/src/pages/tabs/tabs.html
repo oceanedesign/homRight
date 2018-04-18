@@ -5,7 +5,7 @@
 						<div class="lightbox-content">
 							<div  class="profilSection">
 									<ion-icon name="icon-share" class="partage"></ion-icon>
-									<ion-icon name="icon-edit"></ion-icon>
+									<ion-icon name="icon-edit" (click)="editProfil()"></ion-icon>
 								</div>
 							<div col-lg-6 style="text-align: center;">
 								
@@ -13,16 +13,26 @@
 									<p>Pseudo</p>
 								</div>
 
-								<ion-col class="badges" col-auto>
+								<ion-col class="badges" col-auto (click)="directionBadges()">
 									<h2>4</h2>
 									<p>badges</p>
 								</ion-col>
-								<ion-col class="points" col-auto>
+								<ion-col class="points" col-auto (click)="directionPoints()">
 									<h2>100</h2>
 									<p>points</p>
 								</ion-col>
 							</div>
 							<div col-lg-6 class='list-menu'>
+
+								<button ion-item (click)="directionAccueil()">
+									<img class="homie-icone" alt="Homie direction l'accueil" src="../assets/imgs/homie-icone.png"/>
+									<ion-icon name="icon-chevron" icon-end></ion-icon>
+									<div>
+	    	  							<h1>Accueil</h1>
+										<p>Revenir à l'accueil et consultez l'humeur de Homie</p>
+									</div>							
+	    						</button>
+
 								<button ion-item (click)="maMaison()">
 									<ion-icon name="icon-home" icon-start></ion-icon>
 									<ion-icon name="icon-chevron" icon-end></ion-icon>
@@ -81,5 +91,5 @@
 					</div>
 			</ion-row>
 	</ion-grid>
-	<button class="boutton-menuP" (click)="popMenu()"><ion-icon name="icon-cancel"></ion-icon></button>
+	<button class="boutton-menuP" (click)="retourMenu()"><ion-icon name="icon-cancel"></ion-icon></button>
 </ion-content>
