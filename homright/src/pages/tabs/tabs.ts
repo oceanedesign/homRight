@@ -6,6 +6,7 @@ import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { ProfilPage } from '../profil/profil';
 import{EventsPage} from "../events/events";
+import { MonFournisseurPage } from '../mon-fournisseur/mon-fournisseur';
 
 declare var jQuery:any;
 declare var $:any;
@@ -35,7 +36,7 @@ export class TabsPage {
 
   retour(){
     $(".menu-principal").css("display", "block");
-    $(".sous-menu, .profilSection.sous-menu").css("display", "none");    
+    $(".sous-menu, .profilSection.sous-menu").css("display", "none");
   }
 
   editProfil(){}
@@ -45,7 +46,7 @@ export class TabsPage {
   }
 
   directionFournisseur(){
-
+		this.navCtrl.push(MonFournisseurPage);
   }
 
   directionComparer(){}
@@ -57,10 +58,10 @@ export class TabsPage {
   }
 
   directionForum(){
-  	
+
   }
   directionContact(){
-  	
+
   }
 
   directionBadges(){}
