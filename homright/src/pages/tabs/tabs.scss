@@ -13,13 +13,15 @@ tabs{
 			font-family: "Futura";
 			font-weight: 300;
 			font-size: 16px;
+			margin-top: 0px;
 		}
-        ion-icon[name="icon-left-arrow-2"].partage{
+        ion-icon[name="icon-left-arrow-2"].retour{
             background: white;
             padding: 10px;
             cursor: pointer;
             border-radius: 0px;
             color: black;
+            float: left;
             &::before{
               	font-size: 16px;
             }            

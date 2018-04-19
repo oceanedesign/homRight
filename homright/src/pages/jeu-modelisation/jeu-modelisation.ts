@@ -222,10 +222,10 @@ export class JeuModelisationPage {
         $('.actions').find('.spare-item').remove(); // Suppression de l'enfant
       }
 
-
     console.log(event.target.id);
     this.regApp.nomApp= event.target.id;
-    $( "#"+event.target.id ).clone().removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item") 
+    $( "."+event.target.id ).clone().removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item")
+    .removeClass(event.target.id)
     .draggable({
       //grid: [ 10, 10 ],
       // containment: "#case-maison",
@@ -235,7 +235,9 @@ export class JeuModelisationPage {
       drag: function (event, ui) {
         //$(this).draggable( "option", "refreshPositions", true );
         //console.log("top : "+ui.offset.top+" + left : "+ui.offset.left);
+        console.log("count drag : "+countDrag);
          if(countDrag==1){
+
           this.PosTotal = $(".ligne-sol").offset();
           ui.position.left = ui.position.left - this.PosTotal.left;   
           ui.position.top = ui.position.top - this.PosTotal.top;
@@ -285,11 +287,9 @@ export class JeuModelisationPage {
                   
               })
 
-
             });    
-        }
-        }
-           
+          }
+        }           
       },
       beforeStop:function(event,ui){
         
