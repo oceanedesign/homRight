@@ -10,6 +10,7 @@ import { JeuModelisationPage } from '../pages/jeu-modelisation/jeu-modelisation'
 import { HomePage } from '../pages/home/home';
 import { ModelisationBienvenuePage } from '../pages/modelisation-bienvenue/modelisation-bienvenue';
 import { PreModelisationPage } from '../pages/pre-modelisation/pre-modelisation';
+import { MonFournisseurPage } from '../pages/mon-fournisseur/mon-fournisseur';
 
 @Component({
   templateUrl: 'app.html'
