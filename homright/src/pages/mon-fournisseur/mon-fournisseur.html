@@ -7,12 +7,49 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>monFournisseur</ion-title>
+    <ion-title>mon Fournisseur</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list class="">
+
+    <ion-item >
+      <ion-label><ion-icon name="icon-plug"></ion-icon><h4>Mon fournisseur <p>Sélectionnez dans la liste</p></h4></ion-label>
+      <ion-select [(ngModel)]="fournisseur" (ionChange)="onChangeFournisseur()">
+        <ion-option value="engie">ENGIE</ion-option>
+        <ion-option value="edf">EDF</ion-option>
+        <ion-option value="eni">ENI</ion-option>
+        <ion-option value="ekwater">EKWATER</ion-option>
+        <ion-option value="alterna">ALTERNA</ion-option>
+        <ion-option value="proxelia">PROXELIA</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="contrat transparency">
+    <ion-item>
+      <ion-label><ion-icon name="icon-copy"></ion-icon><h4>Mon contrat <p>Sélectionnez dans la liste</p></h4></ion-label>
+      <ion-select [(ngModel)]="contrat" (ionChange)="onChangeContrat()">
+        <ion-option value="contrat1">Vert électrique </ion-option>
+        <ion-option value="contrat2">Tarif Bleu</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <!-- <ion-row class="list">
+      <ion-icon name="icon-copy"></ion-icon>
+        <h4>Mes conseils  <p>Les conseils relatifs à votre abonnement seront disponnibles une fois que nous aurions pu analyser vos pratiques de consommation (environ au bout d’un mois d’utilisation de l’application).</p></h4>
+  </ion-row> -->
+
+  <ion-list class="conseils transparency">
+    <ion-item>
+      <ion-label><ion-icon name="icon-idea"></ion-icon><h4>Mes conseils <p>Les conseils relatifs à votre abonnement seront disponnibles une fois que nous aurions pu analyser vos pratiques de consommation (environ au bout d’un mois d’utilisation de l’application).</p></h4></ion-label>
+
+    </ion-item>
+  </ion-list>
 
 </ion-content>

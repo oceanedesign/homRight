@@ -22,4 +22,11 @@ export class MonFournisseurPage {
     console.log('ionViewDidLoad MonFournisseurPage');
   }
 
+  onChangeFournisseur(){
+    $( ".contrat.transparency" ).removeClass("transparency");
+  }
+  onChangeContrat(){
+
+  }
+
 }
