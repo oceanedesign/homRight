@@ -1,5 +1,25 @@
 page-mon-fournisseur {
 
+  ion-header{
+    background: map-get($colors, secondary);
+    .toolbar-background{
+      border: 0px!important;
+      background: none!important;
+    }
+    ion-title{
+      .toolbar-title{
+        color: white!important;
+      }
+    }
+    button .button-inner{
+      color: white;
+    }
+  }
+
+  .fond-vague{
+    top: -16px;
+    z-index: 0;
+  }
 
   ion-list.list{
    background: #FFFFFF;
@@ -22,6 +42,11 @@ page-mon-fournisseur {
    }
    ion-item.item-block, .item-inner{
      border: 0px!important;
+   }
+   &.fournisseur{
+     position: relative;
+     z-index: 10;
+     margin-top: 40px;
    }
    &.conseils{
      ion-label{
@@ -57,6 +82,8 @@ page-mon-fournisseur {
    opacity: 0.4;
    pointer-events: none;
  }
+
+
 
 
 }

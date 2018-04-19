@@ -14,10 +14,11 @@
 
 
 <ion-content padding>
+  <div class="fond-vague"><img class="vague" src="../assets/imgs/points-cles/vague-bulle.png"/></div>
 
-  <ion-list class="">
+  <ion-list class="fournisseur">
 
-    <ion-item >
+    <ion-item>
       <ion-label><ion-icon name="icon-plug"></ion-icon><h4>Mon fournisseur <p>Sélectionnez dans la liste</p></h4></ion-label>
       <ion-select [(ngModel)]="fournisseur" (ionChange)="onChangeFournisseur()">
         <ion-option value="engie">ENGIE</ion-option>
