@@ -7,7 +7,7 @@ import { HomePage } from '../home/home';
 import { ProfilPage } from '../profil/profil';
 import{EventsPage} from "../events/events";
 import { MonFournisseurPage } from '../mon-fournisseur/mon-fournisseur';
-import { MonFournisseurPage } from '../forum-accueil/forum-accueil';
+import { ForumAccueilPage } from '../forum-accueil/forum-accueil';
 
 declare var jQuery:any;
 declare var $:any;

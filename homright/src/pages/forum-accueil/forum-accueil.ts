@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import{TabsPage} from "../tabs/tabs";
 
+declare var jQuery:any;
+declare var $:any;
 /**
  * Generated class for the ForumAccueilPage page.
  *
@@ -20,6 +23,10 @@ export class ForumAccueilPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ForumAccueilPage');
+  }
+
+  pushMenu(){
+    this.navCtrl.push(TabsPage);
   }
 
 }
