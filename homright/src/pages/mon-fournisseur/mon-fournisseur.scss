@@ -1,12 +1,13 @@
 page-mon-fournisseur {
 
   ion-header{
-    background: map-get($colors, secondary);
+    background: none;
     .toolbar-background{
       border: 0px!important;
       background: none!important;
     }
     ion-title{
+      background: map-get($colors, secondary);
       .toolbar-title{
         color: white!important;
       }

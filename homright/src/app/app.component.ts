@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { ModelisationBienvenuePage } from '../pages/modelisation-bienvenue/modelisation-bienvenue';
 import { PreModelisationPage } from '../pages/pre-modelisation/pre-modelisation';
 import { MonFournisseurPage } from '../pages/mon-fournisseur/mon-fournisseur';
+import { ForumAccueilPage } from '../pages/forum-accueil/forum-accueil';
 
 @Component({
   templateUrl: 'app.html'
@@ -20,6 +21,7 @@ export class MyApp {
   rootPage:any = LoginPage;
   //rootPage:any = PreModelisationPage;
   //rootPage:any = HomePage;
+  //rootPage:any = ForumAccueilPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

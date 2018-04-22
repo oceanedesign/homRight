@@ -1,0 +1,25 @@
+page-forum-accueil {
+
+  ion-header{
+    background: none;
+    .toolbar-background{
+      border: 0px!important;
+      background: none!important;
+    }
+    ion-title{
+      background: map-get($colors, secondary);
+      .toolbar-title{
+        color: white!important;
+      }
+    }
+    button .button-inner{
+      color: white;
+    }
+  }
+
+  .fond-vague{
+    // top: -16px;
+    z-index: 0;
+  }
+
+}
