@@ -213,8 +213,9 @@ page-login {
     font-family: "Futura Cd";
     font-weight: 300;
     font-size: 13px;
+    border-color:transparent;
     text-transform: uppercase;
-    border-color: transparent;
+    border-bottom-color: rgba(0, 0, 0, 0.1);
   }
 
 .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {

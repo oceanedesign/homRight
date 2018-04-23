@@ -18,10 +18,9 @@ import { ForumAccueilPage } from '../pages/forum-accueil/forum-accueil';
 })
 export class MyApp {
 
-  rootPage:any = LoginPage;
+  //rootPage:any = LoginPage;
   //rootPage:any = PreModelisationPage;
   //rootPage:any = HomePage;
-  //rootPage:any = ForumAccueilPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

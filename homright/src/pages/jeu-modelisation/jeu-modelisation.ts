@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { Platform } from 'ionic-angular';
 import { HomePage } from '../home/home';
-
+import { Events } from 'ionic-angular';
 
 declare var jQuery:any;
 declare var $:any;
@@ -52,7 +52,7 @@ export class JeuModelisationPage {
   }
 
   directionAccueil(){
-    this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(HomePage);
   }
 
     recupNomPiece(){
@@ -116,6 +116,17 @@ export class JeuModelisationPage {
     this.InitCache();
     $(".choix-piece").css("display", "block");
 
+  }
+
+
+  desactive(scope, element, attrs) {
+    element.on('click', function() {
+      scope.selected = true;
+    });
+    scope.$on('$destroy', function() {
+      element.off().promise().done(
+      console.log("Memoire bye")); // deregister all event handlers
+    })
   }
 
   validerRetouchePiece(){
@@ -204,6 +215,7 @@ export class JeuModelisationPage {
 
   }; 
 
+
   validerTaille(){
     $(".fond-cache").css("display", "flex");
     $(".contenu-taille").css("display", "none");
@@ -224,8 +236,7 @@ export class JeuModelisationPage {
 
     console.log(event.target.id);
     this.regApp.nomApp= event.target.id;
-    $( "."+event.target.id ).clone().removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item")
-    .removeClass(event.target.id)
+    $( "#"+event.target.id ).clone().removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item")
     .draggable({
       //grid: [ 10, 10 ],
       // containment: "#case-maison",

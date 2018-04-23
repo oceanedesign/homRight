@@ -1,24 +1,24 @@
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>Je participe</ion-title>
-  </ion-navbar>
+    <h1>Je participe</h1>
+    <ion-toolbar>
+    	<ion-segment [(ngModel)]="eventType">
+  			<ion-segment-button value="eventApp">
+  			<ion-icon name="icon-thunderbolt" icon-start></ion-icon>
+    		<p>Hom'right</p>
+  			</ion-segment-button>
+  			<ion-segment-button value="eventVille" >
+  			<ion-icon name="icon-pin" icon-start></ion-icon>
+    		<p>Autour de moi</p>
+  			</ion-segment-button>
+    	</ion-segment>
+ 	</ion-toolbar>
 
 </ion-header>
 
 
 <ion-content padding>
 	<ion-grid class="container">
-		<ion-toolbar>
-    		<ion-segment [(ngModel)]="eventType">
-      			<ion-segment-button value="eventApp">
-        		Hom'right
-      			</ion-segment-button>
-      			<ion-segment-button value="eventVille" >
-        		Autour de moi
-      			</ion-segment-button>
-    		</ion-segment>
- 		</ion-toolbar>
+		
 
  		<div [ngSwitch]="eventType" class="card">
 	    	<div *ngSwitchCase="'eventApp'" class="container">
@@ -28,12 +28,79 @@
 	    	</div>
 
 	    	<div *ngSwitchCase="'eventVille'" class="container">
+	    		
+				<ion-row *ngFor="let card of cards" class="card theme" (click)='ouvertureCard()'>
+		          <section class="card-section card-section-1">
+		            <div class="section-interieur">
+		              <header class="section-titre" style="padding: 10px;">
+		                <ion-col col-1 class="bouton-close"></ion-col>
+		                <ion-col col-7 class="section-titre-nom">{{card.nom}}</ion-col>
+		                <ion-col col-4 class="points">{{card.points}} points</ion-col>
+		              </header>
+		              <div class="section-image" style="{'background-image': 'url({{card.bgImgUrl}})'}">
+		              </div>
+		            </div>
+		          </section>
+		          <section class="card-section card-section-2">
+		            <div class="card-cote retour contour">
+		              <div class="section-interieur face-int">
+		                <div class="face-colore"></div>
+		                <div class="separation"></div>
+		                <ion-col class="date" col-3>
+		                  <p>{{card.startTime}}</p>
+		                  <p>-</p>
+		                  <p>{{card.endTime}}</p>
+		                </ion-col>
+		                <ion-col col-7 class="titre">
+		                  <p>{{card.nom}}</p>
+		                  <p class="typeConso">{{card.typeConco}}</p>
+		                </ion-col>
+		                <ion-col col-2 class="points">
+		                	<p>{{card.points}}pts</p>
+		                	<ion-icon name="icon-chevron" icon-end></ion-icon>
+		            	</ion-col>
+		              </div>
+		            </div>
+		            <div class="card-cote face contour">
+		              	<div class="explication">
+		                	<div class="card-informations-exp">
+		                		<ion-col col-6>
+		                    		<p class="label">Date de début</p>
+		                    		<p class="contenu">{{card.startDate}} à {{card.startTime}}</p>
+		                  		</ion-col>
+		                  		<ion-col col-6>
+		                    		<p class="label">Date de fin</p>
+		                    		<p class="contenu">{{card.endDate}} à {{card.endTime}}</p>
+		                  		</ion-col>
+		                  		<ion-col col-12>
+		                    		<p class="label">Description</p>
+		                    		<p class="contenu">{{card.description}}</p>
+		                  		</ion-col>
+		                  		<ion-col col-12>
+		                    		<p class="label">Recommandations</p>
+		                    		<p class="contenu">{{card.recommandations}}</p>
+		                  		</ion-col>
+		                	</div>
+		              	</div>
+		                  	<section class="card-section card-section-4">
+		                    	<div class="card-cote face">
+		                      	<button type="button" class="bouton-interet bouton-principal">
+		                        	<span class="bouton-interet-txt">{{card.interet}}</span>
+		                      	</button>
+		                      	<p class="nb-interet">{{card.requests}} Hom'rees sont intéressés</p>
+		                    	</div>
+		                  	</section>
+		           		</div>
+		          	</section>
+				</ion-row>
+
 		      	<ion-row>
 					<img class="stats" alt="evenements à l'exterieur" src="../assets/imgs/events/events-ville.png"/>
 				</ion-row>
 	    	</div>
-
 	    </div>
+
+
 	</ion-grid>
 		<button class="boutton-menuP" (click)="pushMenu()"><img  alt="menu principal" src="../assets/button/menu.png"/></button>
 </ion-content>

@@ -15,12 +15,25 @@ page-mon-fournisseur {
     button .button-inner{
       color: white;
     }
+    &.header-md::after{
+      height: 0px;
+    }
   }
 
-  .fond-vague{
-    top: -16px;
-    z-index: 0;
-  }
+.fond-vague {
+      background: #7686FF;
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      margin-left: -16px;
+      margin-top: -16px;
+      .vague {
+          width: 100vw;
+          position: absolute;
+          top: 0px;
+          height: 30px;
+      }
+    }
 
   ion-list.list{
    background: #FFFFFF;
@@ -85,6 +98,11 @@ page-mon-fournisseur {
  }
 
 
+    @media only screen and (max-width: 600px){
+        .fond-vague .vague{
+            height: 20px;
+        }
 
+    }
 
 }

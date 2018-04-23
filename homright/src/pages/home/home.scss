@@ -269,6 +269,15 @@ ion-content.HomieBad{
   .button-event{
     border-radius: 20px;
     box-shadow: none;
+    ion-icon[name=icon-chevron]{
+      color:white;
+    }
+    &.activated, &:hover{
+      background: white;
+      ion-icon[name=icon-chevron]{
+        color:map-get($colors, secondary);
+      }      
+    }
   }
   .mascotte{
     img{
