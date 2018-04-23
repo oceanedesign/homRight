@@ -49,13 +49,11 @@ export class EventsPage {
 
   ouvertureCard(){
     
-    if($('.card').not('active')){
-      if (this.animating) return;
-      this.animating = true;
+    if(!$('.card').hasClass('active')){
     console.log("ouverture Card");
-      var card = $('.card');
-      var cardTop = card.position().top;
-      var scrollTopVal = cardTop - 30;
+      let card = $('.card');
+      //var cardTop = card.position().top;
+      //var scrollTopVal = cardTop - 30;
       card.addClass("flip-step1 active");
 
       //scrollCont.animate({scrollTop: scrollTopVal}, this.step1);
@@ -77,5 +75,29 @@ export class EventsPage {
       }, this.step1*0.65);
     };
   } 
+
+  fermetureCard(){
+    console.log("test fermeture");
+      //if (this.animating) return;
+      //this.animating = true;
+      
+      let card = $('.card');
+      console.log($('.card'));
+      card.removeClass("flip-step3 active");
+
+      setTimeout(function() {
+        card.removeClass("flip-step2");
+
+        setTimeout(function() {
+          card.removeClass("flip-step1");
+
+          setTimeout(function() {
+            this.animating = false;
+          }, this.step1);
+
+        }, this.step2*0.65);
+
+      }, this.step3/2);
+    }
 
 }

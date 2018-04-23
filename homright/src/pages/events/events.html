@@ -20,7 +20,7 @@
 	<ion-grid class="container">
 		
 
- 		<div [ngSwitch]="eventType" class="card">
+ 		<div [ngSwitch]="eventType" class="cardPrincipal">
 	    	<div *ngSwitchCase="'eventApp'" class="container">
 		      	<ion-row>
 					<img class="stats" alt="evenements dans l'application" src="../assets/imgs/events/events-app.png"/>
@@ -33,7 +33,7 @@
 		          <section class="card-section card-section-1">
 		            <div class="section-interieur">
 		              <header class="section-titre" style="padding: 10px;">
-		                <ion-col col-1 class="bouton-close"></ion-col>
+		                <ion-col col-1 class="bouton-close" (click)="fermetureCard()"></ion-col>
 		                <ion-col col-7 class="section-titre-nom">{{card.nom}}</ion-col>
 		                <ion-col col-4 class="points">{{card.points}} points</ion-col>
 		              </header>
