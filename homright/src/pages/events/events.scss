@@ -125,6 +125,14 @@ page-events {
                     color:white;
                     text-align: right;
                     font-weight: 700;
+                    float: right;
+                    ion-icon[name=icon-medal]{
+                        line-height: 18px;
+                        float: right;
+                        &:before{
+                            font-size: 18px;
+                        }
+                    }
                 }
             }
             .card-section {

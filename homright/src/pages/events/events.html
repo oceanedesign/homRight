@@ -27,9 +27,9 @@
 		          <section class="card-section card-section-1">
 		            <div class="section-interieur" (click)="fermetureCard($event)">
 		              <header class="section-titre" style="padding: 10px;">
-		                <ion-col col-1 class="bouton-close" ></ion-col>
+		                <ion-col col-2 class="bouton-close" ></ion-col>
 		                <ion-col col-7 class="section-titre-nom">{{cardHomright.nom}}</ion-col>
-		                <ion-col col-4 class="points">{{cardHomright.points}} pts</ion-col>
+		                <ion-col col-3 class="points">{{cardHomright.points}} pts</ion-col>
 		              </header>
 		            </div>
 		          </section>
@@ -91,7 +91,7 @@
 		              <header class="section-titre" style="padding: 10px;">
 		                <ion-col col-1 class="bouton-close" ></ion-col>
 		                <ion-col col-7 class="section-titre-nom">{{card.nom}}</ion-col>
-		                <ion-col col-4 class="points">{{card.points}} pts</ion-col>
+		                <ion-col col-4 class="points">{{card.points}}pts + <ion-icon name="icon-medal"></ion-icon> </ion-col>
 		              </header>
 		            </div>
 		          </section>
