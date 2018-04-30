@@ -22,6 +22,62 @@
 
  		<div [ngSwitch]="eventType" class="cardPrincipal">
 	    	<div *ngSwitchCase="'eventApp'" class="container">
+
+	    		<ion-row *ngFor="let cardHomright of cardsHomright" class="card theme cardsHomright" id='{{cardHomright.id}}'>
+		          <section class="card-section card-section-1">
+		            <div class="section-interieur" (click)="fermetureCard($event)">
+		              <header class="section-titre" style="padding: 10px;">
+		                <ion-col col-1 class="bouton-close" ></ion-col>
+		                <ion-col col-7 class="section-titre-nom">{{cardHomright.nom}}</ion-col>
+		                <ion-col col-4 class="points">{{cardHomright.points}} pts</ion-col>
+		              </header>
+		            </div>
+		          </section>
+		          <section class="card-section card-section-2">
+		            <div class="card-cote retour contour sous-section-1" (click)='ouvertureCard($event)'>
+		              <div class="section-interieur face-int">
+		                <div class="face-colore"></div>
+		                <div class="separation"></div>
+		                <ion-col class="date" col-3>
+		                  <p>{{cardHomright.startTime}}</p>
+		                  <p>-</p>
+		                  <p>{{cardHomright.endTime}}</p>
+		                </ion-col>
+		                <ion-col col-6 class="titre">
+		                  <p>{{cardHomright.nom}}</p>
+		                  <p class="typeConso">{{cardHomright.typeConco}}</p>
+		                </ion-col>
+		                <ion-col col-xs-12 col-sm-3 class="points">
+		                	<p>{{cardHomright.points}}pts</p>
+		                	<ion-icon name="icon-chevron" icon-end></ion-icon>
+		            	</ion-col>
+		              </div>
+		            </div>
+		            <div class="card-cote face contour sous-section-2">
+		              	<div class="explication">
+		                	<div class="card-informations-exp">
+		                		<ion-col col-sm-6 col-xs-12>
+		                    		<p class="label">Date de début</p>
+		                    		<p class="contenu">{{cardHomright.startDate}} à {{cardHomright.startTime}}</p>
+		                  		</ion-col>
+		                  		<ion-col col-sm-6 col-xs-12>
+		                    		<p class="label">Date de fin</p>
+		                    		<p class="contenu">{{cardHomright.endDate}} à {{cardHomright.endTime}}</p>
+		                  		</ion-col>
+		                  		<ion-col col-12>
+		                    		<p class="label">Description</p>
+		                    		<p class="contenu">{{cardHomright.description}}</p>
+		                  		</ion-col>
+		                  		<ion-col col-12>
+		                    		<p class="label">Recommandations</p>
+		                    		<p class="contenu">{{cardHomright.recommandations}}</p>
+		                  		</ion-col>
+		                	</div>
+		              	</div>
+		           		</div>
+		          	</section>
+				</ion-row>
+
 		      	<ion-row>
 					<img class="stats" alt="evenements dans l'application" src="../assets/imgs/events/events-app.png"/>
 				</ion-row>
@@ -29,46 +85,46 @@
 
 	    	<div *ngSwitchCase="'eventVille'" class="container">
 	    		
-				<ion-row *ngFor="let card of cards" class="card theme" (click)='ouvertureCard()'>
+				<ion-row *ngFor="let card of cards" class="card theme cardsVille" id='{{card.id}}'>
 		          <section class="card-section card-section-1">
-		            <div class="section-interieur">
+		            <div class="section-interieur" (click)="fermetureCard($event)">
 		              <header class="section-titre" style="padding: 10px;">
-		                <ion-col col-1 class="bouton-close" (click)="fermetureCard()"></ion-col>
+		                <ion-col col-1 class="bouton-close" ></ion-col>
 		                <ion-col col-7 class="section-titre-nom">{{card.nom}}</ion-col>
-		                <ion-col col-4 class="points">{{card.points}} points</ion-col>
+		                <ion-col col-4 class="points">{{card.points}} pts</ion-col>
 		              </header>
-		              <div class="section-image" style="{'background-image': 'url({{card.bgImgUrl}})'}">
-		              </div>
 		            </div>
 		          </section>
 		          <section class="card-section card-section-2">
-		            <div class="card-cote retour contour">
+		            <div class="card-cote retour contour sous-section-1" (click)='ouvertureCard($event)'>
 		              <div class="section-interieur face-int">
 		                <div class="face-colore"></div>
 		                <div class="separation"></div>
 		                <ion-col class="date" col-3>
-		                  <p>{{card.startTime}}</p>
-		                  <p>-</p>
-		                  <p>{{card.endTime}}</p>
+		                  <p>{{card.date}}</p>
+		                  <p style='color:white'>-</p>
+		                  <p style="font-size: 13px; font-weight: 500;">à {{card.startTime}}</p>
 		                </ion-col>
-		                <ion-col col-7 class="titre">
+		                <ion-col col-5 class="titre">
 		                  <p>{{card.nom}}</p>
-		                  <p class="typeConso">{{card.typeConco}}</p>
+		                  <p class="typeConso">{{card.interet}}</p>
 		                </ion-col>
-		                <ion-col col-2 class="points">
-		                	<p>{{card.points}}pts</p>
+		                <ion-col col-xs-12 col-sm-4 class="points">
+		                	<p>{{card.points}}pts + <ion-icon name="icon-medal"></ion-icon> </p>
 		                	<ion-icon name="icon-chevron" icon-end></ion-icon>
 		            	</ion-col>
 		              </div>
 		            </div>
-		            <div class="card-cote face contour">
+		            <div class="card-cote face contour sous-section-2">
+		            	<div class="map">
+		            	</div>
 		              	<div class="explication">
 		                	<div class="card-informations-exp">
-		                		<ion-col col-6>
+		                		<ion-col col-sm-6 col-xs-12>
 		                    		<p class="label">Date de début</p>
 		                    		<p class="contenu">{{card.startDate}} à {{card.startTime}}</p>
 		                  		</ion-col>
-		                  		<ion-col col-6>
+		                  		<ion-col col-sm-6 col-xs-12>
 		                    		<p class="label">Date de fin</p>
 		                    		<p class="contenu">{{card.endDate}} à {{card.endTime}}</p>
 		                  		</ion-col>
@@ -76,16 +132,12 @@
 		                    		<p class="label">Description</p>
 		                    		<p class="contenu">{{card.description}}</p>
 		                  		</ion-col>
-		                  		<ion-col col-12>
-		                    		<p class="label">Recommandations</p>
-		                    		<p class="contenu">{{card.recommandations}}</p>
-		                  		</ion-col>
 		                	</div>
 		              	</div>
 		                  	<section class="card-section card-section-4">
 		                    	<div class="card-cote face">
-		                      	<button type="button" class="bouton-interet bouton-principal">
-		                        	<span class="bouton-interet-txt">{{card.interet}}</span>
+		                      	<button type="button" class="bouton-interet bouton-principal" (click)="changementInteret($event)" value="pasinteresse">
+		                        	{{card.interet}}
 		                      	</button>
 		                      	<p class="nb-interet">{{card.requests}} Hom'rees sont intéressés</p>
 		                    	</div>

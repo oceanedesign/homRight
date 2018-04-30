@@ -88,11 +88,27 @@ page-events {
 
     .grid{
         font-weight: 200;
+        .card{
+            margin-bottom: 30px;
+        }
+        .card .sous-section-2, .card .card-section-1{
+            display: none;
+        }
+        .active .sous-section-2, .active .card-section-1{
+            display: block;
+        }
+        .active .sous-section-1{
+            display: none;
+        }
+        .sous-section-2 .map{
+            background-color: #F5AF47;
+            height: 150px;
+            margin: -20px -20px 10px -20px;
+        }
         .cardPrincipal{
             z-index: 1;
             margin-bottom: 15px;
-            -webkit-perspective: 2000px;
-                    perspective: 2000px;
+            margin-top: 30px;
             transition: margin 0.4s 0.1s;
             cursor: pointer;
             .contour{
@@ -108,17 +124,14 @@ page-events {
                 .points{
                     color:white;
                     text-align: right;
-                    font-weight: 200;
+                    font-weight: 700;
                 }
             }
             .card-section {
                 z-index: 1;
                 width: 100%;
                 border-radius: 8px;
-                -webkit-transform-origin: 50% 0;
-                        transform-origin: 50% 0;
-                -webkit-transform-style: preserve-3d;
-                        transform-style: preserve-3d;
+
                 .section-interieur {
                     overflow: hidden;
                     height: 100%;
@@ -157,6 +170,8 @@ page-events {
                     width: 100%;
                     border-radius: inherit;
                     background: #fff;
+                    border-top-left-radius: 0px;
+                    border-top-right-radius: 0px;
                     padding-bottom: 20px;
                     -webkit-backface-visibility: hidden;
                             backface-visibility: hidden;
@@ -165,12 +180,13 @@ page-events {
                     .label{
                         text-transform: uppercase;
                         color: map-get($colors, primary);
-                        font-size: 10px;
+                        font-size: 11px;
                         margin-bottom: 0px;
                         font-weight: 600;
                     }
                     .contenu{
                         margin-top: 2px;
+                        font-size: 15px;
                         font-family: 'Assistant';
                     }
                 }
@@ -210,13 +226,13 @@ page-events {
                     .typeConso{
                         color: #828282;
                         font-weight: 200;
-                        font-size: 12px;
+                        font-size: 15px;
                         margin: 0px;
                     }
                 }
                 .face{
                     padding: 20px;
-                    text-align: justify;
+                    
                 }
                 .date{
                     color: black;
@@ -235,6 +251,13 @@ page-events {
                     color: map-get($colors, primary);
                     text-align: right;
                     padding-right: 10px;
+                    font-weight: 700;
+                    ion-icon[name=icon-medal]{
+                        line-height: 20px;
+                        &:before{
+                            font-size: 20px;
+                        }
+                    }
                     ion-icon[name=icon-chevron]{
                         line-height: 13px;
                         pointer-events: none;
@@ -254,6 +277,10 @@ page-events {
                 }
 
             }
+            .card-section-1 {
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
         }
 
         ion-col{
@@ -264,25 +291,66 @@ page-events {
         }
     }
 
-    .card.flip-step1 {
-      margin-bottom: 175px;
-    }
-    .card.flip-step2 {
-      margin-bottom: 245px;
-    }
-    .card.flip-step3 {
-      margin-bottom: 330px;
+    @media screen and (min-width: 370px) {
+        .grid .cardPrincipal .cardsVille .card-section .face-int .points{
+            flex: 0 0 33.33333%;
+            -webkit-flex: 0 0 33.33333%;
+            -ms-flex: 0 0 33.33333%;
+            width: 33.33333%;
+            max-width: 33.33333%;
+        }
+
+        .grid .cardPrincipal .cardsHomright .card-section .face-int .points{
+            -webkit-box-flex: 0;
+            -webkit-flex: 0 0 25%;
+            -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+            width: 25%;
+            max-width: 25%;
+        }
     }
 
-      @media screen and (max-width: 330px) {
-      ion-header .toolbar .segment .segment-button{
-                    &[value="eventApp"]{
-                        margin-right: 30px;
-                    }
-                    &[value="eventVille"]{
-                        margin-left: 30px;
-                    }
-      }
+
+      @media screen and (max-width: 370px) {
+
+        .grid .cardPrincipal .card-section .titre{
+            -webkit-box-flex: 0;
+            -webkit-flex: 0 0 70%;
+            -ms-flex: 0 0 70%;
+            flex: 0 0 70%;
+            width: 70%;
+            max-width: 70%;
+            margin-top: 10px;
+            padding-left: 0px;
+            float: right;
+        }
+
+        .grid .cardPrincipal .card-section .face-int .points{
+            p{
+                float: left;
+                margin-top: 10px;
+                margin-left: 31%;
+            }
+        }
+
+        .grid .cardPrincipal .card-section .date{
+            margin-top: 2em;
+        }
+
+        .grid .cardPrincipal .card-section .card-cote{
+            padding-bottom: 10px;
+        }
+    }
+
+    @media screen and (max-width: 330px) {
+        ion-header .toolbar .segment .segment-button{
+            &[value="eventApp"]{
+                margin-right: 30px;
+            }
+            &[value="eventVille"]{
+                margin-left: 30px;
+            }
+        }
     }
 
 }

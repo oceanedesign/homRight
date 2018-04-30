@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import{TabsPage} from "../tabs/tabs";
 
-
+declare var jQuery:any;
+declare var $:any;
 
 @Component({
   selector: 'page-events',
@@ -31,73 +32,80 @@ export class EventsPage {
     this.navCtrl.push(TabsPage);
   }
 
-  cards = [
-  {nom: 'Energie verte', points: 20, requests: 5,
-   typeConco: 'Consommation énergétique favorable', interet:"Pas intéressé", 
-   bgImgUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-1.jpg',
-   description: 'Tu veux participer à la transition énergétique de ton quartier ? Tu as des idées novatrices pour que ta ville devienne plus verte ? Viens à la réunion EcoVille pour découvrir les projets écologique de Saint-Denis pour 2018. ', 
-   recommandations: '- Réduire son thermostat et/ou son chauffage électrique et éviter l’utilisation des appareils électriques énergivores.', startTime: '09:00',
-   endTime: '10:30', startDate: '10/06/2018', endDate: '10/06/2018'},
+cardsHomright = [
 
-  {nom: 'Pics de consommation', points: 50, requests: 7,
-   typeConco: 'Consommation énergétique défavorable', interet:"Pas intéressé",
-   bgImgUrl: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-2.jpg',
-   description: 'Tu veux participer à la transition énergétique de ton quartier ? Tu as des idées novatrices pour que ta ville devienne plus verte ? Viens à la réunion EcoVille pour découvrir les projets écologique de Saint-Denis pour 2018. ', 
+  {id:0, nom: 'Pics de consommation', points: 50,
+   typeConco: 'Consommation énergétique défavorable',
+   description: 'Consommation énergétique défavorable', 
    recommandations: '- Réduire son thermostat et/ou son chauffage électrique et éviter l’utilisation des appareils électriques énergivores.', startTime: '18:00',
-   endTime: '20:00', startDate: '18/06/2018', endDate: '1806/2018'}
+   endTime: '20:00', startDate: '18/06/2018', endDate: '18/06/2018'},
+
+  {id:1, nom: 'Energie verte', points: 20,
+   typeConco: 'Consommation énergétique favorable',
+   description: 'Consommation énergétique favorable', 
+   recommandations: 'Profitez en pour lancer vos appareils électriques énergivores !', startTime: '09:00',
+   endTime: '10:00', startDate: '10/06/2018', endDate: '10/06/2018'},
+
+  {id:2, nom: 'Energie verte', points: 20,
+   typeConco: 'Consommation énergétique favorable',
+   description: 'Consommation énergétique favorable', 
+   recommandations: 'Profitez en pour lancer vos appareils électriques énergivores !', startTime: '12:00',
+   endTime: '13:00', startDate: '10/06/2018', endDate: '10/06/2018'}
+
 ];
 
-  ouvertureCard(){
+  cards = [
+  {id:0, nom: 'Ecoville', points: 100, requests: 5, interet:"Pas intéressé(e)", 
+   description: 'Tu veux participer à la transition énergétique de ton quartier ? Tu as des idées novatrices pour que ta ville devienne plus verte ? Viens à la réunion EcoVille pour découvrir les projets écologique de Saint-Denis pour 2018. ', 
+   recommandations: '- Réduire son thermostat et/ou son chauffage électrique et éviter l’utilisation des appareils électriques énergivores.', startTime: '09:00',
+   endTime: '10:30', date:'20/05', startDate: '10/06/2018', endDate: '10/06/2018'},
+
+  {id:1, nom: 'Hackathon', points: 150, requests: 7, interet:"Pas intéressé(e)",
+   description: 'Tu veux participer à la transition énergétique de ton quartier ? Tu as des idées novatrices pour que ta ville devienne plus verte ? Viens à la réunion EcoVille pour découvrir les projets écologique de Saint-Denis pour 2018. ', 
+   recommandations: '- Réduire son thermostat et/ou son chauffage électrique et éviter l’utilisation des appareils électriques énergivores.', startTime: '18:00',
+   endTime: '20:00', date:'20/05', startDate: '18/06/2018', endDate: '18/06/2018'}
+];
+
+  ouvertureCard(event){
     
-    if(!$('.card').hasClass('active')){
-    console.log("ouverture Card");
-      let card = $('.card');
+    if(!$(event.target.closest('.card')).hasClass('active')){
+      console.log("ouverture Card");
+      let card = $(event.target.closest('.card'));
       //var cardTop = card.position().top;
       //var scrollTopVal = cardTop - 30;
-      card.addClass("flip-step1 active");
-
-      //scrollCont.animate({scrollTop: scrollTopVal}, this.step1);
-
-      setTimeout(function() {
-      //$scrollCont.animate({scrollTop: scrollTopVal}, step2);
-        card.addClass("flip-step2");
-
-        setTimeout(function() {
-        //$scrollCont.animate({scrollTop: scrollTopVal}, this.step3);
-          card.addClass("flip-step3");
-
-          setTimeout(function() {
-            this.animating = false;
-          }, this.step3);
-
-        }, this.step2*0.5);
-
-      }, this.step1*0.65);
+      card.addClass("active");
     };
   } 
 
-  fermetureCard(){
+  fermetureCard(event){
     console.log("test fermeture");
       //if (this.animating) return;
       //this.animating = true;
       
-      let card = $('.card');
+      let card = $(event.target.closest('.card'));
       console.log($('.card'));
-      card.removeClass("flip-step3 active");
-
-      setTimeout(function() {
-        card.removeClass("flip-step2");
-
-        setTimeout(function() {
-          card.removeClass("flip-step1");
-
-          setTimeout(function() {
-            this.animating = false;
-          }, this.step1);
-
-        }, this.step2*0.65);
-
-      }, this.step3/2);
+      card.removeClass("active");
     }
+
+  changementInteret(event){
+    
+    let bouton = event.target;
+    console.log(event.target);
+    let identifiant = $(event.target.closest('.card')).attr('id');
+    if($(bouton).attr('value') =='pasinteresse'){
+      console.log("changement : interet");
+      $(bouton).attr('value', 'interesse');
+      bouton.innerHTML = 'Intéressé(e)';
+      this.cards[identifiant].interet = 'Intéressé(e)';
+    }else{
+      console.log("changement : pas interet");
+      $(bouton).attr('value', 'pasinteresse'); 
+      bouton.innerHTML = 'Pas intéressé(e)';  
+      this.cards[identifiant].interet = 'Pas intéressé(e)';  
+    }
+    let card = $(event.target.closest('.card'));
+    card.removeClass("active");
+  }
+
 
 }
