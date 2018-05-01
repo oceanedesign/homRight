@@ -12,14 +12,6 @@ declare var $:any;
 export class EventsPage {
 
 	eventType: string ="eventApp";
-  animating = false;
-  step1 = 500;
-  step2 = 500;
-  step3 = 500;
-  reqStep1 = 600;
-  reqStep2 = 800;
-  reqClosingStep1 = 500;
-  reqClosingStep2 = 500;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -67,25 +59,38 @@ cardsHomright = [
 ];
 
   ouvertureCard(event){
-    
-    if(!$(event.target.closest('.card')).hasClass('active')){
-      console.log("ouverture Card");
-      let card = $(event.target.closest('.card'));
-      //var cardTop = card.position().top;
-      //var scrollTopVal = cardTop - 30;
-      card.addClass("active");
-    };
+    // Ouverture de la carte évenement
+    console.log("ouverture Card");
+    let sectionUn = $(event.target.closest('.card-section-1'));
+    let sectionDeux = $(event.target).closest('.card').find('.card-section-2');
+
+    sectionUn.animate({
+          height: 'toggle'
+    });
+
+    setTimeout(function() {
+      sectionDeux.animate({
+            height: 'toggle'
+      });
+     }, 550);
   } 
 
   fermetureCard(event){
+    // Fermeture de la carte évenement
     console.log("test fermeture");
-      //if (this.animating) return;
-      //this.animating = true;
-      
-      let card = $(event.target.closest('.card'));
-      console.log($('.card'));
-      card.removeClass("active");
-    }
+    let sectionDeux = $(event.target.closest('.card-section-2'));
+    let sectionUn = $(event.target).closest('.card').find('.card-section-1');
+
+    sectionDeux.animate({
+      height: 'toggle'
+    });
+
+    setTimeout(function() {
+      sectionUn.animate({
+            height: 'toggle'
+      });
+    }, 550);
+  }
 
   changementInteret(event){
     
@@ -95,12 +100,12 @@ cardsHomright = [
     if($(bouton).attr('value') =='pasinteresse'){
       console.log("changement : interet");
       $(bouton).attr('value', 'interesse');
-      bouton.innerHTML = 'Intéressé(e)';
+      //bouton.innerHTML = 'Intéressé(e)';
       this.cards[identifiant].interet = 'Intéressé(e)';
     }else{
       console.log("changement : pas interet");
       $(bouton).attr('value', 'pasinteresse'); 
-      bouton.innerHTML = 'Pas intéressé(e)';  
+      //bouton.innerHTML = 'Pas intéressé(e)';  
       this.cards[identifiant].interet = 'Pas intéressé(e)';  
     }
     let card = $(event.target.closest('.card'));

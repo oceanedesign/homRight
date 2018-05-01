@@ -25,16 +25,7 @@
 
 	    		<ion-row *ngFor="let cardHomright of cardsHomright" class="card theme cardsHomright" id='{{cardHomright.id}}'>
 		          <section class="card-section card-section-1">
-		            <div class="section-interieur" (click)="fermetureCard($event)">
-		              <header class="section-titre" style="padding: 10px;">
-		                <ion-col col-2 class="bouton-close" ></ion-col>
-		                <ion-col col-7 class="section-titre-nom">{{cardHomright.nom}}</ion-col>
-		                <ion-col col-3 class="points">{{cardHomright.points}} pts</ion-col>
-		              </header>
-		            </div>
-		          </section>
-		          <section class="card-section card-section-2">
-		            <div class="card-cote retour contour sous-section-1" (click)='ouvertureCard($event)'>
+		          	<div class="card-cote retour contour" (click)='ouvertureCard($event)'>
 		              <div class="section-interieur face-int">
 		                <div class="face-colore"></div>
 		                <div class="separation"></div>
@@ -53,6 +44,18 @@
 		            	</ion-col>
 		              </div>
 		            </div>
+
+		          </section>
+		          <section class="card-section card-section-2">
+
+		          	<div class="section-interieur sous-section-1" (click)="fermetureCard($event)">
+		              <header class="section-titre" style="padding: 10px;">
+		                <ion-col col-2 class="bouton-close" ></ion-col>
+		                <ion-col col-7 class="section-titre-nom">{{cardHomright.nom}}</ion-col>
+		                <ion-col col-3 class="points">{{cardHomright.points}} pts</ion-col>
+		              </header>
+		            </div>
+
 		            <div class="card-cote face contour sous-section-2">
 		              	<div class="explication">
 		                	<div class="card-informations-exp">
@@ -87,16 +90,8 @@
 	    		
 				<ion-row *ngFor="let card of cards" class="card theme cardsVille" id='{{card.id}}'>
 		          <section class="card-section card-section-1">
-		            <div class="section-interieur" (click)="fermetureCard($event)">
-		              <header class="section-titre" style="padding: 10px;">
-		                <ion-col col-1 class="bouton-close" ></ion-col>
-		                <ion-col col-7 class="section-titre-nom">{{card.nom}}</ion-col>
-		                <ion-col col-4 class="points">{{card.points}}pts + <ion-icon name="icon-medal"></ion-icon> </ion-col>
-		              </header>
-		            </div>
-		          </section>
-		          <section class="card-section card-section-2">
-		            <div class="card-cote retour contour sous-section-1" (click)='ouvertureCard($event)'>
+
+		          	<div class="card-cote retour contour" (click)='ouvertureCard($event)'>
 		              <div class="section-interieur face-int">
 		                <div class="face-colore"></div>
 		                <div class="separation"></div>
@@ -115,6 +110,18 @@
 		            	</ion-col>
 		              </div>
 		            </div>
+
+		          </section>
+		          <section class="card-section card-section-2">
+
+		            <div class="section-interieur sous-section-1" (click)="fermetureCard($event)">
+		              <header class="section-titre" style="padding: 10px;">
+		                <ion-col col-1 class="bouton-close" ></ion-col>
+		                <ion-col col-7 class="section-titre-nom">{{card.nom}}</ion-col>
+		                <ion-col col-4 class="points">{{card.points}}pts + <ion-icon name="icon-medal"></ion-icon> </ion-col>
+		              </header>
+		            </div>
+
 		            <div class="card-cote face contour sous-section-2">
 		            	<div class="map">
 		            	</div>
