@@ -8,6 +8,7 @@ import { ProfilPage } from '../profil/profil';
 import{EventsPage} from "../events/events";
 import { MonFournisseurPage } from '../mon-fournisseur/mon-fournisseur';
 import { ForumAccueilPage } from '../forum-accueil/forum-accueil';
+import { ForumAccueilPage } from '../pages/forum-accueil/forum-accueil';
 
 declare var jQuery:any;
 declare var $:any;
@@ -59,7 +60,7 @@ export class TabsPage {
   }
 
   directionForum(){
-
+		this.navCtrl.push(ForumAccueilPage);
   }
   directionContact(){
 
