@@ -56,23 +56,31 @@ page-forum-choix-theme {
       margin-top: 30px;
       text-align: center;
       max-width: 1100px;
+      h2{
+        display: inline-block;
+        background: map-get($colors, primary);
+        color: white;
+        text-transform: uppercase;
+        font-size: 16px;
+        padding: 4px 8px;
+      }
       button{
-        // padding: 10px 15px;
         background: #FFFFFF;
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
         border-radius: 8px;
         margin: auto 4px 12px 4px;
         width: 100%;
         display: flex;
+        padding: 7px;
         .theme-titre{
           border-right: 1.5px solid map-get($colors, medium);
           padding-bottom: 10px;
 
           display: flex;
           justify-content: center;
-          flex-direction: column-reverse;
+          flex-direction: column;
           margin: auto;
-          padding: 18px 5px;
+          padding: 10px 5px;
           h4{
             font-weight: 600;
             font-size: 16px;
@@ -86,7 +94,11 @@ page-forum-choix-theme {
         .dernierMessage{
           padding-top: 6px;
           padding-left: 10px;
-          display: inline-block;
+
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          margin: auto;
         }
         p{
           color: map-get($colors, medium);
@@ -118,6 +130,37 @@ page-forum-choix-theme {
             }
           }
         }
+      }
+    }
+  }
+
+  .button-create-theme {
+    position: fixed;
+    z-index: 1000;
+    right: -8px;
+    margin: auto;
+    bottom: -10px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: map-get($colors, secondary);
+    color: white;
+    -webkit-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
+
+    .icon-plus{
+      margin-top: -10px;
+      margin-left: 14px;
+      float: left;
+      &::before{
+        font-size: 13px;
+      }
+    }
+    .icon-pencil{
+      display: inline;
+      margin-left: -18px;
+      &::before{
+        font-size: 22px;
       }
     }
   }

@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import{TabsPage} from "../tabs/tabs";
 
-/**
- * Generated class for the ForumChoixThemePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+declare var jQuery:any;
+declare var $:any;
+
 
 @IonicPage()
 @Component({
@@ -20,6 +18,10 @@ export class ForumChoixThemePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ForumChoixThemePage');
+  }
+
+  pushMenu(){
+    this.navCtrl.push(TabsPage);
   }
 
 }
