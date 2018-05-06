@@ -17,10 +17,10 @@ header('Access-Control-Allow-Origin:*');
 class Database {
     //Propriétés privées
     //Détails de configuration
-    private $host   = "127.0.0.1";
+    private $host   = "localhost";
     private $name   = "homright";
-    private $user   = "ionic";
-    private $passwd = "toto";
+    private $user   = "root";
+    private $passwd = "";
     
     //Propriétés publiques
     public $connection = null;
