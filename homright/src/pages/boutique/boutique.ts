@@ -11,8 +11,8 @@ export class BoutiquePage {
 
 	boutiqueType: string ="shop";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
-  }
+	constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
+	}
 
 	coupons = [
 	  	{id:0, nom: 'Il fait chaud ?', points: 500,
@@ -32,23 +32,34 @@ export class BoutiquePage {
 	  	img :"../assets/imgs/boutique/item1.png" , 
 	  	note :"../assets/imgs/boutique/note1.png" 
 	  	},
+	  	{id:1, nom: 'Prise connectée', marque: 'Osram', prix: 19.99,
+	  	coupon:0,
+	  	img :"../assets/imgs/boutique/item2.png" , 
+	  	note :"../assets/imgs/boutique/note1.png" 
+	  	},
+	  	{id:2, nom: 'Thermostat', marque: 'Huawei', prix: 159.99,
+	  	coupon:0,
+	  	img :"../assets/imgs/boutique/item3.png" , 
+	  	note :"../assets/imgs/boutique/note1.png" 
+	  	},
+	  	{id:3, nom: 'Réfrigérateur connecté', marque: 'Samsung', prix: 4499.99,
+	  	coupon:1,
+	  	img :"../assets/imgs/boutique/item4.png" , 
+	  	note :"../assets/imgs/boutique/note4.png" 
+	  	},
 	];
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BoutiquePage');
-  }
-  pushMenu(){
-    this.navCtrl.push(TabsPage);
-  }
+	pushMenu(){
+		//Fonction menant au menu principal
+		this.navCtrl.push(TabsPage);
+		}
 
-
-  presentToast() {
-  	//Définit le message de refus d'achat dû à un manque de points
-    let toast = this.toastCtrl.create({
-      message: "Vous n'avez pas assez de points pour acheter ce coupon",
-      duration: 3000
-    });
-    toast.present();
-  }
-
+	presentToast() {
+		//Définit le message de refus d'achat dû à un manque de points
+		let toast = this.toastCtrl.create({
+	    	message: "Vous n'avez pas assez de points pour acheter ce coupon",
+	    	duration: 3000
+	    });
+		toast.present();
+	}
 }

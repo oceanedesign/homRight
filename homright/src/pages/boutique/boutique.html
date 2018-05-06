@@ -12,18 +12,16 @@
   			</ion-segment-button>
     	</ion-segment>
  	</ion-toolbar>
-
 </ion-header>
 
 
 <ion-content padding>
+	<div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
 	<ion-grid class="container">
-		
-
  		<div [ngSwitch]="boutiqueType" >
 	    	<div *ngSwitchCase="'shop'" class="boutiqueType container">
-	    		<ion-row *ngFor="let item of items" id='{{item.id}}'>
-	    			<ion-col col-sm-12 col-md-6>
+	    		<ion-row>
+	    			<ion-col col-sm-12 col-md-6 *ngFor="let item of items" id='{{item.id}}'>
 	    				<div *ngIf="item.coupon == 1" class='reduction'><ion-icon name="icon-video" icon-start></ion-icon></div>
 	    				<ion-row  class="card shop-card">
 	    					<ion-col col-12 col-sm-6 col-md-12>
