@@ -37,6 +37,14 @@ ion-app.md{
 	margin: 0 auto;
 }
 
+.segment-ios .segment-button:hover:not(.segment-activated){
+	    background-color: transparent;
+}
+
+.item-ios.activated{
+	background-color:transparent;
+}
+
 .bouton-contour{
 	color: #F5AF47;
 	font-family: "Futura";
@@ -261,7 +269,8 @@ h3{
 		background: #FFFFFF;
 		box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
 		img{
-			width:20px;
+			width: 25px;
+    		margin-top: 2px;
 		}
 	}
 
