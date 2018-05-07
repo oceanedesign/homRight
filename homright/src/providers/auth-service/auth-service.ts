@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import {Http, Headers} from '@angular/http';
+import {Http, Headers, RequestOptions} from '@angular/http';
 
 import 'rxjs/add/operator/map';
 
 
-let apiUrl = 'http://localhost/homRight/api/';
+let apiUrl = 'http://192.168.56.104/homRight/api/';
 
 /*
   Generated class for the AuthServiceProvider provider.
@@ -19,26 +19,33 @@ export class AuthServiceProvider {
 
   constructor(public http: Http) {
     console.log('Hello AuthServiceProvider Provider');
-  	this.url ="http://localhost/homRight/api/api.php";
+  	this.url ="http://localhost/homRight/api/get.php";
   }
 
   getUsers(){
-  	return this.http.get(this.url).map(res=>res.json())
+  	return this.http.get(this.url).map(res=>res.json());
   }
 
   postData(data, type) {
     return new Promise((resolve, reject) => {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
+        let options = new RequestOptions({headers: headers});
         console.log("Json en cours d'envoi");
-        this.http.post(apiUrl+type, JSON.stringify(data), {headers: headers}).subscribe(res => {
-        	console.log("Json envoyé");
-        	console.log(res);
-           	resolve(res);
-          	}, (err) => {
-            reject(err);
-            console.log("Petit probleme");
-        });
+        console.log(apiUrl+type);
+
+        this.http.post(apiUrl+type, JSON.stringify(data), options=options).subscribe((res:Response) => {
+            resolve(res.json());
+});
+
+//        this.http.post(apiUrl+type, JSON.stringify(data), options=options).subscribe(res => {
+//        	console.log("Json envoyé");
+//        	//console.log(res);
+//           	resolve(res);
+//          	}, (err) => {
+//            reject(err);
+//            console.log("Petit probleme");
+//        });
     });
   }
 
