@@ -13,16 +13,15 @@
 require_once('../errors.php');
 
 class Database {
-    //-----DEBUT Propriétés privées
-    //Détails de la configuration (valeurs par défauts)
-    private $host   = "127.0.0.1";
+
+    //Propriétés privées
+    //Détails de configuration
+    private $host   = "localhost";
     private $name   = "homright";
-    private $user   = "ionic";
-    private $passwd = "toto";
-    private $charset = "utf8mb4";
-    //-----FIN propriétés privées
-    //
-    //-----Propriétés publiques
+    private $user   = "root";
+    private $passwd = "";
+    
+    //Propriétés publiques
     public $connection = null;
     //-----FIN Proprietes privees
     

@@ -76,7 +76,7 @@ export class LoginPage {
     this.regData.lat = this.lat;
     this.regData.lng = this.lng;
     console.log(this.regData);
-    this.authServiceProvider.postData(this.regData,'signup/').then((result) => {
+    this.authServiceProvider.postData(this.regData,'users/create.php').then((result) => {
       console.log("ça maaarche");
        this.navCtrl.push(SignupPage);
     }, (error) => {

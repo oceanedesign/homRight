@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import{TabsPage} from "../tabs/tabs";
+import { ForumChoixThemePage } from '../forum-choix-theme/forum-choix-theme';
 
 declare var jQuery:any;
 declare var $:any;
@@ -21,6 +22,9 @@ export class ForumAccueilPage {
 
   pushMenu(){
     this.navCtrl.push(TabsPage);
+  }
+  pushChoixTheme(){
+    this.navCtrl.push(ForumChoixThemePage);
   }
 
 }
