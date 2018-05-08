@@ -63,11 +63,25 @@ page-forum-accueil {
         border-radius: 8px;
         margin: auto 4px 12px 4px;
         .avatar{
-          background: map-get($colors, medium);
+          background: map-get($colors, secondary);
           border-radius: 50%;
           width: 60px;
           height: 60px;
           margin: 18px auto 13px auto;
+          display: flex;
+          ion-icon{
+            color: white;
+            justify-content: center;
+            margin: auto;
+            &::before{
+              font-size: 40px;
+            }
+            &.icon-garage{
+              &::before{
+                font-size: 35px;
+              }
+            }
+          }
         }
         .theme-titre{
           border-bottom: 1.5px solid map-get($colors, medium);
