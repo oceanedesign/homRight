@@ -24,4 +24,25 @@ export class ForumChoixThemePage {
     this.navCtrl.push(TabsPage);
   }
 
+  nouveauTheme(){
+      //Ouvre la pop up d'édition de la pièce
+
+    $(".fond-cache").css("display", "flex");
+
+    // var bouton = event.target.closest('button'); //Définit la variable bouton et attribut le bouton
+    // console.log($(bouton).attr('value')); //récupération de l'attribut "value" du bouton
+    // this.regPiece.nomPiece = $(bouton).attr('value') ; //Attribut la nouvelle valeur
+
+  }
+  returnChoose(){
+    //Ferme la pop up sans validation
+    $(".fond-cache").css("display", "none");
+  }
+
+  validerChoix(){
+    //Ajout de la piece
+    $(".fond-cache").css("display", "none");
+
+  }
+
 }

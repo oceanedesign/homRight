@@ -40,6 +40,11 @@ page-forum-accueil {
         border-radius: 2px;
         height: 40px;
         width: 100%;
+        img{
+          position: absolute;
+          right: 10px;
+          top: 10px;
+        }
       }
       ion-icon{
         color: white;
