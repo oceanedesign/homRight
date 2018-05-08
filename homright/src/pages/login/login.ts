@@ -32,9 +32,9 @@ export class LoginPage {
   splash = true;
 	connexionType: string ="connexion";
 
-  regData = {"pseudo":"", "password":"", "nom": "", "prenom": "","email": "","lat": "","lng": ""};
-  lat : any;
-  lng : any;
+  regData = {"pseudo":"", "password":"", "nom": "", "prenom": "","email": "","latitude": "","longitude": ""};
+  latitude : any;
+  longitude : any;
 
   users: String;
 
@@ -66,15 +66,15 @@ export class LoginPage {
       this.splash = false;
     }, 5500);
       this.geo.getCurrentPosition().then(pos=>{
-      this.lat = pos.coords.latitude;     
-      this.lng = pos.coords.longitude;
+      this.latitude = pos.coords.latitude;     
+      this.longitude = pos.coords.longitude;
     }).catch(err => console.log(err));
   }
 
   register() {
-    console.log("test dans doSignup " + this.lng +" pour la lattitude "+ this.lat);
-    this.regData.lat = this.lat;
-    this.regData.lng = this.lng;
+    console.log("test dans doSignup " + this.longitude +" pour la lattitude "+ this.latitude);
+    this.regData.latitude = this.latitude;
+    this.regData.longitude = this.longitude;
     console.log(this.regData);
     this.authServiceProvider.postData(this.regData,'users/create.php').then((result) => {
       console.log("ça maaarche");
