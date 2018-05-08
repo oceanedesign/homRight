@@ -79,6 +79,14 @@ page-jeu-modelisation {
         }
       }
 
+      .list-ios .item-block .item-inner, .list-ios > .item-block:last-child .item-inner{
+      	    border-bottom: 1px solid transparent;
+      }
+
+      .segment-ios .segment-button:hover:not(.segment-activated){
+      	background-color: white;
+      }
+
 	.parcours{
 		position: fixed;
 	    right: 10px;

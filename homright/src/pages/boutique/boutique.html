@@ -1,0 +1,87 @@
+<ion-header>
+    <h1>Boutique</h1>
+    <ion-toolbar>
+    	<ion-segment [(ngModel)]="boutiqueType">
+  			<ion-segment-button value="shop">
+  			<ion-icon name="icon-shopping-cart" icon-start></ion-icon>
+    		<p>Shop</p>
+  			</ion-segment-button>
+  			<ion-segment-button value="coupons" >
+  			<ion-icon name="icon-video" icon-start></ion-icon>
+    		<p>Coupons</p>
+  			</ion-segment-button>
+    	</ion-segment>
+ 	</ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+	<div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
+	<ion-grid class="container">
+ 		<div [ngSwitch]="boutiqueType" >
+	    	<div *ngSwitchCase="'shop'" class="boutiqueType container">
+	    		<ion-row>
+	    			<ion-col col-sm-12 col-md-6 *ngFor="let item of items" id='{{item.id}}'>
+	    				<div *ngIf="item.coupon == 1" class='reduction'><ion-icon name="icon-video" icon-start></ion-icon></div>
+	    				<ion-row  class="card shop-card">
+	    					<ion-col col-12 col-sm-6 col-md-12>
+	    						<img src="{{item.img}}"/>
+	    					</ion-col>
+	    					<ion-col col-12 col-sm-6 col-md-12 class="contenu">
+		    					<h1><span>{{item.nom}}</span> - 
+		    						<span>{{item.marque}}</span>
+		    					</h1>
+		    					<p class="prix">{{item.prix}}€</p>
+		    					<img class="notation" src="{{item.note}}"/>
+		    				</ion-col>
+	    				</ion-row>	    			
+	    			</ion-col>
+				</ion-row>
+	    	</div>
+
+	    	<div *ngSwitchCase="'coupons'" class="container">
+	    		
+				<ion-row>
+					<ion-col col-12>
+						<h1>Mes coupons actifs</h1>
+					</ion-col>
+
+					<ion-col col-12 class="card">
+						<div class="visuel">
+							<img src="../assets/imgs/coupons/samsung.png"/>
+						</div>
+						<ion-col col-12>
+							<p class="nom-c">Samsung Addict</p>
+							<p class="description-c">-20% sur tous les produits Samsung proposés en boutique !</p>
+						</ion-col>
+						<ion-col col-12>
+							<button ion-button block class="bouton-contour">XAB15F</button>
+		      			</ion-col>
+					</ion-col>
+
+					<ion-col col-12>
+						<h1>Bonjour, que désirez-vous pour aujourd’hui ?</h1>
+					</ion-col>
+
+					<ion-col  *ngFor="let coupon of coupons" col-12 class="card"  id='{{coupon.id}}'>
+						<div class="visuel">
+							<img src="{{coupon.img}}"/>
+							<p class="points">{{coupon.points}} points</p>
+						</div>	
+						<ion-col col-12>
+							<p class="nom-c">{{coupon.nom}}</p>
+							<p class="description-c">{{coupon.description}}</p>
+						</ion-col>
+						<ion-col col-12>
+							<button ion-button block class="bouton-principal" (click)="presentToast()">Acheter</button>
+		      			</ion-col>
+					</ion-col>
+
+				</ion-row>
+	    	</div>
+	    </div>
+
+
+	</ion-grid>
+		<button class="boutton-menuP" (click)="pushMenu()"><img  alt="menu principal" src="../assets/button/menu.png"/></button>
+</ion-content>

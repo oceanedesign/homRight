@@ -5,12 +5,6 @@ import { ForumChoixThemePage } from '../forum-choix-theme/forum-choix-theme';
 
 declare var jQuery:any;
 declare var $:any;
-/**
- * Generated class for the ForumAccueilPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({

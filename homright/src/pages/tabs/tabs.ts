@@ -8,6 +8,7 @@ import { ProfilPage } from '../profil/profil';
 import{EventsPage} from "../events/events";
 import { MonFournisseurPage } from '../mon-fournisseur/mon-fournisseur';
 import { ForumAccueilPage } from '../forum-accueil/forum-accueil';
+import { BoutiquePage} from '../boutique/boutique';
 
 declare var jQuery:any;
 declare var $:any;
@@ -55,7 +56,7 @@ export class TabsPage {
   directionBudget(){}
 
   directionBoutique(){
-
+    this.navCtrl.push(BoutiquePage);
   }
 
   directionForum(){

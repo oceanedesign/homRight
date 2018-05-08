@@ -18,6 +18,10 @@ page-stats-vue-3d {
         z-index: 100;
     }
 
+    .segment-ios .segment-button:hover:not(.segment-activated){
+        background-color: transparent;
+    }
+
 	.astuces{
     	margin: 0px auto 60px auto;
     	width: 100%;
