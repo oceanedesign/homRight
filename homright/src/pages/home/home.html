@@ -1,14 +1,14 @@
-<ion-content padding overflow-scroll="true" class="HomieGood">
+<ion-content padding overflow-scroll="true" class="HomieBad">
   <div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
   <ion-grid class="container">
       <ion-row>
-          <button ion-button block class="button-event" (click)="pushEvent()"><ion-icon name="icon-wall-clock"></ion-icon> Énergie verte | 10:02 <ion-icon name="icon-chevron"></ion-icon></button>
+          <button ion-button block class="button-event" (click)="pushEvent()"><ion-icon name="icon-wall-clock"></ion-icon> Énergie verte | 16:02 <ion-icon name="icon-chevron"></ion-icon></button>
       </ion-row>
       <ion-row padding class="title">
           <h1></h1>
           <p class="analyseMessage"></p>
       </ion-row>
-  		<ion-row class="mascotte">
+  		<ion-row class="mascotte" (click)="presentToast()">
       		<img class="en-forme" alt="Homie est en forme" src="../assets/imgs/homie_good.png"/>
           <img class="malade" alt="Homie est malade" src="../assets/imgs/homie_malade.png"/>
       </ion-row>
@@ -16,8 +16,8 @@
 		    <ion-col col-12 class="valeurs-conso text-center">
 				  <!-- <p>Analyse en cours...</p> <p>Vos premières données seront disponibles dans une heure.</p> -->
           <ion-col col-12 class="text-center conso-nb">
-            <div class="euros">0.8<span>€</span></div>
-            <div class="kwh">5.3<span>kwh</span></div>
+            <div class="euros">2.7<span>€</span></div>
+            <div class="kwh">17<span>kwh</span></div>
             <div style="font-weight: 700;">consommés depuis ce matin</div>
           </ion-col>
           <button class="boutton" (click)="directionStat3D()">

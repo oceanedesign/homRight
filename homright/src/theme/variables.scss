@@ -148,6 +148,13 @@ $colors: (
 @font-face{
 	font-family: 'Assistant';
 	font-style: normal;
+	font-weight: 800;
+	src : url('../assets/fonts/assistant/Assistant-ExtraBold.ttf')
+}
+
+@font-face{
+	font-family: 'Assistant';
+	font-style: normal;
 	font-weight: 700;
 	src : url('../assets/fonts/assistant/Assistant-Bold.ttf')
 }

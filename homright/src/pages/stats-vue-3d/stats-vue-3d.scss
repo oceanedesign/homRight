@@ -104,6 +104,7 @@ page-stats-vue-3d {
                 box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
                 border-radius: 8px;
                 margin-bottom: 20px;
+
                 p{
                   margin: auto;
                   margin-top: 2px;
@@ -125,6 +126,7 @@ page-stats-vue-3d {
                 }
                 &[name="icon-cuisine"]
                     {
+                        color: white;
                         margin-top: 13px;
                         &::before{
                         font-size: 32px;
@@ -132,6 +134,16 @@ page-stats-vue-3d {
                     }
                 }
               }
+            }
+
+            button.piece-cuisine{
+                    background: #E05151;
+                    p{
+                        color: white;
+                    }
+                    ion-icon::before{
+                        color: white;
+                    }
             }
 
             h1{

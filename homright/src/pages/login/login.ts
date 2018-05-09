@@ -64,7 +64,7 @@ export class LoginPage {
   ionViewDidLoad() {
     setTimeout(() => {
       this.splash = false;
-    }, 5500);
+    }, 6500);
       this.geo.getCurrentPosition().then(pos=>{
       this.latitude = pos.coords.latitude;     
       this.longitude = pos.coords.longitude;
