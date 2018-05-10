@@ -77,9 +77,16 @@ export class LoginPage {
     this.regData.longitude = this.longitude;
     console.log(this.regData);
     this.authServiceProvider.postData(this.regData,'users/create.php').then((result) => {
-      console.log("ça maaarche");
+      console.log(result);
+        if (result.hasOwnProperty("status") && result["status"] == "error") {
+            console.log(result["message"]);
+        } else {
+            console.log("Nop '-'");
+        }
+      console.log(result["_body"]);
        this.navCtrl.push(SignupPage);
     }, (error) => {
+        console.log(error);
         console.log("ça ne marche pas");
     });
   }
