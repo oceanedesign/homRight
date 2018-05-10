@@ -9,43 +9,70 @@
 
 <ion-content padding>
   <div class="fond-vague"><img class="vague" src="../assets/imgs/points-cles/vague-bulle.png"/></div>
-  <div class="block-search"><div class="search-bar"></div><ion-icon name="icon-equalizer"></ion-icon></div>
+  <div class="block-search"><div class="search-bar"><img class="" src="../assets/imgs/search-icon.svg"/></div><!--<ion-icon name="icon-equalizer"></ion-icon>--></div>
   <div class="block-theme" col-12>
-    <h2>Salle de bain</h2>
+    <h2>Cuisine</h2>
     <button class="theme">
       <div class="theme-titre"  col-7>
-        <h4>Feedback sur les chauffe-eaux solaires</h4>
-        <p>par Sophie le 25/02/2018 - 18:00</p>
+        <h4>Les chauffe-eaux solaires : c'est super !</h4>
+        <p>par Sophie le 25/04/2018 - 18:00</p>
       </div>
       <div class="dernierMessage" col-5>
         <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+18</span></div></div>
         <p>Dernier message</p>
-        <p>03/03/2018 à 20:15</p>
+        <p>10/05/2018 à 20:15</p>
       </div>
     </button>
     <button class="theme">
       <div class="theme-titre"  col-7>
-        <h4>Feedback sur les réfrigirateurs connectés</h4>
-        <p>par Sophie le 25/02/2018 - 18:00</p>
+        <h4>Des retours sur les fours connectés ?</h4>
+        <p>par Paul le 08/03/2018 - 15:42</p>
       </div>
       <div class="dernierMessage" col-5>
         <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
         <p>Dernier message</p>
-        <p>03/03/2018 à 20:15</p>
+        <p>14/03/2018 à 09:12</p>
       </div>
     </button>
     <button class="theme">
       <div class="theme-titre"  col-7>
-        <h4>Feedback sur les réfrigirateurs connectés</h4>
-        <p>par Sophie le 25/02/2018 - 18:00</p>
+        <h4>Où placer mon réfrigérateur ?</h4>
+        <p>par Camille le 13/02/2018 - 18:00</p>
       </div>
       <div class="dernierMessage" col-5>
         <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
         <p>Dernier message</p>
-        <p>03/03/2018 à 20:15</p>
+        <p>24/03/2018 à 14:15</p>
       </div>
     </button>
   </div>
-<button class="boutton-menuP" (click)="pushMenu()"><img  alt="menu principal" src="../assets/button/menu.png"/></button>
-<button class="button-create-theme" (click)="pushMenu()"><ion-icon class="icon-plus"></ion-icon><ion-icon class="icon-pencil"></ion-icon></button>
+  <button class="boutton-menuP" (click)="pushMenu()"><img  alt="menu principal" src="../assets/button/menu.png"/></button>
+  <button class="button-create-theme" (click)="nouveauTheme()"><ion-icon class="icon-plus"></ion-icon><ion-icon class="icon-pencil"></ion-icon></button>
+
+  <ion-row class="fond-cache">
+      <div class="lightbox">
+        <div col-12 class="lightbox-content">
+          <div  class="return">
+            <ion-icon (click)="returnChoose()" name="icon-left-arrow-2" class="arrow-return" ></ion-icon>
+            <p> Nouveau thème </p>
+            <ion-icon name="icon-trash-1"></ion-icon>
+          </div>
+          <ion-list class="titreTheme">
+            <ion-row col-12>
+              <ion-item>
+                <ion-label>Titre du sujet</ion-label>
+                <ion-input></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Message</ion-label>
+                <ion-textarea></ion-textarea>
+              </ion-item>
+            </ion-row>
+          </ion-list>
+          <div>
+            <button ion-button block class="" type="submit" (click)="validerChoix()">Poster</button>
+          </div>
+        </div>
+      </div>
+  </ion-row>
 </ion-content>

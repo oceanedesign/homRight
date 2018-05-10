@@ -20,8 +20,8 @@
 	<ion-grid class="container">
  		<div [ngSwitch]="boutiqueType" >
 	    	<div *ngSwitchCase="'shop'" class="boutiqueType container">
-	    		<ion-row>
-	    			<ion-col col-sm-12 col-md-6 *ngFor="let item of items" id='{{item.id}}'>
+	    		<ion-row class="disparition">
+	    			<ion-col col-sm-12 col-md-6 *ngFor="let item of items" id='{{item.id}}' (click)="showItem()">
 	    				<div *ngIf="item.coupon == 1" class='reduction'><ion-icon name="icon-video" icon-start></ion-icon></div>
 	    				<ion-row  class="card shop-card">
 	    					<ion-col col-12 col-sm-6 col-md-12>
@@ -37,6 +37,11 @@
 	    				</ion-row>	    			
 	    			</ion-col>
 				</ion-row>
+
+				<ion-row class="apparition">
+					<img class="stats" alt="Boutique" src="../assets/imgs/boutique/ref.png"/>
+				</ion-row>
+
 	    	</div>
 
 	    	<div *ngSwitchCase="'coupons'" class="container">

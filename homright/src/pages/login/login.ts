@@ -64,7 +64,7 @@ export class LoginPage {
   ionViewDidLoad() {
     setTimeout(() => {
       this.splash = false;
-    }, 5500);
+    }, 6500);
       this.geo.getCurrentPosition().then(pos=>{
       this.latitude = pos.coords.latitude;     
       this.longitude = pos.coords.longitude;
@@ -72,13 +72,6 @@ export class LoginPage {
   }
 
   register() {
-    if (! this.latitude) {
-        this.latitude = 0;
-    }
-
-    if (! this.longitude) {
-        this.longitude = 0;
-    }
     console.log("test dans doSignup " + this.longitude +" pour la lattitude "+ this.latitude);
     this.regData.latitude = this.latitude;
     this.regData.longitude = this.longitude;

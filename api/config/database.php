@@ -17,6 +17,7 @@ class Database {
     //Propriétés privées
     //Détails de configuration
     private $host   = "localhost";
+    private $charset = "utf8mb4";
     private $name   = "homright";
     private $user   = "root";
     private $passwd = "";

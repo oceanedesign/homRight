@@ -9,7 +9,7 @@ page-login {
     z-index: 100000;
     width:100%;
     background-color: #FFFFFF;
-    animation: disparition 0.3s linear 4s forwards;
+    animation: disparition 0.3s linear 5s forwards;
   }
 
   .flb {
@@ -22,7 +22,7 @@ page-login {
 
   .bottom{
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     left: 50%;
     animation: pulse 2s ease-in forwards;
     font-family: "Futura";
@@ -40,7 +40,7 @@ page-login {
   .bottom-center{
     position: relative; 
     left: -50%;
-    font-size: 16px;
+    font-size: 18px;
     color: #7686FF;
   }
 
