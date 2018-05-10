@@ -10,49 +10,19 @@
  *
  */
 require_once('../errors.php');
+require_once('table.php');
 
-class User {
-    //Variables privées
-    private $db_connection  = null;
-    private $table_name     = "user";
-
-    //Variables publiques
-    public $properties     = array();
-    
-    //-----METHODES PRIVEES
-    private function _init_properties() {
-        $stmt = $this->db_connection->get_columns_by_table_name($this->table_name);
-        
-        for ($i = 0; $i < $stmt->rowCount(); $i++) {
-            $row = $stmt->fetch(PDO::FETCH_ASSOC, PDO::FETCH_ORI_ABS, $i);
-            
-            // Ignorer le champ date_creation -> rempli automatiquement par mysql
-            if($row["Field"] == "date_creation") {
-                continue;
-            }
-            
-            $this->properties[$row["Field"]] = "";
-        }
-    }
+class User extends Table {
+    private $I_PROPERTIES = array("date_creation");
     
     private function _generate_token($strong) {
         return bin2hex(openssl_random_pseudo_bytes(128, $strong));
     }
-    //-----FIN METHODES PRIVEES
     
 //-----METHODES PUBLIQUES
     public function __construct($database) {
-        $this->db_connection = $database;
-        $this->PDO_object = $database->get_connection();
-        $this->_init_properties();
-    }
-    
-    public function set_property($name, $value) {
-        if (!in_array($name, array_keys($this->properties))) {
-            return errors("User_setproperty", "La propriété $name n'existe pas");
-        }
-        
-        $this->properties[$name] = $value; 
+        parent::__construct($database, "user");
+        parent::ignore_properties($this->I_PROPERTIES);
     }
     
     public function create() {
@@ -64,7 +34,7 @@ class User {
         $this->properties["password"] = hash("sha1", $this->properties["password"]);
         
         $request = $this->db_connection->build_insert_request($this->table_name, $this->properties);
-        
+                    
         //Préparer la requête
         try {
             $stmt = $this->PDO_object->prepare($request);
@@ -73,27 +43,28 @@ class User {
         }
         
         if(! $stmt) {
-            return errors("User_prepare", "Erreur lors de la préparation de la requête $request");
+            return errors("User_prepare", $stmt->errorInfo()[2]);
         }
 
         //Lier les données dans la requête
         foreach(array_keys($this->properties) as $column) {
             if(! $stmt->bindParam(":$column", $this->properties[$column])) {
-                return errors("User_bindParam", "Erreur lors de la liaison de donnée");
+                return errors("User_bindParam", $stmt->errorInfo()[2]);
             }
         }
         
         //Executer la requête
         if (! $stmt->execute()) {
-            return errors("User_execute", "Erreur lors de l'execution d'une requete");
+            return errors("User_execute", $stmt->errorInfo()[2]);
         }
         
         return array("token" => $this->properties["token"]);
     }   
     
-    public function get_by_pseudo_and_password($pseudo, $passwd) {
-        $passwd = hash("sha1", $passwd);
-        $request = "SELECT * from $this->table_name WHERE pseudo=:pseudo AND password=:password";
+    public function get_token_by_pseudo_and_password() {
+        //Attaque par dictionnaire possible. Ajouter un sel pour une meilleur securité
+        $h_passwd = hash("sha1", $this->properties["password"]);
+        $request = "SELECT token from $this->table_name WHERE pseudo=:pseudo AND password=:password";
         
         //Préparer la requête
         try {
@@ -103,24 +74,32 @@ class User {
         }
         
         if(! $stmt) {
-            return errors("User_prepare", "Erreur lors de la préparation de la requête $request");
+            return errors("User_prepare", $stmt->errorInfo()[2]);
         }
         
-        if (! ($stmt->bindParam(":pseudo", $pseudo) and $stmt->bindParam(":password", $passwd))) {
-                return errors("User_bindParam", "Erreur lors de la liaison de donnée");
+        //Lier les valeurs à la requête
+        if (! ($stmt->bindParam(":pseudo", $this->properties["pseudo"]) and $stmt->bindParam(":password", $h_passwd))) {
+            return errors("User_bindParam", $stmt->errorInfo()[2]);
         }
         
         //Executer la requête
         if (! $stmt->execute()) {
-            return errors("User_execute", "Erreur lors de l'execution d'une requete");
+            return errors("User_execute", $stmt->errorInfo()[2]);
         }
         
         //Vérifier qu'il existe 1 élément
         if ($stmt->rowCount() != 1) {
-            return errors("User_count", "Le pseudo [$pseudo] n'existe pas");
+            return errors("User_count", "Le pseudo [" . $this->properties["pseudo"] . "] n'existe pas ou est déjà utilisé");
         }
         
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        //Vérifier si la fonction a bien retourné la clé token et un token
+        if (! (array_key_exists("token", $data) && preg_match("/^[a-f0-9]{128}$/", $data["token"]))) {
+            return errors("User_token", "Quelque chose s'est mal passée");
+        }
+        
+        return $data;
     }
     //-----FIN METHODES PUBLIQUES
 }

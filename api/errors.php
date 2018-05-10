@@ -4,9 +4,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-header("Access-Control-Allow-Origin: *");
+//header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
-header('Content-Type: application/json');
+
 
 
 function errors($type, $msg) {
@@ -22,12 +22,19 @@ function errors($type, $msg) {
 function check_error($obj) {
     //Vérifier que l'objet n'a pas retourné d'erreur
     if (is_array($obj) && array_key_exists("status", $obj) && $obj["status"] == "error") {
+        header('Content-Type: application/json');
         echo json_encode($obj);
         die();
     }
 }
 
-function success() {
-    $msg = array("status" => "success");
-    echo json_encode($msg);
+function success($msg, $options=array()) {
+    header('Content-Type: application/json');
+    $response = array("status" => "success", "message" => $msg);
+    
+    foreach ($options as $key => $value) {
+        $response[$key] = $value;
+    }
+    
+    echo json_encode($response);
 }

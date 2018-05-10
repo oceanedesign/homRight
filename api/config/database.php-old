@@ -82,7 +82,7 @@ class Database {
         if (! $stmt = $this->connection->query($req)) {
             return errors("Database_query", "$req n'a pu être exécutée");
         }
-
+        
         return $stmt;
     }
     //-----FIN accesseurs
