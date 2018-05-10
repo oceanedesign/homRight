@@ -12,10 +12,10 @@
 						  <ion-item >
 						    <ion-label><ion-icon name="icon-plug"></ion-icon><h4>Mon fournisseur <p>Sélectionnez dans la liste</p></h4></ion-label>
 						    <ion-select [(ngModel)]="fournisseur" (ionChange)="onChangeFournisseur()">
-						      <ion-option value="engie">ENGIE</ion-option>
-						      <ion-option value="edf">EDF</ion-option>
-						      <ion-option value="eni">ENI</ion-option>
-									<ion-option value="ekwater">EKWATER</ion-option>
+						    	<ion-option value="engie">ENGIE</ion-option>
+						    	<ion-option value="edf">EDF</ion-option>
+						    	<ion-option value="eni">ENI</ion-option>
+								<ion-option value="ekwater">EKWATER</ion-option>
 									<ion-option value="alterna">ALTERNA</ion-option>
 						      <ion-option value="proxelia">PROXELIA</ion-option>
 						    </ion-select>
@@ -41,18 +41,18 @@
 						<ion-row col-12>
 							<h4>Superficie</h4>
 						  <ion-item>
-						    <ion-input placeholder="35"></ion-input><div item-end class="item-end">m2</div>
+						    <ion-input value="35"></ion-input><div item-end class="item-end">m2</div>
 						  </ion-item>
 						</ion-row>
 						<ion-row class="nbHab">
 							<h4>Nombre d'habitants</h4>
 							<ion-item col-12>
 								<ion-label>Adulte(s)</ion-label>
-								<ion-input type="number" min="1" placeholder="1"></ion-input>
+								<ion-input type="number" min="1" value="1"></ion-input>
 							</ion-item>
 							<ion-item col-12>
 								<ion-label>Enfant(s)</ion-label>
-								<ion-input type="number" min="0" placeholder="0"></ion-input>
+								<ion-input type="number" min="0" value="0"></ion-input>
 							</ion-item>
 						</ion-row>
 					</ion-list>
@@ -134,7 +134,6 @@
 					<div class="lightbox">
 						<div col-12 class="lightbox-content">
 							<div  class="return">
-								<ion-icon (click)="returnChoose()" name="icon-left-arrow-2" class="arrow-return" ></ion-icon>
 								<p> Editer : {{regPiece.nomPiece}}</p>
 								<ion-icon name="icon-trash-1"></ion-icon>
 							</div>
@@ -147,7 +146,7 @@
 								</ion-row>
 							</ion-list>
 							<ion-list class="icon-scene" radio-group [(ngModel)]="regPiece.type">
-								<p>Type de pièce (sélection multiple)</p>
+								<p>Type de pièce</p>
 								<ion-item col-3>
 									<ion-checkbox class="lit" [(ngModel)]="lit" checked></ion-checkbox>
 								</ion-item>
@@ -187,8 +186,8 @@
 								</ion-item>
 							</ion-list>
 							<div>
-								<button ion-button block class="not-selected" type="submit" (click)="returnChoose()"><ion-icon name="icon-cancel"></ion-icon></button>
-								<button ion-button block class="" type="submit" (click)="validerChoix()"><ion-icon name="icon-check"></ion-icon></button>
+								<button ion-button block class="not-selected" type="submit" (click)="returnChoose()">Annuler</button>
+								<button ion-button block class="" type="submit" (click)="validerChoix()">Valider</button>
 							</div>
 						</div>
 					</div>
@@ -199,19 +198,18 @@
 					<div class="lightbox">
 						<div col-12 class="lightbox-content">
 							<div  class="return">
-								<ion-icon (click)="returnChoose()" name="icon-left-arrow-2" class="arrow-return" ></ion-icon>
 								<p> Ajouter une pièce</p>
 							</div>
 							<ion-list class="nmPiece">
 								<ion-row col-12>
 									<ion-item>
 										<ion-label>Nom de la pièce</ion-label>
-										<ion-input [(ngModel)]="regPiece.nomPiece" placeholder="nom"></ion-input>
+										<ion-input [(ngModel)]="regPiece.nomPiece"></ion-input>
 									</ion-item>
 								</ion-row>
 							</ion-list>
 							<ion-list class="icon-scene" radio-group [(ngModel)]="regPiece.type">
-								<p>Type de pièce (sélection multiple)</p>
+								<p>Type de pièce</p>
 								<ion-item col-3>
 									<ion-checkbox class="lit" [(ngModel)]="lit" checked></ion-checkbox>
 								</ion-item>
@@ -251,8 +249,8 @@
 								</ion-item>
 							</ion-list>
 							<div>
-								<button ion-button block class="not-selected" type="submit" (click)="returnChoose()"><ion-icon name="icon-cancel"></ion-icon></button>
-								<button ion-button block class="" type="submit" (click)="validerAjoutPiece()"><ion-icon name="icon-check"></ion-icon></button>
+								<button ion-button block class="not-selected" type="submit" (click)="returnChoose()">Annuler</button>
+								<button ion-button block class="" type="submit" (click)="validerAjoutPiece()">Valider</button>
 							</div>
 						</div>
 					</div>

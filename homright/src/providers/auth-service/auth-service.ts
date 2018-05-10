@@ -4,7 +4,7 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 
-let apiUrl = 'http://192.168.56.104/homRight/api/';
+let apiUrl = 'http://localhost/homRight/api/';
 
 /*
   Generated class for the AuthServiceProvider provider.
@@ -35,8 +35,13 @@ export class AuthServiceProvider {
         console.log(apiUrl+type);
 
         this.http.post(apiUrl+type, JSON.stringify(data), options=options).subscribe((res:Response) => {
-            resolve(res.json());
-});
+          console.log("data "+data);
+            resolve(res);
+            console.log("res "+res);
+            }, (err) => {
+            reject(err);
+            console.log("Petit probleme");
+        })
 
 //        this.http.post(apiUrl+type, JSON.stringify(data), options=options).subscribe(res => {
 //        	console.log("Json envoyé");

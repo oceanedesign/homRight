@@ -79,13 +79,15 @@ export class LoginPage {
     
     this.authServiceProvider.postData(this.regData,'users/create.php').then((result) => {
       console.log(result);
+      console.log("J'ai envoyé les donnees.")
         if (result.hasOwnProperty("status") && result["status"] == "error") {
             console.log(result["message"]);
+            this.presentToast();
         } else {
-            console.log("Nop '-'");
+          console.log("Nop '-'");
+          this.navCtrl.push(SignupPage);
         }
-      console.log(result["_body"]);
-       this.navCtrl.push(SignupPage);
+
     }, (error) => {
         console.log(error);
         console.log("ça ne marche pas");
