@@ -13,15 +13,19 @@ import { PreModelisationPage } from '../pages/pre-modelisation/pre-modelisation'
 import { MonFournisseurPage } from '../pages/mon-fournisseur/mon-fournisseur';
 import { ForumAccueilPage } from '../pages/forum-accueil/forum-accueil';
 import { ForumChoixThemePage } from '../pages/forum-choix-theme/forum-choix-theme';
+import { ForumDiscussionPage } from '../pages/forum-discussion/forum-discussion';
+import { MonBudgetPage } from '../pages/mon-budget/mon-budget';
+import { MeComparerPage } from '../pages/me-comparer/me-comparer';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
 
-  //rootPage:any = LoginPage;
+  rootPage:any = LoginPage;
   //rootPage:any = PreModelisationPage;
-  rootPage:any = HomePage;
+  //rootPage:any = HomePage;
+
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

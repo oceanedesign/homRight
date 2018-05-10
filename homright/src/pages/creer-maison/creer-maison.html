@@ -23,7 +23,7 @@
 		<ion-list>
 			<ion-item>
 		    	<ion-label color="primary" floating>Nom de la maison</ion-label>
-		    	<ion-input name="maison"  type="text"></ion-input>
+		    	<ion-input [(ngModel)]="maisonData.nom" name="nom" type="text"  type="text"></ion-input>
 		  	</ion-item>
 		</ion-list>
 		<ion-row>
@@ -34,7 +34,7 @@
 				      <button ion-button block class="bouton-rond" color="light" (click)="ajoutMembres()">+</button>
       		</ion-col>
     </ion-row>
-		<ion-list id="list-membre" >
+		<ion-list id="list-membre">
 		</ion-list>
 		<ion-row>
     		<ion-col col-12>

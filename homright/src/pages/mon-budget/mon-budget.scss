@@ -1,0 +1,122 @@
+page-mon-budget {
+
+  ion-header{
+    background: none;
+    .toolbar-background{
+      border: 0px!important;
+      background: none!important;
+    }
+    ion-title{
+      background: map-get($colors, secondary);
+      .toolbar-title{
+        color: white!important;
+      }
+    }
+    button .button-inner{
+      color: white;
+    }
+    &.header-md::after{
+      height: 0px;
+    }
+  }
+
+  ion-content{
+    .fond-vague {
+      background: #7686FF;
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      margin-left: -16px;
+      margin-top: -16px;
+      .vague {
+          width: 100vw;
+          position: absolute;
+          top: 0px;
+          height: 30px;
+      }
+    }
+    .centrage-vertical{
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      .centrage-vertical-inner{
+        justify-content: center;
+        margin: auto;
+      }
+    }
+    .blockIcon{
+      justify-content: center;
+      margin: 10px auto;
+      text-align: center;
+      .bigIcon{
+        background: map-get($colors, secondary);
+        padding: 20px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      h2{
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 20px;
+        margin-top: 30px;
+      }
+    }
+    ion-list.temperature{
+      p{
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0px;
+      }
+      margin-bottom: 0;
+      .range-md, .range-ios{
+        padding: 0px;
+        .range-bar{
+          top: 5px;
+        }
+        .range-has-pin{
+          padding-top: 0;
+        }
+        .range-knob-handle{
+          top: 5px;
+        }
+      }
+      .range-slider{
+        height: 25px;
+
+        .range-bar{
+          height: 3px;
+        }
+      }
+      ion-label.label-range{
+        color: black;
+        font-size: 18px;
+        margin: 10px 0 30px 0;
+        font-weight: bold;
+        span{
+          margin-left: 5px;
+        }
+      }
+      ion-item{
+        border: 0px!important;
+        .item-inner{
+          border-bottom: 0px!important;
+        }
+      }
+    }
+    button.valider{
+      background: map-get($colors, primary);
+      color: white;
+      border-radius: 50px;
+      box-shadow: none;
+      max-width: 215px;
+      width:80%;
+      font-size: 12px;
+      font-weight: 700;
+      margin: auto;
+      margin: 40px auto;
+      text-transform: uppercase;
+    }
+  }
+
+}

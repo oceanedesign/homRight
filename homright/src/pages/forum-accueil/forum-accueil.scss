@@ -1,36 +1,37 @@
 page-forum-accueil {
 
-  ion-header{
-    background: none;
-    .toolbar-background{
-      border: 0px!important;
-      background: none!important;
-    }
-    ion-title{
-      background: map-get($colors, secondary);
-      .toolbar-title{
-        color: white!important;
+    ion-header {
+        background: map-get($colors, secondary);
+        border: 1px solid map-get($colors, secondary);
+        &::after, &.header-md::after{
+            background: map-get($colors, secondary);
+            border-color: map-get($colors, secondary);
+        }
+        h1{
+            text-align: center;
+            text-transform: uppercase;
+            font-family: "Futura";
+            font-weight: 300;
+            font-size: 16px;
+            margin: 20px 0px;
+            color:white;
+        }
+      }
+
+    ion-content .fond-vague{
+      height: 60px;
+      .vague {
+        width: 100vw;
+        position: absolute;
+        top: 59px;
+        height: 38px;
       }
     }
-    button .button-inner{
-      color: white;
-    }
-    ion-navbar{
-    }
-    &::after{
-    height: 0px !important;
-    }
-  }
-
-  .fond-vague{
-    // top: -16px;
-    z-index: 0;
-  }
 
   ion-content{
     .block-search{
       position: relative;
-      max-width: 800px;
+      max-width: 500px;
       z-index: 10;
       display: flex;
       margin: auto;
@@ -40,11 +41,13 @@ page-forum-accueil {
         border-radius: 2px;
         height: 40px;
         width: 100%;
-        img{
-          position: absolute;
-          right: 10px;
-          top: 10px;
-        }
+        border: 0px;
+        padding: 8px;
+      }
+      img{
+        position: absolute;
+        right: 10px;
+        top: 10px;
       }
       ion-icon{
         color: white;
@@ -58,7 +61,7 @@ page-forum-accueil {
     }
     .block-theme{
       position: relative;
-      margin-top: 30px;
+      margin-top: 80px;
       text-align: center;
       max-width: 1100px;
       button{
@@ -67,6 +70,8 @@ page-forum-accueil {
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
         border-radius: 8px;
         margin: auto 4px 12px 4px;
+        width: calc(50% - 14px);
+        max-width: 50%;
         .avatar{
           background: map-get($colors, secondary);
           border-radius: 50%;
@@ -107,12 +112,14 @@ page-forum-accueil {
           color: map-get($colors, medium);
           text-align: left;
           margin: 5px 0;
+          margin-left: 10px;
           font-size: 12.5px;
         }
         .avatar-message{
           display: inline-flex;
           float: right;
-          margin-right: 5px;
+          margin-right: 10px;
+          margin-bottom: 5px;
           .avatar-mini{
             background: map-get($colors, medium);
             border-radius: 50%;
@@ -141,13 +148,30 @@ page-forum-accueil {
   @media only screen and (min-width: 950px) {
     ion-content{
       .block-theme{
-        margin: 60px auto auto auto;
+        margin: 80px auto auto auto;
         button{
           max-width: 300px;
 
-          margin: auto 50px 12px 50px;
+          margin: auto 15px 30px 15px;
         }
       }
     }
   }
+
+  @media screen and (max-width: 575px) {
+    ion-content .fond-vague .vague{
+      height: 20px;
+    }
+    ion-content .block-theme{
+      margin-top: 50px;
+    }
+  }
+
+  @media screen and (max-width: 330px) {
+    ion-content .fond-vague .vague{
+      height: 20px;
+    }
+  }
+
+
 }
