@@ -20,8 +20,8 @@ import { ForumChoixThemePage } from '../pages/forum-choix-theme/forum-choix-them
 export class MyApp {
 
   //rootPage:any = LoginPage;
-  //rootPage:any = PreModelisationPage;
-  rootPage:any = HomePage;
+  rootPage:any = SignupPage;
+  //rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

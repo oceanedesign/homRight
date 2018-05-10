@@ -1,7 +1,7 @@
 <?php
 	include("db.php");
 
-//	header("Access-Control-Allow-Origin:*");
+	header("Access-Control-Allow-Origin:*");
 
 	$requete = "SELECT * FROM user" ;
 	$resultat = $db->query($requete);

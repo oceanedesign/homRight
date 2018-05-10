@@ -17,6 +17,8 @@ declare var $:any;
 })
 export class CreerMaisonPage {
 
+  maisonData = {"nom":""};
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -31,7 +33,8 @@ export class CreerMaisonPage {
 	}
 
   synchronisationCompteur(){
-        this.navCtrl.push(SynchroPage);
+        console.log(this.maisonData);
+            this.navCtrl.push(SynchroPage);
   }
 
 }
