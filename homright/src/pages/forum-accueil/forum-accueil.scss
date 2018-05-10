@@ -40,11 +40,13 @@ page-forum-accueil {
         border-radius: 2px;
         height: 40px;
         width: 100%;
-        img{
-          position: absolute;
-          right: 10px;
-          top: 10px;
-        }
+        border: 0px;
+        padding: 8px;
+      }
+      img{
+        position: absolute;
+        right: 10px;
+        top: 10px;
       }
       ion-icon{
         color: white;
@@ -67,6 +69,8 @@ page-forum-accueil {
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
         border-radius: 8px;
         margin: auto 4px 12px 4px;
+        width: calc(50% - 14px);
+        max-width: 50%;
         .avatar{
           background: map-get($colors, secondary);
           border-radius: 50%;
