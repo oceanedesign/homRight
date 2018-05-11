@@ -34,7 +34,7 @@ export class AuthServiceProvider {
         console.log("Json en cours d'envoi");
         console.log(apiUrl+type);
 
-        this.http.post(apiUrl+type, JSON.stringify(data), options=options).subscribe((res:Response) => {
+        this.http.post(apiUrl+type, JSON.stringify(data), options=options).subscribe((res) => {
           console.log("data "+data);
             resolve(res);
             console.log("res "+res);

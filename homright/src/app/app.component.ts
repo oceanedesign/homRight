@@ -25,9 +25,6 @@ export class MyApp {
   //rootPage:any = LoginPage;
   //rootPage:any = PreModelisationPage;
   rootPage:any = HomePage;
-  //rootPage:any = ForumAccueilPage;
-  //rootPage:any = ForumChoixThemePage;
-  //  rootPage:any = MeComparerPage;
 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
