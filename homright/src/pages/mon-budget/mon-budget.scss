@@ -35,6 +35,15 @@ page-mon-budget {
           height: 30px;
       }
     }
+    .centrage-vertical{
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      .centrage-vertical-inner{
+        justify-content: center;
+        margin: auto;
+      }
+    }
     .blockIcon{
       justify-content: center;
       margin: 30px auto;
@@ -49,12 +58,13 @@ page-mon-budget {
         text-transform: uppercase;
         font-weight: bold;
         font-size: 18px;
+        margin-top: 30px;
       }
     }
     ion-list.temperature{
       p{
-        margin-bottom: 0;
-        margin-top: 25px;
+        text-align: center;
+        font-weight: bold;
       }
       margin-bottom: 0;
       .range-md, .range-ios{
@@ -79,7 +89,11 @@ page-mon-budget {
       ion-label.label-range{
         color: black;
         font-size: 18px;
-        margin-bottom: 30px;
+        margin: 10px 0 30px 0;
+        font-weight: bold;
+        span{
+          margin-left: 5px;
+        }
       }
       ion-item{
         border: 0px!important;
@@ -98,8 +112,8 @@ page-mon-budget {
       font-size: 12px;
       font-weight: 700;
       margin: auto;
-      margin-bottom: 50px;
-      margin-top: 20px;
+      margin: 40px auto;
+      text-transform: uppercase;
     }
   }
 

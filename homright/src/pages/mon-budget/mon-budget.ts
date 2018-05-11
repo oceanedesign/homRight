@@ -13,7 +13,7 @@ import{TabsPage} from "../tabs/tabs";
 })
 export class MonBudgetPage {
 
-  temperature: number= 20;
+  temperature: number= 30;
   // valueObjet: String;
   // regPiece = {"nomPiece": "", "type":"", "temperature":""};
 
