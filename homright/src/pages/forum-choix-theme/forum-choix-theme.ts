@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ForumDiscussionPage } from '../forum-discussion/forum-discussion';
 import{TabsPage} from "../tabs/tabs";
 
 declare var jQuery:any;
@@ -37,6 +38,10 @@ export class ForumChoixThemePage {
   returnChoose(){
     //Ferme la pop up sans validation
     $(".fond-cache").css("display", "none");
+  }
+
+  pushDiscussion(){
+    this.navCtrl.push(ForumDiscussionPage);
   }
 
   validerChoix(){

@@ -81,6 +81,7 @@ page-forum-choix-theme {
         text-transform: uppercase;
         font-size: 16px;
         padding: 4px 8px;
+        margin-bottom: 25px;
       }
       button{
         background: #FFFFFF;
@@ -313,15 +314,21 @@ page-forum-choix-theme {
       .block-theme{
         margin: 80px auto auto auto;
         button{
-
         }
       }
     }
   }
 
     @media screen and (max-width: 575px) {
-    ion-content .fond-vague .vague{
-      height: 20px;
+    ion-content{
+      .fond-vague{
+        .vague{
+          height: 20px;
+        }
+      }
+      .block-theme{
+        margin-top: 50px;
+      }
     }
   }
 
