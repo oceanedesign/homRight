@@ -11,6 +11,7 @@ import { ForumAccueilPage } from '../forum-accueil/forum-accueil';
 import { BoutiquePage} from '../boutique/boutique';
 import { JeuModelisationPage} from '../jeu-modelisation/jeu-modelisation';
 import { MonBudgetPage } from '../mon-budget/mon-budget';
+import { MeComparerPage } from '../me-comparer/me-comparer';
 
 declare var jQuery:any;
 declare var $:any;
@@ -55,7 +56,9 @@ export class TabsPage {
 		this.navCtrl.push(MonFournisseurPage);
   }
 
-  directionComparer(){}
+  directionComparer(){
+		this.navCtrl.push(MeComparerPage);
+	}
 
   directionModelisation(){
     //Fonction permettant d'amener à la page de modélisation des pieces
