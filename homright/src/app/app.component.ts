@@ -14,14 +14,15 @@ import { MonFournisseurPage } from '../pages/mon-fournisseur/mon-fournisseur';
 import { ForumAccueilPage } from '../pages/forum-accueil/forum-accueil';
 import { ForumChoixThemePage } from '../pages/forum-choix-theme/forum-choix-theme';
 import { ForumDiscussionPage } from '../pages/forum-discussion/forum-discussion';
+import { MonBudgetPage } from '../pages/mon-budget/mon-budget';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
 
-  //rootPage:any = LoginPage;
-  rootPage:any = PreModelisationPage;
+  rootPage:any = LoginPage;
+  //rootPage:any = PreModelisationPage;
   //rootPage:any = HomePage;
   //rootPage:any = ForumAccueilPage;
   //rootPage:any = ForumChoixThemePage;

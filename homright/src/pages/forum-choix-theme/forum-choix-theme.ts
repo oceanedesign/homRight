@@ -14,6 +14,7 @@ declare var $:any;
 })
 export class ForumChoixThemePage {
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -26,7 +27,6 @@ export class ForumChoixThemePage {
   }
 
   nouveauTheme(){
-      //Ouvre la pop up d'édition de la pièce
 
     $(".fond-cache").css("display", "flex");
 
@@ -45,9 +45,10 @@ export class ForumChoixThemePage {
   }
 
   validerChoix(){
-    //Ajout de la piece
     $(".fond-cache").css("display", "none");
-
   }
-
+  getTypepiece(){
+    var typePiece = $(this).text();
+    console.log(typePiece);
+  }
 }
