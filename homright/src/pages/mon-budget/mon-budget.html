@@ -14,5 +14,20 @@
 
 
 <ion-content padding>
+  <div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
+  <div class="blockIcon">
+    <div class="bigIcon"><img class="" src="../assets/imgs/money-icon.svg"/></div>
+    <h2>Mon budget maximal</h2>
+  </div>
+  <ion-list class="temperature">
+    <p></p>
+    <ion-item>
+      <ion-label range-right class="label-range">{{temperature}}</ion-label>
+      <ion-range [(ngModel)]="temperature" color="secondary" max="35"></ion-range>
+    </ion-item>
+  </ion-list>
+  <ion-row>
+    <button ion-button block class="valider" type="submit" (click)="retourMenu()">Valider</button>
+  </ion-row>
 
 </ion-content>
