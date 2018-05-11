@@ -11,7 +11,7 @@ import{ConsoPage} from "../conso/conso";
 })
 export class StatsVue_3dPage {
   consoType: string ="vue3D";
-  statsType: string ="jour";
+  statsType: string ="semaine";
 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

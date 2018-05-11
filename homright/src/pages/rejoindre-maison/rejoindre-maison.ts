@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import{SynchroFaitePage} from "../synchro-faite/synchro-faite";
-
+import { ToastController } from 'ionic-angular';
 /**
  * Generated class for the RejoindreMaisonPage page.
  *
@@ -17,11 +17,13 @@ import{SynchroFaitePage} from "../synchro-faite/synchro-faite";
 })
 export class RejoindreMaisonPage {
 
+  maisonData = {"nom":""};
+
   users: String;
   namesHouse: string[];
   hideElement: false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public authServiceProvider : AuthServiceProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public authServiceProvider : AuthServiceProvider, public toastCtrl: ToastController) {
    this.initializeNamesHouse();
   }
 
@@ -70,8 +72,22 @@ export class RejoindreMaisonPage {
   }
 
   synchronisationFaiteCompteur(){
-        this.navCtrl.push(SynchroFaitePage);
+    if(this.maisonData.nom == ""){
+      this.presentToast();
+    }else{
+        console.log(this.maisonData);
+        this.navCtrl.push(SynchroFaitePage);      
+    }
+
   }
 
+  presentToast() {
+    //Définit le message de refus d'achat dû à un manque de points
+    let toast = this.toastCtrl.create({
+        message: "Choisissez une maison !",
+        duration: 3000
+      });
+    toast.present();
+  }
   
 }

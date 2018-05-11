@@ -22,7 +22,7 @@ class User {
     //-----METHODES PRIVEES
     private function _init_properties() {
         $stmt = $this->db_connection->get_columns_by_table_name($this->table_name);
-        
+        check_error($stmt);
         for ($i = 0; $i < $stmt->rowCount(); $i++) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC, PDO::FETCH_ORI_ABS, $i);
             
@@ -84,8 +84,10 @@ class User {
         }
         
         //Executer la requête
-        if (! $stmt->execute()) {
-            return errors("User_execute", "Erreur lors de l'execution d'une requete");
+        $pseudo = $this->properties["pseudo"];
+        if (! $stmt->execute())
+         {
+            return errors("User_execute", "{'message':$pseudo}");
         }
         
         return array("token" => $this->properties["token"]);

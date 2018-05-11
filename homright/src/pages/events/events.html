@@ -119,6 +119,7 @@
 
 		            <div class="card-cote face contour sous-section-2">
 		            	<div class="map">
+		            		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1774.6815036593723!2d2.359632017923484!3d48.93642385237063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66eb6723f7ee5%3A0x685aed3f223ac931!2sMairie+de+Saint-Denis!5e0!3m2!1sen!2sfr!4v1525807858048" frameborder="0" style="border:0" allowfullscreen></iframe>
 		            	</div>
 		              	<div class="explication">
 		                	<div class="card-informations-exp">
@@ -138,7 +139,7 @@
 		              	</div>
 		                  	<section class="card-section card-section-4">
 		                    	<div class="card-cote face">
-		                      	<button type="button" class="bouton-interet bouton-principal" (click)="changementInteret($event)" value="pasinteresse">
+		                      	<button type="button" class="bouton-interet bouton-principal" (click)="changementInteret($event)" value="{{card.interet}}">
 		                        	{{card.interet}}
 		                      	</button>
 		                      	<p class="nb-interet">{{card.requests}} Hom'rees sont intéressés</p>
@@ -146,10 +147,6 @@
 		                  	</section>
 		           		</div>
 		          	</section>
-				</ion-row>
-
-		      	<ion-row>
-					<img class="stats" alt="evenements à l'exterieur" src="../assets/imgs/events/events-ville.png"/>
 				</ion-row>
 	    	</div>
 	    </div>

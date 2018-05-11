@@ -47,7 +47,7 @@ cardsHomright = [
 ];
 
   cards = [
-  {id:0, nom: 'Ecoville', points: 100, requests: 5, interet:"Pas intéressé(e)", 
+  {id:0, nom: 'Ecoville', points: 100, requests: 5, interet:"Intéressé(e)", 
    description: 'Tu veux participer à la transition énergétique de ton quartier ? Tu as des idées novatrices pour que ta ville devienne plus verte ? Viens à la réunion EcoVille pour découvrir les projets écologiques de Saint-Denis pour 2018. ', 
    recommandations: '- Réduire son thermostat et/ou son chauffage électrique et éviter l’utilisation des appareils électriques énergivores.', startTime: '09:00',
    endTime: '10:30', date:'20/05', startDate: '10/06/2018', endDate: '10/06/2018'},
@@ -96,14 +96,14 @@ cardsHomright = [
     let bouton = event.target;
     console.log(event.target);
     let identifiant = $(event.target.closest('.card')).attr('id');
-    if($(bouton).attr('value') =='pasinteresse'){
+    if($(bouton).attr('value') =='Pas intéressé(e)'){
       console.log("changement : interet");
-      $(bouton).attr('value', 'interesse');
+      $(bouton).attr('value', 'Intéressé(e)');
       //bouton.innerHTML = 'Intéressé(e)';
       this.cards[identifiant].interet = 'Intéressé(e)';
     }else{
       console.log("changement : pas interet");
-      $(bouton).attr('value', 'pasinteresse'); 
+      $(bouton).attr('value', 'Pas intéressé(e)'); 
       //bouton.innerHTML = 'Pas intéressé(e)';  
       this.cards[identifiant].interet = 'Pas intéressé(e)';  
     }

@@ -135,17 +135,30 @@ tabs{
 
 	.badges, .points{
 		display: inline-block;
-		background-image: url("../../assets/imgs/barres.png");
-		background-size: 69px 58px;
-		width: 69px;
-		height: 58px;
+		box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
+		border-radius: 8px;
+		width: 45%;
+		height: 50%;
 		text-align: center;
 		font-family: 'Futura';
 		font-weight: 600;
 		text-transform: uppercase;
-		margin: 20px 40px;
+		margin: 20px 5px;
+		padding: 20px;
 		cursor: pointer;
-				
+		ion-icon[name=icon-chevron] {
+		    line-height: 18px;
+		    pointer-events: none;
+		    padding: 0px;
+		    position: absolute;
+		    right: 10px;
+		    top: 35px;
+		    color: #7686FF;
+		    font-weight: bold;
+		    &::before{
+		    	font-size: 18px;
+		    }
+		}
 		h2{
 			margin: 0px;
 			font-size: 25px;
@@ -180,7 +193,7 @@ tabs{
 		}
 
 		.badges, .points{
-			margin: 50px 40px;
+			margin: 50px 4px;
 		}
 
 		.photo{
@@ -202,13 +215,13 @@ tabs{
 
 	@media (min-width: 1100px){
 		.badges, .points{
-			margin: 60px;
+			margin: 60px 4px;
 		}
 	}
 
 	@media (min-width: 1210px){
 		.badges, .points{
-			margin: 80px;
+			margin: 80px 4px;
 		}
 	}
 
@@ -228,14 +241,14 @@ tabs{
 		}
 
 		.badges, .points{
-        	margin: 20px 30px;
+        	margin: 20px 4px;
         }       
 	}  	
 
 	@media screen and (max-width: 315px) {
 
 		.badges, .points{
-        	margin: 20px 10px;
+        	margin: 20px 4px;
         } 
 		button.item-block.item .item-inner ion-icon[icon-start], button.item-block.item .item-inner .homie-icone{
     		margin-bottom: 50px;

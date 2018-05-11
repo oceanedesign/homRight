@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Http, Headers} from '@angular/http';
+import {Http, Headers, RequestOptions} from '@angular/http';
 
 import 'rxjs/add/operator/map';
 
@@ -19,26 +19,38 @@ export class AuthServiceProvider {
 
   constructor(public http: Http) {
     console.log('Hello AuthServiceProvider Provider');
-  	this.url ="http://localhost/homRight/api/api.php";
+  	this.url ="http://localhost/homRight/api/get.php";
   }
 
   getUsers(){
-  	return this.http.get(this.url).map(res=>res.json())
+  	return this.http.get(this.url).map(res=>res.json());
   }
 
   postData(data, type) {
     return new Promise((resolve, reject) => {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
+        let options = new RequestOptions({headers: headers});
         console.log("Json en cours d'envoi");
-        this.http.post(apiUrl+type, JSON.stringify(data), {headers: headers}).subscribe(res => {
-        	console.log("Json envoyé");
-        	console.log(res);
-           	resolve(res);
-          	}, (err) => {
+        console.log(apiUrl+type);
+
+        this.http.post(apiUrl+type, JSON.stringify(data), options=options).subscribe((res:Response) => {
+          console.log("data "+data);
+            resolve(res);
+            console.log("res "+res);
+            }, (err) => {
             reject(err);
             console.log("Petit probleme");
-        });
+        })
+
+//        this.http.post(apiUrl+type, JSON.stringify(data), options=options).subscribe(res => {
+//        	console.log("Json envoyé");
+//        	//console.log(res);
+//           	resolve(res);
+//          	}, (err) => {
+//            reject(err);
+//            console.log("Petit probleme");
+//        });
     });
   }
 

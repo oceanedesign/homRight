@@ -5,19 +5,21 @@
 						<div class="lightbox-content">
 							<div  class="profilSection menu-principal">
 									<ion-icon name="icon-share" class="partage"></ion-icon>
-									<ion-icon name="icon-edit" (click)="editProfil()"></ion-icon>
+									<!-- <ion-icon name="icon-edit" (click)="editProfil()"></ion-icon> -->
 							</div>
 							<div col-lg-6 style="text-align: center;" class='menu-principal'>
 								
 								<div class="photo">
-									<p>Pseudo</p>
+									<p>Pierrot</p>
 								</div>
 
 								<ion-col class="badges" col-auto (click)="directionBadges()">
+									<ion-icon name="icon-chevron" icon-end></ion-icon>
 									<h2>4</h2>
 									<p>badges</p>
 								</ion-col>
 								<ion-col class="points" col-auto (click)="directionPoints()">
+									<ion-icon name="icon-chevron" icon-end></ion-icon>
 									<h2>100</h2>
 									<p>points</p>
 								</ion-col>
@@ -93,6 +95,15 @@
 									<p>Ma maison</p>
 							</div>
 							<div col-lg-6 class='list-menu sous-menu'>
+
+								<button ion-item (click)="directionModelisation()">
+									<ion-icon name="icon-cube" icon-start></ion-icon>
+									<ion-icon name="icon-chevron" icon-end></ion-icon>
+									<div>
+	    	  							<h1>Ma modélisation</h1>
+										<p>Paramétrer, éditer et modéliser votre maison</p>
+									</div>							
+	    						</button>
 
 								<button ion-item (click)="directionFournisseur()">
 									<ion-icon name="icon-thunderbolt" icon-start></ion-icon>

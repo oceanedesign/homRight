@@ -20,8 +20,8 @@ import { ForumDiscussionPage } from '../pages/forum-discussion/forum-discussion'
 })
 export class MyApp {
 
-  rootPage:any = LoginPage;
-  //rootPage:any = PreModelisationPage;
+  //rootPage:any = LoginPage;
+  rootPage:any = PreModelisationPage;
   //rootPage:any = HomePage;
   //rootPage:any = ForumAccueilPage;
   //rootPage:any = ForumChoixThemePage;

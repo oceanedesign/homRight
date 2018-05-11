@@ -29,7 +29,7 @@ class Database {
     
     //-----Constructeur
     public function __construct() {
-        $this->set_connection();
+        check_error($this->set_connection());
     }
     
     //-----DEBUT Mutateurs

@@ -9,6 +9,7 @@ import{EventsPage} from "../events/events";
 import { MonFournisseurPage } from '../mon-fournisseur/mon-fournisseur';
 import { ForumAccueilPage } from '../forum-accueil/forum-accueil';
 import { BoutiquePage} from '../boutique/boutique';
+import { JeuModelisationPage} from '../jeu-modelisation/jeu-modelisation';
 
 declare var jQuery:any;
 declare var $:any;
@@ -44,24 +45,36 @@ export class TabsPage {
   editProfil(){}
 
   directionEvent(){
+    //Fonction permettant d'amener à la page des évenements
     this.navCtrl.push(EventsPage);
   }
 
   directionFournisseur(){
+    //Fonction permettant d'amener à la page de gestion du fournisseur et de son contrat
 		this.navCtrl.push(MonFournisseurPage);
   }
 
   directionComparer(){}
 
+  directionModelisation(){
+    //Fonction permettant d'amener à la page de modélisation des pieces
+    this.navCtrl.push(JeuModelisationPage);
+
+  }
+
   directionBudget(){}
 
   directionBoutique(){
+    //Fonction permettant d'amener à la boutique
     this.navCtrl.push(BoutiquePage);
   }
 
   directionForum(){
+    //Fonction permettant d'amener au forum
 		this.navCtrl.push(ForumAccueilPage);
   }
+
+
   directionContact(){
 
   }
@@ -75,6 +88,7 @@ export class TabsPage {
   directionDemenagement(){}
 
   retourMenu(){
+    //Fonction permettant de fermer le menu 
   	this.navCtrl.pop();
   }
 

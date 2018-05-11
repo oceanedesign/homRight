@@ -3,6 +3,9 @@ import { NavController, NavParams } from 'ionic-angular';
 import{TabsPage} from "../tabs/tabs";
 import { ToastController } from 'ionic-angular';
 
+declare var jQuery:any;
+declare var $:any;
+
 @Component({
   selector: 'page-boutique',
   templateUrl: 'boutique.html',
@@ -13,6 +16,7 @@ export class BoutiquePage {
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtrl: ToastController) {
 	}
+
 
 	coupons = [
 	  	{id:0, nom: 'Il fait chaud ?', points: 500,
@@ -49,6 +53,10 @@ export class BoutiquePage {
 	  	},
 	];
 
+	ionViewDidLoad() {
+
+	}
+
 	pushMenu(){
 		//Fonction menant au menu principal
 		this.navCtrl.push(TabsPage);
@@ -61,5 +69,10 @@ export class BoutiquePage {
 	    	duration: 3000
 	    });
 		toast.present();
+	}
+
+	showItem(){
+    	$(".disparition").css("display", "none");
+    	$(".apparition").css("display", "flex");
 	}
 }
