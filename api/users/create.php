@@ -30,7 +30,7 @@ if ($json_data == null) {
 
 //Affecter les valeurs 
 foreach (array_keys($user->properties) as $column) {
-    if (! in_array($column, $json_data)) {
+    if (! array_key_exists($column, $json_data)) {
         $json_data[$column] = null;
     }
 
