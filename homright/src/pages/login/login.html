@@ -49,22 +49,14 @@
 		    		</ion-col>
 		    	</ion-row>
 
-<!-- 		  		<ion-row>
-		    		<ion-col col-12>
-		    			<span class="line1"></span>
-		      			<p class="center">ou</p>
-		      			<span class="line2"></span>
-		      		</ion-col>
-		      	</ion-row> -->
-
 				<ion-list>
 					<ion-item>
 				    	<ion-label color="primary" floating>Pseudo</ion-label>
-				    	<ion-input></ion-input>
+				    	<ion-input [(ngModel)]="coData.pseudo" name="pseudo" type="text"></ion-input>
 				  	</ion-item>
 				  	<ion-item>
 				    	<ion-label color="primary" floating>Mot de passe</ion-label>
-				    	<ion-input type="password"></ion-input>
+				    	<ion-input [(ngModel)]="coData.password" name="password" type="password"></ion-input>
 				    </ion-item>
 				</ion-list>
 				<ion-row>

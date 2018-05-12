@@ -15,7 +15,7 @@ require_once('../errors.php');
 class Database {
     //-----DEBUT Propriétés privées
     //Détails de la configuration (valeurs par défauts)
-    private $host       = "127.0.0.1";
+    private $host       = "localhost";
     private $name       = "homright";
     private $user       = "root";
     private $passwd     = "";

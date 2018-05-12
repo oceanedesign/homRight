@@ -19,7 +19,7 @@ export class AuthServiceProvider {
 
   constructor(public http: Http) {
     console.log('Hello AuthServiceProvider Provider');
-  	this.url ="http://localhost/homRight/api/get.php";
+  	this.url ="http://localhost/homRight/api/users/get.php";
   }
 
   getUsers(){
