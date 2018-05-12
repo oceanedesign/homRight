@@ -22,8 +22,8 @@ import { MeComparerPage } from '../pages/me-comparer/me-comparer';
 })
 export class MyApp {
 
-  rootPage:any = LoginPage;
-  //rootPage:any = SignupPage;
+  rootPage:any = JeuModelisationPage;
+  //rootPage:any = ModelisationBienvenuePage;
   //rootPage:any = HomePage;
 
 
