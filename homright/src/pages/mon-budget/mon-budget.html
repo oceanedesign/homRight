@@ -22,10 +22,12 @@
         <h2>budget maximal</h2>
       </div>
       <ion-list class="temperature">
-        <p>Sois réaliste !</p>
+        <p *ngIf="budget < 20">Sois réaliste !</p>
+        <p *ngIf="budget >= 20 && budget <= 50">Tu peux le faire !</p>
+        <p *ngIf="budget > 50">Tu peux être plus ambitieux !</p>
         <ion-item>
           <ion-label range-right class="label-range">{{budget}}<span>€/mois</span></ion-label>
-          <ion-range [(ngModel)]="budget" color="secondary" max="300"></ion-range>
+          <ion-range [(ngModel)]="budget" color="secondary" max="200"></ion-range>
         </ion-item>
       </ion-list>
       <ion-row>

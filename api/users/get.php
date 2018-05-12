@@ -2,13 +2,7 @@
         require_once("../config/database.php");
         require_once("../objects/user.php");
         require_once("../errors.php");
-        
-        header("Access-Control-Allow-Origin:*");
-     header('Content-Type: application/json;charset=UTF-8');
-    header('Access-Control-Allow-Methods: DELETE, HEAD, GET, OPTIONS, POST, PUT');
-    header('Access-Control-Allow-Headers: : Origin, Content-Type, X-Auth-Token , Authorization');
-    header('Access-Control-Max-Age: 1728000');
-       
+      
          //Initialiser la connexion
         $db = new Database();
         
@@ -32,12 +26,7 @@
         }
         
         //Ajouter les valeurs du json dans l'objet user
-        foreach (array_keys($json_data) as $column) {
-            $ret = $user->set_property_value($column, $json_data[$column]);
-                
-            //Vérifier que la fonction n'a pas retournée d'erreur
-            check_error($ret);
-        }
+        $user->set_properties($json_data);
         
         //Récupérer le token associé à l'utilisateur : {"token": [0-9a-f]{128}}
         $data = $user->get_token_by_pseudo_and_password();

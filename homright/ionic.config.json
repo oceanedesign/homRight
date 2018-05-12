@@ -4,5 +4,11 @@
   "integrations": {
     "cordova": {}
   },
-  "app_id": "51c09ff5"
+  "app_id": "51c09ff5",
+  "proxies" : [
+	  {
+	  	"path" : "/homRight/api",
+	  	"proxyUrl" : "http://192.168.56.104/homRight/api"
+	  }
+  ]
 }

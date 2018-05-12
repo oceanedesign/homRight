@@ -101,5 +101,41 @@ class User extends Table {
         
         return $data;
     }
+    
+    
+    public function get_all_by_token() {
+        $request = "SELECT * from " . $this->table_name . " where token=:token";
+        
+        //Préparer la requête
+        try {
+            $stmt = $this->PDO_object->prepare($request);
+        } catch (PDOException $ex) {
+            return errors("PDOException", $ex->getMessage());
+        }
+        
+        if (! $stmt) {
+            return errors("User_prepare", $stmt->errorInfo()[2]);
+        }
+        
+        //Lier les données dans la requête
+        if(! $stmt->bindParam(":token", $this->properties["token"])) {
+            return errors("User_bindParam", $stmt->errorInfo()[2]);
+        }
+        
+        //Exécuter la requête
+        if (! $stmt->execute()) {
+            return errors("User_execute", $stmt->errorInfo()[2]);
+        }
+        
+        //Vérifier qu'il existe qu'un seul utilisateur (devrait jamais arriver)
+        if ($stmt->rowCount() != 1) {
+            return errors("User_count", "L'utilisateur n'existe pas ou est déjà utilisé");
+        }
+        
+        $this->set_properties($stmt->fetch(PDO::FETCH_ASSOC));
+        
+        return $this->properties["user_id"];
+    }
+    
     //-----FIN METHODES PUBLIQUES
 }

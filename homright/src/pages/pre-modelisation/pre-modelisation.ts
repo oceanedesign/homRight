@@ -21,7 +21,19 @@ export class PreModelisationPage {
 
   temperature: number= 20;
   valueObjet: String;
-  regPiece = {"nomPiece": "", "type":"", "temperature":""};
+  countPiece = -1;
+
+  regMaison = {"fournisseur":"","contrat":"","nb_habitants":"1","superficie":"25","volets_fermes":"","chauffage_reduit":""};
+  
+  regPiece = {"piece_id":"","nomPiece": "", "type":"", "temperature":""};
+  updatePiece = {"piece_id":"","nomPiece": "", "type":"", "temperature":""};
+
+  pieces = [
+   //{"piece_id":"0","nomPiece": "Chambre", "type":"lit", "temperature":"22"}
+  // {"piece_id":"1","nomPiece": "Salle de bains", "type":"douche", "temperature":"20"},
+  // {"piece_id":"2","nomPiece": "Salon", "type":"canape", "temperature":"25"}
+  ];
+
 
   @ViewChild(Slides) slides: Slides;
 
@@ -34,28 +46,24 @@ export class PreModelisationPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PreModelisationPage');
     this.slides.lockSwipes(true);
-    this.recupValue();
     // $( ".swiper-pagination::before" ).click(function() {
     //   console.log('ok');
     // });
+
+    console.log(this.pieces);
   }
 
-  recupValue(){
-    let value;
-    var buttonRoom = $('.listButtonRoom').find('.button-room');
+  voirVolet(){
+    console.log(this.regMaison.volets_fermes);
+  }
 
-    $('.button-room').each(function() {
-    
-    value = $(this).attr('value');
-    let paragraphe = $( this ).find('p');
-    paragraphe.replaceWith( "<p>"+value+"</p>");
-    });
-
-    console.log(value);
+  voirChauffage(){
+    console.log(this.regMaison.chauffage_reduit);
   }
 
   modeliserMaison(){
     //Fonction permettant d'aller sur l'écran de modélisation de la maison (phase de jeu)
+    console.log(this.regMaison)
     this.navCtrl.push(JeuModelisationPage);
   }
 
@@ -64,10 +72,12 @@ export class PreModelisationPage {
 
     $(".fond-cache").css("display", "flex");
 
-    var bouton = event.target.closest('button'); //Définit la variable bouton et attribut le bouton
-    console.log($(bouton).attr('value')); //récupération de l'attribut "value" du bouton
-    this.regPiece.nomPiece = $(bouton).attr('value') ; //Attribut la nouvelle valeur
 
+    var bouton = event.target.closest('ion-item'); //Définit la variable bouton et attribut le bouton
+    console.log($(bouton).attr('id')); //récupération de l'attribut "id" du bouton
+
+    this.updatePiece = this.pieces[$(bouton).attr('id')] ; //Attribut la nouvelle valeur
+    console.log(this.updatePiece);
   }
 
   returnChoose(){
@@ -76,9 +86,10 @@ export class PreModelisationPage {
     $(".fond-cache2").css("display", "none");
   }
 
-  validerChoix(){
-    //Ajout de la piece
+  validerModificationPiece(){
+    //Modification de la piece validée
     $(".fond-cache").css("display", "none");
+    console.log(this.updatePiece);
     
   }
 
@@ -90,16 +101,27 @@ export class PreModelisationPage {
   validerAjoutPiece(){
     $(".fond-cache2").css("display", "none");
     this.regPiece.temperature = this.temperature.toString();
-    console.log(this.regPiece.type);
 
+    
+    this.countPiece = (this.countPiece +1);
+    var idPiece= this.countPiece.toString();
+    this.pieces.push({"piece_id":idPiece,"nomPiece":this.regPiece.nomPiece,"type":this.regPiece.type, "temperature":this.regPiece.temperature});
+
+    console.log(this.regPiece.type);
     console.log(this.regPiece.nomPiece);
+    console.log(this.pieces);
   }
+
+  
 
   onChangeFournisseur(){
     $( "ion-list.transparency" ).removeClass("transparency");
+    console.log(this.regMaison.fournisseur);
   }
+
   onChangeContrat(){
     $( ".right-arrow" ).removeClass("transparency");
+    console.log(this.regMaison.contrat);
   }
 
   goToPrev() {

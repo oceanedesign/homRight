@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-import { LottieAnimationViewModule } from 'ng-lottie';
 import{SignupPage} from "../signup/signup";
 import { HomePage } from '../home/home';
 import { ToastController } from 'ionic-angular';
@@ -15,7 +14,6 @@ import { Geolocation } from '@ionic-native/geolocation';
  * Ionic pages and navigation.
  */
 
-declare var jquery:any;
 declare var $:any;
 
 @IonicPage({
@@ -32,6 +30,8 @@ export class LoginPage {
   splash = true;
 	connexionType: string ="connexion";
 
+  coData = {"pseudo":"", "password":""};
+
   regData = {"pseudo":"", "password":"", "nom": "", "prenom": "","email": "","latitude": "","longitude": ""};
   latitude : any;
   longitude : any;
@@ -40,62 +40,58 @@ export class LoginPage {
 
 
   	constructor(public navCtrl: NavController, public authServiceProvider : AuthServiceProvider, public geo: Geolocation, public toastCtrl: ToastController) {
-    LottieAnimationViewModule.forRoot();
-      this.lottieConfig={
-        path:'assets/imgs/splashScreen/data.json',
-        autoplay: true,
-        loopt: true
-
-      }
   }
-
-  ngOnInit(){
-    this.authServiceProvider.getUsers().subscribe(
-      data=>{
-        this.users=data.users;
-        console.log(data);
-      },
-      error=>{
-        console.log(error);
-      })
-  }
-
 
   ionViewDidLoad() {
+     //Fonction qui s'active au chargement de la page
     setTimeout(() => {
+      //lorsque le temps est écoulé, le splashscreen s'enleve
       this.splash = false;
     }, 6500);
       this.geo.getCurrentPosition().then(pos=>{
+        //récupere la géolocalisation
       this.latitude = pos.coords.latitude;     
       this.longitude = pos.coords.longitude;
     }).catch(err => console.log(err));
   }
 
   register() {
-    console.log("test dans doSignup " + this.longitude +" pour la lattitude "+ this.latitude);
+    //Fonction permettant d'enregistrer un nouveau utilisateur dans la base de données
+
+    //Attribut la latitude au json
     this.regData.latitude = this.latitude;
+    //Attribut la longitude au json
     this.regData.longitude = this.longitude;
     console.log(this.regData);
-    
+
+    //Envoi au serveur le json   
     this.authServiceProvider.postData(this.regData,'users/create.php').then((result) => {
-      console.log(result);
       console.log("J'ai envoyé les donnees.")
-        if (result.hasOwnProperty("status") && result["status"] == "error") {
-            console.log(result["message"]);
-            this.presentToast();
+        if (JSON.parse(result['_body']).hasOwnProperty("status") && JSON.parse(result['_body']).status == "error") {
+          // s'il y a une erreur
+            this.presentToastInscription();
+            //prevenir l'utilisateur
         } else {
-          console.log("Nop '-'");
+          var $my_token = JSON.parse(result['_body']).token;
+          this.authServiceProvider.token = $my_token;
+          let headers = new Headers();
+          headers.append('Token', this.authServiceProvider.token);
+
+
           this.navCtrl.push(SignupPage);
+          //sinon passer à l'écran suivant
         }
 
     }, (error) => {
+      //erreur coté serveur
         console.log(error);
         console.log("ça ne marche pas");
     });
   }
 
-  presentToast() {
-    //Définit le message de refus d'achat dû à un manque de points
+  presentToastInscription() {
+    //Définit le message "pseudo deja utilisé" lorsqu'un utilisateur essaye de s'inscrire avec un pseudo
+    // déjà existant dans la base de données
     let toast = this.toastCtrl.create({
         message: "Pseudo déjà utilisé",
         duration: 3000
@@ -104,7 +100,38 @@ export class LoginPage {
   }
 
   connexion(){
-  	this.navCtrl.push(HomePage);
+  // fonction permettant à l'utilisateur de se connecter s'il est déjà inscrit dans la bdd
+
+    //Envoi au serveur le json   
+    this.authServiceProvider.postData(this.coData,'users/get.php').then((result) => {
+      console.log("J'ai envoyé les donnees.")
+        if (JSON.parse(result['_body']).hasOwnProperty("status") && JSON.parse(result['_body']).status == "error") {
+        // s'il y a une erreur
+            this. presentToastConnexion();
+            //prevenir l'utilisateur
+        } else {   
+          //sinon passer à l'écran HomePage     
+          this.navCtrl.push(HomePage);
+          var $my_token = JSON.parse(result['_body']).token;
+          this.authServiceProvider.token = $my_token;
+          let headers = new Headers();
+          headers.append('Token', this.authServiceProvider.token);
+        }
+    }, (error) => {
+      //erreur coté serveur
+        console.log(error);
+        console.log("ça ne marche pas");
+    });
+  }
+
+  presentToastConnexion() {
+    //Définit le message "Pseudo ou mot de passe incorrecte" lorsqu'un utilisateur essaye de se connecter
+    //avec des erreurs
+    let toast = this.toastCtrl.create({
+        message: "Pseudo ou mot de passe incorrecte",
+        duration: 3000
+      });
+    toast.present();
   }
 
 }
