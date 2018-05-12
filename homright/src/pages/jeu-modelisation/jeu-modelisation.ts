@@ -22,6 +22,10 @@ export class JeuModelisationPage {
   superficie =0;
   largeur =0;
   longueur =0;
+
+
+
+
   regApp = {"nomApp": "", "connexion":""};
   connexion: boolean = false;
   nomPiece: String;
@@ -267,7 +271,9 @@ export class JeuModelisationPage {
         var positionP = $(this).find('.buttonSymetrie'); //Definit la variable
         if(positionP.length == 0){
           if( $(this).hasClass( "sans-symetrie" )==true){
+            //Et si l'objet a la classe sans-symetrie
              $(this).append("<img class='buttonVoir cache' src='../../assets/button/see.png'/>");
+             //Créer uniquement le bouton permettant d'activer la pop up
           }else{
           $(this).append("<img class='buttonSymetrie cache' src='../../assets/button/rotate.png'/><img class='buttonVoir cache' src='../../assets/button/see.png'/>").promise().done(
 
@@ -303,8 +309,6 @@ export class JeuModelisationPage {
         }           
       },
       beforeStop:function(event,ui){
-        
-       // console.log("test");
       },
 
       stop: function(event,ui){
@@ -315,18 +319,10 @@ export class JeuModelisationPage {
         if(countDrag==1){
           $(this).attr('id', + $('.case-sol').find('.spare-item2').length);
         }
-
-        //$(this).draggable('option','revert','invalid');
-        
       }
 
     })
     .on('click', function() {
-      // if( $(this).children().is( ':visible' ) ){
-      //   $(this).find('.cache').hide(); 
-      // }else{
-      //   $(this).find('.cache').show(); 
-      // }
       $(".cache").not($(this)).hide(); 
       $(this).find('.cache').show(); 
     }) 
@@ -335,24 +331,26 @@ export class JeuModelisationPage {
 
 
   activeDraggableItem(){
+    //Activation du drag and drop pour les éléments déjà créés dans la pièce
     $( ".spare-item2").draggable({
-      //grid: [ 10, 10 ],
-      // containment: "#case-maison",
       cursor: "grab",
-      //cursorAt: { left: 10, top:10 },
-      //revert: 'invalid',
       start: function (event, ui) { 
         $(".cache").hide(); 
         var positionP = $(this).find('.buttonSymetrie'); //Definit la variable
         if(positionP.length == 0){
+          //Si les boutons ne sont pas créés
           if( $(this).hasClass( "sans-symetrie" )==true){
+            //Et si l'objet a la classe sans-symetrie
              $(this).append("<img class='buttonVoir cache' src='../../assets/button/see.png'/>");
+             //Créer uniquement le bouton permettant d'activer la pop up
           }else{
           $(this).append("<img class='buttonSymetrie cache' src='../../assets/button/rotate.png'/><img class='buttonVoir cache' src='../../assets/button/see.png'/>")  
+          //Sinon crer les deux boutons (symétrie et voir)
         }
         }},
 
       stop: function(event,ui){
+        //Insert l'objet dans la pièce
         $(this).insertBefore(".case-maison");
         $(this).attr('position-x', + ui.position.left);
         $(this).attr('position-y', + ui.position.top);
@@ -360,6 +358,7 @@ export class JeuModelisationPage {
 
     })
     .on('click', function() {
+      //Montrer les boutons
       $(".cache").not($(this)).hide(); 
       $(this).find('.cache').show(); 
     }) 
@@ -385,13 +384,13 @@ export class JeuModelisationPage {
     .on('click', '.buttonVoir', function() {
     //Function permettant d'activer le pop up 
       console.log('Activation pop up ini');
-      $(".lightbox-cache").css("display", "flex");
-       
+      $(".lightbox-cache").css("display", "flex");    
     })
-
   }
 
+
   supprimer(){
+    //Fonction permettant de supprimer un objet existant dans la pièce
     console.log("supprimer");
     let rechercheItem = $( ".spare-item2").find('.cache:visible').closest('div').remove();
     $(".lightbox-cache").css("display", "none");
@@ -399,6 +398,7 @@ export class JeuModelisationPage {
 
   
   tailleSol(){
+    //Fonction permettant de définir la taille de la pièce en fonction des colonnes et lignes
     console.log("colonne : "+ this.colonne);
     $('.case-sol').attr('colonne', + this.colonne).attr('ligne', +this.ligne);
     $('.case-sol, .actions').width(this.colonne*160-2+"px");
@@ -409,7 +409,6 @@ export class JeuModelisationPage {
 
     $('.mur').css({"left": (-((this.ligne-1)*25)-15)+(((this.colonne-1)*8))+"px"});
     $('.mur').css({"top": (((this.ligne-1)*29.85)-358)-(((this.colonne-1)*12.7))+"px"});
-
 
     $('.mur2').width(this.colonne*50-10+this.colonne*3+"px");
     $('.mur2').css({"left": (((this.colonne-1)*3.55)+24)+((this.ligne-1)*20.45)+"px"});
@@ -436,6 +435,7 @@ export class JeuModelisationPage {
   }
 
   activationBoutton(){
+    //Fonction permettant d'ouvrir le menu
   	 $('.elements-ini').addClass('elements-active');
   	 $('.elements-ini').removeClass('elements');
 
@@ -450,6 +450,7 @@ export class JeuModelisationPage {
   }
 
   desactiveBoutton(){
+    //Fonction permettant de fermer le menu
   	$('.elements-ini').removeClass('elements-active');
   	$('.elements-ini').addClass('elements');
 
