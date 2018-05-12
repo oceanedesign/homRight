@@ -3,12 +3,6 @@ require_once("../config/database.php");
 require_once("../objects/user.php");
 require_once("../errors.php");
 
-header('Access-Control-Allow-Origin:*');
-header('Content-Type: application/json;charset=UTF-8');
-header('Access-Control-Allow-Methods: DELETE, HEAD, GET, OPTIONS, POST, PUT');
-header('Access-Control-Allow-Headers: : Origin, Content-Type, X-Auth-Token , Authorization');
-header('Access-Control-Max-Age: 1728000');
-
 //Initialiser la connexion
 $db = new Database();
 
@@ -40,6 +34,7 @@ foreach (array_keys($user->properties) as $column) {
     check_error($ret);
 }
 
-check_error($user->create());
+$ret = $user->create();
+check_error($ret);
 
-success("Utilisateur créé");
+success("Utilisateur créé", $options=$ret);
