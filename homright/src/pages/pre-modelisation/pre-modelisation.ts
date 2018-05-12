@@ -21,7 +21,15 @@ export class PreModelisationPage {
 
   temperature: number= 20;
   valueObjet: String;
+  regMaison = {"fournisseur":"","contrat":"","nb_habitants":"1","superficie":"25","volets_fermes":"","chauffage_reduit":""};
+  
   regPiece = {"nomPiece": "", "type":"", "temperature":""};
+
+
+  pieces = [{"nomPiece": "Chambre", "type":"lit", "temperature":"22"},
+  {"nomPiece": "Salle de bains", "type":"douche", "temperature":"20"},
+  {"nomPiece": "Salon", "type":"canape", "temperature":"25"}];
+
 
   @ViewChild(Slides) slides: Slides;
 
@@ -34,28 +42,22 @@ export class PreModelisationPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PreModelisationPage');
     this.slides.lockSwipes(true);
-    this.recupValue();
     // $( ".swiper-pagination::before" ).click(function() {
     //   console.log('ok');
     // });
   }
 
-  recupValue(){
-    let value;
-    var buttonRoom = $('.listButtonRoom').find('.button-room');
+  voirVolet(){
+    console.log(this.regMaison.volets_fermes);
+  }
 
-    $('.button-room').each(function() {
-    
-    value = $(this).attr('value');
-    let paragraphe = $( this ).find('p');
-    paragraphe.replaceWith( "<p>"+value+"</p>");
-    });
-
-    console.log(value);
+  voirChauffage(){
+    console.log(this.regMaison.chauffage_reduit);
   }
 
   modeliserMaison(){
     //Fonction permettant d'aller sur l'écran de modélisation de la maison (phase de jeu)
+    console.log(this.regMaison)
     this.navCtrl.push(JeuModelisationPage);
   }
 
@@ -90,16 +92,22 @@ export class PreModelisationPage {
   validerAjoutPiece(){
     $(".fond-cache2").css("display", "none");
     this.regPiece.temperature = this.temperature.toString();
-    console.log(this.regPiece.type);
 
+
+    this.pieces.push({"nomPiece":"4","type":"pending", "temperature":"25"});
+
+    console.log(this.regPiece.type);
     console.log(this.regPiece.nomPiece);
   }
 
   onChangeFournisseur(){
     $( "ion-list.transparency" ).removeClass("transparency");
+    console.log(this.regMaison.fournisseur);
   }
+
   onChangeContrat(){
     $( ".right-arrow" ).removeClass("transparency");
+    console.log(this.regMaison.contrat);
   }
 
   goToPrev() {

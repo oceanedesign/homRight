@@ -14,7 +14,6 @@ import { Geolocation } from '@ionic-native/geolocation';
  * Ionic pages and navigation.
  */
 
-declare var jquery:any;
 declare var $:any;
 
 @IonicPage({
@@ -42,10 +41,6 @@ export class LoginPage {
 
   	constructor(public navCtrl: NavController, public authServiceProvider : AuthServiceProvider, public geo: Geolocation, public toastCtrl: ToastController) {
   }
-
-  ngOnInit(){
-  }
-
 
   ionViewDidLoad() {
      //Fonction qui s'active au chargement de la page
@@ -115,8 +110,12 @@ export class LoginPage {
             this. presentToastConnexion();
             //prevenir l'utilisateur
         } else {   
-        //sinon passer à l'écran suivant      
-        this.navCtrl.push(HomePage);
+          //sinon passer à l'écran HomePage     
+          this.navCtrl.push(HomePage);
+          var $my_token = JSON.parse(result['_body']).token;
+          this.authServiceProvider.token = $my_token;
+          let headers = new Headers();
+          headers.append('Token', this.authServiceProvider.token);
         }
     }, (error) => {
       //erreur coté serveur

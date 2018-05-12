@@ -22,9 +22,9 @@ import { MeComparerPage } from '../pages/me-comparer/me-comparer';
 })
 export class MyApp {
 
-  rootPage:any = LoginPage;
+  //rootPage:any = PreModelisationPage;
   //rootPage:any = SignupPage;
-  //rootPage:any = HomePage;
+  rootPage:any = HomePage;
 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {

@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import{StatsVue_3dPage} from "../stats-vue-3d/stats-vue-3d";
-import { LottieAnimationViewModule } from 'ng-lottie';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { ToastController } from 'ionic-angular';
-
 import{TabsPage} from "../tabs/tabs";
 import{EventsPage} from "../events/events";
+
+
 declare var jQuery:any;
 declare var $:any;
 @Component({
@@ -16,30 +16,27 @@ declare var $:any;
 export class HomePage {
 
 	orderBy:string;
-  lottieConfig:any;
   splash = true;
-  constructor(public navCtrl: NavController, public toastCtrl: ToastController) {
-    LottieAnimationViewModule.forRoot();
-      this.lottieConfig={
-        path:'assets/imgs/splashScreen/data.json',
-        autoplay: true,
-        loopt: true
 
-      }
+  constructor(public navCtrl: NavController, public toastCtrl: ToastController,   public authServiceProvider : AuthServiceProvider) {
   }
 
   ionViewDidLoad() {
   	this.updateRoutines;
+    console.log(this.authServiceProvider.token);
   }
+
   creerScene(){
   	//this.navCtrl.push(creerScenePage);
   }
 
   pushEvent(){
+    //Fonction permettant d'aller à l'écran des evenements
     this.navCtrl.push(EventsPage);
   }
 
   pushMenu(){
+    //Fonction permettant d'activer le menu
     this.navCtrl.push(TabsPage);
   }
 
@@ -48,7 +45,8 @@ export class HomePage {
 	}
 
 	directionStat3D(){
-	this.navCtrl.push(StatsVue_3dPage);
+    //Fonction permettant d'aller à la page des statistiques
+	  this.navCtrl.push(StatsVue_3dPage);
 	}
 
   presentToast() {

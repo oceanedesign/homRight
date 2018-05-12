@@ -4,7 +4,6 @@ import{SynchroPage} from "../synchro/synchro";
 import { ToastController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
-declare var jquery:any;
 declare var $:any;
 
 @IonicPage()
@@ -24,9 +23,12 @@ export class CreerMaisonPage {
     console.log(this.authServiceProvider.token);
   }
 
-  synchronisationCompteur(){
+  creerMaison(){
+    //Fonction permettant d'ajouter une maison à la bdd
     if(this.maisonData.nom == ""){
+      //Si le champ est vide
       this.presentToast();
+      //Transmettre un message à l'utilisateur
     }else{
 
     //Envoi au serveur le json   
@@ -44,6 +46,7 @@ export class CreerMaisonPage {
   }
 
   ajoutMembres(){
+    //Fonction permettant d'ajouter des input pour d'autres invitations
     console.log("test ajout membres");
     $('#list-membre').append('<ion-item class="item item-block item-md item-input"><div class="item-inner"><div class="input-wrapper"><ion-input name="mail_membre" placeholder="membre@contact.com" type="text" class="input input-md" ng-reflect-type="text" ng-reflect-placeholder="membre@contact.com"><input class="text-input text-input-md" dir="auto" ng-reflect-klass="text-input" ng-reflect-ng-class="text-input-md" type="text" aria-labelledby="lbl-1" autocomplete="off" autocorrect="off" placeholder="membre@contact.com" name="mail_membre" ng-reflect-type="text" ng-reflect-placeholder="membre@contact.com"></ion-input></div></div><div class="button-effect"></div></ion-item>'); 
   }

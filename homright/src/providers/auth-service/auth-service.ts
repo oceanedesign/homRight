@@ -3,15 +3,9 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 
 import 'rxjs/add/operator/map';
 
-
 let apiUrl = 'http://localhost/homRight/api/';
 
-/*
-  Generated class for the AuthServiceProvider provider.
 
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class AuthServiceProvider {
 
@@ -30,6 +24,7 @@ export class AuthServiceProvider {
 
 
   postData(data, type) {
+    //Envoie le json au serveur
     return new Promise((resolve, reject) => {
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
@@ -50,6 +45,7 @@ export class AuthServiceProvider {
   }
 
   postDataWithToken(data, type) {
+    //Envoie le json au serveur avec le token en entete
     return new Promise((resolve, reject) => {
         let headers = new Headers();
         headers.append('Token', this.token);
