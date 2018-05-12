@@ -6,18 +6,16 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Je Partage</ion-title>
-  </ion-navbar>
+  <h1>Je Partage</h1>
 
 </ion-header>
 
 
 <ion-content padding>
-  <div class="fond-vague"><img class="vague" src="../assets/imgs/points-cles/vague-bulle.png"/></div>
-  <div class="block-search"><div class="search-bar"><img class="" src="../assets/imgs/search-icon.svg"/></div><!--<ion-icon name="icon-equalizer"></ion-icon>--></div>
+  <div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
+  <div class="block-search"><input class="search-bar"/><img class="" src="../assets/imgs/search-icon.svg"/><!--<ion-icon name="icon-equalizer"></ion-icon>--></div>
   <div class="block-theme" col-12>
-    <button class="theme cuisine" (click)="pushChoixTheme()" col-5>
+    <button class="theme cuisine" (click)="pushChoixTheme()" col-12 col-sm-6>
       <div class="avatar"><ion-icon class="icon-kitchen"></ion-icon></div>
       <div class="theme-titre"><h4>Cuisine</h4><span>10 posts</span>
       </div>
@@ -27,7 +25,7 @@
         <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
       </div>
     </button>
-    <button class="theme salle-de-bain" (click)="pushChoixTheme()" col-5>
+    <button class="theme salle-de-bain" (click)="pushChoixTheme()" col-12 col-sm-6>
       <div class="avatar"><ion-icon class="icon-shower"></ion-icon></div>
       <div class="theme-titre"><h4>Salle de bain</h4><span>6 posts</span>
       </div>
@@ -37,7 +35,7 @@
         <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
       </div>
     </button>
-    <button class="theme chambre" (click)="pushChoixTheme()" col-5>
+    <button class="theme chambre" (click)="pushChoixTheme()" col-12 col-sm-6>
       <div class="avatar"><ion-icon class="icon-bed"></ion-icon></div>
       <div class="theme-titre"><h4>Chambre</h4><span>5 posts</span>
       </div>
@@ -47,7 +45,7 @@
         <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
       </div>
     </button>
-    <button class="theme entree" (click)="pushChoixTheme()" col-5>
+    <button class="theme entree" (click)="pushChoixTheme()" col-12 col-sm-6>
       <div class="avatar"><ion-icon class="icon-door"></ion-icon></div>
       <div class="theme-titre"><h4>Entrée</h4><span>2 posts</span>
       </div>
@@ -57,7 +55,7 @@
         <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
       </div>
     </button>
-    <button class="theme salon" (click)="pushChoixTheme()" col-5>
+    <button class="theme salon" (click)="pushChoixTheme()" col-12 col-sm-6>
       <div class="avatar"><ion-icon class="icon-couch"></ion-icon></div>
       <div class="theme-titre"><h4>Salon</h4><span>2 posts</span>
       </div>
@@ -67,7 +65,7 @@
         <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
       </div>
     </button>
-    <button class="theme garage" (click)="pushChoixTheme()" col-5>
+    <button class="theme garage" (click)="pushChoixTheme()" col-12 col-sm-6>
       <div class="avatar"><ion-icon class="icon-garage"></ion-icon></div>
       <div class="theme-titre"><h4>Salon</h4><span>2 posts</span>
       </div>

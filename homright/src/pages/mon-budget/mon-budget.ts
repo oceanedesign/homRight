@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
 import{TabsPage} from "../tabs/tabs";
 
  declare var JQuery:any;
@@ -9,23 +8,20 @@ import{TabsPage} from "../tabs/tabs";
 
 @IonicPage()
 @Component({
-  selector: 'page-mon-fournisseur',
-  templateUrl: 'mon-fournisseur.html',
+  selector: 'page-mon-budget',
+  templateUrl: 'mon-budget.html',
 })
-export class MonFournisseurPage {
+export class MonBudgetPage {
+
+  budget: number= 30;
+  // valueObjet: String;
+  // budgetUser = {"budget":""};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MonFournisseurPage');
-  }
-
-  onChangeFournisseur(){
-    $( ".contrat.transparency" ).removeClass("transparency");
-  }
-  onChangeContrat(){
-
+    console.log('ionViewDidLoad MonBudgetPage');
   }
 
   retourMenu(){

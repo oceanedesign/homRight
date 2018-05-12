@@ -15,6 +15,9 @@ import { SynchroFaitePage } from '../synchro-faite/synchro-faite';
 })
 export class SynchroPage {
 
+
+  maisonData = {"nom":"", "voie":"41 rue Guynemer", "immeuble": "Résidence Arc-en-ciel","bp": "Appartement 220","cp": "Saint Denis"};
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

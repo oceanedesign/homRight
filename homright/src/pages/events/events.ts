@@ -50,11 +50,11 @@ cardsHomright = [
   {id:0, nom: 'Ecoville', points: 100, requests: 5, interet:"Intéressé(e)", 
    description: 'Tu veux participer à la transition énergétique de ton quartier ? Tu as des idées novatrices pour que ta ville devienne plus verte ? Viens à la réunion EcoVille pour découvrir les projets écologiques de Saint-Denis pour 2018. ', 
    recommandations: '- Réduire son thermostat et/ou son chauffage électrique et éviter l’utilisation des appareils électriques énergivores.', startTime: '09:00',
-   endTime: '10:30', date:'20/05', startDate: '10/06/2018', endDate: '10/06/2018'},
+   endTime: '10:30', date:'10/06', startDate: '10/06/2018', endDate: '10/06/2018'},
 
   {id:1, nom: 'Hackathon', points: 150, requests: 7, interet:"Pas intéressé(e)",
    description: "Tu veux participer à la transition énergétique de ton quartier ? Tu as des idées novatrices pour que ta ville devienne plus verte ? Viens au Hackathon de Paris sur l'énergie verte ! ", startTime: '18:00', 
-   endTime: '20:00', date:'20/05', startDate: '18/06/2018', endDate: '18/06/2018'}
+   endTime: '20:00', date:'18/06', startDate: '18/06/2018', endDate: '18/06/2018'}
 ];
 
   ouvertureCard(event){

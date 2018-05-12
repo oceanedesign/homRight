@@ -501,8 +501,8 @@ page-pre-modelisation {
           }
         }
         ion-list.nmPiece{
-          .item-inner{
-            border-bottom: 1px solid black;
+          .item-md .item-inner, .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+            border-bottom: 1px solid transparent;
           }
           .label-ios + ion-input .text-input, .label-ios + ion-textarea .text-input, .label-ios + .input + .cloned-input{
             margin-left: 0px;
@@ -648,7 +648,7 @@ page-pre-modelisation {
 
 
         button{
-          width: 55px;
+          width: 88px;
           height: 55px;
           display: inline-block;
           margin: 20px 8px;
@@ -703,6 +703,14 @@ page-pre-modelisation {
     .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
       border-bottom: 1px solid white;
     }
+
+  .fond-cache2 .lightbox-content{
+      ion-list.nmPiece{
+        .item-md .item-inner, .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+            border-bottom: 1px solid black;
+        }
+      }
+  }
 
   @media screen and (min-width: 500px) {
     .header-icon{

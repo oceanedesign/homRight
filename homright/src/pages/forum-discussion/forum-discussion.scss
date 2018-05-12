@@ -1,0 +1,126 @@
+page-forum-discussion {
+  ion-header{
+    background: none;
+        z-index: 1;
+    .toolbar-background{
+      border: 0px!important;
+      background: none!important;
+    }
+    ion-title{
+      background: map-get($colors, secondary);
+      .toolbar-title{
+        color: white!important;
+      }
+    }
+    button .button-inner{
+      color: white;
+    }
+    ion-navbar{
+    }
+    &::after{
+    height: 0px !important;
+    }
+    .nomTheme{
+      background: map-get($colors, primary);
+      color: white;
+      text-align: center;
+      padding: 4px 0;
+    }
+  }
+  ion-content{
+    .blockMessage{
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      margin-left: 8px;
+      .block-message-inner{
+        .avatar{
+          background: #f5b8da;
+          border-radius: 50%;
+          width: 60px;
+          height: 60px;
+          display: inline-block;
+          float: right;
+          position: relative;
+          z-index: 2;
+          p{
+            margin: 21.5px auto;
+          }
+        }
+        .bulle-message{
+          box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.12);
+          border-radius: 8px;
+          padding: 9px 30px;
+          margin-top: 20px;
+          margin-right: -20px;
+          display: inline-block;
+          max-width: 84%;
+          text-align: left;
+          float: right;
+          position: relative;
+          z-index: 1;
+          .date-message{
+            color: map-get($colors, medium);
+            font-size: 10px;
+            margin-top: 10px;
+          }
+        }
+      }
+      &.auteur{
+        .bulle-message{
+          float: left;
+          margin-left: -20px;
+          background: map-get($colors, primary);
+          color: white;
+          .date-message{
+            color: white;
+          }
+        }
+        .avatar{
+          float: left;
+          background: #B8F5D1;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 400px) {
+  ion-content{
+    .blockMessage{
+      margin-left: 20px;
+      .block-message-inner{
+        width: 90%;
+        .bulle-message{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 800px) {
+  ion-content{
+    .blockMessage{
+      .block-message-inner{
+        width: 70%;
+        .bulle-message{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1300px) {
+  ion-content{
+    .blockMessage{
+      .block-message-inner{
+        width: 50%;
+        .bulle-message{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

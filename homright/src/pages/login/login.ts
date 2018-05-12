@@ -3,7 +3,7 @@ import { IonicPage, NavController } from 'ionic-angular';
 import { LottieAnimationViewModule } from 'ng-lottie';
 import{SignupPage} from "../signup/signup";
 import { HomePage } from '../home/home';
-
+import { ToastController } from 'ionic-angular';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { Geolocation } from '@ionic-native/geolocation';
 
@@ -39,7 +39,7 @@ export class LoginPage {
   users: String;
 
 
-  	constructor(public navCtrl: NavController, public authServiceProvider : AuthServiceProvider, public geo: Geolocation) {
+  	constructor(public navCtrl: NavController, public authServiceProvider : AuthServiceProvider, public geo: Geolocation, public toastCtrl: ToastController) {
     LottieAnimationViewModule.forRoot();
       this.lottieConfig={
         path:'assets/imgs/splashScreen/data.json',
@@ -76,19 +76,31 @@ export class LoginPage {
     this.regData.latitude = this.latitude;
     this.regData.longitude = this.longitude;
     console.log(this.regData);
+    
     this.authServiceProvider.postData(this.regData,'users/create.php').then((result) => {
       console.log(result);
+      console.log("J'ai envoyé les donnees.")
         if (result.hasOwnProperty("status") && result["status"] == "error") {
             console.log(result["message"]);
+            this.presentToast();
         } else {
-            console.log("Nop '-'");
+          console.log("Nop '-'");
+          this.navCtrl.push(SignupPage);
         }
-      console.log(result["_body"]);
-       this.navCtrl.push(SignupPage);
+
     }, (error) => {
         console.log(error);
         console.log("ça ne marche pas");
     });
+  }
+
+  presentToast() {
+    //Définit le message de refus d'achat dû à un manque de points
+    let toast = this.toastCtrl.create({
+        message: "Pseudo déjà utilisé",
+        duration: 3000
+      });
+    toast.present();
   }
 
   connexion(){

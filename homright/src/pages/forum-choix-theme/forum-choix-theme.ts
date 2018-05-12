@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ForumDiscussionPage } from '../forum-discussion/forum-discussion';
 import{TabsPage} from "../tabs/tabs";
 
 declare var jQuery:any;
@@ -13,6 +14,7 @@ declare var $:any;
 })
 export class ForumChoixThemePage {
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -25,7 +27,6 @@ export class ForumChoixThemePage {
   }
 
   nouveauTheme(){
-      //Ouvre la pop up d'édition de la pièce
 
     $(".fond-cache").css("display", "flex");
 
@@ -39,10 +40,15 @@ export class ForumChoixThemePage {
     $(".fond-cache").css("display", "none");
   }
 
-  validerChoix(){
-    //Ajout de la piece
-    $(".fond-cache").css("display", "none");
-
+  pushDiscussion(){
+    this.navCtrl.push(ForumDiscussionPage);
   }
 
+  validerChoix(){
+    $(".fond-cache").css("display", "none");
+  }
+  getTypepiece(){
+    var typePiece = $(this).text();
+    console.log(typePiece);
+  }
 }
