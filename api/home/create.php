@@ -1,13 +1,8 @@
 <?php
+
 require_once("../config/database.php");
 require_once("../objects/user.php");
 require_once("../errors.php");
-
-header('Access-Control-Allow-Origin:*');
-header('Content-Type: application/json;charset=UTF-8');
-header('Access-Control-Allow-Methods: DELETE, HEAD, GET, OPTIONS, POST, PUT');
-header('Access-Control-Allow-Headers: : Origin, Content-Type, X-Auth-Token , Authorization');
-header('Access-Control-Max-Age: 1728000');
 
 //Initialiser la connexion
 $db = new Database();
@@ -16,10 +11,10 @@ $db = new Database();
 check_error($db);
 
 //Initialiser l'objet user
-$user = new User($db);
+$home = new Home($db);
 
 //Vérifier que l'objet n'a pas retourné d'erreur
-check_error($user);
+check_error($home);
 
 //Récupérer les données au format json
 $json_data = json_decode(file_get_contents('php://input'), true);
@@ -29,17 +24,16 @@ if ($json_data == null) {
 }
 
 //Affecter les valeurs 
-foreach (array_keys($user->properties) as $column) {
-    if (! in_array($column, $json_data)) {
+foreach (array_keys($home->properties) as $column) {
+    if (! array_keys_exists($column, $json_data)) {
         $json_data[$column] = null;
     }
 
-    $ret = $user->set_property_value($column, $json_data[$column]);
+    $ret = $home->set_property_value($column, $json_data[$column]);
 
     //Vérifier que la fonction n'a pas retournée d'erreur
     check_error($ret);
 }
+check_error($home->create());
 
-check_error($user->create());
-
-success("Utilisateur créé");
+success("Maison créé");
