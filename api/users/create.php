@@ -27,7 +27,7 @@ foreach (array_keys($user->properties) as $column) {
     if (! array_key_exists($column, $json_data)) {
         $json_data[$column] = null;
     }
-
+    
     $ret = $user->set_property_value($column, $json_data[$column]);
 
     //Vérifier que la fonction n'a pas retournée d'erreur
