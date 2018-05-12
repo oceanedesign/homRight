@@ -83,6 +83,9 @@ class Database {
             return errors("Database_query", "$req n'a pu être exécutée");
         }
         
+        //var_dump($stmt->fetchAll(PDO::FETCH_ASSOC));
+        //die();
+
         return $stmt;
     }
     //-----FIN accesseurs

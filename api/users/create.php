@@ -11,8 +11,6 @@
         require_once("../objects/user.php");
         require_once("../errors.php");
         
-
-        
         //Initialiser la connexion
         $db = new Database();
         
@@ -26,6 +24,8 @@
         check_error($user);
         
         //Récupérer les données au format json
+        var_dump(file_get_contents('php://input'));
+        die();
         $json_data = json_decode(file_get_contents('php://input'), true);
         
         if ($json_data == null) {

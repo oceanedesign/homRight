@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>monBudget</ion-title>
+    <ion-title>mon Budget</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,13 +19,13 @@
     <div class="centrage-vertical-inner">
       <div class="blockIcon">
         <div class="bigIcon"><img class="" src="../assets/imgs/money-icon.svg"/></div>
-        <h2>Mon budget maximal</h2>
+        <h2>budget maximal</h2>
       </div>
       <ion-list class="temperature">
-        <p>Soit réaliste !</p>
+        <p>Sois réaliste !</p>
         <ion-item>
-          <ion-label range-right class="label-range">{{temperature}}<span>€/mois</span></ion-label>
-          <ion-range [(ngModel)]="temperature" color="secondary" max="300"></ion-range>
+          <ion-label range-right class="label-range">{{budget}}<span>€/mois</span></ion-label>
+          <ion-range [(ngModel)]="budget" color="secondary" max="300"></ion-range>
         </ion-item>
       </ion-list>
       <ion-row>

@@ -13,9 +13,9 @@ import{TabsPage} from "../tabs/tabs";
 })
 export class MonBudgetPage {
 
-  temperature: number= 30;
+  budget: number= 30;
   // valueObjet: String;
-  // regPiece = {"nomPiece": "", "type":"", "temperature":""};
+  // budgetUser = {"budget":""};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

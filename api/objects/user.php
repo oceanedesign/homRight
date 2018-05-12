@@ -33,6 +33,10 @@ class User {
             
             $this->properties[$row["Field"]] = "";
         }
+
+             //       var_dump($this->properties);
+            //die();
+
     }
     
     private function _generate_token($strong) {
