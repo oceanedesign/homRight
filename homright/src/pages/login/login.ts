@@ -44,14 +44,6 @@ export class LoginPage {
   }
 
   ngOnInit(){
-    this.authServiceProvider.getUsers().subscribe(
-      data=>{
-        this.users=data.users;
-        console.log(data);
-      },
-      error=>{
-        console.log(error);
-      })
   }
 
 
@@ -85,6 +77,12 @@ export class LoginPage {
             this.presentToastInscription();
             //prevenir l'utilisateur
         } else {
+          var $my_token = JSON.parse(result['_body']).token;
+          this.authServiceProvider.token = $my_token;
+          let headers = new Headers();
+          headers.append('Token', this.authServiceProvider.token);
+
+
           this.navCtrl.push(SignupPage);
           //sinon passer à l'écran suivant
         }

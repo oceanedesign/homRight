@@ -16,6 +16,7 @@ let apiUrl = 'http://localhost/homRight/api/';
 export class AuthServiceProvider {
 
 	public url: string;
+  public token: string;
 
   constructor(public http: Http) {
     console.log('Hello AuthServiceProvider Provider');
@@ -26,6 +27,8 @@ export class AuthServiceProvider {
   	return this.http.get(this.url).map(res=>res.json());
   }
 
+
+
   postData(data, type) {
     return new Promise((resolve, reject) => {
         let headers = new Headers();
@@ -33,16 +36,6 @@ export class AuthServiceProvider {
         let options = new RequestOptions({headers: headers});
         console.log("Json en cours d'envoi");
         console.log(apiUrl+type);
-
-        // this.http.post(apiUrl+type, JSON.stringify(data), options=options).subscribe((res) => {
-        //   console.log("data "+data);
-        //     resolve(res);
-        //     console.log("res "+res);
-        //     }, (err) => {
-        //     reject(err);
-        //     console.log("Petit probleme");
-        // })
-
 
         this.http.post(apiUrl+type, JSON.stringify(data), options=options).subscribe(res => { 
           console.log("Json envoyé"); 
@@ -55,5 +48,27 @@ export class AuthServiceProvider {
 
     });
   }
+
+  postDataWithToken(data, type) {
+    return new Promise((resolve, reject) => {
+        let headers = new Headers();
+        headers.append('Token', this.token);
+        headers.append('Content-Type', 'application/json');
+        let options = new RequestOptions({headers: headers});
+        console.log("Json en cours d'envoi");
+        console.log("url : "+apiUrl+type+" token : "+ this.token);
+
+        this.http.post(apiUrl+type, JSON.stringify(data), options=options).subscribe(res => { 
+          console.log("Json envoyé"); 
+          console.log(res); 
+             resolve(res); 
+            }, (err) => { 
+            reject(err); 
+            console.log("Petit probleme"); 
+        }); 
+
+    });
+  }
+  
 
 }

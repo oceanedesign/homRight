@@ -1,8 +1,17 @@
 <?php
 
 require_once("../config/database.php");
-require_once("../objects/user.php");
+
+require_once("../objects/home.php");
 require_once("../errors.php");
+
+header('Access-Control-Allow-Origin:*'); 
+header('Content-Type: application/json;charset=UTF-8'); 
+header('Access-Control-Allow-Methods: DELETE, HEAD, GET, OPTIONS, POST, PUT'); 
+header('Access-Control-Allow-Headers: : Origin, Content-Type, Token , Authorization'); 
+header('Access-Control-Max-Age: 1728000'); 
+
+
 
 //Initialiser la connexion
 $db = new Database();
@@ -25,7 +34,7 @@ if ($json_data == null) {
 
 //Affecter les valeurs 
 foreach (array_keys($home->properties) as $column) {
-    if (! array_keys_exists($column, $json_data)) {
+    if (! array_key_exists($column, $json_data)) {
         $json_data[$column] = null;
     }
 

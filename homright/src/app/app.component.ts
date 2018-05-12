@@ -23,7 +23,7 @@ import { MeComparerPage } from '../pages/me-comparer/me-comparer';
 export class MyApp {
 
   rootPage:any = LoginPage;
-  //rootPage:any = MonBudgetPage;
+  //rootPage:any = SignupPage;
   //rootPage:any = HomePage;
 
 
