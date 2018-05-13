@@ -79,12 +79,12 @@ class Home extends Table {
     
     public function update_linky($token) {
         $request = "UPDATE " . $this->table_name;
-        $request .= "INNER JOIN user_has_maison";
-        $request .= "ON maison.maison_id = user_has_maison.maison_maison_id";
-        $request .= "INNER JOIN user";
-        $request .= "ON user_has_maison.user_user_id = user.user_id";
-        $request .= "SET maison.compt_linky=:compt_linky";
-        $request .= "WHERE user.token=:token";
+        $request .= " INNER JOIN user_has_maison";
+        $request .= " ON maison.maison_id = user_has_maison.maison_maison_id";
+        $request .= " INNER JOIN user";
+        $request .= " ON user_has_maison.user_user_id = user.user_id";
+        $request .= " SET maison.compt_linky=:compt_linky";
+        $request .= " WHERE user.token=:token";
         
                 //Préparer la requête
         try {

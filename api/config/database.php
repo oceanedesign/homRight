@@ -17,8 +17,8 @@ class Database {
     //Détails de la configuration (valeurs par défauts)
     private $host       = "localhost";
     private $name       = "homright";
-    private $user       = "ionic";
-    private $passwd     = "toto";
+    private $user       = "root";
+    private $passwd     = "";
     private $charset    = "utf8mb4";
     //-----FIN propriétés privées
     //
