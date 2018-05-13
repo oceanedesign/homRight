@@ -56,6 +56,6 @@ foreach (array_keys($home->properties) as $column) {
 }
 check_error($home->create());
 
-check_error($user_has_maison->create($token=get_token(), $maison_id=$home->properties["maison_id"]));
+check_error($user_has_maison->create($token=get_token(), array("maison_id" => $home->properties["maison_id"])));
 
 success("Maison créé");
