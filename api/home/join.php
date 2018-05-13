@@ -2,12 +2,18 @@
 require_once("../get_token.php");
 require_once("../config/database.php");
 require_once("../objects/user_has_home.php");
+require_once("../objects/home.php");
 
 //Initialiser la connexion
 $db = new Database();
 
 //Vérifier que l'objet n'a pas retourné d'erreur
 check_error($db);
+
+$home = new Home($db);
+
+//Vérifier que l'objet n'a pas retourné d'erreur
+check_error($home);
 
 //Initialiser l'objet home
 $user_has_maison = new User_has_home($db);
@@ -26,6 +32,12 @@ if ($json_data == null) {
 //Vérfier que la clé nom existe dans le json
 if (! array_key_exists("nom", $json_data)) {
     check_error(errors("Join_json_keys", "L'entrée est invalide")); 
+}
+
+check_error($stmt = $home->get_by_name($json_data["nom"]));
+
+if (! ($stmt && $stmt->rowCount() == 1)) {
+    check_error(errors("Join_name", "Le nom de la maison n'existe pas"));
 }
 
 check_error($ret = $user_has_maison->create($token=get_token(), array("nom" => $json_data["nom"])));
