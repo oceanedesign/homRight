@@ -5,7 +5,7 @@ require_once('table.php');
 
 class Home extends Table {
     
-    public function _build_update_request($columns) {
+    private function _build_update_request($columns) {
         $str_to_label = function($s) { return "maison.$s=:$s"; };
         
         $request = "UPDATE " . $this->table_name;
