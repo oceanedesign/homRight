@@ -12,6 +12,7 @@ import { BoutiquePage} from '../boutique/boutique';
 import { JeuModelisationPage} from '../jeu-modelisation/jeu-modelisation';
 import { MonBudgetPage } from '../mon-budget/mon-budget';
 import { MeComparerPage } from '../me-comparer/me-comparer';
+import { DemenagementPage } from '../demenagement/demenagement';
 
 declare var jQuery:any;
 declare var $:any;
@@ -91,7 +92,10 @@ export class TabsPage {
 
   directionParametre(){}
 
-  directionDemenagement(){}
+  directionDemenagement(){
+  //Fonction permettant d'amener à la page de déménagement
+    this.navCtrl.push(DemenagementPage);
+  }
 
   retourMenu(){
     //Fonction permettant de fermer le menu

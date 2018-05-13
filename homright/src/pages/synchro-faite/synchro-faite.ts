@@ -15,7 +15,7 @@ import{PointsClesPage} from "../points-cles/points-cles";
   templateUrl: 'synchro-faite.html',
 })
 export class SynchroFaitePage {
-  maisonData = {"compt_linky":"", "nom":"", "voie":"41 rue Guynemer", "immeuble": "Résidence Arc-en-ciel","bp": "Appartement 220","cp": "Saint Denis"};
+  maisonData = {"compt_linky":"", "nom":"", "voie":"41 rue Guynemer", "immeuble": "Résidence Arc-en-ciel","bp": "Appartement 220","cp": "93200", "ville" : "Saint Denis"};
 
 
 

@@ -21,20 +21,39 @@
  		<div [ngSwitch]="boutiqueType" >
 	    	<div *ngSwitchCase="'shop'" class="boutiqueType container">
 	    		<ion-row class="disparition">
-	    			<ion-col col-sm-12 col-md-6 *ngFor="let item of items" id='{{item.id}}' (click)="showItem()">
-	    				<div *ngIf="item.coupon == 1" class='reduction'><ion-icon name="icon-video" icon-start></ion-icon></div>
-	    				<ion-row  class="card shop-card">
-	    					<ion-col col-12 col-sm-6 col-md-12>
-	    						<img src="{{item.img}}"/>
-	    					</ion-col>
-	    					<ion-col col-12 col-sm-6 col-md-12 class="contenu">
-		    					<h1><span>{{item.nom}}</span> - 
-		    						<span>{{item.marque}}</span>
-		    					</h1>
-		    					<p class="prix">{{item.prix}}€</p>
-		    					<img class="notation" src="{{item.note}}"/>
-		    				</ion-col>
-	    				</ion-row>	    			
+	    			<ion-col col-sm-12 col-md-6 *ngFor="let item of items" id='{{item.id}}'>
+	    				<div *ngIf="item.id == 3" (click)="showItem()">
+		    				<div *ngIf="item.coupon == 1" class='reduction'><ion-icon name="icon-video" icon-start></ion-icon></div>
+		    				<ion-row  class="card shop-card">
+		    					<ion-col col-12 col-sm-6 col-md-12>
+		    						<img src="{{item.img}}"/>
+		    					</ion-col>
+		    					<ion-col col-12 col-sm-6 col-md-12 class="contenu">
+			    					<h1><span>{{item.nom}}</span> - 
+			    						<span>{{item.marque}}</span>
+			    					</h1>
+			    					<p class="prix">{{item.prix}}€</p>
+			    					<img class="notation" src="{{item.note}}"/>
+			    				</ion-col>
+		    				</ion-row>
+	    				</div>
+
+	    				<div *ngIf="item.id != 3">
+		    				<div *ngIf="item.coupon == 1" class='reduction'><ion-icon name="icon-video" icon-start></ion-icon></div>
+		    				<ion-row  class="card shop-card">
+		    					<ion-col col-12 col-sm-6 col-md-12>
+		    						<img src="{{item.img}}"/>
+		    					</ion-col>
+		    					<ion-col col-12 col-sm-6 col-md-12 class="contenu">
+			    					<h1><span>{{item.nom}}</span> - 
+			    						<span>{{item.marque}}</span>
+			    					</h1>
+			    					<p class="prix">{{item.prix}}€</p>
+			    					<img class="notation" src="{{item.note}}"/>
+			    				</ion-col>
+		    				</ion-row>
+	    				</div>
+
 	    			</ion-col>
 				</ion-row>
 

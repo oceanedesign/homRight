@@ -15,8 +15,9 @@ page-jeu-modelisation {
         margin: auto;
         h1{
         	text-align: center;
-        	color:black;
-        	font-size: 26px;
+		    color: black;
+		    padding: 40px;
+		    font-size: 28px;
         	margin: 30px auto;
         }
       }
@@ -58,7 +59,7 @@ page-jeu-modelisation {
                   color: black;
                 }
                 p[name="Cuisine"]{
-                	margin-top: 35px;
+                	//margin-top: 35px;
                 }
               }
               ion-icon{
@@ -155,12 +156,13 @@ page-jeu-modelisation {
 
 	.bouton-taille{
 		text-align: center;
-			button{
-		    margin: 5px;
-	    	width: 60px;
-	    	height: 60px;
-	    	border-radius: 8px;
-	   		display: inline-block;
+		button{
+			font-size: 13px;
+			margin: 3px;
+			width: 73px;
+			height: 60px;
+			border-radius: 8px;
+			display: inline-block;
 		}
 	}
 	.spare-item{
@@ -198,7 +200,7 @@ page-jeu-modelisation {
 
 	.bouton{
 		margin: 0 auto;
-		width: 60px;
+		width: 80px;
     	height: 60px;
     	border-radius: 8px;
 	    z-index: 10;
@@ -208,7 +210,7 @@ page-jeu-modelisation {
 	}
 
 	.bouton-annuler{
-		right:100px;
+		right:120px;
 	}
 
 
@@ -341,6 +343,7 @@ page-jeu-modelisation {
 	.container .item-block{
 		padding: 15px 0;
 		border-bottom: 1px solid white;
+		cursor: pointer;
 	}
 
 	.list-ios .item-block .item-inner, .list-ios > .item-block:last-child .item-inner,
@@ -686,7 +689,7 @@ input[type="range"]
     button {
     	margin: 5px;
     	display: inline-block;
-    	width: 60px;
+    	width: 80px;
     	height: 60px;
     	border-radius: 8px;
 		}
@@ -704,8 +707,8 @@ input[type="range"]
 	width: 50px;
     padding: 10px;
     position: absolute;
-    top: -15px;
-    left: -10px;
+    top: -10px;
+    left: -25px;
     z-index: 100;
     background: #7686FF;
     border-radius: 50%;
@@ -725,8 +728,8 @@ input[type="range"]
 
 	.item-radiateur{
 		.buttonSymetrie{
-			top: -15px;
-    		left: -10px;
+			top: -5px;
+    		left: -30px;
 		}
 		.buttonVoir{
 			top: -31px;
@@ -1168,7 +1171,7 @@ input[type="range"]
 		}
 
 		.bouton{
-			width: 50px;
+			width: 80px;
     		height: 50px;
 		}
 

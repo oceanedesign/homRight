@@ -16,6 +16,17 @@ import 'jquery-ui-dist/jquery-ui';
 })
 export class JeuModelisationPage {
 
+
+  pieces = [
+    {"piece_id":"0","nomPiece": "Chambre", "type":"lit"},
+    {"piece_id":"1","nomPiece": "Salle de bains", "type":"douche"},
+    {"piece_id":"2","nomPiece": "Salon", "type":"canape"},
+    {"piece_id":"3","nomPiece": "Cuisine", "type":"cuisine", "equipement":{
+
+    }}
+  ];
+
+
   ligne: number = 5;
   colonne:number=11;
   PosTotal:any;
@@ -56,10 +67,12 @@ export class JeuModelisationPage {
   }
 
   directionAccueil(){
+    //Fonction menant vers l'accueil
     this.navCtrl.setRoot(HomePage);
   }
 
     recupNomPiece(){
+     //Recuperation du nom de la pièce
     let value;
     var buttonRoom = $('.listButtonRoom').find('.button-room');
 
@@ -109,7 +122,6 @@ export class JeuModelisationPage {
       $(".mur, .mur2").removeClass("mur-visible");
     }
 
-
     var bouton = event.target.closest('button'); //Définit la variable bouton et attribut le bouton
     console.log($(bouton).attr('value')); //récupération de l'attribut "value" du bouton
     this.nomPiece = $(bouton).attr('value') ; //Attribut la nouvelle valeur
@@ -120,17 +132,6 @@ export class JeuModelisationPage {
     this.InitCache();
     $(".choix-piece").css("display", "block");
 
-  }
-
-
-  desactive(scope, element, attrs) {
-    element.on('click', function() {
-      scope.selected = true;
-    });
-    scope.$on('$destroy', function() {
-      element.off().promise().done(
-      console.log("Memoire bye")); // deregister all event handlers
-    })
   }
 
   validerRetouchePiece(){
@@ -195,7 +196,6 @@ export class JeuModelisationPage {
           .removeClass("move-cursor")
           .addClass("grab-cursor")
           .addClass("opac");
-      
       })
 
       .on("mouseup", function(){
@@ -207,6 +207,7 @@ export class JeuModelisationPage {
   }
 
   ActiveDraggable(){
+    //Activation de la zone qui accepte les équipements
     $( "#snaptarget" ).droppable({
       accept: ".spare-item2",
       over: function(event, ui) {
@@ -221,6 +222,7 @@ export class JeuModelisationPage {
 
 
   validerTaille(){
+    //Lorsque la taille a été validée, les murs deviennent visibles
     $(".fond-cache").css("display", "flex");
     $(".contenu-taille").css("display", "none");
     $(".case-maison").addClass("case-maison3d");
@@ -230,26 +232,26 @@ export class JeuModelisationPage {
   }
 
   caseMaisonObjet(event){
+    //Fonction permettant de mettre en place 
+    //le drag and drop sur les objets que l'on va ajouter dans la pièce
+
     var enfantCaseSol = $('.actions').find('.spare-item'); //Definit la variable
     var countDrag =0;
     $('.cache').hide();
-    if(enfantCaseSol.length > 0) //
+    if(enfantCaseSol.length > 0) //S'il y a deja un élément dans la case de prévisualisation
       { 
-        $('.actions').find('.spare-item').remove(); // Suppression de l'enfant
+        $('.actions').find('.spare-item').remove(); // Suppression de l'enfant/l'element
       }
 
-    console.log(event.target.id);
+
+    var item = event.target.closest('ion-item');
+    var objet = $(item).find('.objets-presentation');
+    console.log(objet);
     this.regApp.nomApp= event.target.id;
-    $( "#"+event.target.id ).clone().removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item")
+    objet.clone().removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item")
     .draggable({
-      //grid: [ 10, 10 ],
-      // containment: "#case-maison",
       cursor: "grab",
-      //cursorAt: { left: 10, top:10 },
-      //revert: 'invalid',
       drag: function (event, ui) {
-        //$(this).draggable( "option", "refreshPositions", true );
-        //console.log("top : "+ui.offset.top+" + left : "+ui.offset.left);
         console.log("count drag : "+countDrag);
          if(countDrag==1){
 
@@ -264,19 +266,19 @@ export class JeuModelisationPage {
         countDrag++;
         $(this).attr('symetrie', + "1");
 
-        //if (outside==true) {
         $(this).removeClass("spare-item");
         $(this).addClass("spare-item2");
-        //$(this).insertBefore("#case-maison");
+
         var positionP = $(this).find('.buttonSymetrie'); //Definit la variable
         if(positionP.length == 0){
+          //Si les boutons ne sont pas créés
           if( $(this).hasClass( "sans-symetrie" )==true){
             //Et si l'objet a la classe sans-symetrie
              $(this).append("<img class='buttonVoir cache' src='../../assets/button/see.png'/>");
              //Créer uniquement le bouton permettant d'activer la pop up
           }else{
           $(this).append("<img class='buttonSymetrie cache' src='../../assets/button/rotate.png'/><img class='buttonVoir cache' src='../../assets/button/see.png'/>").promise().done(
-
+            //Sinon créer les deux boutons
             function(){
 
               $(this).on('click', '.buttonSymetrie', function() {
@@ -313,11 +315,14 @@ export class JeuModelisationPage {
 
       stop: function(event,ui){
         $(this).insertBefore(".case-maison");
+        //Insertion de l'objet dans la maison
         $(this).attr('position-x', + ui.position.left);
         $(this).attr('position-y', + ui.position.top);
 
         if(countDrag==1){
+          //Si c'est la premiere fois que l'element est posé dans la piece
           $(this).attr('id', + $('.case-sol').find('.spare-item2').length);
+          //Attribue un ID à l'objet
         }
       }
 
