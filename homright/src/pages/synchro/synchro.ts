@@ -31,12 +31,12 @@ export class SynchroPage {
       //Envoi au serveur le json   
       this.authServiceProvider.postDataWithToken(this.maisonData,'home/update.php').then((result) => {
           console.log("J'ai envoyé les donnees.")
+          console.log(this.maisonData);
           if (JSON.parse(result['_body']).hasOwnProperty("status") && JSON.parse(result['_body']).status == "error") {
             // s'il y a une erreur
               this.presentToastCompteur();
               //prevenir l'utilisateur
           } else {
-            
             this.navCtrl.push(SynchroFaitePage);
             //sinon passer à l'écran suivant
           }
