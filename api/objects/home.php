@@ -5,7 +5,7 @@ require_once('table.php');
 
 class Home extends Table {
     
-    private function _build_update_request($columns) {
+    public function _build_update_request($columns) {
         $str_to_label = function($s) { return "maison.$s=:$s"; };
         
         $request = "UPDATE " . $this->table_name;
@@ -96,9 +96,14 @@ class Home extends Table {
         $data = array();
         foreach ($this->properties as $key => $value) {
             if ($value != null) {
-                $data[$key] = $value;
+                $data[] = $key;
             }
         }
+        
+        if (sizeof($data) == 0) {
+            return errors("Home_update", "Aucun élément à mettre à jour");
+        }
+        
         $request = $this->_build_update_request($data);
         
         //Préparer la requête
