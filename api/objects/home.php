@@ -5,6 +5,21 @@ require_once('table.php');
 
 class Home extends Table {
     
+    private function _build_update_request($columns) {
+        $str_to_label = function($s) { return "maison.$s=:$s"; };
+        
+        $request = "UPDATE " . $this->table_name;
+        $request .= " INNER JOIN user_has_maison";
+        $request .= " ON maison.maison_id = user_has_maison.maison_maison_id";
+        $request .= " INNER JOIN user";
+        $request .= " ON user_has_maison.user_user_id = user.user_id";
+        $request .= " SET " . implode(',', array_map($str_to_label, array_keys($columns)));
+        $request .= " WHERE user.token=:token";
+        
+        return $request;
+    }
+    
+    
     private function _set_id_by_name() {
         $request = "SELECT maison_id from " . $this->table_name . " where nom=:nom";
         
@@ -77,16 +92,16 @@ class Home extends Table {
     }
     
     
-    public function update_linky($token) {
-        $request = "UPDATE " . $this->table_name;
-        $request .= " INNER JOIN user_has_maison";
-        $request .= " ON maison.maison_id = user_has_maison.maison_maison_id";
-        $request .= " INNER JOIN user";
-        $request .= " ON user_has_maison.user_user_id = user.user_id";
-        $request .= " SET maison.compt_linky=:compt_linky";
-        $request .= " WHERE user.token=:token";
+    public function update($token) {      
+        $data = array();
+        foreach ($this->properties as $key => $value) {
+            if ($value != null) {
+                $data[$key] = $value;
+            }
+        }
+        $request = $this->_build_update_request($data);
         
-                //Préparer la requête
+        //Préparer la requête
         try {
             $stmt = $this->PDO_object->prepare($request);
         } catch (PDOException $ex) {
@@ -111,4 +126,16 @@ class Home extends Table {
         return array("status" => "success");
     }
     
+    
+    public function get_all_by_name_and_cp() {
+        $request = "SELECT nom, cp FROM maison";
+        
+        $stmt = $this->PDO_object->query($request);
+        
+        if(! $stmt) {
+            return errors("Home_query",$stmt->errorInfo()[2]);
+        }
+        
+        return $stmt;
+    }
 }
