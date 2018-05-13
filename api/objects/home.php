@@ -96,7 +96,7 @@ class Home extends Table {
         $data = array();
         foreach ($this->properties as $key => $value) {
             if ($value != null) {
-                $data[] = $key;
+                $data[$key] = $value;
             }
         }
         
@@ -105,7 +105,7 @@ class Home extends Table {
         }
         
         $request = $this->_build_update_request($data);
-        
+
         //Préparer la requête
         try {
             $stmt = $this->PDO_object->prepare($request);
@@ -118,11 +118,13 @@ class Home extends Table {
         }
 
         //Lier les données dans la requête
-        if(! ($stmt->bindParam(":compt_linky", $this->properties["compt_linky"]) && 
-                $stmt->bindParam(":token", $token))) {
-            return errors("Home_bindParam", $stmt->errorInfo()[2]);
+        $data["token"] = $token;
+        foreach($data as $key => $value) {
+            if (! $stmt->bindParam(":$key", $value)) {
+                return errors("Home_bindParam", $stmt->errorInfo()[2]);
+            }
         }
-        
+
         //Executer la requête
         if (! $stmt->execute()) {
             return errors("Home_execute", $stmt->errorInfo()[2]);
