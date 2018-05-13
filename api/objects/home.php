@@ -168,6 +168,37 @@ class Home extends Table {
         }
         
         return $stmt;
-        
     }
+    
+    
+    public function get_address_by_token($token) {
+        $request = "SELECT voie, immeuble, bp, cp, ville, compt_linky "
+                . "FROM maison "
+                . "LEFT JOIN user_has_maison ON user_has_maison.maison_maison_id = maison.maison_id "
+                . "LEFT JOIN user ON user_has_maison.user_user_id = user.user_id "
+                . "WHERE user.token=:token";
+        
+        //Préparer la requête
+        try {
+            $stmt = $this->PDO_object->prepare($request);
+        } catch (PDOException $ex) {
+            return errors("PDOException", $ex->getMessage());
+        }
+        
+        if(! $stmt) {
+            return errors("Home_prepare", $stmt->errorInfo()[2]);
+        }
+
+        //Lier les données dans la requête
+        if(! $stmt->bindParam(":token", $token)) {
+            return errors("Home_bindParam", $stmt->errorInfo()[2]);
+        }
+        
+        //Executer la requête
+        if (! $stmt->execute()) {
+            return errors("Home_execute", $stmt->errorInfo()[2]);
+        }
+        
+        return $stmt;
+    }   
 }
