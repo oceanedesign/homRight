@@ -3,7 +3,6 @@ require_once("../config/database.php");
 require_once("../objects/user.php");
 require_once("../errors.php");
 
-
 header('Access-Control-Allow-Origin:*'); 
 header('Content-Type: application/json;charset=UTF-8'); 
 header('Access-Control-Allow-Methods: DELETE, HEAD, GET, OPTIONS, POST, PUT'); 
@@ -34,7 +33,7 @@ foreach (array_keys($user->properties) as $column) {
     if (! array_key_exists($column, $json_data)) {
         $json_data[$column] = null;
     }
-
+    
     $ret = $user->set_property_value($column, $json_data[$column]);
 
     //Vérifier que la fonction n'a pas retournée d'erreur
