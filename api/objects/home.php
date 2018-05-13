@@ -131,7 +131,7 @@ class Home extends Table {
     }
     
     
-    public function get_name_and_cp() {
+    public function get_all_name_and_cp() {
         $request = "SELECT nom, cp FROM maison";
         
         $stmt = $this->PDO_object->query($request);
