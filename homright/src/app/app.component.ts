@@ -24,7 +24,7 @@ export class MyApp {
 
   //rootPage:any = JeuModelisationPage;
   //rootPage:any = ModelisationBienvenuePage;
-  rootPage:any = ForumAccueilPage;
+  rootPage:any = HomePage;
 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
