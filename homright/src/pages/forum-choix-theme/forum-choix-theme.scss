@@ -1,5 +1,6 @@
 page-forum-choix-theme {
 
+
   ion-header{
     background: none;
         z-index: 1;
@@ -34,6 +35,10 @@ page-forum-choix-theme {
     }
 
   ion-content{
+      .pasDePost{
+      font-family: 'Assistant';
+      font-size: 18px;
+    }
     textarea{
       width: 100%;
       height: 38px;

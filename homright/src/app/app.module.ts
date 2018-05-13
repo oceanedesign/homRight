@@ -23,6 +23,7 @@ import { PreModelisationPage } from '../pages/pre-modelisation/pre-modelisation'
 import { StatsVue_3dPage } from '../pages/stats-vue-3d/stats-vue-3d';
 import { EventsPage } from '../pages/events/events';
 import { BoutiquePage } from '../pages/boutique/boutique';
+import { DemenagementPage } from '../pages/demenagement/demenagement';
 
 import { ConsoPage } from '../pages/conso/conso';
 import { ContactPage } from '../pages/contact/contact';
@@ -50,9 +51,11 @@ import { SQLite } from '@ionic-native/sqlite';
     MyApp,
     LoginPage,
     SignupPage, RejoindreMaisonPage,CreerMaisonPage,
-    SynchroFaitePage, EditAdressePostalePage, PointsClesPage, ModelisationBienvenuePage, PreModelisationPage, MonFournisseurPage,
-    JeuModelisationPage, StatsVue_3dPage, EventsPage, ForumAccueilPage, ForumChoixThemePage,ForumDiscussionPage, MonBudgetPage,
-    SynchroPage, BoutiquePage, MeComparerPage,
+    SynchroFaitePage, EditAdressePostalePage, PointsClesPage, 
+    ModelisationBienvenuePage, PreModelisationPage, MonFournisseurPage,
+    JeuModelisationPage, StatsVue_3dPage, EventsPage, ForumAccueilPage, 
+    ForumChoixThemePage,ForumDiscussionPage, MonBudgetPage,
+    SynchroPage, BoutiquePage, MeComparerPage, DemenagementPage,
     ConsoPage,
     ContactPage,
     HomePage,
@@ -69,9 +72,11 @@ import { SQLite } from '@ionic-native/sqlite';
     MyApp,
     LoginPage,
     SignupPage, RejoindreMaisonPage, CreerMaisonPage,
-    SynchroFaitePage, EditAdressePostalePage, PointsClesPage, ModelisationBienvenuePage, PreModelisationPage, MonFournisseurPage,
-    JeuModelisationPage, StatsVue_3dPage, EventsPage, ForumAccueilPage, ForumChoixThemePage, ForumDiscussionPage, MonBudgetPage,
-    SynchroPage, BoutiquePage, MeComparerPage,
+    SynchroFaitePage, EditAdressePostalePage, PointsClesPage, 
+    ModelisationBienvenuePage, PreModelisationPage, MonFournisseurPage,
+    JeuModelisationPage, StatsVue_3dPage, EventsPage, ForumAccueilPage, 
+    ForumChoixThemePage, ForumDiscussionPage, MonBudgetPage,
+    SynchroPage, BoutiquePage, MeComparerPage, DemenagementPage,
     ConsoPage,
     ContactPage,
     HomePage,

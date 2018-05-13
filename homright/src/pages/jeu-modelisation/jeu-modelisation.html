@@ -1,10 +1,3 @@
-<!--
-  Generated template for the JeuModelisationPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-
 <ion-content class="no-scroll">
 
 	<div class="choix-piece">
@@ -13,28 +6,14 @@
 			<ion-col col-12>
 				<ion-scroll scrollX="true">
 					<ion-list class="listButtonRoom">
-						<ion-item>
-							<button value="Chambre" ion-button block class="button-room" type="submit" (click)="activeJeuIni($event)">
-								<ion-icon name="icon-bed"></ion-icon>
-								<p >Chambre</p>
+						<ion-item *ngFor="let piece of pieces" id="{{piece.piece_id}}">
+							<button *ngIf="piece.nomPiece != 'Cuisine'" value="{{piece.nomPiece}}" ion-button block class="button-room" type="submit" (click)="activeJeuIni($event)">
+								<ion-icon name="icon-{{piece.type}}"></ion-icon>
+								<p >{{piece.nomPiece}}</p>
 							</button>
-						</ion-item>
-						<ion-item>
-							<button value="Salle de bains" ion-button block class="button-room" type="submit" (click)="activeJeuIni($event)">
-								<ion-icon name="icon-shower"></ion-icon>
-								<p>Salle de bains</p>
-							</button>
-						</ion-item>
-						<ion-item>
-							<button value="Salon" ion-button block class="button-room" type="submit" (click)="activeJeuIni($event)">
-								<ion-icon name="icon-couch"></ion-icon>
-								<p>Salon</p>
-							</button>
-						</ion-item>
-						<ion-item>
-							<button value="Cuisine" ion-button block class="button-room" type="submit" (click)="activeJeuCuisine($event)">
-								<ion-icon name="icon-cuisine"></ion-icon>
-								<p name="cuisine">Cuisine</p>
+							<button *ngIf="piece.nomPiece == 'Cuisine'" value="{{piece.nomPiece}}" ion-button block class="button-room" type="submit" (click)="activeJeuCuisine($event)">
+								<ion-icon name="icon-{{piece.type}}"></ion-icon>
+								<p name="cuisine">{{piece.nomPiece}}</p>
 							</button>
 						</ion-item>
 					</ion-list>
@@ -79,8 +58,8 @@
       			</div>
     		</div>
     		<div class="bouton-taille">
-    			<button ion-button block class="bouton-principal" (click)="validerTaille()"><ion-icon name="icon-check"></ion-icon></button>
-				<button ion-button block class="bouton-contour" (click)="annulerRetouchePiece()"><ion-icon name="icon-cancel"></ion-icon></button>
+    			<button ion-button block class="bouton-principal" (click)="validerTaille()">Valider</button>
+				<button ion-button block class="bouton-contour" (click)="annulerRetouchePiece()">Annuler</button>
 			</div>
 		  	</ion-col>
 	  	</ion-row>
@@ -90,9 +69,9 @@
 			    	<div *ngSwitchCase="'ouverture'" class="container-actif container">
 			    		<h1>Ouverture</h1>
 			    		<ion-list>
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="fenetre" class="objets-presentation item-fenetre" (click)="caseMaisonObjet($event);"></div>
+									<div id="fenetre" class="objets-presentation item-fenetre"></div>
 								</div>
 								<h2>Fenêtre</h2>
 								<p>double vitrage</p>
@@ -106,33 +85,33 @@
 			    		<h1>éclairage</h1>
 
 			    		<ion-list>
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="halogene" class="objets-presentation item-halogene" (click)="caseMaisonObjet($event);"></div>
+									<div id="halogene" class="objets-presentation item-halogene" ></div>
 								</div>
 								<h2>Halogène</h2>
 								<p>lampe de chevet</p>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="led" class="objets-presentation item-led" (click)="caseMaisonObjet($event);"></div>
+									<div id="led" class="objets-presentation item-led"></div>
 								</div>
 								<h2>LED</h2>
 								<p>lampe de chevet</p>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="lampadaire-halo" class="objets-presentation item-lampadaire-halo sans-symetrie" (click)="caseMaisonObjet($event);"></div>
+									<div id="lampadaire-halo" class="objets-presentation item-lampadaire-halo sans-symetrie"></div>
 								</div>
 								<h2>Halogène</h2>
 								<p>lampadaire</p>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="lampadaire-led" class="objets-presentation item-lampadaire-led sans-symetrie" (click)="caseMaisonObjet($event);"></div>
+									<div id="lampadaire-led" class="objets-presentation item-lampadaire-led sans-symetrie"></div>
 								</div>
 								<h2>LED</h2>
 								<p>lampadaire</p>
@@ -145,9 +124,9 @@
 			    	<div *ngSwitchCase="'temperature'" class="container-actif container">
 			    		<h1>temperature</h1>
 						<ion-list>
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="radiateur" class="objets-presentation item-radiateur" (click)="caseMaisonObjet($event);"></div>
+									<div id="radiateur" class="objets-presentation item-radiateur"></div>
 								</div>
 								<h2>Radiateur</h2>
 								<p>électrique </p>
@@ -159,89 +138,89 @@
 			    	<div *ngSwitchCase="'appareils'" class="container-actif container">
 			    		<h1>appareils électriques</h1>
 			    		<ion-list>
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="prise" class="objets-presentation item-prise" (click)="caseMaisonObjet($event);"></div>
+									<div id="prise" class="objets-presentation item-prise"></div>
 								</div>
 								<h2>Appareil</h2>
 								<p>personnalisé</p>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="ordi-fixe" class="objets-presentation item-ordi-fixe" (click)="caseMaisonObjet($event);"></div>
+									<div id="ordi-fixe" class="objets-presentation item-ordi-fixe"></div>
 								</div>
 								<h2>Ordinateur</h2>
 								<p>fixe</p>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="ecran-plat" class="objets-presentation item-ecran-plat" (click)="caseMaisonObjet($event);"></div>
+									<div id="ecran-plat" class="objets-presentation item-ecran-plat"></div>
 								</div>
 								<h2>Télévision</h2>
 								<p>écran plat</p>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="micro-onde" class="objets-presentation item-micro-onde" (click)="caseMaisonObjet($event);"></div>
+									<div id="micro-onde" class="objets-presentation item-micro-onde"></div>
 								</div>
 								<h2>Micro-onde</h2>
 								<p></p>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="cafetiere" class="objets-presentation item-cafetiere" (click)="caseMaisonObjet($event);"></div>
+									<div id="cafetiere" class="objets-presentation item-cafetiere"></div>
 								</div>
 								<h2>Cafetière</h2>
 								<p></p>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="cuisiniere" class="objets-presentation item-cuisiniere" (click)="caseMaisonObjet($event);"></div>
+									<div id="cuisiniere" class="objets-presentation item-cuisiniere"></div>
 								</div>
 								<h2>Cuisinière</h2>
 								<p>électrique</p>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="plaques-induction" class="objets-presentation item-plaques-induction" (click)="caseMaisonObjet($event);"></div>
+									<div id="plaques-induction" class="objets-presentation item-plaques-induction"></div>
 								</div>
 								<h2>Plaque</h2>
 								<p>à induction</p>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="vitroceramique" class="objets-presentation item-vitroceramique" (click)="caseMaisonObjet($event);"></div>
+									<div id="vitroceramique" class="objets-presentation item-vitroceramique"></div>
 								</div>
 								<h2>Plaque</h2>
 								<p>vitrocéramique</p>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="four" class="objets-presentation item-four" (click)="caseMaisonObjet($event);"></div>
+									<div id="four" class="objets-presentation item-four"></div>
 								</div>
 								<h2>Four</h2>
 								<p></p>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="lave-vaisselle" class="objets-presentation item-lave-vaisselle" (click)="caseMaisonObjet($event);"></div>
+									<div id="lave-vaisselle" class="objets-presentation item-lave-vaisselle"></div>
 								</div>
 								<h2>Lave-vaisselle</h2>
 								<p></p>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="frigo" class="objets-presentation item-frigo" (click)="caseMaisonObjet($event);"></div>
+									<div id="frigo" class="objets-presentation item-frigo"></div>
 								</div>
 								<h2>Refrigérateur</h2>
 								<p></p>
@@ -251,40 +230,40 @@
 				    </div>
 
 			    	<div *ngSwitchCase="'decoration'" class="container-actif container">
-			    		<h1>Décoration</h1>
+			    		<h1>Meubles</h1>
 			    		
 			    		<ion-list>
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="lit" class="objets-presentation item-lit" (click)="caseMaisonObjet($event);"></div>
+									<div id="lit" class="objets-presentation item-lit"></div>
 								</div>
 								<h2>Lit simple</h2>								
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="placard" class="objets-presentation item-placard" (click)="caseMaisonObjet($event);"></div>
+									<div id="placard" class="objets-presentation item-placard"></div>
 								</div>
 								<h2>Placard</h2>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="evier" class="objets-presentation item-evier" (click)="caseMaisonObjet($event);"></div>
+									<div id="evier" class="objets-presentation item-evier"></div>
 								</div>
 								<h2>Evier</h2>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="table" class="objets-presentation item-table" (click)="caseMaisonObjet($event);"></div>
+									<div id="table" class="objets-presentation item-table"></div>
 								</div>
 								<h2>Table</h2>
 							</ion-item>
 
-							<ion-item>
+							<ion-item (click)="caseMaisonObjet($event);">
 								<div item-end>
-									<div id="plan-travail" class="objets-presentation item-plan-travail" (click)="caseMaisonObjet($event);"></div>
+									<div id="plan-travail" class="objets-presentation item-plan-travail"></div>
 								</div>
 								<h2>Plan de travail</h2>
 							</ion-item>
@@ -312,7 +291,7 @@
 		        		<ion-icon col-4 col-xl-5 name="icon-plug" style="vertical-align: initial;"></ion-icon><p col-8 col-xl-7 class="titre-compose">appareils électriques</p>
 		      			</ion-segment-button>
 		      			<ion-segment-button value="decoration" (click)="activationBoutton()">
-		        		<ion-icon col-4 col-xl-5 name="icon-vase"></ion-icon><p col-8 col-xl-7>décoration</p>
+		        		<ion-icon col-4 col-xl-5 name="icon-vase"></ion-icon><p col-8 col-xl-7>Meubles</p>
 		      			</ion-segment-button>
 		    		</ion-segment>
 		 		</ion-toolbar>
@@ -355,14 +334,14 @@
 		                
 		    </div>
 	  	</ion-row>
-		<button ion-button block class="bouton-contour bouton fond-cache" type="submit" (click)="annulerRetouchePiece()"><ion-icon name="icon-cancel"></ion-icon></button>
-		<button ion-button block class="bouton-principal bouton bouton-annuler fond-cache" type="submit" (click)="validerRetouchePiece()"><ion-icon name="icon-check"></ion-icon></button>
+		<button ion-button block class="bouton-contour bouton fond-cache" type="submit" (click)="annulerRetouchePiece()">Annuler</button>
+		<button ion-button block class="bouton-principal bouton bouton-annuler fond-cache" type="submit" (click)="validerRetouchePiece()">Valider</button>
 
 		<ion-row class="lightbox-cache">
 			<div class="box-principal">
 				<div class="lightbox">
 					<div col-12 class="lightbox-content">
-					  <div  class="return"><ion-icon name="icon-left-arrow-2" class="arrow-return" (click)="returnChoose()"></ion-icon>
+					  <div  class="return">
 					  	<p>Voir l'objet</p>
 					  	<ion-icon name="icon-trash-1" class="trash" (click)="supprimer()"></ion-icon></div>
 
@@ -380,8 +359,8 @@
 						</ion-list>
 						<ion-row>
 		    			<ion-col col-12>
-							<button ion-button block class="bouton-contour" type="submit" (click)="returnChoose()"><ion-icon name="icon-cancel"></ion-icon></button>
-							<button ion-button block class="bouton-principal" type="submit" (click)="validerItem()"><ion-icon name="icon-check"></ion-icon></button>
+							<button ion-button block class="bouton-contour" type="submit" (click)="returnChoose()">Annuler</button>
+							<button ion-button block class="bouton-principal" type="submit" (click)="validerItem()">Valider</button>
 				      		</ion-col>
 				      	</ion-row>
 				      </form>

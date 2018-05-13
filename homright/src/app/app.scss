@@ -28,6 +28,22 @@ ion-app.md{
     display: none; 
 }
 
+::-moz-scrollbar{
+	display: none;
+}
+
+::-ms-scrollbar{
+	display: none;
+}
+
+::-o-scrollbar{
+	display: none;
+}
+
+.scroll-content ::-moz-scrollbar{
+    display: none;
+}
+
 ::-scrollbar { 
     display: none; 
 }

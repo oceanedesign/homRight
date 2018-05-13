@@ -13,13 +13,14 @@ declare var $:any;
   templateUrl: 'forum-choix-theme.html',
 })
 export class ForumChoixThemePage {
-
+  typePiece: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.typePiece = navParams.get('data');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ForumChoixThemePage');
+    console.log(this.typePiece);
   }
 
   pushMenu(){

@@ -1,9 +1,3 @@
-<!--
-  Generated template for the ForumAccueilPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <h1>Je Partage</h1>
@@ -15,64 +9,64 @@
   <div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
   <div class="block-search"><input class="search-bar"/><img class="" src="../assets/imgs/search-icon.svg"/><!--<ion-icon name="icon-equalizer"></ion-icon>--></div>
   <div class="block-theme" col-12>
-    <button class="theme cuisine" (click)="pushChoixTheme()" col-12 col-sm-6>
+    <button value="cuisine" #cuisine class="theme cuisine" (click)="pushChoixTheme(cuisine.value)" col-12 col-sm-6>
       <div class="avatar"><ion-icon class="icon-kitchen"></ion-icon></div>
-      <div class="theme-titre"><h4>Cuisine</h4><span>10 posts</span>
+      <div class="theme-titre"><h4>Cuisine</h4><span>1 post</span>
       </div>
       <div class="dernierMessage">
         <p>Dernier message</p>
         <p>03/03/2018 à 20:15</p>
-        <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
+        <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+1</span></div></div>
       </div>
     </button>
-    <button class="theme salle-de-bain" (click)="pushChoixTheme()" col-12 col-sm-6>
+    <button value="salle de bains" #sdb class="theme salle-de-bain" (click)="pushChoixTheme(sdb.value)" col-12 col-sm-6>
       <div class="avatar"><ion-icon class="icon-shower"></ion-icon></div>
-      <div class="theme-titre"><h4>Salle de bain</h4><span>6 posts</span>
+      <div class="theme-titre"><h4>Salle de bains</h4><span>0 post</span>
       </div>
       <div class="dernierMessage">
-        <p>Dernier message</p>
-        <p>03/03/2018 à 20:15</p>
-        <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
+        <p>Aucun message</p>
+        <p style="visibility: hidden;">03/03/2018 à 20:15</p>
+        <div class="avatar-message" style="visibility: hidden;"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
       </div>
     </button>
-    <button class="theme chambre" (click)="pushChoixTheme()" col-12 col-sm-6>
+    <button value="chambre" #chambre class="theme chambre" (click)="pushChoixTheme(chambre.value)" col-12 col-sm-6>
       <div class="avatar"><ion-icon class="icon-bed"></ion-icon></div>
-      <div class="theme-titre"><h4>Chambre</h4><span>5 posts</span>
+      <div class="theme-titre"><h4>Chambre</h4><span>0 post</span>
       </div>
       <div class="dernierMessage">
-        <p>Dernier message</p>
-        <p>03/03/2018 à 20:15</p>
-        <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
+        <p>Aucun message</p>
+        <p style="visibility: hidden;">03/03/2018 à 20:15</p>
+        <div class="avatar-message" style="visibility: hidden;"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
       </div>
     </button>
-    <button class="theme entree" (click)="pushChoixTheme()" col-12 col-sm-6>
+    <button value="entree" #entree class="theme entree" (click)="pushChoixTheme(entree.value)" col-12 col-sm-6>
       <div class="avatar"><ion-icon class="icon-door"></ion-icon></div>
-      <div class="theme-titre"><h4>Entrée</h4><span>2 posts</span>
+      <div class="theme-titre"><h4>Entrée</h4><span>0 post</span>
       </div>
       <div class="dernierMessage">
-        <p>Dernier message</p>
-        <p>03/03/2018 à 20:15</p>
-        <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
+        <p>Aucun message</p>
+        <p style="visibility: hidden;">03/03/2018 à 20:15</p>
+        <div class="avatar-message" style="visibility: hidden;"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
       </div>
     </button>
-    <button class="theme salon" (click)="pushChoixTheme()" col-12 col-sm-6>
+    <button value="salon" #salon class="theme salon" (click)="pushChoixTheme(salon.value)" col-12 col-sm-6>
       <div class="avatar"><ion-icon class="icon-couch"></ion-icon></div>
-      <div class="theme-titre"><h4>Salon</h4><span>2 posts</span>
+      <div class="theme-titre"><h4>Salon</h4><span>0 post</span>
       </div>
       <div class="dernierMessage">
-        <p>Dernier message</p>
-        <p>03/03/2018 à 20:15</p>
-        <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
+        <p>Aucun message</p>
+        <p style="visibility: hidden;">03/03/2018 à 20:15</p>
+        <div class="avatar-message" style="visibility: hidden;"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
       </div>
     </button>
-    <button class="theme garage" (click)="pushChoixTheme()" col-12 col-sm-6>
+    <button value="garage" #garage class="theme garage" (click)="pushChoixTheme(garage.value)" col-12 col-sm-6>
       <div class="avatar"><ion-icon class="icon-garage"></ion-icon></div>
-      <div class="theme-titre"><h4>Salon</h4><span>2 posts</span>
+      <div class="theme-titre"><h4>Garage</h4><span>0 post</span>
       </div>
       <div class="dernierMessage">
-        <p>Dernier message</p>
-        <p>03/03/2018 à 20:15</p>
-        <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
+        <p>Aucun message</p>
+        <p style="visibility: hidden;">03/03/2018 à 20:15</p>
+        <div class="avatar-message" style="visibility: hidden;"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
       </div>
     </button>
   </div>
