@@ -27,7 +27,7 @@ for ($i = 0; $i < $stmt->rowCount(); $i++) {
     $tmp = array();
     
     foreach($row as $key => $value) {
-        $tmp[$key] = $value;
+        $tmp[$key] = htmlentities($value);
     }
     
     $homes[] = $tmp;
