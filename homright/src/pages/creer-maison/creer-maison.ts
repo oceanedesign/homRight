@@ -34,8 +34,17 @@ export class CreerMaisonPage {
     //Envoi au serveur le json   
     this.authServiceProvider.postDataWithToken(this.maisonData,'home/create.php').then((result) => {
       console.log("J'ai envoyé les donnees.")
-      console.log(this.maisonData);
-      this.navCtrl.push(SynchroPage);
+
+      if (JSON.parse(result['_body']).hasOwnProperty("status") && JSON.parse(result['_body']).status == "error") {
+          // s'il y a une erreur
+            this.presentToastHouseExisted();
+            //prevenir l'utilisateur
+      } else {
+          
+        console.log(this.maisonData);
+        this.navCtrl.push(SynchroPage);
+          //sinon passer à l'écran suivant
+      }
     }, (error) => {
       //erreur coté serveur
         console.log(error);
@@ -52,12 +61,22 @@ export class CreerMaisonPage {
   }
 
   presentToast() {
-    //Définit le message de refus d'achat dû à un manque de points
+    //Définit le message de refus de créer une maison vide
     let toast = this.toastCtrl.create({
         message: "Choisissez un nom à votre maison.",
         duration: 3000
       });
     toast.present();
   }
-  
+
+  presentToastHouseExisted() {
+    //Définit le message de refus de créer une maison existante
+    let toast = this.toastCtrl.create({
+        message: "Ce nom de maison est déjà attribué.",
+        duration: 3000
+      });
+    toast.present();
+  }
+
+
 }

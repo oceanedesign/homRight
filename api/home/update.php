@@ -4,6 +4,13 @@ require_once("../objects/home.php");
 require_once("../errors.php");
 require_once("../config/database.php");
 
+header('Access-Control-Allow-Origin:*'); 
+header('Content-Type: application/json;charset=UTF-8'); 
+header('Access-Control-Allow-Methods: DELETE, HEAD, GET, OPTIONS, POST, PUT'); 
+header('Access-Control-Allow-Headers: Origin, Content-Type, Token, Authorization'); 
+header('Access-Control-Max-Age: 1728000'); 
+
+
 //Initialiser la connexion
 $db = new Database();
 
