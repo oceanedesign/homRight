@@ -1,5 +1,5 @@
 <?php
-require_once("./objects/table.php");
+require_once("table.php");
 /**
  * Description of User_has_home
  *
@@ -10,7 +10,7 @@ class User_has_home extends Table{
     }
     
     public function create($token, $maison_id) {
-        $request = "INSERT INTO user_has_home SELECT user_id, maison_id FROM user, maison WHERE token=:token AND maison_id=:maison_id";
+        $request = "INSERT INTO " . $this->table_name  . " SELECT user_id, maison_id FROM user, maison WHERE token=:token AND maison_id=:maison_id";
         
         //Préparer la requête
         try {
@@ -33,6 +33,6 @@ class User_has_home extends Table{
             return errors("UserHM_execute", $stmt->errorInfo()[2]);
         }
         
-        return success("Relation créée");
+        return True;
     }
 }

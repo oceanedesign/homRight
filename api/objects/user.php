@@ -16,7 +16,7 @@ class User extends Table {
     private $I_PROPERTIES = array("date_creation");
     
     private function _generate_token($strong) {
-        return bin2hex(openssl_random_pseudo_bytes(128, $strong));
+        return bin2hex(openssl_random_pseudo_bytes(64, $strong));
     }
     
 //-----METHODES PUBLIQUES
