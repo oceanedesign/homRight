@@ -11,38 +11,17 @@
   <div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
   <div class="block-search"><input class="search-bar"/><img class="" src="../assets/imgs/search-icon.svg"/><!--<ion-icon name="icon-equalizer"></ion-icon>--></div>
   <div class="block-theme container" col-12>
-    <h2>Cuisine</h2>
-    <button class="theme"  (click)="pushDiscussion()">
+    <h2>{{typePiece}}</h2>
+    <div class="pasDePost" *ngIf="typePiece != 'cuisine'"> Besoin d'astuces ? De conseils ? Envie de donner un avis ? Soyez le premier à poster dans l'espace "{{typePiece}}" !</div>
+    <button class="theme"  (click)="pushDiscussion()" *ngIf="typePiece == 'cuisine'">
       <div class="theme-titre"  col-7 col-sm-8 col-md-9>
-        <h4>Les chauffe-eaux solaires : c'est super !</h4>
+        <h4>Les chauffe-eaux solaires : est-ce vraiment bien ?</h4>
         <p>par Sophie le 25/04/2018 - 18:00</p>
       </div>
       <div class="dernierMessage" col-5 col-sm-4 col-md-3>
-        <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+18</span></div></div>
+        <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+1</span></div></div>
         <p>Dernier message</p>
         <p>10/05/2018 à 20:15</p>
-      </div>
-    </button>
-    <button class="theme">
-      <div class="theme-titre"  col-7 col-sm-8 col-md-9>
-        <h4>Des retours sur les fours connectés ?</h4>
-        <p>par Paul le 08/03/2018 - 15:42</p>
-      </div>
-      <div class="dernierMessage" col-5 col-sm-4 col-md-3>
-        <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
-        <p>Dernier message</p>
-        <p>14/03/2018 à 09:12</p>
-      </div>
-    </button>
-    <button class="theme">
-      <div class="theme-titre"  col-7 col-sm-8 col-md-9>
-        <h4>Où placer mon réfrigérateur ?</h4>
-        <p>par Camille le 13/02/2018 - 18:00</p>
-      </div>
-      <div class="dernierMessage" col-5 col-sm-4 col-md-3>
-        <div class="avatar-message"><div class="avatar-mini"></div><div class="avatar-mini"></div><div class="avatar-mini"><span>+10</span></div></div>
-        <p>Dernier message</p>
-        <p>24/03/2018 à 14:15</p>
       </div>
     </button>
   </div>

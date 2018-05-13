@@ -23,8 +23,11 @@ export class ForumAccueilPage {
   pushMenu(){
     this.navCtrl.push(TabsPage);
   }
-  pushChoixTheme(){
-    this.navCtrl.push(ForumChoixThemePage);
+  pushChoixTheme(typePiece){
+    typePiece = typePiece;
+    this.navCtrl.push(ForumChoixThemePage, {
+      data:typePiece
+    });
   }
 
 }
