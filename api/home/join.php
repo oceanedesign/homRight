@@ -28,7 +28,9 @@ if (! array_key_exists("nom", $json_data)) {
     check_error(errors("Join_json_keys", "L'entrée est invalide")); 
 }
 
-check_error($user_has_maison->create($token=get_token(), array("nom" => $json_data["nom"])));
+check_error($ret = $user_has_maison->create($token=get_token(), array("nom" => $json_data["nom"])));
+
+success($ret["success"]);
 
 
 
