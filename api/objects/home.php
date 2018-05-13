@@ -6,14 +6,14 @@ require_once('table.php');
 class Home extends Table {
     
     private function _build_update_request($columns) {
-        $str_to_label = function($s) { return "maison.$s=:$s"; };
+        $str_to_label = function($s) { return "maison.$s = :$s"; };
         
         $request = "UPDATE " . $this->table_name;
         $request .= " INNER JOIN user_has_maison";
         $request .= " ON maison.maison_id = user_has_maison.maison_maison_id";
         $request .= " INNER JOIN user";
         $request .= " ON user_has_maison.user_user_id = user.user_id";
-        $request .= " SET " . implode(',', array_map($str_to_label, array_keys($columns)));
+        $request .= " SET " . implode(', ', array_map($str_to_label, array_keys($columns)));
         $request .= " WHERE user.token=:token";
         
         return $request;
@@ -99,12 +99,17 @@ class Home extends Table {
                 $data[$key] = $value;
             }
         }
+        unset($key);
+        unset($value);
         
         if (sizeof($data) == 0) {
             return errors("Home_update", "Aucun élément à mettre à jour");
         }
         
         $request = $this->_build_update_request($data);
+        
+        //Ajouter le token aux données que l'on souhaite lier
+        $data["token"] = $token;
 
         //Préparer la requête
         try {
@@ -117,20 +122,12 @@ class Home extends Table {
             return errors("Home_prepare", $stmt->errorInfo()[2]);
         }
 
-        //Lier les données dans la requête
-        $data["token"] = $token;
-        foreach($data as $key => $value) {
-            if (! $stmt->bindParam(":$key", $value)) {
-                return errors("Home_bindParam", $stmt->errorInfo()[2]);
-            }
-        }
-
-        //Executer la requête
-        if (! $stmt->execute()) {
+        //Lier et Executer la requête
+        if (! $stmt->execute($data)) {
             return errors("Home_execute", $stmt->errorInfo()[2]);
         }
         
-        return array("status" => "success");
+        return array("status" => "Mise à jour des informations de la maison faite");
     }
     
     
