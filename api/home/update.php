@@ -1,12 +1,12 @@
 <?php
 
-
+/*
 header('Access-Control-Allow-Origin: *'); 
 header('Content-Type: application/json;charset=UTF-8'); 
 header('Access-Control-Allow-Methods: DELETE, HEAD, GET, OPTIONS, POST, PUT'); 
 header('Access-Control-Allow-Headers: Origin, Content-Type, Token, Authorization'); 
 header('Access-Control-Max-Age: 1728000'); 
-
+*/
 
 require_once("../get_token.php");
 require_once("../config/database.php");
@@ -45,11 +45,5 @@ foreach (array_keys($home->properties) as $column) {
     check_error($ret);
 }
 
-if (array_key_exists("compt_linky", $json_data)) {
-    check_error($home->update_linky(get_token()));
-    
-    success("Linky a été mis à jour");
-} else {
-    check_error(errors("Home/update", "Mise à jour non supportée"));
-}
-
+check_error($home->update(get_token()));
+success("Les données ont été mises à jour");
