@@ -7,12 +7,7 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { Geolocation } from '@ionic-native/geolocation';
 
 //import { LottieAnimationViewModule } from 'ng-lottie';
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 declare var $:any;
 

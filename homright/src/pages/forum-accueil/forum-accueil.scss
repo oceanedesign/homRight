@@ -1,32 +1,32 @@
 page-forum-accueil {
 
-    ion-header {
+  ion-header {
+    background: map-get($colors, secondary);
+    border: 1px solid map-get($colors, secondary);
+    &::after, &.header-md::after{
         background: map-get($colors, secondary);
-        border: 1px solid map-get($colors, secondary);
-        &::after, &.header-md::after{
-            background: map-get($colors, secondary);
-            border-color: map-get($colors, secondary);
-        }
-        h1{
-            text-align: center;
-            text-transform: uppercase;
-            font-family: "Futura";
-            font-weight: 300;
-            font-size: 16px;
-            margin: 20px 0px;
-            color:white;
-        }
-      }
-
-    ion-content .fond-vague{
-      height: 60px;
-      .vague {
-        width: 100vw;
-        position: absolute;
-        top: 59px;
-        height: 38px;
-      }
+        border-color: map-get($colors, secondary);
     }
+    h1{
+      text-align: center;
+      text-transform: uppercase;
+      font-family: "Futura";
+      font-weight: 300;
+      font-size: 16px;
+      margin: 20px 0px;
+      color:white;
+    }
+  }
+
+  ion-content .fond-vague{
+    height: 60px;
+    .vague {
+      width: 100vw;
+      position: absolute;
+      top: 59px;
+      height: 38px;
+    }
+  }
 
   ion-content{
     .block-search{
@@ -173,6 +173,4 @@ page-forum-accueil {
       height: 20px;
     }
   }
-
-
 }

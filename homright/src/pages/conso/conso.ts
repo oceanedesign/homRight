@@ -13,6 +13,7 @@ export class ConsoPage {
 	typePiece: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    //Recupere les données envoyées par la page précédente
   	this.typePiece = navParams.get('data');
   }
 
@@ -27,9 +28,8 @@ export class ConsoPage {
     }
   }
 
-
-
   pushMenu(){
+    //Fonction permettant d'acceder au menu
     this.navCtrl.push(TabsPage);
   }
 

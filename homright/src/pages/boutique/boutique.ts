@@ -53,10 +53,6 @@ export class BoutiquePage {
 	  	},
 	];
 
-	ionViewDidLoad() {
-
-	}
-
 	pushMenu(){
 		//Fonction menant au menu principal
 		this.navCtrl.push(TabsPage);

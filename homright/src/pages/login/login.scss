@@ -30,11 +30,11 @@ page-login {
   }
 
   .non-anim{
-  animation: pulse 1s ease-in forwards; 
+    animation: pulse 1s ease-in forwards; 
   }
 
   .anim{
-  animation: descente 3s ease-in forwards;     
+    animation: descente 3s ease-in forwards;     
   }
 
   .bottom-center{
@@ -218,13 +218,13 @@ page-login {
     border-bottom-color: rgba(0, 0, 0, 0.1);
   }
 
-.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
-    border-bottom-color: transparent;
-}
+  .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+      border-bottom-color: transparent;
+  }
 
-.list-md .item-block .item-inner {
-    border-bottom: 1px solid transparent;
-}
+  .list-md .item-block .item-inner {
+      border-bottom: 1px solid transparent;
+  }
 
   .segment-ios .segment-button:first-of-type, .segment-ios .segment-button:last-of-type{
     border-bottom-left-radius: 0px;

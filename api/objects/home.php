@@ -103,6 +103,7 @@ class Home extends Table {
         if (sizeof($data) == 0) {
             return errors("Home_update", "Aucun élément à mettre à jour");
         }
+        return(errors("debug", $data));
         
         $request = $this->_build_update_request($data);
 

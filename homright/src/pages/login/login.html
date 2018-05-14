@@ -1,28 +1,20 @@
-<!--
-  Generated template for the LoginPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-
 <ion-content id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
-  <div class="fond-vague anim"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
-  <div class="flb">
+  	<div class="fond-vague anim"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
+  	<div class="flb">
 <!--       <lottie-animation-view [options]="lottieConfig" [width]="300" [height]="300">
       </lottie-animation-view> -->
-      <div class="non-anim">
-        <img style="width:70%; max-width: 300px; margin-top: 0px;" alt="Homie dit bonjour" src="../assets/imgs/homie_good.png"/>
-        <p style="font-size: 45px; margin: 5px; font-family: 'Assistant'; text-transform: uppercase; font-weight: 800;">Hom<span style="color:#7686FF;">'</span>right</p>
-      </div>
-      <div class="bottom"><p class="bottom-center">en complément avec le compteur linky<p></div>
-  </div>
+      	<div class="non-anim">
+        	<img style="width:70%; max-width: 300px; margin-top: 0px;" alt="Homie dit bonjour" src="../assets/imgs/homie_good.png"/>
+        	<p style="font-size: 45px; margin: 5px; font-family: 'Assistant'; text-transform: uppercase; font-weight: 800;">Hom<span style="color:#7686FF;">'</span>right</p>
+      	</div>
+      	<div class="bottom"><p class="bottom-center">en complément avec le compteur linky<p></div>
+  	</div>
 </ion-content>
 
 <ion-content padding overflow-scroll="false">
 	<div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
 	<ion-grid class="container">
   		<ion-row>
-
       		<img class="mascotte" alt="Homie dit bonjour" src="../assets/imgs/homie_connexion.png"/>
       	</ion-row>
 
@@ -39,7 +31,6 @@
 
 	  	<div [ngSwitch]="connexionType" class="card">
 	    	<div *ngSwitchCase="'connexion'" class="container">
-	      
 		      	<ion-row class="reseaux">
 		    		<ion-col col-6>
 		    			<button ion-button block class="bouton-contour" color="secondary">facebook</button>
@@ -81,36 +72,35 @@
 		    			<button ion-button block class="bouton-contour">google</button>
 		    		</ion-col>
 		    	</ion-row>
-
-		      	<form >
-				<ion-list>
-					<ion-item>
-				    	<ion-label color="primary" floating>Prénom</ion-label>
-				    	<ion-input [(ngModel)]="regData.prenom" name="prenom"  type="text"></ion-input>
-				  	</ion-item>
-					<ion-item>
-				    	<ion-label color="primary" floating>Nom</ion-label>
-				    	<ion-input [(ngModel)]="regData.nom" name="nom" type="text"></ion-input>
-				  	</ion-item>
-					<ion-item>
-				    	<ion-label color="primary" floating>Pseudo</ion-label>
-				    	<ion-input [(ngModel)]="regData.pseudo" name="pseudo" type="text"></ion-input>
-				  	</ion-item>
-				  	<ion-item>
-  						<ion-label color="primary" floating>Email</ion-label>
-  						<ion-input [(ngModel)]="regData.email" name="email"  type="email"></ion-input>
-					</ion-item>
-				  	<ion-item>
-				    	<ion-label color="primary" floating>Mot de passe</ion-label>
-				    	<ion-input [(ngModel)]="regData.password" name="password" type="password"></ion-input>
-				    </ion-item>
-				</ion-list>
-				<ion-row>
-		    		<ion-col col-12>
-						<button ion-button block class="bouton-principal inscription" type="submit" (click)="register()">S'inscrire</button>
-		      		</ion-col>
-		      	</ion-row>
-		      </form>
+		      	<form>
+					<ion-list>
+						<ion-item>
+					    	<ion-label color="primary" floating>Prénom</ion-label>
+					    	<ion-input [(ngModel)]="regData.prenom" name="prenom"  type="text"></ion-input>
+					  	</ion-item>
+						<ion-item>
+					    	<ion-label color="primary" floating>Nom</ion-label>
+					    	<ion-input [(ngModel)]="regData.nom" name="nom" type="text"></ion-input>
+					  	</ion-item>
+						<ion-item>
+					    	<ion-label color="primary" floating>Pseudo</ion-label>
+					    	<ion-input [(ngModel)]="regData.pseudo" name="pseudo" type="text"></ion-input>
+					  	</ion-item>
+					  	<ion-item>
+	  						<ion-label color="primary" floating>Email</ion-label>
+	  						<ion-input [(ngModel)]="regData.email" name="email"  type="email"></ion-input>
+						</ion-item>
+					  	<ion-item>
+					    	<ion-label color="primary" floating>Mot de passe</ion-label>
+					    	<ion-input [(ngModel)]="regData.password" name="password" type="password"></ion-input>
+					    </ion-item>
+					</ion-list>
+					<ion-row>
+			    		<ion-col col-12>
+							<button ion-button block class="bouton-principal inscription" type="submit" (click)="register()">S'inscrire</button>
+			      		</ion-col>
+			      	</ion-row>
+		      	</form>
 		    </div>
 	  	</div>		
 	</ion-grid>

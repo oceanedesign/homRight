@@ -18,6 +18,7 @@ export class DemenagementPage {
   }
 
   changementMaison(){
+    //Fonction permettant de mener vers la page "créer ou rejoindre une maison"
   	this.navCtrl.push(SignupPage);
   }
 

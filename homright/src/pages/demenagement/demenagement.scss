@@ -23,58 +23,58 @@ page-demenagement {
   	ion-content{
     	font-family: 'Assistant';
 	    .fond-vague {
-	      background: #7686FF;
-	      height: 1px;
-	      width: 100%;
-	      position: absolute;
-	      margin-left: -16px;
-	      margin-top: -16px;
-	      .vague {
+	      	background: #7686FF;
+	      	height: 1px;
+	      	width: 100%;
+	     	position: absolute;
+	      	margin-left: -16px;
+	      	margin-top: -16px;
+	      	.vague {
 	          width: 100vw;
 	          position: absolute;
 	          top: 0px;
 	          height: 30px;
+	   		}
+    	}
+	    .mascotte{
+		    img{
+		      width: 220px;
+		      margin-bottom: 20px;
+		      margin-top: 20px;
+		      z-index: 10;
+		      position: relative;
+	  		}
+	  	}
+	    .centrage-vertical{
+	    	text-align: center;
+	    	display: flex;
+	    	justify-content: center;
+	    	height: 100%;
+	    	.centrage-vertical-inner{
+	        	justify-content: center;
+	        	margin: auto;
+	      	}
 	    }
-    }
-    .mascotte{
-	    img{
-	      width: 220px;
-	      margin-bottom: 20px;
-	      margin-top: 20px;
-	      z-index: 10;
-	      position: relative;
-  		}
-  	}
-    .centrage-vertical{
-    	text-align: center;
-    	display: flex;
-    	justify-content: center;
-    	height: 100%;
-    	.centrage-vertical-inner{
-        	justify-content: center;
-        	margin: auto;
-      	}
-    }
     
-    .auRevoir{
-    	max-width: 400px;
-    	border-top: 1px solid black;
-	    padding: 25px 5px;
-	    border-bottom: 1px solid black;
-    }
-    p{
-    	margin: 0px;
-    	font-size: 18px;
-    	font-weight: 600;
-    }
+	    .auRevoir{
+	    	max-width: 400px;
+	    	border-top: 1px solid black;
+		    padding: 25px 5px;
+		    border-bottom: 1px solid black;
+	    }
+	    p{
+	    	margin: 0px;
+	    	font-size: 18px;
+	    	font-weight: 600;
+	    }
 
-    h1{
-        text-transform: uppercase;
-        font-weight: 800;
-        font-size: 30px;
-        margin: 0px;
-        margin-bottom: 10px;
-      }
+    	h1{
+        	text-transform: uppercase;
+        	font-weight: 800;
+        	font-size: 30px;
+        	margin: 0px;
+        	margin-bottom: 10px;
+      	}
     }
 
     button.valider{
@@ -99,5 +99,4 @@ page-demenagement {
 		    }		  	
 	  	}
 	}
-
 }

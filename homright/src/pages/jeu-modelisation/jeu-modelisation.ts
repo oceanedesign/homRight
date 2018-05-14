@@ -68,6 +68,7 @@ export class JeuModelisationPage {
 
 
   activeJeuCuisine(event){
+    //Activation d'une piece toute faite : la cuisine
     var itemPiece = event.target.closest('ion-item'); 
     console.log($(itemPiece).attr('id')); 
     this.updatePiece = this.pieces[$(itemPiece).attr('id')] ; //Attribut la nouvelle valeur 
@@ -91,6 +92,7 @@ export class JeuModelisationPage {
   }
 
   activeJeuIni(event){
+    //Activation de la phase modélisation initiale
     $(".choix-piece").css("display", "none");
     $(".cacher-totale").css("display", "block");
     $(".spare-item2").css("display", "none");

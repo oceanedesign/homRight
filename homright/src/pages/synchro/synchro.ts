@@ -11,8 +11,9 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 })
 export class SynchroPage {
 
-  maisonData = {"compt_linky":""};
-  //maisonData = {"compt_linky":"", "voie":"41 rue Guynemer", "immeuble": "Résidence Arc-en-ciel","bp": "Appartement 220","cp": "93200", "ville" : "Saint Denis"};
+  //maisonData = {"compt_linky":""};
+  maisonData = {"compt_linky":"", "voie":"41 rue Guynemer",
+   "immeuble": "Résidence Arc-en-ciel","bp": "Appartement 220","cp": 93200, "ville" : "Saint Denis"};
 
   constructor(public navCtrl: NavController, public authServiceProvider : AuthServiceProvider, public navParams: NavParams, public toastCtrl: ToastController) {
   }
@@ -22,7 +23,7 @@ export class SynchroPage {
   }
 
   synchronisationFaiteCompteur(){
-
+    //Fonction permettant d'envoyer le numéro de compteur à la bdd
     if(this.maisonData.compt_linky == ""){
       //Si le champ est vide
       this.presentToast();
