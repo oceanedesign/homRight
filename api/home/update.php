@@ -27,8 +27,8 @@ check_error($home);
 
 //Récupérer les données au format json
 $json_data = json_decode(file_get_contents('php://input'), true);
-//var_dump(file_get_contents('php://input'))
-
+var_dump(json_decode(file_get_contents('php://input'), true));
+die();
 if ($json_data == null) {
     return check_error(errors("Create_get_contents", "Le fichier json est vide"));
 }

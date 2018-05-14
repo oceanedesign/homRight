@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { JeuModelisationPage } from '../jeu-modelisation/jeu-modelisation';
-
+import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 
@@ -34,18 +34,44 @@ export class PreModelisationPage {
   // {"piece_id":"2","nomPiece": "Salon", "type":"canape", "temperature":"25"}
   ];
 
+  form: FormGroup;
+  fournisseurs = ['Edf', 'Engie', 'Eni', 'Ekwater', 'Alterna'];
+  contractsByFournisseurs = {
+    Edf: ["Vert électrique", "Tarif Bleu"],
+    Engie: ["Happ'e", "Elec Ajust 3 ans", "Duo Ajust 3 ans"],
+    Eni: ["Webeo", "Evo", "Astucio Eco", "Astucio Planète"],
+    Ekwater: ["Electricité prix variable", "Electricité prix fixe"],
+    Alterna: ["Idea", "Idea Vert"],
+  };
+  contrats = [];
+
+
+
 
   @ViewChild(Slides) slides: Slides;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, fb: FormBuilder,  private _cdr: ChangeDetectorRef) {
+    this.form = fb.group({
+      fournisseur: [''],
+      contrat: [''],
+    });
   }
 
+  onFournisseurChange(): void {
+    $( "ion-list.transparency" ).removeClass("transparency");
+    console.log(this.regMaison.fournisseur);
+
+    let fournisseur = this.form.get('fournisseur').value;
+    this.contrats = this.contractsByFournisseurs[fournisseur];
+    this._cdr.detectChanges();
+  }
 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PreModelisationPage');
     this.slides.lockSwipes(true);
+
+    console.log(this.pieces.length);
     // $( ".swiper-pagination::before" ).click(function() {
     //   console.log('ok');
     // });
@@ -113,11 +139,6 @@ export class PreModelisationPage {
   }
 
   
-
-  onChangeFournisseur(){
-    $( "ion-list.transparency" ).removeClass("transparency");
-    console.log(this.regMaison.fournisseur);
-  }
 
   onChangeContrat(){
     $( ".right-arrow" ).removeClass("transparency");

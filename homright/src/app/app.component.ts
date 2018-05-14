@@ -14,7 +14,7 @@ import { MonFournisseurPage } from '../pages/mon-fournisseur/mon-fournisseur';
 import { ForumAccueilPage } from '../pages/forum-accueil/forum-accueil';
 import { ForumChoixThemePage } from '../pages/forum-choix-theme/forum-choix-theme';
 import { ForumDiscussionPage } from '../pages/forum-discussion/forum-discussion';
-import { MonBudgetPage } from '../pages/mon-budget/mon-budget';
+import { PointsClesPage } from '../pages/points-cles/points-cles';
 import { MeComparerPage } from '../pages/me-comparer/me-comparer';
 
 @Component({
@@ -22,7 +22,7 @@ import { MeComparerPage } from '../pages/me-comparer/me-comparer';
 })
 export class MyApp {
 
-  rootPage:any = LoginPage;
+  rootPage:any = PointsClesPage;
   //rootPage:any = ModelisationBienvenuePage;
   //rootPage:any = HomePage;
 

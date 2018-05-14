@@ -1,2 +1,2 @@
 <?php
-	$db = new mysqli("localhost","ionic","toto","homright");
+	$db = new mysqli("localhost","root","","homright");

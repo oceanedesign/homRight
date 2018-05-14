@@ -7,30 +7,25 @@
 		    	<div class="fond-vague"><img class="vague" src="../assets/imgs/pre-modelisation/vague.png"/></div>
 					<div padding>
 		        		<p class="icon-slider"><ion-icon name="icon-thunderbolt" class="circle"></ion-icon></p>
-						<ion-list class="slide1 firstList">
+		        		<form [formGroup]="form">
+							<ion-list class="slide1 firstList">
+							  <ion-item >
+							    <ion-label><ion-icon name="icon-plug"></ion-icon><h4>Mon fournisseur <p>Sélectionnez dans la liste</p></h4></ion-label>
+							    <ion-select formControlName="fournisseur" [(ngModel)]="regMaison.fournisseur" (ionChange)="onFournisseurChange()">
+							    	<ion-option *ngFor="let fournisseur of fournisseurs" [value]="fournisseur">{{fournisseur}}</ion-option>
+							    </ion-select>
+							  </ion-item>
+							</ion-list>
 
-						  <ion-item >
-						    <ion-label><ion-icon name="icon-plug"></ion-icon><h4>Mon fournisseur <p>Sélectionnez dans la liste</p></h4></ion-label>
-						    <ion-select [(ngModel)]="regMaison.fournisseur" (ionChange)="onChangeFournisseur()">
-						    	<ion-option value="engie">ENGIE</ion-option>
-						    	<ion-option value="edf">EDF</ion-option>
-						    	<ion-option value="eni">ENI</ion-option>
-								<ion-option value="ekwater">EKWATER</ion-option>
-									<ion-option value="alterna">ALTERNA</ion-option>
-						      <ion-option value="proxelia">PROXELIA</ion-option>
-						    </ion-select>
-						  </ion-item>
-						</ion-list>
-
-						<ion-list class="transparency slide1">
-							<ion-item>
-								<ion-label><ion-icon name="icon-copy"></ion-icon><h4>Mon contrat <p>Sélectionnez dans la liste</p></h4></ion-label>
-								<ion-select [(ngModel)]="regMaison.contrat" (ionChange)="onChangeContrat()">
-									<ion-option value="Vert électrique">Vert électrique</ion-option>
-									<ion-option value="Tarif Bleu">Tarif Bleu</ion-option>
-								</ion-select>
-							</ion-item>
-						</ion-list>
+							<ion-list class="transparency slide1">
+								<ion-item>
+									<ion-label><ion-icon name="icon-copy"></ion-icon><h4>Mon contrat <p>Sélectionnez dans la liste</p></h4></ion-label>
+									<ion-select formControlName="contrat" [(ngModel)]="regMaison.contrat" (ionChange)="onChangeContrat()">
+										<ion-option *ngFor="let contrat of contrats" [value]="contrat">{{contrat}}</ion-option>
+									</ion-select>
+								</ion-item>
+							</ion-list>
+						</form>
 					</div>
 			</ion-slide>
 	        <ion-slide id="deux">
@@ -92,7 +87,7 @@
 					<p class="icon-slider"><ion-icon name="icon-settings" class="circle"></ion-icon></p>
 					<ion-row  class="firstList">
 						<ion-col col-12 >
-
+								<div *ngIf="pieces.length  == 0">Ajouter les pièces de votre maison !</div>
 								<ion-list class="listButtonRoom" radio-group>
             						<ion-item *ngFor="let piece of pieces" id="{{piece.piece_id}}">
 										<button value="{{piece.nomPiece}}" ion-button block class="button-room" type="submit" (click)="editerPiece($event)">
