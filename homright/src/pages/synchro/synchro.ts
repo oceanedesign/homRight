@@ -12,7 +12,8 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 export class SynchroPage {
 
   maisonData = {"compt_linky":""};
-  
+  //maisonData = {"compt_linky":"", "voie":"41 rue Guynemer", "immeuble": "Résidence Arc-en-ciel","bp": "Appartement 220","cp": "93200", "ville" : "Saint Denis"};
+
   constructor(public navCtrl: NavController, public authServiceProvider : AuthServiceProvider, public navParams: NavParams, public toastCtrl: ToastController) {
   }
 

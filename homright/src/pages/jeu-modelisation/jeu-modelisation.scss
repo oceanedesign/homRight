@@ -1,5 +1,14 @@
 page-jeu-modelisation {
 
+	.fondGris{ 
+    background: black; 
+    opacity: 0.7; 
+    display:none; 
+      position: absolute; 
+      width: 100%; 
+      height: 100%; 
+      z-index: 11; 
+  } 
 
 	.direct-accueil{
 	width: 170px;
@@ -17,6 +26,7 @@ page-jeu-modelisation {
         	text-align: center;
 		    color: black;
 		    padding: 40px;
+		    padding-bottom: 0px; 
 		    font-size: 28px;
         	margin: 30px auto;
         }
@@ -90,6 +100,7 @@ page-jeu-modelisation {
 
 	.parcours{
 		position: fixed;
+		display: none; 
 	    right: 10px;
 	    top: 10px;
 	    text-align: center;
@@ -97,7 +108,7 @@ page-jeu-modelisation {
 	    font-family: "Futura";
 	    font-weight: 800;
 	    font-size: 15px;
-	    z-index: 7;
+	    z-index: 12; 
 		.prev{
 			background: white;
 			border: 2px solid black;
@@ -170,7 +181,7 @@ page-jeu-modelisation {
 	    margin: 0 0;
 	    right: 40px;
     	top: 40px;
-	    z-index:8;
+	    z-index:12; 
 	    position: fixed;
 	}
 
@@ -243,6 +254,7 @@ page-jeu-modelisation {
 		max-width: 33%;
 		height: 100%;
     	width: 100%;
+    	z-index: 12; 
     	transition: left 1s;
 	}
 

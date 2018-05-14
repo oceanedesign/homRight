@@ -11,6 +11,7 @@ export class AuthServiceProvider {
 
 	public url: string;
   public token: string;
+  public pseudo:string;
 
   constructor(public http: Http) {
     console.log('Hello AuthServiceProvider Provider');

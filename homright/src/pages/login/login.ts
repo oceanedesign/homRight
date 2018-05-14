@@ -72,8 +72,13 @@ export class LoginPage {
             this.presentToastInscription();
             //prevenir l'utilisateur
         } else {
+          //Récupere le token de l'utilisateur
           var $my_token = JSON.parse(result['_body']).token;
           this.authServiceProvider.token = $my_token;
+
+          //Récupere son pseudo
+          var pseudo = JSON.parse(result['_body']).pseudo;          
+          this.authServiceProvider.pseudo = pseudo;
           let headers = new Headers();
           headers.append('Token', this.authServiceProvider.token);
 
@@ -114,6 +119,11 @@ export class LoginPage {
           this.navCtrl.push(HomePage);
           var $my_token = JSON.parse(result['_body']).token;
           this.authServiceProvider.token = $my_token;
+
+          //Récupere son pseudo
+          var pseudo = JSON.parse(result['_body']).pseudo;          
+          this.authServiceProvider.pseudo = pseudo;
+          
           let headers = new Headers();
           headers.append('Token', this.authServiceProvider.token);
         }
