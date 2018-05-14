@@ -102,7 +102,7 @@ class User extends Table {
         return $data;
     }
     
-    
+/*
     public function get_all_by_token() {
         $request = "SELECT * from " . $this->table_name . " where token=:token";
         
@@ -136,6 +136,6 @@ class User extends Table {
         
         return $this->properties["user_id"];
     }
-    
+*/
     //-----FIN METHODES PUBLIQUES
 }
