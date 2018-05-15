@@ -143,4 +143,32 @@ class Home extends Table {
         
         return $stmt;
     }
+    
+    public function  get_by_name($name) {
+        $request = "SELECT * FROM maison WHERE nom=:nom";
+        
+        //Préparer la requête
+        try {
+            $stmt = $this->PDO_object->prepare($request);
+        } catch (PDOException $ex) {
+            return errors("PDOException", $ex->getMessage());
+        }
+        
+        if(! $stmt) {
+            return errors("Home_prepare", $stmt->errorInfo()[2]);
+        }
+
+        //Lier les données dans la requête
+        if(! $stmt->bindParam(":nom", $name)) {
+            return errors("Home_bindParam", $stmt->errorInfo()[2]);
+        }
+        
+        //Executer la requête
+        if (! $stmt->execute()) {
+            return errors("Home_execute", $stmt->errorInfo()[2]);
+        }
+        
+        return $stmt;
+        
+    }
 }
