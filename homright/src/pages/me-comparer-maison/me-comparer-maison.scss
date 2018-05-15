@@ -32,6 +32,7 @@ page-me-comparer-maison {
       padding: 5px;
       border-radius: 50%;
       display: flex;
+      z-index: 0;
       span{
         margin: auto;
       }
@@ -43,6 +44,56 @@ page-me-comparer-maison {
       img{
         margin: auto;
       }
+    }
+    .profil-bon-eleve{
+      background: white;
+      top: 8px;
+      right: 8px;
+      position: fixed;
+      z-index: 1;
+      box-shadow: 0px 8px 26px rgba(0, 0, 0, 0.12);
+      border-radius: 8px;
+      padding: 15px;
+      width: auto;
+      margin: auto auto 20px auto;
+      display: inline-flex;
+        .avatar-circle{
+          border: 2px solid map-get($colors, secondary);
+          padding: 10px;
+          border-radius: 50%;
+          display: inline-flex;
+          font-size: 12px;
+          width: 70px;
+          height: 70px;
+          span{
+            margin: auto;
+          }
+        }
+        h4{
+          font-size: 14px;
+          font-weight: bold;
+          margin: auto 20px;
+          span{
+            display: block;
+            font-size: 10px;
+            font-weight: normal;
+          }
+        }
+        .conso{
+          margin: auto 8px;
+          text-align: center;
+          .valeurs{
+            font-weight: 800;
+            font-size: 30px;
+            span{
+              font-size: 16px;
+              margin-left: 5px;
+            }
+          }
+        }
+        &.hidden-profil{
+          display: none;
+        }
     }
   }
 }

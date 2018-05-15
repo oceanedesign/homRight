@@ -8,6 +8,16 @@
 
 
 <ion-content padding>
-  <div class="profil"><span>Axol</span></div>
+  <div class="profil" (click)="openProfil()"><span>Axol</span></div>
   <div class="maison"><img src="../assets/imgs/vue3D/3d.png"></div>
+
+  <div class="profil-bon-eleve"  (click)="closeProfil()">
+        <div class="avatar-circle"><span>AVATAR</span></div>
+        <h4>Axol<span>niveau 15</span></h4>
+
+        <div class="conso">
+          <div class="valeurs">10<span>KWH</span></div>
+          <div class="time-unity">/jour</div>
+        </div>
+  </div>
 </ion-content>
