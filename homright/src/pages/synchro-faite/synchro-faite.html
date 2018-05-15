@@ -18,16 +18,19 @@
 			<ion-list>
 				<ion-item>
 		    		<ion-label color="primary" floating>N° du compteur linky</ion-label>
-			    	<ion-input [(value)]="maisonData.compt_linky" name="num_compteur" disabled type="text"></ion-input>
+			    	<ion-input *ngFor="let nameHouse of namesHouse" value="{{nameHouse.compt_linky}}" name="num_compteur" disabled type="text"></ion-input>
 			  	</ion-item>
 				<ion-item class="inactif">
 		    		<ion-label color="primary">Adresse postale</ion-label>
 			  	</ion-item>
-	    		<button class="navigation" ion-item (click)="editionAdresseP()" icon-end>
+	    		<button *ngFor="let nameHouse of namesHouse" class="navigation" ion-item (click)="editionAdresseP()" icon-end>
 	    				<ion-icon name="icon-chevron"></ion-icon>
-    	  				<p>Résidence Arc-en-ciel</p>
-						<p>Appartement 220</p>
-						<p>41 rue Guynemer 93200 Saint Denis</p>
+    	  				<!-- <p>{{nameHouse.immeuble}}</p> -->
+    	  				<p [innerHTML]="nameHouse.immeuble"></p>
+						<p [innerHTML]="nameHouse.bp"></p>
+						<p><span [innerHTML]="nameHouse.voie"></span>
+							<span [innerHTML]="nameHouse.cp"></span>
+							<span [innerHTML]="nameHouse.ville"></span></p>
 						
     			</button>
 
