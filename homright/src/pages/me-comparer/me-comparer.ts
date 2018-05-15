@@ -15,9 +15,9 @@ import 'jquery-ui-dist/jquery-ui';
 export class MeComparerPage {
 
   eleves = [
-  {"id":0, "avatar":"#8CD8AB", "pseudo":"Axol", "niveau":15, "consommation":"10", "badges":"15" },
-  {"id":1, "avatar":"#D8A38C", "pseudo":"Lywie", "niveau":10, "consommation":"10.42", "badges":"9" },
-  {"id":2, "avatar":"AB8CD8", "pseudo":"Alain", "niveau":12, "consommation":"12.8", "badges":"11" },
+  {"id":0, "avatar":"A775FF", "pseudo":"Axol", "niveau":15, "consommation":"10", "badges":"15" },
+  {"id":1, "avatar":"D8A38C", "pseudo":"Lywie", "niveau":10, "consommation":"10.42", "badges":"9" },
+  {"id":2, "avatar":"FFEDB8", "pseudo":"Alain", "niveau":12, "consommation":"12.8", "badges":"11" },
   ]
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

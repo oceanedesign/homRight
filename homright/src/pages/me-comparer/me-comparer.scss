@@ -63,15 +63,27 @@ page-me-comparer {
           text-align: center;
           width: 40%;
           .avatar-circle{
-            border: 2px solid map-get($colors, secondary);
             padding: 10px;
             border-radius: 50%;
             display: inline-flex;
             font-size: 12px;
             width: 70px;
             height: 70px;
-            span{
+            &.8CD8AB{
+              background: #8CD8AB;
+            }
+            &.A775FF{
+              background: #A775FF;
+            }
+            &.D8A38C{
+              background: #D8A38C;
+            }
+            &.FFEDB8{
+              background: #FFEDB8;
+            }
+            .avatar{
               margin: auto;
+              width: 100%;
             }
           }
           h4{
