@@ -23,11 +23,7 @@ check_error($stmt);
 
 //Filtrer les valeurs retournées
 foreach ($stmt->fetch(PDO::FETCH_ASSOC) as $key => $value) {
-    $tmp = array();
-    foreach($value as $key => $value) {
-        $tmp[$key] = htmlentities($value);
-    }
-    $homes[] = $tmp;
+    $homes[$key] = htmlentities($value);
 }
 
 success("Les nom des maisons ont été récupérés", array("names" => $homes));
