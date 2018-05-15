@@ -276,6 +276,9 @@ export class JeuModelisationPage {
     //le drag and drop sur les objets que l'on va ajouter dans la pièce
 
     var enfantCaseSol = $('.actions').find('.spare-item'); //Definit la variable
+
+    var pieceModelisation = this.nomPiece.toLowerCase();
+
     var countDrag =0;
     $('.cache').hide();
     if(enfantCaseSol.length > 0) //S'il y a deja un élément dans la case de prévisualisation
@@ -331,6 +334,8 @@ export class JeuModelisationPage {
 
         $(this).removeClass("spare-item");
         $(this).addClass("spare-item2");
+        $(this).addClass(pieceModelisation);
+        console.log("la piece dans laquelle je modélise : "+pieceModelisation);
 
         var positionP = $(this).find('.buttonSymetrie'); //Definit la variable
         if(positionP.length == 0){

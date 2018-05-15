@@ -23,8 +23,8 @@ import { MeComparerMaisonPage } from '../pages/me-comparer-maison/me-comparer-ma
 })
 export class MyApp {
 
-  //rootPage:any = MeComparerMaisonPage;
-  rootPage:any = LoginPage;
+  rootPage:any = JeuModelisationPage;
+  //rootPage:any = LoginPage;
   //rootPage:any = HomePage;
 
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-declare var JQuery:any;
+declare var jQuery:any;
 declare var $:any;
 
 @IonicPage()
@@ -18,6 +18,7 @@ export class MeComparerMaisonPage {
     this.pseudo = navParams.get('data1');
     this.consommation = navParams.get('data2');
   }
+
 
   openProfil(){
     //Fonction permettant d'ouvrir le profil du bon élève
@@ -38,4 +39,5 @@ export class MeComparerMaisonPage {
     //Fonction permettant de retourner à la page principale de comparaison
     this.navCtrl.pop();
   }
+
 }
