@@ -35,9 +35,9 @@
         </ion-col>
       </ion-row> 
     <ion-row class="mesRoutines scroll-bord">      
-        <ion-col col-12 >
+        <ion-col col-12 *ngIf="userData == 'r' && 'sophie' " >
           <!-- <p>Créez vos routines quotidiennes pour économiser du temps et de l’argent.</p> -->
-          <ion-scroll scrollX="true" *ngIf="userData == 'r' && 'sophie' ">
+          <ion-scroll scrollX="true" >
             <ion-list class="volets" radio-group>
               <ion-item class="matin">
                 <ion-radio value="matin" (click)="updateRoutines(matin)" checked="true" ></ion-radio>
@@ -50,9 +50,24 @@
               </ion-item>
             </ion-list>
           </ion-scroll>
-          <p *ngIf="userData != 'r' && 'sophie' ">
-            Vous n’avez aucun appareil connecté. Vous ne pouvez donc pas créer de routines pour économiser du temps et de l’argent.
+        </ion-col>
+        <ion-col col-12  *ngIf="userData != 'r' && 'sophie'">
+          <p>
+            Ajoutez des appareils connectés dans votre maison et créez des routines pour économiser du temps et de l’argent.
           </p>
+          <ion-scroll scrollX="true" class="transparent">
+            <ion-list class="volets" radio-group>
+              <ion-item class="matin" (click)="activerSceneImpossible()">
+                <ion-radio value="matin"  disabled></ion-radio>
+              </ion-item>
+              <ion-item class="absent" (click)="activerSceneImpossible()">
+                <ion-radio value="absent"  disabled></ion-radio>
+              </ion-item>
+              <ion-item  class="nuit" (click)="activerSceneImpossible()">
+                <ion-radio value="nuit"  disabled></ion-radio>
+              </ion-item>
+            </ion-list>
+          </ion-scroll>
         </ion-col>
     </ion-row> 
 	</ion-grid>

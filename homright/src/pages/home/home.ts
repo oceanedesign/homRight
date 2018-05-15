@@ -74,4 +74,13 @@ export class HomePage {
     toast.present();
   }
 
+  activerSceneImpossible() {
+    //Définit le message de refus d'activer des scènes
+    let toast = this.toastCtrl.create({
+        message: "Vous n'avez pas d'objets connectés : vous ne pouvez pas activer ou éditer ces routines.",
+        duration: 3000
+      });
+    toast.present();
+  }
+
 }

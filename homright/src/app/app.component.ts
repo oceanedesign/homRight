@@ -23,9 +23,9 @@ import { MeComparerMaisonPage } from '../pages/me-comparer-maison/me-comparer-ma
 })
 export class MyApp {
 
-  rootPage:any = MeComparerMaisonPage;
+  //rootPage:any = MeComparerMaisonPage;
   //rootPage:any = PointsClesPage;
-  //rootPage:any = HomePage;
+  rootPage:any = HomePage;
 
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
