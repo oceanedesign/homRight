@@ -1,5 +1,4 @@
 <ion-header>
-
 	<ion-row col-12>
 		<img class="mascotte" alt="Homie recherche votre compteur" src="../assets/imgs/recherche_compteur.png"/>
 	</ion-row>
@@ -18,21 +17,19 @@
       	<form>
 			<ion-list>
 				<ion-item>
-		    	<ion-label color="primary" floating>N° du compteur linky</ion-label>
+		    		<ion-label color="primary" floating>N° du compteur linky</ion-label>
 			    	<ion-input [(value)]="maisonData.compt_linky" name="num_compteur" disabled type="text"></ion-input>
 			  	</ion-item>
 				<ion-item class="inactif">
-
 		    		<ion-label color="primary">Adresse postale</ion-label>
-			    	
 			  	</ion-item>
-	    			<button class="navigation" ion-item (click)="editionAdresseP()" icon-end>
+	    		<button class="navigation" ion-item (click)="editionAdresseP()" icon-end>
 	    				<ion-icon name="icon-chevron"></ion-icon>
     	  				<p>Résidence Arc-en-ciel</p>
 						<p>Appartement 220</p>
 						<p>41 rue Guynemer 93200 Saint Denis</p>
 						
-    				</button>
+    			</button>
 
 			</ion-list>
 			<ion-row>
