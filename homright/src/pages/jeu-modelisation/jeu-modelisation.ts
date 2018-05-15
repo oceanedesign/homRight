@@ -19,7 +19,7 @@ export class JeuModelisationPage {
   pieces = [
     {"piece_id":"0","nomPiece": "Chambre", "type":"lit", "longueur":"", "largeur":""}, 
     {"piece_id":"1","nomPiece": "Salle de bains", "type":"douche", "longueur":"", "largeur":""}, 
-    {"piece_id":"2","nomPiece": "Salon", "type":"canape", "longueur":"", "largeur":""}, 
+    {"piece_id":"2","nomPiece": "Salon", "type":"canape", "longueur":"4", "largeur":"5"}, 
     {"piece_id":"3","nomPiece": "Cuisine", "type":"cuisine", "longueur":"3", "largeur":"6.6"} 
   ]; 
  
@@ -35,6 +35,7 @@ export class JeuModelisationPage {
   regApp = {"nomApp": "", "connexion":""};
   connexion: boolean = false;
   nomPiece: String;
+  typePiece: String;
   nomAppareil: String; 
 
   constructor(public plt: Platform, private screenOrientation : ScreenOrientation, public navCtrl: NavController, public navParams: NavParams) {
@@ -81,6 +82,10 @@ export class JeuModelisationPage {
     this.updatePiece = this.pieces[$(itemPiece).attr('id')] ; //Attribut la nouvelle valeur 
     console.log(this.updatePiece); 
 
+    this.typePiece = this.updatePiece.type; //Définit une valeur à type pièce
+    console.log("le type de la piece est "+this.typePiece);
+
+
      if(this.updatePiece.largeur == "" && this.updatePiece.longueur == "" ){ 
  
       console.log(this.updatePiece.largeur); 
@@ -105,10 +110,13 @@ export class JeuModelisationPage {
 
       this.tailleSol(); 
       this.validerTaille(); 
-
-      setTimeout(function(){  
-          $(".spare-item2.cuisine").css("display", "block"); 
-      }, 1000);
+      if($('div').hasClass(this.updatePiece.type)){
+        var type = this.updatePiece.type;
+        setTimeout(function(){  
+            $(".spare-item2."+type).css("display", "block");
+            console.log($(".spare-item2."+type));
+        }, 1000);
+      }
     }    
   }
 
@@ -257,7 +265,7 @@ export class JeuModelisationPage {
 
     var enfantCaseSol = $('.actions').find('.spare-item'); //Definit la variable
 
-    var pieceModelisation = this.nomPiece.toLowerCase();
+    var pieceModelisation = this.typePiece.toLowerCase();
 
     var countDrag =0;
     $('.cache').hide();
