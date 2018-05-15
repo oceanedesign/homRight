@@ -17,6 +17,7 @@ export class HomePage {
 
 	orderBy:string;
   splash = true;
+  userData = this.authServiceProvider.pseudo;
 
   constructor(public navCtrl: NavController, public toastCtrl: ToastController,   public authServiceProvider : AuthServiceProvider) {
   }
@@ -24,10 +25,16 @@ export class HomePage {
   ionViewDidLoad() {
   	this.updateRoutines;
     console.log(this.authServiceProvider.token);
+    console.log(this.authServiceProvider.pseudo);
   }
 
   creerScene(){
   	//this.navCtrl.push(creerScenePage);
+  }
+
+  creerSceneImpossible(){
+    //Création de la scène impossible car l'utilisateur n'a pas d'objets connectés
+    this.presentToastScene();
   }
 
   pushEvent(){
@@ -50,9 +57,18 @@ export class HomePage {
 	}
 
   presentToast() {
-    //Définit le message de refus d'achat dû à un manque de points
+    //Définit le message de gain de points
     let toast = this.toastCtrl.create({
         message: "Bravo ! Vous avez gagné 10 points supplémentaires !",
+        duration: 3000
+      });
+    toast.present();
+  }
+
+  presentToastScene() {
+    //Définit le message de refus de créer des scènes
+    let toast = this.toastCtrl.create({
+        message: "Impossible ! Vous n'avez pas d'objets connectés dans votre maison",
         duration: 3000
       });
     toast.present();

@@ -30,13 +30,14 @@
           <h3>Mes routines</h3>
         </ion-col>
         <ion-col col-6>
-          <button ion-button block class="bouton-principal" (click)="creerScene()">Créer routine</button>
+          <button *ngIf="userData == 'r' && 'sophie' " ion-button block class="bouton-principal" (click)="creerScene()">Créer routine</button>
+          <button *ngIf="userData != 'r' && 'sophie' " ion-button block class="bouton-principal transparent" (click)="creerSceneImpossible()">Créer routine</button>
         </ion-col>
       </ion-row> 
     <ion-row class="mesRoutines scroll-bord">      
         <ion-col col-12 >
           <!-- <p>Créez vos routines quotidiennes pour économiser du temps et de l’argent.</p> -->
-          <ion-scroll scrollX="true">
+          <ion-scroll scrollX="true" *ngIf="userData == 'r' && 'sophie' ">
             <ion-list class="volets" radio-group>
               <ion-item class="matin">
                 <ion-radio value="matin" (click)="updateRoutines(matin)" checked="true" ></ion-radio>
@@ -49,6 +50,9 @@
               </ion-item>
             </ion-list>
           </ion-scroll>
+          <p *ngIf="userData != 'r' && 'sophie' ">
+            Vous n’avez aucun appareil connecté. Vous ne pouvez donc pas créer de routines pour économiser du temps et de l’argent.
+          </p>
         </ion-col>
     </ion-row> 
 	</ion-grid>
