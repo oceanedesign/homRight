@@ -11,6 +11,7 @@ export class AuthServiceProvider {
 
 	public url: string;
   public urlHome: string;
+  public urlAdress: string;
   public token: string;
   public pseudo:string;
 
@@ -18,6 +19,7 @@ export class AuthServiceProvider {
     console.log('Hello AuthServiceProvider Provider');
   	this.url ="http://localhost/homRight/api/users/get.php";
     this.urlHome ="http://localhost/homRight/api/home/get_all.php";
+    this.urlAdress ="http://localhost/homRight/api/home/get_address.php";
   }
 
   getUsers(){
@@ -26,6 +28,14 @@ export class AuthServiceProvider {
 
   getHomes(){
     return this.http.get(this.urlHome).map(res=>res.json());
+  }
+
+  getAdress(){
+    let headers = new Headers();
+    headers.append('Token', this.token);
+    headers.append('Content-Type', 'application/json');
+    let options = new RequestOptions({headers: headers});
+    return this.http.get(this.urlAdress, options=options).map(res=>res.json());
   }
 
   postData(data, type) {

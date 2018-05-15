@@ -28,9 +28,6 @@ export class RejoindreMaisonPage {
   }
 
 
-  ngOnInit(){
-  }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad RejoindreMaisonPage');
     console.log(this.namesHouse);
@@ -51,7 +48,6 @@ export class RejoindreMaisonPage {
 
   getNameHouse(ev: any) {
     // Reset items back to all of the namesHouse
-    this.ngOnInit();
 
     // set val to the value of the searchbar
     let val = ev.target.value;
@@ -68,8 +64,25 @@ export class RejoindreMaisonPage {
     if(this.maisonData.nom == ""){
       this.presentToast();
     }else{
-        console.log(this.maisonData);
-        this.navCtrl.push(SynchroFaitePage);      
+      //Envoi au serveur le json    
+      this.authServiceProvider.postDataWithToken(this.maisonData,'home/join.php').then((result) => { 
+        console.log("J'ai envoyé les donnees.") 
+        console.log(this.authServiceProvider.token); 
+        if (JSON.parse(result['_body']).hasOwnProperty("status") && JSON.parse(result['_body']).status == "error") { 
+            // s'il y a une erreur 
+              this.presentToastHouseNotExisted(); 
+              //prevenir l'utilisateur 
+        } else { 
+             
+          console.log(this.maisonData); 
+          this.navCtrl.push(SynchroFaitePage); 
+            //sinon passer à l'écran suivant 
+        } 
+      }, (error) => { 
+        //erreur coté serveur 
+          console.log(error); 
+          console.log("ça ne marche pas"); 
+      });     
     }
 
   }
@@ -82,5 +95,14 @@ export class RejoindreMaisonPage {
       });
     toast.present();
   }
+
+  presentToastHouseNotExisted() { 
+    //Définit le message de refus de créer une maison alors qu'il doit en rejoindre une 
+    let toast = this.toastCtrl.create({ 
+        message: "Ce nom de maison n'existe pas.", 
+        duration: 3000 
+      }); 
+    toast.present(); 
+  }   
   
 }
