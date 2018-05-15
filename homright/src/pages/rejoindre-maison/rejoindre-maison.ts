@@ -17,40 +17,34 @@ import { ToastController } from 'ionic-angular';
 })
 export class RejoindreMaisonPage {
 
-  maisonData = {"nom":""};
-
+  namesHouse= [];
   users: String;
-  namesHouse: any;
   hideElement: false;
+
+  maisonData={"nom":""};
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authServiceProvider : AuthServiceProvider, public toastCtrl: ToastController) {
    this.initializeNamesHouse();
   }
 
 
-  ngOnInit(){
-    this.authServiceProvider.getUsers().subscribe(
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad RejoindreMaisonPage');
+
+    this.authServiceProvider.getHomes().subscribe(
       data=>{
-        this.users=data.users;
+        this.namesHouse=data.names;
         console.log(data);
+        console.log(this.namesHouse);
       },
       error=>{
         console.log(error);
       })
-  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad RejoindreMaisonPage');
+
   }
 
   initializeNamesHouse() {
-    this.namesHouse = [
-      {'nom':'PerfectHouse', 'cp':'1000'},
-      {'nom':'TheBigThree', 'cp':'1000'},
-      {'nom':'TheBigHouse', 'cp':'1000'},
-      {'nom':'SuperMaison', 'cp':'1000'},
-      {'nom':'ThePlaceToBe', 'cp':'1000'}
-    ];
   }
 
   getNameHouse(ev: any) {

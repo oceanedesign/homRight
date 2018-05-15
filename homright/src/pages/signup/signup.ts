@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LottieAnimationViewModule } from 'ng-lottie'; 
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import{RejoindreMaisonPage} from "../rejoindre-maison/rejoindre-maison";
 import { CreerMaisonPage } from '../creer-maison/creer-maison';
@@ -14,8 +15,15 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 })
 export class SignupPage {
 
+lottieConfig:any; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authServiceProvider : AuthServiceProvider, private nativePageTransitions: NativePageTransitions) {
+    LottieAnimationViewModule.forRoot(); 
+    this.lottieConfig={ 
+      path:'assets/imgs/choix/data.json', 
+      autoplay: true, 
+      loopt: true 
+    }
   }
 
   ionViewDidLoad() {

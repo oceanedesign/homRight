@@ -10,19 +10,23 @@ let apiUrl = 'http://localhost/homRight/api/';
 export class AuthServiceProvider {
 
 	public url: string;
+  public urlHome: string;
   public token: string;
   public pseudo:string;
 
   constructor(public http: Http) {
     console.log('Hello AuthServiceProvider Provider');
   	this.url ="http://localhost/homRight/api/users/get.php";
+    this.urlHome ="http://localhost/homRight/api/home/get_all.php";
   }
 
   getUsers(){
   	return this.http.get(this.url).map(res=>res.json());
   }
 
-
+  getHomes(){
+    return this.http.get(this.urlHome).map(res=>res.json());
+  }
 
   postData(data, type) {
     //Envoie le json au serveur
