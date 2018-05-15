@@ -305,8 +305,8 @@ export class JeuModelisationPage {
     .draggable({
       cursor: "grab",
       drag: function (event, ui) {
-        console.log("count drag : "+countDrag);
-        if(countDrag==1){ 
+        //console.log("count drag : "+countDrag);
+        if(countDrag==1){ //S'il s'agit du premier drag and drop
           //Détermine la position de la maison et l'enleve à la position de l'objet 
 
           this.PosTotal = $(".ligne-sol").offset();
@@ -464,9 +464,8 @@ export class JeuModelisationPage {
       $(".lightbox-cache").css("display", "flex");  
  
       var inputNomApp = $( ".spare-item2").find('.cache:visible').closest('div').attr('value'); 
-      $(".nomApp").attr('value',  + inputNomApp); 
       console.log(inputNomApp); 
-      console.log($(".nomApp").attr('value'));   
+      $(".nomApp").attr('value', 'coucou');   
     })
   }
 
@@ -474,7 +473,7 @@ export class JeuModelisationPage {
   supprimer(){
     //Fonction permettant de supprimer un objet existant dans la pièce
     console.log("supprimer");
-    let rechercheItem = $( ".spare-item2").find('.cache:visible').closest('div').remove();
+    $( ".spare-item2").find('.cache:visible').closest('div').remove();
     $(".lightbox-cache").css("display", "none");
   }
 
