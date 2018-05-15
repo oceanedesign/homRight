@@ -8,19 +8,31 @@
           <h1></h1>
           <p class="analyseMessage"></p>
       </ion-row>
-  		<ion-row class="mascotte" (click)="presentToast()">
+  		<ion-row class="mascotte" *ngIf="userData == 'r' || userData == 'sophie'" (click)="presentToast()">
       		<img class="en-forme" alt="Homie est en forme" src="../assets/imgs/homie_good.png"/>
-          <img class="malade" alt="Homie est malade" src="../assets/imgs/homie_malade.png"/>
+          <img class="malade" alt="Homie est malade" src="../assets/imgs/recherche_compteur.png"/>
       </ion-row>
+
+      <ion-row class="mascotte" (click)="presentToast()" *ngIf="userData != 'r' && userData != 'sophie' ">
+          <img class="en-forme" alt="Homie réflechit" src="../assets/imgs/recherche_compteur.png"/>
+          <img class="malade" alt="Homie est malade" src="../assets/imgs/recherche_compteur.png"/>
+      </ion-row>
+
       <ion-row>
 		    <ion-col col-12 class="valeurs-conso text-center">
 				  <!-- <p>Analyse en cours...</p> <p>Vos premières données seront disponibles dans une heure.</p> -->
-          <ion-col col-12 class="text-center conso-nb">
+          <ion-col col-12 class="text-center conso-nb" *ngIf="userData == 'r' || userData == 'sophie'">
             <div class="euros">2.7<span>€</span></div>
             <div class="kwh">17<span>kwh</span></div>
             <div style="font-weight: 700;">consommés depuis ce matin</div>
           </ion-col>
-          <button class="boutton" (click)="directionStat3D()">
+
+          <ion-col col-12 class="text-center conso-nb" *ngIf="userData != 'r' && userData != 'sophie'">
+            <div class="kwh specifites">Analyse en cours</div>
+            <div class="specifites2">Vos premières données ne sont pas encore disponibles.</div>
+          </ion-col>
+
+          <button *ngIf="userData == 'r' || userData == 'sophie' " class="boutton" (click)="directionStat3D()">
             <ion-icon name="icon-chevron"></ion-icon>
           </button>
 		    </ion-col>
@@ -30,12 +42,12 @@
           <h3>Mes routines</h3>
         </ion-col>
         <ion-col col-6>
-          <button *ngIf="userData == 'r' && 'sophie' " ion-button block class="bouton-principal" (click)="creerScene()">Créer routine</button>
-          <button *ngIf="userData != 'r' && 'sophie' " ion-button block class="bouton-principal transparent" (click)="creerSceneImpossible()">Créer routine</button>
+          <button *ngIf="userData == 'r' || userData == 'sophie' " ion-button block class="bouton-principal" (click)="creerScene()">Créer routine</button>
+          <button *ngIf="userData != 'r' && userData != 'sophie' " ion-button block class="bouton-principal transparent" (click)="creerSceneImpossible()">Créer routine</button>
         </ion-col>
       </ion-row> 
     <ion-row class="mesRoutines scroll-bord">      
-        <ion-col col-12 *ngIf="userData == 'r' && 'sophie' " >
+        <ion-col col-12 *ngIf="userData == 'r' || userData == 'sophie' " >
           <!-- <p>Créez vos routines quotidiennes pour économiser du temps et de l’argent.</p> -->
           <ion-scroll scrollX="true" >
             <ion-list class="volets" radio-group>
@@ -51,7 +63,7 @@
             </ion-list>
           </ion-scroll>
         </ion-col>
-        <ion-col col-12  *ngIf="userData != 'r' && 'sophie'">
+        <ion-col col-12  *ngIf="userData != 'r' && userData !='sophie'">
           <p>
             Ajoutez des appareils connectés dans votre maison et créez des routines pour économiser du temps et de l’argent.
           </p>
