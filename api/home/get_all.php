@@ -30,8 +30,11 @@ $stmt = $home->get_all_name_and_cp();
 check_error($stmt);
 
 //Filtrer les valeurs retournées
-foreach ($stmt->fetch(PDO::FETCH_ASSOC) as $key => $value) {
-    $homes[$key] = htmlentities($value);
+for ($i = 0; $i < $stmt->rowCount(); $i++) {
+    $row = $stmt->fetch(PDO::FETCH_ASSOC, PDO::FETCH_ORI_ABS, $i);
+    foreach($row as $key => $value) {
+        $homes[][$key] = $value;
+    }
 }
 
 success("Les nom des maisons ont été récupérés", array("names" => $homes));
