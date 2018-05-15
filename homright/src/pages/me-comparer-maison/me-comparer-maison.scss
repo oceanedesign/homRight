@@ -1,27 +1,23 @@
 page-me-comparer-maison {
-  ion-header{
-    background: none;
-    .toolbar-background{
-      border: 0px!important;
-      background: none!important;
-    }
-    button.back-button.disable-hover{
-      background: map-get($colors, secondary);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      margin-top: 10px;
-      margin-left: 8px;
-    }
-    button .button-inner{
-      color: white;
-    }
-    &.header-md::after{
-      height: 0px;
-    }
-  }
+
   ion-content{
     // background-image: url("../assets/imgs/vue3D/3d.png");
+
+    .boutton-menuP{
+      background: map-get($colors, secondary);
+      position: fixed;
+      bottom: unset;
+      right: unset;
+      left: 35px;
+      top: 25px;
+      ion-icon{
+        color: white;
+        &::before{
+          font-size: 18px;
+        }
+      }
+    }  
+
     .profil{
       position: fixed;
       width: 50px;
@@ -94,6 +90,12 @@ page-me-comparer-maison {
         &.hidden-profil{
           display: none;
         }
+    }
+  }
+
+  @media only screen and (max-width: 315px){
+    .conso{
+      display: none;
     }
   }
 }

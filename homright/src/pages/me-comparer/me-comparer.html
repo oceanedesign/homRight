@@ -1,62 +1,30 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title>Me comparer</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
   <div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
-  <p class="intro">Découvrez comment font les foyers similaires au votre pour consommer moins</p>
-  <div class="profil-bon-eleve" (click)="directionComparerMaison()">
-    <div class="badges"><span>55</span> badges</div>
-    <div class="column-flex">
-      <div class="column-left">
-        <div class="avatar-circle"><span>AVATAR</span></div>
-        <h4>Axol<span>niveau 15</span></h4>
-      </div>
-      <div class="column-right">
-        <div class="conso">
-          <div class="valeurs">10<span>KWH</span></div>
-          <div class="time-unity">/jour</div>
+  <div class="container">
+    <p class="intro">Découvrez comment font les foyers similaires au vôtre pour consommer moins :</p>
+    <div *ngFor="let eleve of eleves" class="profil-bon-eleve" id="{{eleve.id}}" (click)="directionComparerMaison(eleve.pseudo, eleve.consommation)">
+      <div class="badges"><span>{{eleve.badges}}</span> badges</div>
+      <div class="column-flex">
+        <div class="column-left">
+          <div class="avatar-circle"><span>AVATAR</span></div>
+          <h4>{{eleve.pseudo}}<span>niveau {{eleve.niveau}}</span></h4>
+        </div>
+        <div class="column-right">
+          <div class="conso">
+            <div class="valeurs">{{eleve.consommation}}<span>KWH</span></div>
+            <div class="time-unity">/jour</div>
+          </div>
         </div>
       </div>
+      <div class="lien-maison"><span>voir sa maison</span><ion-icon class="icon-chevron"></ion-icon></div>
     </div>
-    <div class="lien-maison"><span>voir sa maison</span><ion-icon class="icon-chevron"></ion-icon></div>
-  </div>
-  <div class="profil-bon-eleve" (click)="directionComparerMaison()">
-    <div class="badges"><span>44</span> badges</div>
-    <div class="column-flex">
-      <div class="column-left">
-        <div class="avatar-circle"><span>AVATAR</span></div>
-        <h4>Lywie<span>niveau 13</span></h4>
-      </div>
-      <div class="column-right">
-        <div class="conso">
-          <div class="valeurs">13<span>KWH</span></div>
-          <div class="time-unity">/jour</div>
-        </div>
-      </div>
-    </div>
-    <div class="lien-maison"><span>voir sa maison</span><ion-icon class="icon-chevron"></ion-icon></div>
-  </div>
-  <div class="profil-bon-eleve" (click)="directionComparerMaison()">
-    <div class="badges"><span>39</span> badges</div>
-    <div class="column-flex">
-      <div class="column-left">
-        <div class="avatar-circle"><span>AVATAR</span></div>
-        <h4>Alain<span>niveau 12</span></h4>
-      </div>
-      <div class="column-right">
-        <div class="conso">
-          <div class="valeurs">13.5<span>KWH</span></div>
-          <div class="time-unity">/jour</div>
-        </div>
-      </div>
-    </div>
-    <div class="lien-maison"><span>voir sa maison</span><ion-icon class="icon-chevron"></ion-icon></div>
   </div>
   <button class="boutton-menuP" (click)="pushMenu()"><img  alt="menu principal" src="../assets/button/menu.png"/></button>
 </ion-content>

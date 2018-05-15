@@ -1,23 +1,14 @@
-<ion-header>
-
-  <ion-navbar>
-    <ion-title></ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content padding>
   <div class="profil" (click)="openProfil()"><span>Axol</span></div>
   <div class="maison"><img src="../assets/imgs/vue3D/3d.png"></div>
 
   <div class="profil-bon-eleve"  (click)="closeProfil()">
-        <div class="avatar-circle"><span>AVATAR</span></div>
-        <h4>Axol<span>niveau 15</span></h4>
+        <div class="avatar-circle"><span>{{pseudo}}</span></div>
 
         <div class="conso">
-          <div class="valeurs">10<span>KWH</span></div>
+          <div class="valeurs">{{consommation}}<span>KWH</span></div>
           <div class="time-unity">/jour</div>
         </div>
   </div>
+  <button class="boutton-menuP" (click)="retourEcran()"><ion-icon name="icon-left-arrow-2"></ion-icon></button>
 </ion-content>

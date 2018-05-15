@@ -14,6 +14,12 @@ import 'jquery-ui-dist/jquery-ui';
 })
 export class MeComparerPage {
 
+  eleves = [
+  {"id":0, "avatar":"#8CD8AB", "pseudo":"Axol", "niveau":15, "consommation":"10", "badges":"15" },
+  {"id":1, "avatar":"#D8A38C", "pseudo":"Lywie", "niveau":10, "consommation":"10.42", "badges":"9" },
+  {"id":2, "avatar":"AB8CD8", "pseudo":"Alain", "niveau":12, "consommation":"12.8", "badges":"11" },
+  ]
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -26,8 +32,12 @@ export class MeComparerPage {
     this.navCtrl.push(TabsPage);
   }
 
-  directionComparerMaison(){
-    this.navCtrl.push(MeComparerMaisonPage);
+  directionComparerMaison(pseudo, consommation){
+    //Envoie les données "id" à la page suivante (sous-catégorie de la comparaison entre joueurs)
+    this.navCtrl.push(MeComparerMaisonPage, {
+      data1:pseudo, data2:consommation
+    });
+    console.log(pseudo, consommation);
   }
 
 }

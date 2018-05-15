@@ -36,6 +36,10 @@ page-me-comparer {
             margin-bottom: 20px;
         }
       }
+      .container{
+        max-width: 800px;
+        margin: 20px auto;
+      }
       .centrage-vertical{
         display: flex;
         justify-content: center;
@@ -46,11 +50,12 @@ page-me-comparer {
         }
       }
       .profil-bon-eleve{
+        cursor: pointer;
         box-shadow: 0px 8px 26px rgba(0, 0, 0, 0.12);
         border-radius: 8px;
         padding: 15px 0;
-        max-width: 900px;
-        margin: auto auto 20px auto;
+        max-width: 600px;
+        margin: 30px auto;
         .column-flex{
           display: flex;
         }
@@ -125,6 +130,7 @@ page-me-comparer {
       .intro{
         margin: 40px auto 30px auto;
         text-align: center;
+        font-size: 20px;
       }
     }
 }
