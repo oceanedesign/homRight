@@ -30,7 +30,7 @@
 		  	<ion-input [(ngModel)]="maisonData.nom" name="nom" list="maison" type="text"></ion-input></ion-item>
   			<datalist id="maison"> 
   				<div *ngFor="let nameHouse of namesHouse">
-  					<option value="{{ nameHouse }}"></option>
+  					<option value="{{ nameHouse.nom }}"></option>
   				</div>
   			</datalist>
   		

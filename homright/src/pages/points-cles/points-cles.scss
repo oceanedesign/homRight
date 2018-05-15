@@ -97,12 +97,11 @@ page-points-cles {
     }
   }
 
-    @media screen and (max-height: 580px) {
-  ion-slide.swiper-slide{
+  @media screen and (max-height: 580px) {
+    ion-slide.swiper-slide{
     .image{
       height:190px;
     }
-
     img {
       width: 36%;
       margin-bottom: 15px;
@@ -114,9 +113,7 @@ page-points-cles {
     }
   }
 
-    @media screen and (min-width: 900px) {
-
-
+  @media screen and (min-width: 900px) {
     ion-slide.swiper-slide .fond-vague{
       height: 100px;
     }

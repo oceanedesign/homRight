@@ -525,6 +525,21 @@ export class JeuModelisationPage {
   	$('.segment-button').attr('aria-pressed', 'false');
   }
 
+  desactiveFondGris(){
+    //Fonction permettant d'enlever le fond grid sans faire le drag and drop
+    this.desactiveBoutton();
+    
+    //Disparition du fond gris 
+    $(".fondGris").css("display", "none"); 
+
+    var enfantCaseSol = $('.actions').find('.spare-item'); //Definit la variable
+    if(enfantCaseSol.length > 0) //S'il y a deja un élément dans la case de prévisualisation
+      { 
+        $('.actions').find('.spare-item').remove(); // Suppression de l'enfant/l'element
+      }
+      $(".parcours").css("display", "none"); 
+  }
+
 
    /*!
    * jQuery UI Touch Punch 0.2.3

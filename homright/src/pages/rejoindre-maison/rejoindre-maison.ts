@@ -20,7 +20,7 @@ export class RejoindreMaisonPage {
   maisonData = {"nom":""};
 
   users: String;
-  namesHouse: string[];
+  namesHouse: any;
   hideElement: false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authServiceProvider : AuthServiceProvider, public toastCtrl: ToastController) {
@@ -39,20 +39,17 @@ export class RejoindreMaisonPage {
       })
   }
 
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad RejoindreMaisonPage');
   }
 
-
-
-    initializeNamesHouse() {
+  initializeNamesHouse() {
     this.namesHouse = [
-      'PerfectHouse',
-      'TheBigThree',
-      'TheBigHouse',
-      'SuperMaison',
-      'ThePlaceToBe'
+      {'nom':'PerfectHouse', 'cp':'1000'},
+      {'nom':'TheBigThree', 'cp':'1000'},
+      {'nom':'TheBigHouse', 'cp':'1000'},
+      {'nom':'SuperMaison', 'cp':'1000'},
+      {'nom':'ThePlaceToBe', 'cp':'1000'}
     ];
   }
 
