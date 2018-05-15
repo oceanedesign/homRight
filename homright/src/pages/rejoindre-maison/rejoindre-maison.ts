@@ -17,8 +17,8 @@ import { ToastController } from 'ionic-angular';
 })
 export class RejoindreMaisonPage {
 
-  namesHouse= [];
   users: String;
+  namesHouse: any;
   hideElement: false;
 
   maisonData={"nom":""};
@@ -28,9 +28,16 @@ export class RejoindreMaisonPage {
   }
 
 
+  ngOnInit(){
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad RejoindreMaisonPage');
+    console.log(this.namesHouse);
+  }
 
+
+  initializeNamesHouse() {
     this.authServiceProvider.getHomes().subscribe(
       data=>{
         this.namesHouse=data.names;
@@ -39,17 +46,12 @@ export class RejoindreMaisonPage {
       },
       error=>{
         console.log(error);
-      })
-
-
-  }
-
-  initializeNamesHouse() {
+    })
   }
 
   getNameHouse(ev: any) {
     // Reset items back to all of the namesHouse
-    this.initializeNamesHouse();
+    this.ngOnInit();
 
     // set val to the value of the searchbar
     let val = ev.target.value;
