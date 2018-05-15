@@ -1,32 +1,32 @@
 page-forum-accueil {
 
-    ion-header {
+  ion-header {
+    background: map-get($colors, secondary);
+    border: 1px solid map-get($colors, secondary);
+    &::after, &.header-md::after{
         background: map-get($colors, secondary);
-        border: 1px solid map-get($colors, secondary);
-        &::after, &.header-md::after{
-            background: map-get($colors, secondary);
-            border-color: map-get($colors, secondary);
-        }
-        h1{
-            text-align: center;
-            text-transform: uppercase;
-            font-family: "Futura";
-            font-weight: 300;
-            font-size: 16px;
-            margin: 20px 0px;
-            color:white;
-        }
-      }
-
-    ion-content .fond-vague{
-      height: 60px;
-      .vague {
-        width: 100vw;
-        position: absolute;
-        top: 59px;
-        height: 38px;
-      }
+        border-color: map-get($colors, secondary);
     }
+    h1{
+      text-align: center;
+      text-transform: uppercase;
+      font-family: "Futura";
+      font-weight: 300;
+      font-size: 16px;
+      margin: 20px 0px;
+      color:white;
+    }
+  }
+
+  ion-content .fond-vague{
+    height: 60px;
+    .vague {
+      width: 100vw;
+      position: absolute;
+      top: 59px;
+      height: 38px;
+    }
+  }
 
   ion-content{
     .block-search{
@@ -98,11 +98,12 @@ page-forum-accueil {
           padding-bottom: 10px;
           h4{
             font-weight: 600;
-            font-size: 16px;
+            font-size: 18px;
             margin-bottom: 5px;
           }
           span{
             color: map-get($colors, dark-blue);
+            font-size: 16px;
           }
         }
         .dernierMessage{
@@ -113,7 +114,7 @@ page-forum-accueil {
           text-align: left;
           margin: 5px 0;
           margin-left: 10px;
-          font-size: 12.5px;
+          font-size: 13.5px;
         }
         .avatar-message{
           display: inline-flex;
@@ -172,6 +173,4 @@ page-forum-accueil {
       height: 20px;
     }
   }
-
-
 }

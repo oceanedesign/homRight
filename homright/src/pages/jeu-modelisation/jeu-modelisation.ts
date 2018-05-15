@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { Platform } from 'ionic-angular';
 import { HomePage } from '../home/home';
-import { Events } from 'ionic-angular';
 
 declare var jQuery:any;
 declare var $:any;
@@ -18,15 +17,14 @@ export class JeuModelisationPage {
 
 
   pieces = [
-    {"piece_id":"0","nomPiece": "Chambre", "type":"lit"},
-    {"piece_id":"1","nomPiece": "Salle de bains", "type":"douche"},
-    {"piece_id":"2","nomPiece": "Salon", "type":"canape"},
-    {"piece_id":"3","nomPiece": "Cuisine", "type":"cuisine", "equipement":{
-
-    }}
-  ];
-
-
+    {"piece_id":"0","nomPiece": "Chambre", "type":"lit", "longueur":"", "largeur":""}, 
+    {"piece_id":"1","nomPiece": "Salle de bains", "type":"douche", "longueur":"", "largeur":""}, 
+    {"piece_id":"2","nomPiece": "Salon", "type":"canape", "longueur":"", "largeur":""}, 
+    {"piece_id":"3","nomPiece": "Cuisine", "type":"cuisine", "longueur":"3", "largeur":"6.6"} 
+  ]; 
+ 
+  updatePiece = {"piece_id":"","nomPiece": "", "type":"", "longueur":"", "largeur":""}; 
+ 
   ligne: number = 5;
   colonne:number=11;
   PosTotal:any;
@@ -34,12 +32,10 @@ export class JeuModelisationPage {
   largeur =0;
   longueur =0;
 
-
-
-
   regApp = {"nomApp": "", "connexion":""};
   connexion: boolean = false;
   nomPiece: String;
+  nomAppareil: String; 
 
   constructor(public plt: Platform, private screenOrientation : ScreenOrientation, public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -63,7 +59,6 @@ export class JeuModelisationPage {
     this.ActiveDraggable();
     this.InitCache();
     this.activeDraggableItem();
-    this.recupNomPiece();
   }
 
   directionAccueil(){
@@ -71,27 +66,24 @@ export class JeuModelisationPage {
     this.navCtrl.setRoot(HomePage);
   }
 
-    recupNomPiece(){
-     //Recuperation du nom de la pièce
-    let value;
-    var buttonRoom = $('.listButtonRoom').find('.button-room');
-
-    $('.button-room').each(function() {
-    
-    value = $(this).attr('value');
-    let paragraphe = $( this ).find('p');
-    paragraphe.replaceWith( "<p name='"+value+"'>"+value+"</p>");
-    });
-
-    console.log(value);
-  }
-
 
   activeJeuCuisine(event){
-    $(".choix-piece").css("display", "none");
-    $(".cacher-totale").css("display", "block");
-    $(".spare-item2").css("display", "block");
-    this.validerTaille();
+    //Activation d'une piece toute faite : la cuisine
+    var itemPiece = event.target.closest('ion-item'); 
+    console.log($(itemPiece).attr('id')); 
+    this.updatePiece = this.pieces[$(itemPiece).attr('id')] ; //Attribut la nouvelle valeur 
+    console.log(this.updatePiece);
+
+    $(".choix-piece").css("display", "none"); 
+    $(".cacher-totale").css("display", "block"); 
+    $(".spare-item2").css("display", "none"); 
+        this.tailleSol(); 
+        this.validerTaille(); 
+ 
+    setTimeout(function(){  
+        $(".spare-item2.cuisine").css("display", "block"); 
+    }, 1000);
+
 
      var bouton = event.target.closest('button'); //Définit la variable bouton et attribut le bouton
     console.log($(bouton).attr('value')); //récupération de l'attribut "value" du bouton
@@ -100,31 +92,44 @@ export class JeuModelisationPage {
   }
 
   activeJeuIni(event){
+    //Activation de la phase modélisation initiale
     $(".choix-piece").css("display", "none");
     $(".cacher-totale").css("display", "block");
     $(".spare-item2").css("display", "none");
 
+    var bouton = event.target.closest('button'); //Définit la variable bouton et attribut le bouton 
+    console.log($(bouton).attr('value')); //récupération de l'attribut "value" du bouton 
+    this.nomPiece = $(bouton).attr('value') ; //Attribut la nouvelle valeur 
+ 
+    var itemPiece = event.target.closest('ion-item'); 
+    console.log($(itemPiece).attr('id')); 
+    this.updatePiece = this.pieces[$(itemPiece).attr('id')] ; //Attribut la nouvelle valeur 
+    console.log(this.updatePiece); 
 
-    $(".fond-cache").css("display", "none");
-    $(".contenu-taille").css("display", "flex");
-    if($(".case-maison").hasClass("case-maison3d")){
-        $(".case-maison").removeClass("case-maison3d");
-    }
-    if($(".resize").hasClass("inactive")){
-      $(".resize").removeClass("inactive");
-    }
-    if($(".cube").hasClass("active")){
-      $(".cube").addClass("inactive");
-      $(".cube").removeClass("active");
-    }
-    if($(".mur, .mur2").hasClass("mur-visible")){
-      $(".mur, .mur2").addClass("mur-cache");
-      $(".mur, .mur2").removeClass("mur-visible");
-    }
-
-    var bouton = event.target.closest('button'); //Définit la variable bouton et attribut le bouton
-    console.log($(bouton).attr('value')); //récupération de l'attribut "value" du bouton
-    this.nomPiece = $(bouton).attr('value') ; //Attribut la nouvelle valeur
+     if(this.updatePiece.largeur == "" && this.updatePiece.longueur == "" ){ 
+ 
+      console.log(this.updatePiece.largeur); 
+ 
+      $(".fond-cache").css("display", "none"); 
+      $(".contenu-taille").css("display", "flex"); 
+      if($(".case-maison").hasClass("case-maison3d")){ 
+          $(".case-maison").removeClass("case-maison3d"); 
+      } 
+      if($(".resize").hasClass("inactive")){ 
+        $(".resize").removeClass("inactive"); 
+      } 
+      if($(".cube").hasClass("active")){ 
+        $(".cube").addClass("inactive"); 
+        $(".cube").removeClass("active"); 
+      } 
+      if($(".mur, .mur2").hasClass("mur-visible")){ 
+        $(".mur, .mur2").addClass("mur-cache"); 
+        $(".mur, .mur2").removeClass("mur-visible"); 
+      } 
+    }else{ 
+        this.tailleSol(); 
+        this.validerTaille(); 
+    }    
   }
 
   annulerRetouchePiece(){
@@ -152,7 +157,7 @@ export class JeuModelisationPage {
   } 
 
   validerItem() {
-    //Ajoute l'iteme dans la base de données 
+    //Ajoute l'item dans la base de données 
     this.returnChoose();
     this.updateConnexion();
     console.log(this.regApp);
@@ -171,6 +176,41 @@ export class JeuModelisationPage {
     this.superficie = Number((this.largeur * this.longueur).toFixed(2));
 
   }
+
+  tailleSol(){ 
+    //Fonction permettant de définir la taille de la pièce en fonction des colonnes et lignes 
+ 
+    if(this.updatePiece.largeur != "" && this.updatePiece.longueur != "" ){ 
+      this.colonne = parseInt(this.updatePiece.largeur)/0.6; 
+      this.ligne = parseInt(this.updatePiece.longueur)/0.6; 
+      console.log("dans if : largeur " + this.updatePiece.largeur); 
+      this.calculTaille(); 
+    }else{ 
+      console.log("pas dans if : largeur" + this.updatePiece.largeur); 
+      this.calculTaille(); 
+    } 
+ 
+  } 
+ 
+  calculTaille(){ 
+    console.log("colonne : "+ this.colonne); 
+    $('.case-sol').attr('colonne', + this.colonne).attr('ligne', +this.ligne); 
+    $('.case-sol, .actions').width(this.colonne*160-2+"px"); 
+ 
+    $('.case-sol, .case-maison, .actions').height(this.ligne*60-2+"px");  
+    $('.case-maison').width(this.colonne*60-2+"px"); 
+    $('.mur').width(this.ligne*50-10+"px"); 
+ 
+    $('.mur').css({"left": (-((this.ligne-1)*25)-15)+(((this.colonne-1)*8))+"px"}); 
+    $('.mur').css({"top": (((this.ligne-1)*29.85)-358)-(((this.colonne-1)*12.7))+"px"}); 
+ 
+    $('.mur2').width(this.colonne*50-10+this.colonne*3+"px"); 
+    $('.mur2').css({"left": (((this.colonne-1)*3.55)+24)+((this.ligne-1)*20.45)+"px"}); 
+    $('.mur2').css({"top": (((this.ligne-1)*17.5)-358)+"px"}); 
+    this.superficiePiece(); 
+    //$('#case-maison').height(this.ligne*60-2+"px"); 
+  } 
+ 
 
   MaisonDeplace(){
     // Fonction qui permet à la maison d'etre déplacée
@@ -242,18 +282,24 @@ export class JeuModelisationPage {
       { 
         $('.actions').find('.spare-item').remove(); // Suppression de l'enfant/l'element
       }
-
+      //Rend visible la case de prévisualisation 
+    $(".parcours").css("display", "block"); 
+ 
+    //Apparition du fond gris 
+    $(".fondGris").css("display", "block"); 
 
     var item = event.target.closest('ion-item');
     var objet = $(item).find('.objets-presentation');
     console.log(objet);
     this.regApp.nomApp= event.target.id;
+
     objet.clone().removeClass( "objets-presentation" ).appendTo(".actions").addClass("spare-item")
     .draggable({
       cursor: "grab",
       drag: function (event, ui) {
         console.log("count drag : "+countDrag);
-         if(countDrag==1){
+        if(countDrag==1){ 
+          //Détermine la position de la maison et l'enleve à la position de l'objet 
 
           this.PosTotal = $(".ligne-sol").offset();
           ui.position.left = ui.position.left - this.PosTotal.left;   
@@ -261,10 +307,27 @@ export class JeuModelisationPage {
         }      
 
       },
-      start: function (event, ui) { 
+      start: function (event, ui) {
+
+        //Cache la case de prévisualisation 
+        $(".parcours").css("display", "none"); 
+ 
+        //Disparition du fond gris 
+        $(".fondGris").css("display", "none"); 
+ 
+        //Ferme le menu 
+        $('.elements-ini').removeClass('elements-active'); 
+        $('.elements-ini').addClass('elements'); 
+        $('.contenu-ini').addClass('contenu'); 
+        $('.contenu-ini').removeClass('contenu-actif'); 
+        $('.container').removeClass('container-actif'); 
+        $('.container').addClass('container-inactif'); 
+        $('.segment-button').removeClass('segment-activated'); 
+        $('.segment-button').attr('aria-pressed', 'false'); 
+
         $(".cache").hide(); 
-        countDrag++;
-        $(this).attr('symetrie', + "1");
+        countDrag++;//Augmente le count du drag and drop de l'objet 
+        $(this).attr('symetrie', + "1"); //Attribut le champ symétrie à 1 à l'objet 
 
         $(this).removeClass("spare-item");
         $(this).addClass("spare-item2");
@@ -274,28 +337,29 @@ export class JeuModelisationPage {
           //Si les boutons ne sont pas créés
           if( $(this).hasClass( "sans-symetrie" )==true){
             //Et si l'objet a la classe sans-symetrie
-             $(this).append("<img class='buttonVoir cache' src='../../assets/button/see.png'/>");
-             //Créer uniquement le bouton permettant d'activer la pop up
+            //Créer uniquement le bouton permettant d'activer la pop up 
+             $(this).append("<img class='buttonVoir cache' src='../../assets/button/see.png'/>").promise().done( 
+ 
+             function(){ 
+              $(this).on('click', '.buttonVoir', function() { 
+                //Function permettant d'activer le pop up  
+                  console.log('Activation pop up pas en mode Ini'); 
+                  $(".lightbox-cache").css("display", "flex");     
+              }) 
+            }); 
           }else{
-          $(this).append("<img class='buttonSymetrie cache' src='../../assets/button/rotate.png'/><img class='buttonVoir cache' src='../../assets/button/see.png'/>").promise().done(
-            //Sinon créer les deux boutons
-            function(){
-
-              $(this).on('click', '.buttonSymetrie', function() {
-                //Function permettant de changer la symétrie de l'objet
+            $(this).append("<img class='buttonSymetrie cache' src='../../assets/button/rotate.png'/><img class='buttonVoir cache' src='../../assets/button/see.png'/>").promise().done( 
+              function(){ 
+                $(this).on('click', '.buttonSymetrie', function() { 
+                  //Function permettant de changer la symétrie de l'objet 
                   console.log('Activation symetrie');
                   var matrice1 = $(this).parent().css("transform");
                   var scx =parseInt(matrice1.split(",")[0].substring(7))*(-1) ;
                   if(scx== -1 || scx == 1){
-                    $(this).parent().css({
-                      "transform": "scaleX("+scx+")"
-                      });
+                    $(this).parent().css({"transform": "scaleX("+scx+")"});
                       $(this).parent().attr('symetrie', + scx);
                   }else{
-                     $(this).parent().css(
-                      {
-                      "transform": "scaleX(-1)"
-                      });
+                     $(this).parent().css({"transform": "scaleX(-1)"});
                      $(this).parent().attr('symetrie', + "-1");
               }});
 
@@ -310,8 +374,6 @@ export class JeuModelisationPage {
           }
         }           
       },
-      beforeStop:function(event,ui){
-      },
 
       stop: function(event,ui){
         $(this).insertBefore(".case-maison");
@@ -325,9 +387,9 @@ export class JeuModelisationPage {
           //Attribue un ID à l'objet
         }
       }
-
     })
     .on('click', function() {
+      //Cache les boutons des autres objets 
       $(".cache").not($(this)).hide(); 
       $(this).find('.cache').show(); 
     }) 
@@ -369,7 +431,7 @@ export class JeuModelisationPage {
     }) 
 
     .on('click', '.buttonSymetrie', function() {
-    //Function permettant de changer la symétrie de l'objet
+      //Function permettant de changer la symétrie de l'objet
       console.log('Activation symetrie');
       var matrice1 = $(this).parent().css("transform");
       var scx =parseInt(matrice1.split(",")[0].substring(7))*(-1) ;
@@ -389,7 +451,12 @@ export class JeuModelisationPage {
     .on('click', '.buttonVoir', function() {
     //Function permettant d'activer le pop up 
       console.log('Activation pop up ini');
-      $(".lightbox-cache").css("display", "flex");    
+      $(".lightbox-cache").css("display", "flex");  
+ 
+      var inputNomApp = $( ".spare-item2").find('.cache:visible').closest('div').attr('value'); 
+      $(".nomApp").attr('value',  + inputNomApp); 
+      console.log(inputNomApp); 
+      console.log($(".nomApp").attr('value'));   
     })
   }
 
@@ -401,26 +468,6 @@ export class JeuModelisationPage {
     $(".lightbox-cache").css("display", "none");
   }
 
-  
-  tailleSol(){
-    //Fonction permettant de définir la taille de la pièce en fonction des colonnes et lignes
-    console.log("colonne : "+ this.colonne);
-    $('.case-sol').attr('colonne', + this.colonne).attr('ligne', +this.ligne);
-    $('.case-sol, .actions').width(this.colonne*160-2+"px");
-
-    $('.case-sol, .case-maison, .actions').height(this.ligne*60-2+"px"); 
-    $('.case-maison').width(this.colonne*60-2+"px");
-    $('.mur').width(this.ligne*50-10+"px");
-
-    $('.mur').css({"left": (-((this.ligne-1)*25)-15)+(((this.colonne-1)*8))+"px"});
-    $('.mur').css({"top": (((this.ligne-1)*29.85)-358)-(((this.colonne-1)*12.7))+"px"});
-
-    $('.mur2').width(this.colonne*50-10+this.colonne*3+"px");
-    $('.mur2').css({"left": (((this.colonne-1)*3.55)+24)+((this.ligne-1)*20.45)+"px"});
-    $('.mur2').css({"top": (((this.ligne-1)*17.5)-358)+"px"});
-    this.superficiePiece();
-    //$('#case-maison').height(this.ligne*60-2+"px");
-  }
 
   getCurrentScreenOrientation(){
   	// Connaitre l'orientation actuelle de l'écran (exemple : portrait)

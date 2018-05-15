@@ -56,15 +56,11 @@
 
 	    			</ion-col>
 				</ion-row>
-
 				<ion-row class="apparition">
 					<img class="stats" alt="Boutique" src="../assets/imgs/boutique/ref.png"/>
 				</ion-row>
-
 	    	</div>
-
-	    	<div *ngSwitchCase="'coupons'" class="container">
-	    		
+	    	<div *ngSwitchCase="'coupons'" class="container">	
 				<ion-row>
 					<ion-col col-12>
 						<h1>Mes coupons actifs</h1>
@@ -82,7 +78,6 @@
 							<button ion-button block class="bouton-contour">XAB15F</button>
 		      			</ion-col>
 					</ion-col>
-
 					<ion-col col-12>
 						<h1>Bonjour, que désirez-vous pour aujourd’hui ?</h1>
 					</ion-col>
@@ -100,12 +95,9 @@
 							<button ion-button block class="bouton-principal" (click)="presentToast()">Acheter</button>
 		      			</ion-col>
 					</ion-col>
-
 				</ion-row>
 	    	</div>
 	    </div>
-
-
 	</ion-grid>
 		<button class="boutton-menuP" (click)="pushMenu()"><img  alt="menu principal" src="../assets/button/menu.png"/></button>
 </ion-content>

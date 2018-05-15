@@ -7,8 +7,6 @@
 //header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 
-
-
 function errors($type, $msg) {
     $err = array(
         "status" => "error",

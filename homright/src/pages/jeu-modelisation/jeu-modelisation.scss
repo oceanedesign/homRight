@@ -1,95 +1,105 @@
 page-jeu-modelisation {
 
+	.fondGris{ 
+    	background: black; 
+    	opacity: 0.7; 
+    	display:none; 
+      	position: absolute; 
+      	width: 100%; 
+      	height: 100%; 
+      	z-index: 11; 
+  	} 
 
 	.direct-accueil{
-	width: 170px;
-    cursor: pointer;
-    position: fixed;
-    bottom: 40px;
-    left:0%;
-    right: 0%;
+		width: 170px;
+	    cursor: pointer;
+	    position: fixed;
+	    bottom: 40px;
+	    left:0%;
+	    right: 0%;
 	}
 
 
-      ion-row.firstList{
+    ion-row.firstList{
         margin: auto;
         h1{
         	text-align: center;
 		    color: black;
 		    padding: 40px;
+		    padding-bottom: 0px; 
 		    font-size: 28px;
         	margin: 30px auto;
         }
-      }
-        ion-scroll{
-          height: 150px;
-          white-space:nowrap;
-          //margin: -16px;
-          .scroll-content{
-            padding: 0px !important;
-          }
-        ion-list.list{
-          width:100%;
-          margin-bottom: 0;
-          margin-left: 40px;
-          text-align: center;
-          ion-item.item-block{
-            display: inline-block;
-            width: auto;
-            padding: 0;
-            button.button-room{
-              background: white;
-              color: map-get($colors, secondary);
-              width: 120px;
-              height: 120px !important;
-              border: 1px solid #F2F2F2;
-              box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-              border-radius: 8px;
-              margin: 0 auto 24px auto;
-              padding: 0;
-              position: relative;
-              pointer-events: auto;
-              .button-inner{
-                display: block;
-                p{
-                  margin: auto;
-                  margin-top: 20px;
-                  font-weight: 700;
-                  text-transform: initial;
-                  color: black;
-                }
-                p[name="Cuisine"]{
-                	//margin-top: 35px;
-                }
-              }
-              ion-icon{
-                &::before{
-                  font-size: 60px;
-                  top: 15px;
-                  position: relative;
-                  color: map-get($colors, secondary);
-
-                }
-                &[name="icon-cuisine"]::before{
-                	font-size: 45px;
-                	top:25px;
-                }
-              }
-            }
-          }
+    }
+    ion-scroll{
+        height: 150px;
+        white-space:nowrap;
+        //margin: -16px;
+        .scroll-content{
+        	padding: 0px !important;
         }
-      }
+        ion-list.list{
+          	width:100%;
+          	margin-bottom: 0;
+          	margin-left: 40px;
+          	text-align: center;
+          	ion-item.item-block{
+            	display: inline-block;
+            	width: auto;
+            	padding: 0;
+            	button.button-room{
+              		background: white;
+              		color: map-get($colors, secondary);
+              		width: 120px;
+              		height: 120px !important;
+              		border: 1px solid #F2F2F2;
+              		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+              		border-radius: 8px;
+              		margin: 0 auto 24px auto;
+              		padding: 0;
+              		position: relative;
+              		pointer-events: auto;
+              		.button-inner{
+                		display: block;
+                		p{
+                  			margin: auto;
+                  			margin-top: 20px;
+                  			font-weight: 700;
+                  			text-transform: initial;
+                  			color: black;
+                		}
+                		p[name="Cuisine"]{
+                			//margin-top: 35px;
+                		}
+              		}
+              		ion-icon{
+                		&::before{
+                  			font-size: 60px;
+                  			top: 15px;
+                  			position: relative;
+                  			color: map-get($colors, secondary);
+                		}
+                		&[name="icon-cuisine"]::before{
+                			font-size: 45px;
+                			top:25px;
+                		}
+              		}
+            	}
+          	}
+        }
+    }
 
-      .list-ios .item-block .item-inner, .list-ios > .item-block:last-child .item-inner{
-      	    border-bottom: 1px solid transparent;
-      }
+    .list-ios .item-block .item-inner, .list-ios > .item-block:last-child .item-inner{
+      	border-bottom: 1px solid transparent;
+    }
 
-      .segment-ios .segment-button:hover:not(.segment-activated){
-      	background-color: white;
-      }
+    .segment-ios .segment-button:hover:not(.segment-activated){
+    	background-color: white;
+    }
 
 	.parcours{
 		position: fixed;
+		display: none; 
 	    right: 10px;
 	    top: 10px;
 	    text-align: center;
@@ -97,7 +107,7 @@ page-jeu-modelisation {
 	    font-family: "Futura";
 	    font-weight: 800;
 	    font-size: 15px;
-	    z-index: 7;
+	    z-index: 12; 
 		.prev{
 			background: white;
 			border: 2px solid black;
@@ -170,23 +180,23 @@ page-jeu-modelisation {
 	    margin: 0 0;
 	    right: 40px;
     	top: 40px;
-	    z-index:8;
+	    z-index:12; 
 	    position: fixed;
 	}
 
 
-.spare-item2{
-    display: inline-block;
-    float: left;
-    margin: 0 0;
-    z-index:8;
-    position:absolute;
-}
+	.spare-item2{
+	    display: inline-block;
+	    float: left;
+	    margin: 0 0;
+	    z-index:8;
+	    position:absolute;
+	}
 
 
 	.opac {
-  opacity: .8;
-}
+  		opacity: .8;
+	}
 
 	.move-cursor {
 	  cursor: move;
@@ -243,6 +253,7 @@ page-jeu-modelisation {
 		max-width: 33%;
 		height: 100%;
     	width: 100%;
+    	z-index: 12; 
     	transition: left 1s;
 	}
 
@@ -407,10 +418,8 @@ page-jeu-modelisation {
 	}
 
 
-
-
 	.toolbar-background-ios {
-    background: transparent;
+    	background: transparent;
 	}
 
 	.grid{
@@ -429,9 +438,9 @@ page-jeu-modelisation {
 	}
 
 	.segment-button {
-    overflow: initial;
-    text-overflow: initial;
-    white-space: initial;
+	    overflow: initial;
+	    text-overflow: initial;
+	    white-space: initial;
 	}
 
 	.toolbar-ios, .toolbar-md{
@@ -458,50 +467,50 @@ page-jeu-modelisation {
 	}
 
 
-html {
-  box-sizing: border-box;
-}
+	html {
+	  box-sizing: border-box;
+	}
 
 
 
-input[type="range"]
-{
-    width: 200px;
+	input[type="range"]
+	{
+	    width: 200px;
 
-}
+	}
 
 
-.container-maison{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    top: 0px;
-    left: 30%;
-    top: 40%;
-	//overflow-x: scroll;
-    //overflow-y: scroll;
-}
+	.container-maison{
+	    position: absolute;
+	    width: 100%;
+	    height: 100%;
+	    left: 0px;
+	    top: 0px;
+	    left: 30%;
+	    top: 40%;
+		//overflow-x: scroll;
+	    //overflow-y: scroll;
+	}
 
-.sol{
-    position: relative;
-    //left: 30%;
-    width: 100%;
-    height: 100%;
-    display: block;
-    vertical-align: middle;
-    //margin: 50px 0;
-}
+	.sol{
+	    position: relative;
+	    //left: 30%;
+	    width: 100%;
+	    height: 100%;
+	    display: block;
+	    vertical-align: middle;
+	    //margin: 50px 0;
+	}
 
-.ligne-sol
-{
-   display: flex;
-	flex-direction: row;
-	justify-content: flex-start;
-	align-items: flex-start; 
-	align-content: flex-start; 
-	height: 100%;
-}
+	.ligne-sol
+	{
+	   display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: flex-start; 
+		align-content: flex-start; 
+		height: 100%;
+	}
 
 
 	.case-sol, .actions
@@ -1098,8 +1107,6 @@ input[type="range"]
 		.segment-md .segment-button p, .segment-ios .segment-button p{
 	        //padding: 30px 0px 0px 0px;
 		}
-
-
 
 		h1{
 		font-size: 25px;

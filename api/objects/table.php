@@ -49,6 +49,16 @@ class Table {
         $this->properties[$name] = $value; 
     }
     
+    public function set_properties($array) {
+        //Ajouter les informations dans l'objet
+        foreach ($array as $key => $value) {
+            $ret = $this->set_property_value($key, $value);
+                
+            //Vérifier que la fonction n'a pas retournée d'erreur
+            check_error($ret);
+        }
+    }
+    
     //Supprimer dans l'objet les colonnes qui ne nous intéressent pas
     public function ignore_properties($ignore_properties) {
         foreach ($ignore_properties as $property) {

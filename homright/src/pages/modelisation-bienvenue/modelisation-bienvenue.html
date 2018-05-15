@@ -1,10 +1,3 @@
-<!--
-  Generated template for the ModelisationBienvenuePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-
 <ion-content padding>
 	<div class="fond-vague"><img class="vague" src="../assets/imgs/points-cles/vague-bulle.png"/></div>
 	<ion-grid class="container">
@@ -13,34 +6,30 @@
       	</ion-row>
       	<ion-row>
         	<h1 col-12>Allons modéliser votre maison !</h1>
-        	<p  col-12>Cette étape peut prendre quelques minutes.</p>
+        	<p col-12>Cette étape peut prendre quelques minutes.</p>
 				<ion-col col-12 padding>
-						<button ion-button block class="bouton-principal" type="submit" (click)="modeliserMaison()">En route !</button>
-						<button ion-button block class="bouton-contour" type="submit" (click)="plusTard()">Plus tard !</button>
+					<button ion-button block class="bouton-principal" type="submit" (click)="modeliserMaison()">En route !</button>
+					<button ion-button block class="bouton-contour" type="submit" (click)="plusTard()">Plus tard !</button>
 				</ion-col>
     	</ion-row>
     </ion-grid>
-			<div class="fond-cache">
-				<div class="box-principal">
-					<div class="lightbox">
-						<div col-12 class="lightbox-content">
-						  <div class="arrow-return" ><ion-icon name="icon-left-arrow-2" (click)="returnChoose()"></ion-icon><p>Reporter la modélisation</p></div>
-							
-						  	<div class="explication">
-								<img class="mascotte" alt="Homie est enbêté par votre choix" src="../assets/imgs/homie_oups.png"/>
-								<p>Sans cette modélisation, nous ne pouvons pas vous fournir une analyse précise de votre consommation.</p>
-								<h2>Avez-vous changé d’avis ?</h2>
-							</div>
-							<div>
-
-								<button ion-button block class="" type="submit" (click)="modeliserMaison()">Oui</button>
-
-								<button ion-button block class="not-selected" type="submit" (click)="pasModeliserMaison()">Non</button>
-
-							</div>
-						</div>
+	<div class="fond-cache">
+		<div class="box-principal">
+			<div class="lightbox">
+				<div col-12 class="lightbox-content">
+				  <div class="arrow-return" ><ion-icon name="icon-left-arrow-2" (click)="returnChoose()"></ion-icon><p>Reporter la modélisation</p></div>
+					
+				  	<div class="explication">
+						<img class="mascotte" alt="Homie est enbêté par votre choix" src="../assets/imgs/homie_oups.png"/>
+						<p>Sans cette modélisation, nous ne pouvons pas vous fournir une analyse précise de votre consommation.</p>
+						<h2>Avez-vous changé d’avis ?</h2>
+					</div>
+					<div>
+						<button ion-button block class="" type="submit" (click)="modeliserMaison()">Oui</button>
+						<button ion-button block class="not-selected" type="submit" (click)="pasModeliserMaison()">Non</button>
 					</div>
 				</div>
 			</div>
-
+		</div>
+	</div>
 </ion-content>

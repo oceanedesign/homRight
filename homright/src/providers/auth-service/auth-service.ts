@@ -11,6 +11,7 @@ export class AuthServiceProvider {
 
 	public url: string;
   public token: string;
+  public pseudo:string;
 
   constructor(public http: Http) {
     console.log('Hello AuthServiceProvider Provider');
@@ -55,16 +56,21 @@ export class AuthServiceProvider {
         console.log("url : "+apiUrl+type+" token : "+ this.token);
 
         this.http.post(apiUrl+type, JSON.stringify(data), options=options).subscribe(res => { 
-          console.log("Json envoyé"); 
+          console.log("Json envoyé");
+          console.log(JSON.stringify(data));
           console.log(res); 
              resolve(res); 
             }, (err) => { 
             reject(err); 
+            console.log(err); 
             console.log("Petit probleme"); 
         }); 
 
     });
   }
+
+
+
   
 
 }

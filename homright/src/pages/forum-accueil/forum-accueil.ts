@@ -24,6 +24,7 @@ export class ForumAccueilPage {
     this.navCtrl.push(TabsPage);
   }
   pushChoixTheme(typePiece){
+    //Envoie les données "type de piece" à la page suivante (sous-catégorie du forum)
     typePiece = typePiece;
     this.navCtrl.push(ForumChoixThemePage, {
       data:typePiece

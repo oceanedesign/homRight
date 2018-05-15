@@ -1,6 +1,6 @@
 page-events {
 
-	    .container{
+	.container{
         display: block;
         max-width: 450px;
         margin: 0 auto;
@@ -69,8 +69,7 @@ page-events {
                         margin-left: 60px;
                     }
                     &.segment-activated{
-                        border-bottom: 3px solid white;
-                        
+                        border-bottom: 3px solid white;   
                     }
                     ion-icon{
                         font-size: 20px;
@@ -105,7 +104,6 @@ page-events {
         .card-section-2{
            display: none;
         }
-
         .sous-section-2 .map{
             height: 150px;
             margin: -20px -20px 10px -20px;
@@ -284,9 +282,7 @@ page-events {
                         text-align: center;
                     }
                 }
-
-            }
-            
+            }  
         }
         .cardPrincipal .card-section .section-interieur{
                 border-bottom-left-radius: 0px;
@@ -368,5 +364,4 @@ page-events {
             }
         }
     }
-
 }

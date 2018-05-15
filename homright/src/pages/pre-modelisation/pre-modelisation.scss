@@ -15,6 +15,12 @@ page-pre-modelisation {
       }
     }
   }
+
+  .radio-md .radio-icon{
+    border-width: 0px;
+    border-color: white;
+  }
+
   .header-icon{
     .icon-slider{
       position: absolute;
@@ -189,9 +195,16 @@ page-pre-modelisation {
       text-align: center;
       display: inline-block;
       position: fixed;
-      left: calc(50% - 60px);
+      /* left: calc(50% - 60px); */
       bottom: 15px;
       z-index: 50;
+      width: 100%;
+      .left-bouton{
+        width: 100px;
+        font-size: 12px;
+        //position: absolute;
+        //left: 20px;
+      }
       p{
         width: auto;
         margin: auto;

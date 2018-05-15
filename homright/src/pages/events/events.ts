@@ -21,6 +21,7 @@ export class EventsPage {
   }
 
   pushMenu(){
+    //Fonction permettant d'activer le menu
     this.navCtrl.push(TabsPage);
   }
 
@@ -92,7 +93,7 @@ cardsHomright = [
   }
 
   changementInteret(event){
-    
+    //Permet de changer l'intéret de l'utilisateur pour un évenement de la ville 
     let bouton = event.target;
     console.log(event.target);
     let identifiant = $(event.target.closest('.card')).attr('id');

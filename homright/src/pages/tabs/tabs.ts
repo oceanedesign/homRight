@@ -13,6 +13,8 @@ import { JeuModelisationPage} from '../jeu-modelisation/jeu-modelisation';
 import { MonBudgetPage } from '../mon-budget/mon-budget';
 import { MeComparerPage } from '../me-comparer/me-comparer';
 import { DemenagementPage } from '../demenagement/demenagement';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
+import { ToastController } from 'ionic-angular';
 
 declare var jQuery:any;
 declare var $:any;
@@ -23,12 +25,15 @@ declare var $:any;
 })
 export class TabsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  userData = this.authServiceProvider.pseudo;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public authServiceProvider : AuthServiceProvider, public toastCtrl: ToastController) {
 
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TabsPage');
+    console.log(this.authServiceProvider.pseudo);
   }
 
   directionAccueil(){
@@ -58,6 +63,7 @@ export class TabsPage {
   }
 
   directionComparer(){
+    //Pages de comparaison entre utilisateurs
 		this.navCtrl.push(MeComparerPage);
 	}
 
@@ -86,9 +92,33 @@ export class TabsPage {
 
   }
 
-  directionBadges(){}
+  directionBadges(){
+    this.presentToastBadges();
+  }
 
-  directionPoints(){}
+  presentToastBadges() {
+    //Définit un message "lorsqu'un utilisateur clique sur le bouton des badges
+    let toast = this.toastCtrl.create({
+        message: "Vous n'avez pour le moment pas de badges. Participez à des événements pour en gagner !",
+        duration: 3000
+      });
+    toast.present();
+  }
+
+  directionPoints(){
+    this.presentToastPoints();
+  }
+
+
+  presentToastPoints() {
+    //Définit le message "Vous n'avez effectué aucune transaction." lorsqu'un utilisateur 
+    //Clique sur le bouton des points
+    let toast = this.toastCtrl.create({
+        message: "Vous n'avez effectué aucune transaction.",
+        duration: 3000
+      });
+    toast.present();
+  }
 
   directionParametre(){}
 

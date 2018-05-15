@@ -12,7 +12,6 @@
   			</ion-segment-button>
     	</ion-segment>
  	</ion-toolbar>
-
 </ion-header>
 
 
@@ -21,128 +20,122 @@
 	<ion-grid class="container">
  		<div [ngSwitch]="eventType" class="cardPrincipal">
 	    	<div *ngSwitchCase="'eventApp'" class="container">
-
 	    		<ion-row *ngFor="let cardHomright of cardsHomright" class="card theme cardsHomright" id='{{cardHomright.id}}'>
-		          <section class="card-section card-section-1">
-		          	<div class="card-cote retour contour" (click)='ouvertureCard($event)'>
-		              <div class="section-interieur face-int">
-		                <div class="face-colore"></div>
-		                <div class="separation"></div>
-		                <ion-col class="date" col-3>
-		                  <p>{{cardHomright.startTime}}</p>
-		                  <p>-</p>
-		                  <p>{{cardHomright.endTime}}</p>
-		                </ion-col>
-		                <ion-col col-6 class="titre">
-		                  <p>{{cardHomright.nom}}</p>
-		                  <p class="typeConso">{{cardHomright.typeConco}}</p>
-		                </ion-col>
-		                <ion-col col-xs-12 col-sm-3 class="points">
-		                	<p>{{cardHomright.points}}pts</p>
-		                	<ion-icon name="icon-chevron" icon-end></ion-icon>
-		            	</ion-col>
-		              </div>
-		            </div>
+		          	<section class="card-section card-section-1">
+			          	<div class="card-cote retour contour" (click)='ouvertureCard($event)'>
+			              	<div class="section-interieur face-int">
+			                	<div class="face-colore"></div>
+			                	<div class="separation"></div>
+				                <ion-col class="date" col-3>
+				                  <p>{{cardHomright.startTime}}</p>
+				                  <p>-</p>
+				                  <p>{{cardHomright.endTime}}</p>
+				                </ion-col>
+				                <ion-col col-6 class="titre">
+				                  <p>{{cardHomright.nom}}</p>
+				                  <p class="typeConso">{{cardHomright.typeConco}}</p>
+				                </ion-col>
+				                <ion-col col-xs-12 col-sm-3 class="points">
+				                	<p>{{cardHomright.points}}pts</p>
+				                	<ion-icon name="icon-chevron" icon-end></ion-icon>
+				            	</ion-col>
+			              	</div>
+			            </div>
+		          	</section>
 
-		          </section>
-		          <section class="card-section card-section-2">
+		          	<section class="card-section card-section-2">
+			          	<div class="section-interieur sous-section-1" (click)="fermetureCard($event)">
+			              	<header class="section-titre" style="padding: 10px;">
+			                	<ion-col col-2 class="bouton-close" ></ion-col>
+			                	<ion-col col-7 class="section-titre-nom">{{cardHomright.nom}}</ion-col>
+			                	<ion-col col-3 class="points">{{cardHomright.points}} pts</ion-col>
+			              	</header>
+			            </div>
 
-		          	<div class="section-interieur sous-section-1" (click)="fermetureCard($event)">
-		              <header class="section-titre" style="padding: 10px;">
-		                <ion-col col-2 class="bouton-close" ></ion-col>
-		                <ion-col col-7 class="section-titre-nom">{{cardHomright.nom}}</ion-col>
-		                <ion-col col-3 class="points">{{cardHomright.points}} pts</ion-col>
-		              </header>
-		            </div>
-
-		            <div class="card-cote face contour sous-section-2">
-		              	<div class="explication">
-		                	<div class="card-informations-exp">
-		                		<ion-col col-sm-6 col-xs-12>
-		                    		<p class="label">Date de début</p>
-		                    		<p class="contenu">{{cardHomright.startDate}} à {{cardHomright.startTime}}</p>
-		                  		</ion-col>
-		                  		<ion-col col-sm-6 col-xs-12>
-		                    		<p class="label">Date de fin</p>
-		                    		<p class="contenu">{{cardHomright.endDate}} à {{cardHomright.endTime}}</p>
-		                  		</ion-col>
-		                  		<ion-col col-12>
-		                    		<p class="label">Description</p>
-		                    		<p class="contenu">{{cardHomright.description}}</p>
-		                  		</ion-col>
-		                  		<ion-col col-12>
-		                    		<p class="label">Recommandations</p>
-		                    		<p class="contenu">{{cardHomright.recommandations}}</p>
-		                  		</ion-col>
-		                	</div>
-		              	</div>
-		           		</div>
+			            <div class="card-cote face contour sous-section-2">
+			              	<div class="explication">
+			                	<div class="card-informations-exp">
+			                		<ion-col col-sm-6 col-xs-12>
+			                    		<p class="label">Date de début</p>
+			                    		<p class="contenu">{{cardHomright.startDate}} à {{cardHomright.startTime}}</p>
+			                  		</ion-col>
+			                  		<ion-col col-sm-6 col-xs-12>
+			                    		<p class="label">Date de fin</p>
+			                    		<p class="contenu">{{cardHomright.endDate}} à {{cardHomright.endTime}}</p>
+			                  		</ion-col>
+			                  		<ion-col col-12>
+			                    		<p class="label">Description</p>
+			                    		<p class="contenu">{{cardHomright.description}}</p>
+			                  		</ion-col>
+			                  		<ion-col col-12>
+			                    		<p class="label">Recommandations</p>
+			                    		<p class="contenu">{{cardHomright.recommandations}}</p>
+			                  		</ion-col>
+			                	</div>
+			              	</div>
+			           	</div>
 		          	</section>
 				</ion-row>
 	    	</div>
 
-	    	<div *ngSwitchCase="'eventVille'" class="container">
-	    		
+	    	<div *ngSwitchCase="'eventVille'" class="container">	
 				<ion-row *ngFor="let card of cards" class="card theme cardsVille" id='{{card.id}}'>
-		          <section class="card-section card-section-1">
+		          	<section class="card-section card-section-1">
+			          	<div class="card-cote retour contour" (click)='ouvertureCard($event)'>
+			              	<div class="section-interieur face-int">
+			                	<div class="face-colore"></div>
+			                	<div class="separation"></div>
+				                <ion-col class="date" col-3>
+				                  <p>{{card.date}}</p>
+				                  <p style='color:white'>-</p>
+				                  <p style="font-size: 13px; font-weight: 500;">à {{card.startTime}}</p>
+				                </ion-col>
+				                <ion-col col-5 class="titre">
+				                  <p>{{card.nom}}</p>
+				                  <p class="typeConso">{{card.interet}}</p>
+				                </ion-col>
+				                <ion-col col-xs-12 col-sm-4 class="points">
+				                	<p>{{card.points}}pts + <ion-icon name="icon-medal"></ion-icon> </p>
+				                	<ion-icon name="icon-chevron" icon-end></ion-icon>
+				            	</ion-col>
+			              	</div>
+			            </div>
+		          	</section>
+		          	<section class="card-section card-section-2">
+			            <div class="section-interieur sous-section-1" (click)="fermetureCard($event)">
+			              <header class="section-titre" style="padding: 10px;">
+			                <ion-col col-1 class="bouton-close" ></ion-col>
+			                <ion-col col-7 class="section-titre-nom">{{card.nom}}</ion-col>
+			                <ion-col col-4 class="points">{{card.points}}pts + <ion-icon name="icon-medal"></ion-icon> </ion-col>
+			              </header>
+			            </div>
 
-		          	<div class="card-cote retour contour" (click)='ouvertureCard($event)'>
-		              <div class="section-interieur face-int">
-		                <div class="face-colore"></div>
-		                <div class="separation"></div>
-		                <ion-col class="date" col-3>
-		                  <p>{{card.date}}</p>
-		                  <p style='color:white'>-</p>
-		                  <p style="font-size: 13px; font-weight: 500;">à {{card.startTime}}</p>
-		                </ion-col>
-		                <ion-col col-5 class="titre">
-		                  <p>{{card.nom}}</p>
-		                  <p class="typeConso">{{card.interet}}</p>
-		                </ion-col>
-		                <ion-col col-xs-12 col-sm-4 class="points">
-		                	<p>{{card.points}}pts + <ion-icon name="icon-medal"></ion-icon> </p>
-		                	<ion-icon name="icon-chevron" icon-end></ion-icon>
-		            	</ion-col>
-		              </div>
-		            </div>
-
-		          </section>
-		          <section class="card-section card-section-2">
-
-		            <div class="section-interieur sous-section-1" (click)="fermetureCard($event)">
-		              <header class="section-titre" style="padding: 10px;">
-		                <ion-col col-1 class="bouton-close" ></ion-col>
-		                <ion-col col-7 class="section-titre-nom">{{card.nom}}</ion-col>
-		                <ion-col col-4 class="points">{{card.points}}pts + <ion-icon name="icon-medal"></ion-icon> </ion-col>
-		              </header>
-		            </div>
-
-		            <div class="card-cote face contour sous-section-2">
-		            	<div class="map">
-		            		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1774.6815036593723!2d2.359632017923484!3d48.93642385237063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66eb6723f7ee5%3A0x685aed3f223ac931!2sMairie+de+Saint-Denis!5e0!3m2!1sen!2sfr!4v1525807858048" frameborder="0" style="border:0" allowfullscreen></iframe>
-		            	</div>
-		              	<div class="explication">
-		                	<div class="card-informations-exp">
-		                		<ion-col col-sm-6 col-xs-12>
-		                    		<p class="label">Date de début</p>
-		                    		<p class="contenu">{{card.startDate}} à {{card.startTime}}</p>
-		                  		</ion-col>
-		                  		<ion-col col-sm-6 col-xs-12>
-		                    		<p class="label">Date de fin</p>
-		                    		<p class="contenu">{{card.endDate}} à {{card.endTime}}</p>
-		                  		</ion-col>
-		                  		<ion-col col-12>
-		                    		<p class="label">Description</p>
-		                    		<p class="contenu">{{card.description}}</p>
-		                  		</ion-col>
-		                	</div>
-		              	</div>
+			            <div class="card-cote face contour sous-section-2">
+			            	<div class="map">
+			            		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1774.6815036593723!2d2.359632017923484!3d48.93642385237063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66eb6723f7ee5%3A0x685aed3f223ac931!2sMairie+de+Saint-Denis!5e0!3m2!1sen!2sfr!4v1525807858048" frameborder="0" style="border:0" allowfullscreen></iframe>
+			            	</div>
+			              	<div class="explication">
+			                	<div class="card-informations-exp">
+			                		<ion-col col-sm-6 col-xs-12>
+			                    		<p class="label">Date de début</p>
+			                    		<p class="contenu">{{card.startDate}} à {{card.startTime}}</p>
+			                  		</ion-col>
+			                  		<ion-col col-sm-6 col-xs-12>
+			                    		<p class="label">Date de fin</p>
+			                    		<p class="contenu">{{card.endDate}} à {{card.endTime}}</p>
+			                  		</ion-col>
+			                  		<ion-col col-12>
+			                    		<p class="label">Description</p>
+			                    		<p class="contenu">{{card.description}}</p>
+			                  		</ion-col>
+			                	</div>
+			              	</div>
 		                  	<section class="card-section card-section-4">
 		                    	<div class="card-cote face">
-		                      	<button type="button" class="bouton-interet bouton-principal" (click)="changementInteret($event)" value="{{card.interet}}">
-		                        	{{card.interet}}
-		                      	</button>
-		                      	<p class="nb-interet">{{card.requests}} Hom'rees sont intéressés</p>
+			                      	<button type="button" class="bouton-interet bouton-principal" (click)="changementInteret($event)" value="{{card.interet}}">
+			                        	{{card.interet}}
+			                      	</button>
+		                      		<p class="nb-interet">{{card.requests}} Hom'rees sont intéressés</p>
 		                    	</div>
 		                  	</section>
 		           		</div>
@@ -150,8 +143,6 @@
 				</ion-row>
 	    	</div>
 	    </div>
-
-
 	</ion-grid>
-		<button class="boutton-menuP" (click)="pushMenu()"><img  alt="menu principal" src="../assets/button/menu.png"/></button>
+	<button class="boutton-menuP" (click)="pushMenu()"><img  alt="menu principal" src="../assets/button/menu.png"/></button>
 </ion-content>

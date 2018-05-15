@@ -2,7 +2,7 @@
 
 	<div class="choix-piece">
 		<ion-row  class="firstList">
-			<h1 style="margin: 30px auto;">Choisir la pièce à modéliser</h1>
+			<h1 style="margin: 30px auto 5px auto;">Choisir la pièce à modéliser</h1> 
 			<ion-col col-12>
 				<ion-scroll scrollX="true">
 					<ion-list class="listButtonRoom">
@@ -27,347 +27,352 @@
 	    </ion-row>
 	</div>
 	<div class="cacher-totale">
-	<div class="parcours">
-<!-- 		<div>
-			<div>
-				<ion-icon name="resize" class="resize active"></ion-icon>
-				>
-				<ion-icon name="cube" class="cube inactive"></ion-icon>
-			</div>
-		</div>
-		 -->
-		<div class="prev  fond-cache" >
-			
-	  	</div>
-	</div>
-	<ion-grid>
-	<ion-row id="" class="contenu-taille ">
-			<ion-col id="elements-taille" col-7 class="elements-taille">
-			<h1 class="titre-taille">Définir la taille de la pièce</h1>
-			<div><p>{{nomPiece}} ≈ {{superficie}} m<sup>2</sup></p></div>
-    		<div class="gestion-range">
-    			<div class="container-gestion">
-    				<p>longueur : {{longueur}}m</p>
-      				<ion-range min="1" max="20" [(ngModel)]="ligne" color="secondary" (ionChange)="tailleSol()">
-      				</ion-range>
-    			</div>
-    			<div  class="container-gestion">
-    				<p>largeur : {{largeur}}m</p>
-      				<ion-range min="1" max="20" [(ngModel)]="colonne" color="secondary" (ionChange)="tailleSol()">
-      				</ion-range>
-      			</div>
-    		</div>
-    		<div class="bouton-taille">
-    			<button ion-button block class="bouton-principal" (click)="validerTaille()">Valider</button>
-				<button ion-button block class="bouton-contour" (click)="annulerRetouchePiece()">Annuler</button>
-			</div>
-		  	</ion-col>
-	  	</ion-row>
-		<ion-row id="contenuPrincipal" class="contenu-ini contenu fond-cache">
-			<ion-col id="elements" col-7 class="elements-ini elements">
-		  		<div [ngSwitch]="objetType" class="card">
-			    	<div *ngSwitchCase="'ouverture'" class="container-actif container">
-			    		<h1>Ouverture</h1>
-			    		<ion-list>
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="fenetre" class="objets-presentation item-fenetre"></div>
-								</div>
-								<h2>Fenêtre</h2>
-								<p>double vitrage</p>
-							</ion-item>
-						</ion-list>
-
-				    </div>
-
-
-			    	<div *ngSwitchCase="'eclairage'" class="container-actif container">
-			    		<h1>éclairage</h1>
-
-			    		<ion-list>
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="halogene" class="objets-presentation item-halogene" ></div>
-								</div>
-								<h2>Halogène</h2>
-								<p>lampe de chevet</p>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="led" class="objets-presentation item-led"></div>
-								</div>
-								<h2>LED</h2>
-								<p>lampe de chevet</p>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="lampadaire-halo" class="objets-presentation item-lampadaire-halo sans-symetrie"></div>
-								</div>
-								<h2>Halogène</h2>
-								<p>lampadaire</p>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="lampadaire-led" class="objets-presentation item-lampadaire-led sans-symetrie"></div>
-								</div>
-								<h2>LED</h2>
-								<p>lampadaire</p>
-							</ion-item>
-
-						</ion-list>
-
-				    </div>
-
-			    	<div *ngSwitchCase="'temperature'" class="container-actif container">
-			    		<h1>temperature</h1>
-						<ion-list>
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="radiateur" class="objets-presentation item-radiateur"></div>
-								</div>
-								<h2>Radiateur</h2>
-								<p>électrique </p>
-							</ion-item>
-
-						</ion-list>
-				    </div>
-
-			    	<div *ngSwitchCase="'appareils'" class="container-actif container">
-			    		<h1>appareils électriques</h1>
-			    		<ion-list>
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="prise" class="objets-presentation item-prise"></div>
-								</div>
-								<h2>Appareil</h2>
-								<p>personnalisé</p>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="ordi-fixe" class="objets-presentation item-ordi-fixe"></div>
-								</div>
-								<h2>Ordinateur</h2>
-								<p>fixe</p>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="ecran-plat" class="objets-presentation item-ecran-plat"></div>
-								</div>
-								<h2>Télévision</h2>
-								<p>écran plat</p>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="micro-onde" class="objets-presentation item-micro-onde"></div>
-								</div>
-								<h2>Micro-onde</h2>
-								<p></p>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="cafetiere" class="objets-presentation item-cafetiere"></div>
-								</div>
-								<h2>Cafetière</h2>
-								<p></p>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="cuisiniere" class="objets-presentation item-cuisiniere"></div>
-								</div>
-								<h2>Cuisinière</h2>
-								<p>électrique</p>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="plaques-induction" class="objets-presentation item-plaques-induction"></div>
-								</div>
-								<h2>Plaque</h2>
-								<p>à induction</p>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="vitroceramique" class="objets-presentation item-vitroceramique"></div>
-								</div>
-								<h2>Plaque</h2>
-								<p>vitrocéramique</p>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="four" class="objets-presentation item-four"></div>
-								</div>
-								<h2>Four</h2>
-								<p></p>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="lave-vaisselle" class="objets-presentation item-lave-vaisselle"></div>
-								</div>
-								<h2>Lave-vaisselle</h2>
-								<p></p>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="frigo" class="objets-presentation item-frigo"></div>
-								</div>
-								<h2>Refrigérateur</h2>
-								<p></p>
-							</ion-item>
-
-						</ion-list>
-				    </div>
-
-			    	<div *ngSwitchCase="'decoration'" class="container-actif container">
-			    		<h1>Meubles</h1>
-			    		
-			    		<ion-list>
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="lit" class="objets-presentation item-lit"></div>
-								</div>
-								<h2>Lit simple</h2>								
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="placard" class="objets-presentation item-placard"></div>
-								</div>
-								<h2>Placard</h2>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="evier" class="objets-presentation item-evier"></div>
-								</div>
-								<h2>Evier</h2>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="table" class="objets-presentation item-table"></div>
-								</div>
-								<h2>Table</h2>
-							</ion-item>
-
-							<ion-item (click)="caseMaisonObjet($event);">
-								<div item-end>
-									<div id="plan-travail" class="objets-presentation item-plan-travail"></div>
-								</div>
-								<h2>Plan de travail</h2>
-							</ion-item>
-
-						</ion-list>
-
-				    </div>
-		  		</div>
-
-		  	</ion-col>
-
-		  	<ion-col col-5 class="choix">
-				<ion-toolbar>
-		    		<ion-segment [(ngModel)]="objetType">
-		      			<ion-segment-button value="ouverture" (click)="activationBoutton()">
-		        		<ion-icon col-4 col-xl-5 name="icon-placard"></ion-icon><p col-8 col-xl-7>ouverture</p>
-		      			</ion-segment-button>
-		      			<ion-segment-button value="eclairage" (click)="activationBoutton()">
-		        		<ion-icon col-4 col-xl-5 name="icon-bulb"></ion-icon><p col-8 col-xl-7>éclairage</p>
-		      			</ion-segment-button>
-		      			<ion-segment-button value="temperature" (click)="activationBoutton()">
-		        		<ion-icon col-4 col-xl-5 name="icon-thermometer"></ion-icon><p col-8 col-xl-7>température</p>
-		      			</ion-segment-button>
-		      			<ion-segment-button value="appareils" (click)="activationBoutton()" >
-		        		<ion-icon col-4 col-xl-5 name="icon-plug" style="vertical-align: initial;"></ion-icon><p col-8 col-xl-7 class="titre-compose">appareils électriques</p>
-		      			</ion-segment-button>
-		      			<ion-segment-button value="decoration" (click)="activationBoutton()">
-		        		<ion-icon col-4 col-xl-5 name="icon-vase"></ion-icon><p col-8 col-xl-7>Meubles</p>
-		      			</ion-segment-button>
-		    		</ion-segment>
-		 		</ion-toolbar>
-			</ion-col>
-	  	</ion-row>
-	  	<ion-row class="modelisation" (click)="desactiveBoutton()">
-			
-		    <div class="container-maison" >   
-		      <div class="sol" id="sol-maison">
-		          <div class="ligne-sol">
-
-		          		<div class="actions item-container">
-		          		</div>
-
-		              	<div id="snaptarget" class="case-sol droptarget ui-widget-header">
-
-
-		              		<div class="item-plan-travail ui-draggable ui-draggable-handle spare-item2" id="3" symetrie="1" style="left: 155.688px; top: -128.15px;" position-x="155.68753051757812" position-y="-128.14999389648438"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
-		              		<div class="item-plan-travail ui-draggable ui-draggable-handle spare-item2" id="4" symetrie="1" style="left: 119.688px; top: -107.15px;" position-x="119.68753051757812" position-y="-107.14999389648438"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
-		              		<div class="item-plan-travail ui-draggable ui-draggable-handle spare-item2" id="5" symetrie="1" style="left: 83.6875px; top: -87.15px;" position-x="83.68753051757812" position-y="-87.14999389648438"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
-		              		<div class="item-four ui-draggable ui-draggable-handle spare-item2" id="2" symetrie="1" style="left: 48.6875px; top: -66.6625px;" position-x="48.6875" position-y="-66.66249084472656"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
-		              		<div class="item-plan-travail ui-draggable ui-draggable-handle spare-item2" id="6" symetrie="-1" style="left: 194.688px; top: -108.15px; transform: scaleX(-1);" position-x="194.68753051757812" position-y="-108.14999389648438"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
-		              		<div class="item-plan-travail ui-draggable ui-draggable-handle spare-item2" id="6" symetrie="1" style="left: 228.688px; top: -87.1375px; transform: scaleX(-1);" position-x="228.68753051757812" position-y="-87.13749694824219"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
-		              		<div class="item-plan-travail ui-draggable ui-draggable-handle spare-item2" id="7" symetrie="-1" style="left: 263.688px; top: -67.15px; transform: scaleX(-1);" position-x="263.6875305175781" position-y="-67.14999389648438"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
-		              		<div class="item-micro-onde ui-draggable ui-draggable-handle spare-item2" id="8" symetrie="1" style="left: 298.688px; top: -47.1375px; transform: scaleX(-1);" position-x="298.6875305175781" position-y="-47.13749694824219"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
-		              		<div class="item-table ui-draggable ui-draggable-handle spare-item2" id="9" symetrie="1" style="left: 118.688px; top: 12.85px;" position-x="118.68753051757812" position-y="12.850006103515625"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
-		              		<div class="item-prise ui-draggable ui-draggable-handle spare-item2" id="10" symetrie="1" style="left: 583.688px; top: 120.85px; transform: scaleX(-1);" position-x="583.6875305175781" position-y="120.85000610351562"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
-		              		<div class="item-evier ui-draggable ui-draggable-handle spare-item2" id="11" symetrie="1" style="left: 318.688px; top: -22.125px; transform: scaleX(-1);" position-x="318.6875305175781" position-y="-22.125"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
-		              		<div class="item-cuisiniere ui-draggable ui-draggable-handle spare-item2" id="12" symetrie="1" style="left: 408.688px; top: 17.85px; transform: scaleX(-1);" position-x="408.6875305175781" position-y="17.850006103515625"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
-		              		<div class="item-frigo ui-draggable ui-draggable-handle spare-item2" id="13" symetrie="1" style="left: 448.688px; top: -7.14999px; transform: scaleX(-1);" position-x="448.6875305175781" position-y="-7.149993896484375"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div>
-
-
-
-		              		<div id="case-maison" class="case-maison"></div>
-		              		<div class="mur mur-cache"></div>
-		              		<div class="mur2 mur-cache"></div>
-		              </div>
-		          </div>
-		    </div>
-		                
-		    </div>
-	  	</ion-row>
-		<button ion-button block class="bouton-contour bouton fond-cache" type="submit" (click)="annulerRetouchePiece()">Annuler</button>
-		<button ion-button block class="bouton-principal bouton bouton-annuler fond-cache" type="submit" (click)="validerRetouchePiece()">Valider</button>
-
-		<ion-row class="lightbox-cache">
-			<div class="box-principal">
-				<div class="lightbox">
-					<div col-12 class="lightbox-content">
-					  <div  class="return">
-					  	<p>Voir l'objet</p>
-					  	<ion-icon name="icon-trash-1" class="trash" (click)="supprimer()"></ion-icon></div>
-
-				      <form >
-						<ion-list>
-							<ion-item>
-						    	<ion-label color="primary" floating>Nom de l'objet</ion-label>
-						    	<ion-input [(ngModel)]="regApp.nomApp" name="nom"  type="text"></ion-input>
-						  	</ion-item>
-						  	<ion-item>
-    							<ion-label>Connecter l'appareil</ion-label>
-    							<ion-checkbox [(ngModel)]="connexion" color="secondary" name="connexion" (ionChange)="updateConnexion()"></ion-checkbox>
-  							</ion-item>
-
-						</ion-list>
-						<ion-row>
-		    			<ion-col col-12>
-							<button ion-button block class="bouton-contour" type="submit" (click)="returnChoose()">Annuler</button>
-							<button ion-button block class="bouton-principal" type="submit" (click)="validerItem()">Valider</button>
-				      		</ion-col>
-				      	</ion-row>
-				      </form>
-					</div>
+		<div class="fondGris"></div> 
+		<div class="parcours">
+	<!-- 		<div>
+				<div>
+					<ion-icon name="resize" class="resize active"></ion-icon>
+					>
+					<ion-icon name="cube" class="cube inactive"></ion-icon>
 				</div>
 			</div>
-		</ion-row>
-	</ion-grid>
-</div>
+			 -->
+			<div class="prev  fond-cache"></div>
+		</div>
+		<ion-grid>
+			<ion-row id="" class="contenu-taille ">
+				<ion-col id="elements-taille" col-7 class="elements-taille">
+					<h1 class="titre-taille">Définir la taille de la pièce</h1>
+					<div><p>{{nomPiece}} ≈ {{superficie}} m<sup>2</sup></p></div>
+		    		<div class="gestion-range">
+		    			<div class="container-gestion">
+		    				<p>longueur : {{longueur}}m</p>
+		      				<ion-range min="1" max="20" [(ngModel)]="ligne" color="secondary" (ionChange)="tailleSol()">
+		      				</ion-range>
+		    			</div>
+		    			<div  class="container-gestion">
+		    				<p>largeur : {{largeur}}m</p>
+		      				<ion-range min="1" max="20" [(ngModel)]="colonne" color="secondary" (ionChange)="tailleSol()">
+		      				</ion-range>
+		      			</div>
+		    		</div>
+		    		<div class="bouton-taille">
+		    			<button ion-button block class="bouton-principal" (click)="validerTaille()">Valider</button>
+						<button ion-button block class="bouton-contour" (click)="annulerRetouchePiece()">Annuler</button>
+					</div>
+				</ion-col>
+			</ion-row>
+			<ion-row id="contenuPrincipal" class="contenu-ini contenu fond-cache">
+				<ion-col id="elements" col-7 class="elements-ini elements">
+			  		<div [ngSwitch]="objetType" class="card">
+				    	<div *ngSwitchCase="'ouverture'" class="container-actif container">
+				    		<h1>Ouverture</h1>
+				    		<ion-list>
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="fenetre" class="objets-presentation item-fenetre"></div>
+									</div>
+									<h2>Fenêtre</h2>
+									<p>double vitrage</p>
+								</ion-item>
+							</ion-list>
+
+					    </div>
+
+
+				    	<div *ngSwitchCase="'eclairage'" class="container-actif container">
+				    		<h1>éclairage</h1>
+
+				    		<ion-list>
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="halogene" class="objets-presentation item-halogene" ></div>
+									</div>
+									<h2>Halogène</h2>
+									<p>lampe de chevet</p>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="led" class="objets-presentation item-led"></div>
+									</div>
+									<h2>LED</h2>
+									<p>lampe de chevet</p>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="lampadaire-halo" class="objets-presentation item-lampadaire-halo sans-symetrie"></div>
+									</div>
+									<h2>Halogène</h2>
+									<p>lampadaire</p>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="lampadaire-led" class="objets-presentation item-lampadaire-led sans-symetrie"></div>
+									</div>
+									<h2>LED</h2>
+									<p>lampadaire</p>
+								</ion-item>
+
+							</ion-list>
+
+					    </div>
+
+				    	<div *ngSwitchCase="'temperature'" class="container-actif container">
+				    		<h1>temperature</h1>
+							<ion-list>
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="radiateur" class="objets-presentation item-radiateur"></div>
+									</div>
+									<h2>Radiateur</h2>
+									<p>électrique </p>
+								</ion-item>
+
+							</ion-list>
+					    </div>
+
+				    	<div *ngSwitchCase="'appareils'" class="container-actif container">
+				    		<h1>appareils électriques</h1>
+				    		<ion-list>
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="prise" class="objets-presentation item-prise"></div>
+									</div>
+									<h2>Appareil</h2>
+									<p>personnalisé</p>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="ordi-fixe" class="objets-presentation item-ordi-fixe"></div>
+									</div>
+									<h2>Ordinateur</h2>
+									<p>fixe</p>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="ecran-plat" class="objets-presentation item-ecran-plat"></div>
+									</div>
+									<h2>Télévision</h2>
+									<p>écran plat</p>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="micro-onde" class="objets-presentation item-micro-onde"></div>
+									</div>
+									<h2>Micro-onde</h2>
+									<p></p>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="cafetiere" class="objets-presentation item-cafetiere"></div>
+									</div>
+									<h2>Cafetière</h2>
+									<p></p>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="cuisiniere" class="objets-presentation item-cuisiniere"></div>
+									</div>
+									<h2>Cuisinière</h2>
+									<p>électrique</p>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="plaques-induction" class="objets-presentation item-plaques-induction"></div>
+									</div>
+									<h2>Plaque</h2>
+									<p>à induction</p>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="vitroceramique" class="objets-presentation item-vitroceramique"></div>
+									</div>
+									<h2>Plaque</h2>
+									<p>vitrocéramique</p>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="four" class="objets-presentation item-four"></div>
+									</div>
+									<h2>Four</h2>
+									<p></p>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="lave-vaisselle" class="objets-presentation item-lave-vaisselle"></div>
+									</div>
+									<h2>Lave-vaisselle</h2>
+									<p></p>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="frigo" class="objets-presentation item-frigo"></div>
+									</div>
+									<h2>Refrigérateur</h2>
+									<p></p>
+								</ion-item>
+
+							</ion-list>
+					    </div>
+
+				    	<div *ngSwitchCase="'decoration'" class="container-actif container">
+				    		<h1>Meubles</h1>
+				    		
+				    		<ion-list>
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="lit" class="objets-presentation item-lit"></div>
+									</div>
+									<h2>Lit simple</h2>								
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="placard" class="objets-presentation item-placard"></div>
+									</div>
+									<h2>Placard</h2>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="evier" class="objets-presentation item-evier"></div>
+									</div>
+									<h2>Evier</h2>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="table" class="objets-presentation item-table"></div>
+									</div>
+									<h2>Table</h2>
+								</ion-item>
+
+								<ion-item (click)="caseMaisonObjet($event);">
+									<div item-end>
+										<div id="plan-travail" class="objets-presentation item-plan-travail"></div>
+									</div>
+									<h2>Plan de travail</h2>
+								</ion-item>
+
+							</ion-list>
+
+					    </div>
+			  		</div>
+
+			  	</ion-col>
+
+			  	<ion-col col-5 class="choix">
+					<ion-toolbar>
+			    		<ion-segment [(ngModel)]="objetType">
+			      			<ion-segment-button value="ouverture" (click)="activationBoutton()">
+			        		<ion-icon col-4 col-xl-5 name="icon-placard"></ion-icon><p col-8 col-xl-7>ouverture</p>
+			      			</ion-segment-button>
+			      			<ion-segment-button value="eclairage" (click)="activationBoutton()">
+			        		<ion-icon col-4 col-xl-5 name="icon-bulb"></ion-icon><p col-8 col-xl-7>éclairage</p>
+			      			</ion-segment-button>
+			      			<ion-segment-button value="temperature" (click)="activationBoutton()">
+			        		<ion-icon col-4 col-xl-5 name="icon-thermometer"></ion-icon><p col-8 col-xl-7>température</p>
+			      			</ion-segment-button>
+			      			<ion-segment-button value="appareils" (click)="activationBoutton()" >
+			        		<ion-icon col-4 col-xl-5 name="icon-plug" style="vertical-align: initial;"></ion-icon><p col-8 col-xl-7 class="titre-compose">appareils électriques</p>
+			      			</ion-segment-button>
+			      			<ion-segment-button value="decoration" (click)="activationBoutton()">
+			        		<ion-icon col-4 col-xl-5 name="icon-vase"></ion-icon><p col-8 col-xl-7>Meubles</p>
+			      			</ion-segment-button>
+			    		</ion-segment>
+			 		</ion-toolbar>
+				</ion-col>
+		  	</ion-row>
+		  	<ion-row class="modelisation" (click)="desactiveBoutton()">	
+			    <div class="container-maison" >   
+			      	<div class="sol" id="sol-maison">
+			          	<div class="ligne-sol">
+
+			          		<div class="actions item-container">
+			          		</div>
+
+			              	<div id="snaptarget" class="case-sol droptarget ui-widget-header">
+
+	 
+		                      	<div value="plan de travail" class="item-plan-travail ui-draggable ui-draggable-handle spare-item2 cuisine" id="4" position-x="109.6875" position-y="-97.15000915527344" style="left: 109.688px; top: -97.15px; display: block;" symetrie="1"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div> 
+		 
+		                     	<div value="plan de travail" class="item-plan-travail ui-draggable ui-draggable-handle spare-item2 cuisine" id="5" position-x="73.6875" position-y="-77.16252136230469" style="left: 73.6875px; top: -77.1625px; display: block;" symetrie="1"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div> 
+		 
+		                      	<div value="four" class="item-four ui-draggable ui-draggable-handle spare-item2 cuisine" id="2" position-x="38.6875" position-y="-56.662506103515625" style="left: 38.6875px; top: -56.6625px; display: block;" symetrie="1"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div> 
+		 
+		                      	<div value="plan de travail" class="item-plan-travail ui-draggable ui-draggable-handle spare-item2 cuisine" id="6" position-x="179.6875" position-y="-98.15000915527344" style="left: 179.688px; top: -98.15px; transform: scaleX(-1); display: block;" symetrie="-1"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div> 
+		 
+		                     	<div value="plan de travail" class="item-plan-travail ui-draggable ui-draggable-handle spare-item2 cuisine" id="6" position-x="213.6875" position-y="-77.15000915527344" style="left: 213.688px; top: -77.15px; transform: scaleX(-1); display: block;" symetrie="1"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div> 
+		 
+		                      	<div value="plan de travail" class="item-plan-travail ui-draggable ui-draggable-handle spare-item2 cuisine" id="7" position-x="248.6875" position-y="-57.175018310546875" style="left: 248.688px; top: -57.175px; transform: scaleX(-1); display: block;" symetrie="-1"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div> 
+		 
+		                      	<div value="micro-onde" class="item-micro-onde ui-draggable ui-draggable-handle spare-item2 cuisine" id="8" position-x="283.6875" position-y="-37.1500244140625" style="left: 283.688px; top: -37.15px; transform: scaleX(-1); display: block;" symetrie="1"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div> 
+		 
+		                      	<div value="evier" class="item-evier ui-draggable ui-draggable-handle spare-item2 cuisine" id="11" position-x="303.6875" position-y="-12.125" style="left: 303.688px; top: -12.125px; transform: scaleX(-1); display: block;" symetrie="1"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div> 
+		 
+		                      	<div value="cuisiniere" class="item-cuisiniere ui-draggable ui-draggable-handle spare-item2 cuisine" id="12" position-x="388.6875" position-y="22.824981689453125" style="left: 388.688px; top: 22.825px; transform: scaleX(-1); display: block;" symetrie="1"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div> 
+		 
+		                      	<div value="réfrigérateur" class="item-frigo ui-draggable ui-draggable-handle spare-item2 cuisine" id="13" position-x="423.6875" position-y="-7.162506103515625" style="left: 423.688px; top: -7.16251px; transform: scaleX(-1); display: block;" symetrie="1"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div> 
+		 
+		                      	<div value="table" class="item-table ui-draggable ui-draggable-handle spare-item2 cuisine" id="9" position-x="128.6875" position-y="27.824981689453125" style="left: 128.688px; top: 27.825px; display: block;" symetrie="1"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div> 
+		 
+		                      	<div value="prise" class="item-prise ui-draggable ui-draggable-handle spare-item2 cuisine" id="10" position-x="523.6875" position-y="100.8499755859375" style="left: 523.688px; top: 100.85px; transform: scaleX(-1); display: block;" symetrie="1"><img class="buttonSymetrie cache" src="../../assets/button/rotate.png" style="display: none;"><img class="buttonVoir cache" src="../../assets/button/see.png" style="display: none;"></div> 
+	 
+	 
+			              		<div id="case-maison" class="case-maison"></div>
+			              		<div class="mur mur-cache"></div>
+			              		<div class="mur2 mur-cache"></div>
+			              	</div>
+			          	</div>
+			    	</div>            
+			    </div>
+		  	</ion-row>
+			<button ion-button block class="bouton-contour bouton fond-cache" type="submit" (click)="annulerRetouchePiece()">Annuler</button>
+			<button ion-button block class="bouton-principal bouton bouton-annuler fond-cache" type="submit" (click)="validerRetouchePiece()">Valider</button>
+
+			<ion-row class="lightbox-cache">
+				<div class="box-principal">
+					<div class="lightbox">
+						<div col-12 class="lightbox-content">
+						  	<div  class="return">
+						  		<p>Voir l'objet</p>
+						  		<ion-icon name="icon-trash-1" class="trash" (click)="supprimer()"></ion-icon>
+						  	</div>
+					      	<form >
+								<ion-list>
+									<ion-item>
+								    	<ion-label color="primary" floating>Nom de l'objet</ion-label>
+								    	<ion-input class="nomApp" name="nomApp" type="text"></ion-input> 
+								  	</ion-item>
+								  	<ion-item>
+		    							<ion-label>Connecter l'appareil</ion-label>
+		    							<ion-checkbox [(ngModel)]="connexion" color="secondary" name="connexion" (ionChange)="updateConnexion()"></ion-checkbox>
+		  							</ion-item>
+								</ion-list>
+								<ion-row>
+				    				<ion-col col-12>
+										<button ion-button block class="bouton-contour" type="submit" (click)="returnChoose()">Annuler</button>
+										<button ion-button block class="bouton-principal" type="submit" (click)="validerItem()">Valider</button>
+						      		</ion-col>
+						      	</ion-row>
+					      	</form>
+						</div>
+					</div>
+				</div>
+			</ion-row>
+		</ion-grid>
+	</div>
 </ion-content>

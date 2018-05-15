@@ -7,12 +7,7 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { Geolocation } from '@ionic-native/geolocation';
 
 //import { LottieAnimationViewModule } from 'ng-lottie';
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 
 declare var $:any;
 
@@ -72,8 +67,13 @@ export class LoginPage {
             this.presentToastInscription();
             //prevenir l'utilisateur
         } else {
+          //Récupere le token de l'utilisateur
           var $my_token = JSON.parse(result['_body']).token;
           this.authServiceProvider.token = $my_token;
+
+          //Récupere son pseudo
+          var pseudo = JSON.parse(result['_body']).pseudo;          
+          this.authServiceProvider.pseudo = pseudo;
           let headers = new Headers();
           headers.append('Token', this.authServiceProvider.token);
 
@@ -114,6 +114,11 @@ export class LoginPage {
           this.navCtrl.push(HomePage);
           var $my_token = JSON.parse(result['_body']).token;
           this.authServiceProvider.token = $my_token;
+
+          //Récupere son pseudo
+          var pseudo = JSON.parse(result['_body']).pseudo;          
+          this.authServiceProvider.pseudo = pseudo;
+          
           let headers = new Headers();
           headers.append('Token', this.authServiceProvider.token);
         }
