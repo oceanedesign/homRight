@@ -44,6 +44,17 @@ page-mon-budget {
         margin: auto;
       }
     }
+
+    .boutton-menuP{
+      background: map-get($colors, secondary);
+      ion-icon{
+        color: white;
+        &::before{
+          font-size: 18px;
+        }
+      }
+    } 
+
     .blockIcon{
       justify-content: center;
       margin: 10px auto;

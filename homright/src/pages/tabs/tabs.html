@@ -1,150 +1,148 @@
 <ion-content padding>
 	<ion-grid class="container">
-						<ion-row class="fond-noir">
-					<div class="lightbox">
-						<div class="lightbox-content">
-							<div  class="profilSection menu-principal">
-									<ion-icon name="icon-share" class="partage"></ion-icon>
-									<!-- <ion-icon name="icon-edit" (click)="editProfil()"></ion-icon> -->
-							</div>
-							<div col-lg-6 style="text-align: center;" class='menu-principal'>
-								
-								<div class="photo">
-									<p>{{userData}}</p>
-								</div>
-
-								<ion-col class="badges" col-auto (click)="directionBadges()">
-									<ion-icon name="icon-chevron" icon-end></ion-icon>
-									<h2>0</h2>
-									<p>badge</p>
-								</ion-col>
-								<ion-col class="points" col-auto (click)="directionPoints()">
-									<ion-icon name="icon-chevron" icon-end></ion-icon>
-									<h2>100</h2>
-									<p>points</p>
-								</ion-col>
-							</div>
-							<div col-lg-6 class='list-menu menu-principal'>
-
-								<button ion-item (click)="directionAccueil()">
-									<img class="homie-icone" alt="Homie direction l'accueil" src="../assets/imgs/homie-icone.png"/>
-									<ion-icon name="icon-chevron" icon-end></ion-icon>
-									<div>
-	    	  							<h1>Accueil</h1>
-										<p>Revenir à l'accueil et consulter l'humeur de Homie</p>
-									</div>							
-	    						</button>
-
-								<button ion-item (click)="maMaison()">
-									<ion-icon name="icon-home" icon-start></ion-icon>
-									<ion-icon name="icon-chevron" icon-end></ion-icon>
-									<div>
-	    	  							<h1>Ma maison</h1>
-										<p>Configurer et optimiser ma maison</p>
-									</div>							
-	    						</button>
-
-								<button ion-item (click)="directionEvent()">
-									<ion-icon name="icon-calendar" icon-start></ion-icon>
-									<ion-icon name="icon-chevron" icon-end></ion-icon>
-									<div>
-	    	  							<h1>Je participe</h1>
-										<p>Trouver et participer à un évènement</p>
-									</div>							
-	    						</button>
-
-								<button ion-item (click)="directionBoutique()">
-									<ion-icon name="icon-shopping-cart" icon-start></ion-icon>
-									<ion-icon name="icon-chevron" icon-end></ion-icon>
-									<div>
-	    	  							<h1>Boutique</h1>
-										<p>Découvrir les dernières nouveautés et utiliser mes coupons</p>
-									</div>							
-	    						</button>
-
-								<button ion-item (click)="directionForum()">
-									<ion-icon name="icon-chat" icon-start></ion-icon>
-									<ion-icon name="icon-chevron" icon-end></ion-icon>
-									<div>
-	    	  							<h1>Je partage</h1>
-										<p>Echanger sur le forum mes astuces pour une consommation responsable</p>
-									</div>							
-	    						</button>
-
-								<button ion-item (click)="directionContact()">
-									<ion-icon name="icon-information" icon-start></ion-icon>
-									<ion-icon name="icon-chevron" icon-end></ion-icon>
-									<div>
-	    	  							<h1>Contact</h1>
-										<p>Besoin d’aide ?</p>
-									</div>							
-	    						</button>
-
-								<button ion-item (click)="directionParametre()">
-									<ion-icon name="icon-settings" icon-start></ion-icon>
-									<ion-icon name="icon-chevron" icon-end></ion-icon>
-									<div>
-	    	  							<h1>Paramètres</h1>
-										<p>Confidentialité, notifications, déconnexion</p>
-									</div>							
-	    						</button>
-    						</div>
-
-							<div  class="profilSection sous-menu">
-									<ion-icon name="icon-left-arrow-2" class="retour" (click)="retour()"></ion-icon>
-									<p>Ma maison</p>
-							</div>
-							<div col-lg-6 class='list-menu sous-menu'>
-
-								<button ion-item (click)="directionModelisation()">
-									<ion-icon name="icon-cube" icon-start></ion-icon>
-									<ion-icon name="icon-chevron" icon-end></ion-icon>
-									<div>
-	    	  							<h1>Ma modélisation</h1>
-										<p>Paramétrer, éditer et modéliser votre maison</p>
-									</div>							
-	    						</button>
-
-								<button ion-item (click)="directionFournisseur()">
-									<ion-icon name="icon-thunderbolt" icon-start></ion-icon>
-									<ion-icon name="icon-chevron" icon-end></ion-icon>
-									<div>
-	    	  							<h1>Mon fournisseur d'énergie</h1>
-										<p>Configurer mon fournisseur et mon contrat</p>
-									</div>							
-	    						</button>
-
-								<button ion-item (click)="directionComparer()">
-									<ion-icon name="icon-scale" icon-start></ion-icon>
-									<ion-icon name="icon-chevron" icon-end></ion-icon>
-									<div>
-	    	  							<h1>Me comparer</h1>
-										<p>Comparer ma consommation avec d'autres Hom'rees</p>
-									</div>							
-	    						</button>
-
-								<button ion-item (click)="directionBudget()">
-									<ion-icon name="icon-piggy-bank" icon-start></ion-icon>
-									<ion-icon name="icon-chevron" icon-end></ion-icon>
-									<div>
-	    	  							<h1>Mon budget</h1>
-										<p>Etablir un budget maximum à ma consommation</p>
-									</div>							
-	    						</button>
-
-								<button ion-item (click)="directionDemenagement()">
-									<ion-icon name="icon-flag" icon-start></ion-icon>
-									<ion-icon name="icon-chevron" icon-end></ion-icon>
-									<div>
-	    	  							<h1>Je déménage</h1>
-										<p>Synchroniser avec mon nouveau compteur Linky</p>
-									</div>							
-	    						</button>
-    						</div>
-
-						</div>
+		<ion-row class="fond-noir">
+			<div class="lightbox">
+				<div class="lightbox-content">
+					<div  class="profilSection menu-principal">
+							<ion-icon name="icon-share" class="partage"></ion-icon>
+							<!-- <ion-icon name="icon-edit" (click)="editProfil()"></ion-icon> -->
 					</div>
-			</ion-row>
+					<div col-lg-6 style="text-align: center;" class='menu-principal'>
+						<div class="photo">
+							<p>{{userData}}</p>
+						</div>
+
+						<ion-col class="badges" col-auto (click)="directionBadges()">
+							<ion-icon name="icon-chevron" icon-end></ion-icon>
+							<h2>0</h2>
+							<p>badge</p>
+						</ion-col>
+						<ion-col class="points" col-auto (click)="directionPoints()">
+							<ion-icon name="icon-chevron" icon-end></ion-icon>
+							<h2>100</h2>
+							<p>points</p>
+						</ion-col>
+					</div>
+					<div col-lg-6 class='list-menu menu-principal'>
+
+						<button ion-item (click)="directionAccueil()">
+							<img class="homie-icone" alt="Homie direction l'accueil" src="../assets/imgs/homie-icone.png"/>
+							<ion-icon name="icon-chevron" icon-end></ion-icon>
+							<div>
+	  							<h1>Accueil</h1>
+								<p>Revenir à l'accueil et consulter l'humeur de Homie</p>
+							</div>							
+						</button>
+
+						<button ion-item (click)="maMaison()">
+							<ion-icon name="icon-home" icon-start></ion-icon>
+							<ion-icon name="icon-chevron" icon-end></ion-icon>
+							<div>
+	  							<h1>Ma maison</h1>
+								<p>Configurer et optimiser ma maison</p>
+							</div>							
+						</button>
+
+						<button ion-item (click)="directionEvent()">
+							<ion-icon name="icon-calendar" icon-start></ion-icon>
+							<ion-icon name="icon-chevron" icon-end></ion-icon>
+							<div>
+	  							<h1>Je participe</h1>
+								<p>Trouver et participer à un évènement</p>
+							</div>							
+						</button>
+
+						<button ion-item (click)="directionBoutique()">
+							<ion-icon name="icon-shopping-cart" icon-start></ion-icon>
+							<ion-icon name="icon-chevron" icon-end></ion-icon>
+							<div>
+	  							<h1>Boutique</h1>
+								<p>Découvrir les dernières nouveautés et utiliser mes coupons</p>
+							</div>							
+						</button>
+
+						<button ion-item (click)="directionForum()">
+							<ion-icon name="icon-chat" icon-start></ion-icon>
+							<ion-icon name="icon-chevron" icon-end></ion-icon>
+							<div>
+	  							<h1>Je partage</h1>
+								<p>Echanger sur le forum mes astuces pour une consommation responsable</p>
+							</div>							
+						</button>
+
+						<button ion-item (click)="directionContact()">
+							<ion-icon name="icon-information" icon-start></ion-icon>
+							<ion-icon name="icon-chevron" icon-end></ion-icon>
+							<div>
+	  							<h1>Contact</h1>
+								<p>Besoin d’aide ?</p>
+							</div>							
+						</button>
+
+						<button ion-item (click)="directionParametre()">
+							<ion-icon name="icon-settings" icon-start></ion-icon>
+							<ion-icon name="icon-chevron" icon-end></ion-icon>
+							<div>
+	  							<h1>Paramètres</h1>
+								<p>Confidentialité, notifications, déconnexion</p>
+							</div>							
+						</button>
+					</div>
+
+					<div  class="profilSection sous-menu">
+						<ion-icon name="icon-left-arrow-2" class="retour" (click)="retour()"></ion-icon>
+						<p>Ma maison</p>
+					</div>
+					<div col-lg-6 class='list-menu sous-menu'>
+
+						<button ion-item (click)="directionModelisation()">
+							<ion-icon name="icon-cube" icon-start></ion-icon>
+							<ion-icon name="icon-chevron" icon-end></ion-icon>
+							<div>
+	  							<h1>Ma modélisation</h1>
+								<p>Paramétrer, éditer et modéliser votre maison</p>
+							</div>							
+						</button>
+
+						<button ion-item (click)="directionFournisseur()">
+							<ion-icon name="icon-thunderbolt" icon-start></ion-icon>
+							<ion-icon name="icon-chevron" icon-end></ion-icon>
+							<div>
+	  							<h1>Mon fournisseur d'énergie</h1>
+								<p>Configurer mon fournisseur et mon contrat</p>
+							</div>							
+						</button>
+
+						<button ion-item (click)="directionComparer()">
+							<ion-icon name="icon-scale" icon-start></ion-icon>
+							<ion-icon name="icon-chevron" icon-end></ion-icon>
+							<div>
+	  							<h1>Me comparer</h1>
+								<p>Comparer ma consommation avec d'autres Hom'rees</p>
+							</div>							
+						</button>
+
+						<button ion-item (click)="directionBudget()">
+							<ion-icon name="icon-piggy-bank" icon-start></ion-icon>
+							<ion-icon name="icon-chevron" icon-end></ion-icon>
+							<div>
+	  							<h1>Mon budget</h1>
+								<p>Etablir un budget maximum à ma consommation</p>
+							</div>							
+						</button>
+
+						<button ion-item (click)="directionDemenagement()">
+							<ion-icon name="icon-flag" icon-start></ion-icon>
+							<ion-icon name="icon-chevron" icon-end></ion-icon>
+							<div>
+	  							<h1>Je déménage</h1>
+								<p>Synchroniser avec mon nouveau compteur Linky</p>
+							</div>							
+						</button>
+					</div>
+				</div>
+			</div>
+		</ion-row>
 	</ion-grid>
 	<button class="boutton-menuP" (click)="retourMenu()"><ion-icon name="icon-cancel"></ion-icon></button>
 </ion-content>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import{SignupPage} from "../signup/signup";
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-demenagement',
@@ -20,6 +21,10 @@ export class DemenagementPage {
   changementMaison(){
     //Fonction permettant de mener vers la page "créer ou rejoindre une maison"
   	this.navCtrl.push(SignupPage);
+  }
+  pushAccueil(){
+    //fonction menant vers l'accueil principal
+    this.navCtrl.push(HomePage);
   }
 
 }

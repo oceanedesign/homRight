@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-contact',
@@ -11,4 +12,8 @@ export class ContactPage {
 
   }
 
+  pushAccueil(){
+  	//fonction menant vers l'accueil principal
+  	this.navCtrl.push(HomePage);
+  }
 }

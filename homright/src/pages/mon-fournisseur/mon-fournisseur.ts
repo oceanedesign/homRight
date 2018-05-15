@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { HomePage } from '../home/home';
 import{TabsPage} from "../tabs/tabs";
 
  declare var JQuery:any;
@@ -30,6 +30,11 @@ export class MonFournisseurPage {
 
   retourMenu(){
     this.navCtrl.pop();
+  }
+
+  pushAccueil(){
+    //fonction menant vers l'accueil principal
+    this.navCtrl.push(HomePage);
   }
 
 }

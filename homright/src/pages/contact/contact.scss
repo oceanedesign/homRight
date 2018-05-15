@@ -1,3 +1,104 @@
 page-contact {
 
+	ion-header{
+	    background: none;
+	    .toolbar-background{
+	      border: 0px!important;
+	      background: none!important;
+	    }
+	    ion-title{
+	      background: map-get($colors, secondary);
+	      .toolbar-title{
+	        color: white!important;
+	      }
+	    }
+	    button .button-inner{
+	      color: white;
+	    }
+	    &.header-md::after{
+	      height: 0px;
+	    }
+  	}
+
+  	ion-content{
+    	font-family: 'Assistant';
+	    .fond-vague {
+	      	background: #7686FF;
+	      	height: 1px;
+	      	width: 100%;
+	     	position: absolute;
+	      	margin-left: -16px;
+	      	margin-top: -16px;
+	      	.vague {
+	          width: 100vw;
+	          position: absolute;
+	          top: 0px;
+	          height: 30px;
+	   		}
+    	}
+	    .centrage-vertical{
+	    	text-align: center;
+	    	display: flex;
+	    	justify-content: center;
+	    	height: 100%;
+	    	.centrage-vertical-inner{
+	        	justify-content: center;
+	        	margin: auto;
+	      	}
+	    }
+
+		.boutton-menuP{
+			background: map-get($colors, secondary);
+			ion-icon{
+				color: white;
+				&::before{
+					font-size: 18px;
+				}
+			}
+		} 
+		   
+	    .contact{
+	    	max-width: 300px;
+	    	border-top: 1px solid black;
+		    padding: 25px 5px;
+		    border-bottom: 1px solid black;
+	    }
+	    p{
+	    	margin: 0px;
+	    	font-size: 18px;
+	    	font-weight: 600;
+	    	&.remerciments{
+	    		font-size: 16px;
+    			margin-top: 40px;
+    			font-weight: 200;
+    		}
+    		span{
+    			font-weight: 600;
+    		}
+	    }
+
+    	h1{
+        	text-transform: uppercase;
+        	font-weight: 800;
+        	font-size: 30px;
+        	margin: 0px;
+        	margin-bottom: 10px;
+      	}
+    }
+
+    
+
+    @media only screen and (max-width: 330px) {
+	    ion-content {
+	    	.mascotte{
+			    img{
+			      width: 180px;
+
+		  		}
+		  	}
+	  		ion-col p{
+		    	font-size: 16px;
+		    }		  	
+	  	}
+	}
 }

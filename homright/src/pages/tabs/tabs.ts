@@ -89,10 +89,11 @@ export class TabsPage {
 
 
   directionContact(){
-
+    this.navCtrl.push(ContactPage);
   }
 
   directionBadges(){
+    //Fonction permettant d'amener à la page de contact
     this.presentToastBadges();
   }
 

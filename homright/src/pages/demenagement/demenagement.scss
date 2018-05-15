@@ -55,6 +55,16 @@ page-demenagement {
 	        	margin: auto;
 	      	}
 	    }
+
+	    .boutton-menuP{
+			background: map-get($colors, secondary);
+			ion-icon{
+				color: white;
+				&::before{
+					font-size: 18px;
+				}
+			}
+		} 
     
 	    .auRevoir{
 	    	max-width: 400px;

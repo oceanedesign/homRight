@@ -20,7 +20,7 @@ page-mon-fournisseur {
     }
   }
 
-.fond-vague {
+  .fond-vague {
       background: #7686FF;
       height: 1px;
       width: 100%;
@@ -32,8 +32,18 @@ page-mon-fournisseur {
           position: absolute;
           top: 0px;
           height: 30px;
+    }
+  }
+
+  .boutton-menuP{
+    background: map-get($colors, secondary);
+    ion-icon{
+      color: white;
+      &::before{
+        font-size: 18px;
       }
     }
+  }
 
   ion-list.list{
    background: #FFFFFF;
@@ -42,6 +52,7 @@ page-mon-fournisseur {
    padding: 2px 15px;
    max-width: 340px;
    margin: 20px auto;
+
 
 
    h4{
