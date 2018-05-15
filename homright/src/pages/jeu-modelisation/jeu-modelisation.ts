@@ -19,7 +19,7 @@ export class JeuModelisationPage {
   pieces = [
     {"piece_id":"0","nomPiece": "Chambre", "type":"lit", "longueur":"", "largeur":""}, 
     {"piece_id":"1","nomPiece": "Salle de bains", "type":"douche", "longueur":"", "largeur":""}, 
-    {"piece_id":"2","nomPiece": "Salon", "type":"canape", "longueur":"4", "largeur":"5"}, 
+    {"piece_id":"2","nomPiece": "Salon", "type":"canape", "longueur":"", "largeur":""}, 
     {"piece_id":"3","nomPiece": "Cuisine", "type":"cuisine", "longueur":"3", "largeur":"6.6"} 
   ]; 
  
@@ -113,8 +113,9 @@ export class JeuModelisationPage {
       if($('div').hasClass(this.updatePiece.type)){
         var type = this.updatePiece.type;
         setTimeout(function(){  
+          //Active les objets de cette piece
             $(".spare-item2."+type).css("display", "block");
-            console.log($(".spare-item2."+type));
+            //console.log($(".spare-item2."+type));
         }, 1000);
       }
     }    
@@ -251,6 +252,22 @@ export class JeuModelisationPage {
 
   validerTaille(){
     //Lorsque la taille a été validée, les murs deviennent visibles
+
+    for (var i = 0; i < this.pieces.length; i++){
+      var obj= this.pieces[i];
+      for (var key in obj){
+        var value = obj[key];
+        if(value == this.updatePiece.nomPiece){
+          console.log(i);
+          this.pieces[i].largeur = (this.colonne*0.6).toString() ;
+          this.pieces[i].longueur = (this.ligne*0.6).toString();
+          console.log(this.pieces[i]);
+        }
+      }
+    }
+
+
+
     $(".fond-cache").css("display", "flex");
     $(".contenu-taille").css("display", "none");
     $(".case-maison").addClass("case-maison3d");
