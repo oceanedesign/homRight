@@ -32,9 +32,13 @@ check_error($stmt);
 //Filtrer les valeurs retournées
 for ($i = 0; $i < $stmt->rowCount(); $i++) {
     $row = $stmt->fetch(PDO::FETCH_ASSOC, PDO::FETCH_ORI_ABS, $i);
+    $tmp = array();
+    
     foreach($row as $key => $value) {
-        $homes[][$key] = $value;
+        $tmp[$key] = $value;
     }
+    
+    $homes[] = $tmp;
 }
 
 success("Les nom des maisons ont été récupérés", array("names" => $homes));
