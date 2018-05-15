@@ -37,6 +37,7 @@ import { ForumChoixThemePage } from '../pages/forum-choix-theme/forum-choix-them
 import { ForumDiscussionPage } from '../pages/forum-discussion/forum-discussion';
 import { MonBudgetPage } from '../pages/mon-budget/mon-budget';
 import { MeComparerPage } from '../pages/me-comparer/me-comparer';
+import { MeComparerMaisonPage } from '../pages/me-comparer-maison/me-comparer-maison';
 
 import { Geolocation } from '@ionic-native/geolocation';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -51,11 +52,11 @@ import { SQLite } from '@ionic-native/sqlite';
     MyApp,
     LoginPage,
     SignupPage, RejoindreMaisonPage,CreerMaisonPage,
-    SynchroFaitePage, EditAdressePostalePage, PointsClesPage, 
+    SynchroFaitePage, EditAdressePostalePage, PointsClesPage,
     ModelisationBienvenuePage, PreModelisationPage, MonFournisseurPage,
-    JeuModelisationPage, StatsVue_3dPage, EventsPage, ForumAccueilPage, 
+    JeuModelisationPage, StatsVue_3dPage, EventsPage, ForumAccueilPage,
     ForumChoixThemePage,ForumDiscussionPage, MonBudgetPage,
-    SynchroPage, BoutiquePage, MeComparerPage, DemenagementPage,
+    SynchroPage, BoutiquePage, MeComparerPage, MeComparerMaisonPage, DemenagementPage,
     ConsoPage,
     ContactPage,
     HomePage,
@@ -72,11 +73,11 @@ import { SQLite } from '@ionic-native/sqlite';
     MyApp,
     LoginPage,
     SignupPage, RejoindreMaisonPage, CreerMaisonPage,
-    SynchroFaitePage, EditAdressePostalePage, PointsClesPage, 
+    SynchroFaitePage, EditAdressePostalePage, PointsClesPage,
     ModelisationBienvenuePage, PreModelisationPage, MonFournisseurPage,
-    JeuModelisationPage, StatsVue_3dPage, EventsPage, ForumAccueilPage, 
+    JeuModelisationPage, StatsVue_3dPage, EventsPage, ForumAccueilPage,
     ForumChoixThemePage, ForumDiscussionPage, MonBudgetPage,
-    SynchroPage, BoutiquePage, MeComparerPage, DemenagementPage,
+    SynchroPage, BoutiquePage, MeComparerPage, MeComparerMaisonPage, DemenagementPage,
     ConsoPage,
     ContactPage,
     HomePage,

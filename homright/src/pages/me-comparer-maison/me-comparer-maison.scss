@@ -1,0 +1,48 @@
+page-me-comparer-maison {
+  ion-header{
+    background: none;
+    .toolbar-background{
+      border: 0px!important;
+      background: none!important;
+    }
+    button.back-button.disable-hover{
+      background: map-get($colors, secondary);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin-top: 10px;
+      margin-left: 8px;
+    }
+    button .button-inner{
+      color: white;
+    }
+    &.header-md::after{
+      height: 0px;
+    }
+  }
+  ion-content{
+    // background-image: url("../assets/imgs/vue3D/3d.png");
+    .profil{
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      top: 8px;
+      right: 8px;
+      border: 2px solid map-get($colors, secondary);
+      padding: 5px;
+      border-radius: 50%;
+      display: flex;
+      span{
+        margin: auto;
+      }
+    }
+    .maison{
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      img{
+        margin: auto;
+      }
+    }
+  }
+}

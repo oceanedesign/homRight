@@ -16,6 +16,7 @@ import { ForumChoixThemePage } from '../pages/forum-choix-theme/forum-choix-them
 import { ForumDiscussionPage } from '../pages/forum-discussion/forum-discussion';
 import { PointsClesPage } from '../pages/points-cles/points-cles';
 import { MeComparerPage } from '../pages/me-comparer/me-comparer';
+import { MeComparerMaisonPage } from '../pages/me-comparer-maison/me-comparer-maison';
 
 @Component({
   templateUrl: 'app.html'
