@@ -889,9 +889,9 @@ page-jeu-modelisation {
 
 		.item-#{$nom}.spare-item{
 			background-image: url("../../assets/isometrie/#{$nom}.png");
-			width: 45px;
+			width: 44px;
     		height: 75px;
-   			background-size: 45px 75px;
+   			background-size: 44px 75px;
 		    right: 50px;
     		top: 32px;		
 		}
