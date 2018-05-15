@@ -66,31 +66,6 @@ export class JeuModelisationPage {
     this.navCtrl.setRoot(HomePage);
   }
 
-
-  activeJeuCuisine(event){
-    //Activation d'une piece toute faite : la cuisine
-    var itemPiece = event.target.closest('ion-item'); 
-    console.log($(itemPiece).attr('id')); 
-    this.updatePiece = this.pieces[$(itemPiece).attr('id')] ; //Attribut la nouvelle valeur 
-    console.log(this.updatePiece);
-
-    $(".choix-piece").css("display", "none"); 
-    $(".cacher-totale").css("display", "block"); 
-    $(".spare-item2").css("display", "none"); 
-        this.tailleSol(); 
-        this.validerTaille(); 
- 
-    setTimeout(function(){  
-        $(".spare-item2.cuisine").css("display", "block"); 
-    }, 1000);
-
-
-     var bouton = event.target.closest('button'); //Définit la variable bouton et attribut le bouton
-    console.log($(bouton).attr('value')); //récupération de l'attribut "value" du bouton
-    this.nomPiece = $(bouton).attr('value') ; //Attribut la nouvelle valeur   
-
-  }
-
   activeJeuIni(event){
     //Activation de la phase modélisation initiale
     $(".choix-piece").css("display", "none");
@@ -127,8 +102,13 @@ export class JeuModelisationPage {
         $(".mur, .mur2").removeClass("mur-visible"); 
       } 
     }else{ 
-        this.tailleSol(); 
-        this.validerTaille(); 
+
+      this.tailleSol(); 
+      this.validerTaille(); 
+
+      setTimeout(function(){  
+          $(".spare-item2.cuisine").css("display", "block"); 
+      }, 1000);
     }    
   }
 

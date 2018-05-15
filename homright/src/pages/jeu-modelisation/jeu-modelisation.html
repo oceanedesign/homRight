@@ -7,13 +7,9 @@
 				<ion-scroll scrollX="true">
 					<ion-list class="listButtonRoom">
 						<ion-item *ngFor="let piece of pieces" id="{{piece.piece_id}}">
-							<button *ngIf="piece.nomPiece != 'Cuisine'" value="{{piece.nomPiece}}" ion-button block class="button-room" type="submit" (click)="activeJeuIni($event)">
+							<button value="{{piece.nomPiece}}" ion-button block class="button-room" type="submit" (click)="activeJeuIni($event)">
 								<ion-icon name="icon-{{piece.type}}"></ion-icon>
 								<p >{{piece.nomPiece}}</p>
-							</button>
-							<button *ngIf="piece.nomPiece == 'Cuisine'" value="{{piece.nomPiece}}" ion-button block class="button-room" type="submit" (click)="activeJeuCuisine($event)">
-								<ion-icon name="icon-{{piece.type}}"></ion-icon>
-								<p name="cuisine">{{piece.nomPiece}}</p>
 							</button>
 						</ion-item>
 					</ion-list>
