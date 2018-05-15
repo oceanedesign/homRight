@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import{TabsPage} from "../tabs/tabs";
 
-/**
- * Generated class for the MeComparerPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+declare var JQuery:any;
+declare var $:any;
+import 'jquery-ui-dist/jquery-ui';
 
 @IonicPage()
 @Component({
@@ -20,6 +18,11 @@ export class MeComparerPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MeComparerPage');
+  }
+
+  pushMenu(){
+    //Fonction permettant d'activer le menu
+    this.navCtrl.push(TabsPage);
   }
 
 }
