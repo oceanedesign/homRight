@@ -9,8 +9,11 @@ class User_has_home extends Table{
         parent::__construct($db, "user_has_maison");
     }
     
-    public function create($token, $maison_id) {
-        $request = "INSERT INTO " . $this->table_name  . " SELECT user_id, maison_id FROM user, maison WHERE token=:token AND maison_id=:maison_id";
+    //public function create($token, $maison_id) {
+    public function create($token, $cond) {
+        $column = array_keys($cond)[0];
+        //$request = "INSERT INTO " . $this->table_name  . " SELECT user_id, maison_id FROM user, maison WHERE token=:token AND maison_id=:maison_id";
+        $request = "INSERT INTO " . $this->table_name  . " SELECT user_id, maison_id FROM user, maison WHERE token=:token AND maison.$column=:$column";
         
         //Préparer la requête
         try {
@@ -24,7 +27,7 @@ class User_has_home extends Table{
         }
         
         //Lier les données dans la requête
-        if(! ($stmt->bindParam(":token", $token) && $stmt->bindParam(":maison_id", $maison_id))) {
+        if(! ($stmt->bindParam(":token", $token) && $stmt->bindParam(":$column", $cond[$column]))) {
             return errors("UserHM_bindParam", $stmt->errorInfo()[2]);
         }
         
@@ -33,6 +36,6 @@ class User_has_home extends Table{
             return errors("UserHM_execute", $stmt->errorInfo()[2]);
         }
         
-        return True;
+        return array("success" => "Utilisateur lié à une maison");
     }
 }
