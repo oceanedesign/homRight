@@ -17,7 +17,7 @@ $home = new Home($db);
 check_error($home);
 
 $homes = array();
-$stmt = $home->get_by_name_and_cp();
+$stmt = $home->get_all_name_and_cp();
 
 check_error($stmt);
 
