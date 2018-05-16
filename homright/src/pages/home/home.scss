@@ -1,5 +1,6 @@
 page-home {
 
+
   .transparent{
     opacity: 0.6;
     text-align: left;
@@ -9,7 +10,7 @@ page-home {
     text-transform: uppercase;
     font-size: 26px;
     font-weight: 600;
-    margin-top: 20px;
+    margin-top: 0px;
   }
 
   .conso-nb .specifites2{
@@ -104,16 +105,14 @@ page-home {
     margin-top: 0px;
     height: 180px;
     width: 100%;
-    z-index: 0;
+    z-index: -1;
   }
 
     .vague{
       top: 179px;
+      z-index: -1;
     }
   }
-
-
-
 
   .container{
     max-width: 450px;
@@ -134,9 +133,19 @@ ion-content.HomieGood{
     }
   }
   ion-row.mascotte{
+    .lottie{
+      margin: auto;
+      margin-bottom: -50px;
+      position: relative;
+      left: 0%;
+      right: 0%;
+      z-index: 1000;
+      width: 100%;
+      height: 100%;
+    }   
     img{
       &:nth-child(1){
-        display: block;
+        display: none;
       }
       &:nth-child(2){
         display: none;
@@ -172,6 +181,9 @@ ion-content.HomieAnalyse{
 
 
 ion-content.HomieBad{
+  lottie-animation-view.en-forme{
+    display: none;
+  }
   .title{
     h1{
       &::before{
@@ -319,9 +331,7 @@ ion-content.HomieBad{
         display: none;
       }
     }
-
   }
-
 
   ion-row{
 
@@ -392,10 +402,8 @@ ion-content.HomieBad{
     ion-list{
       width:100%;
       margin-bottom: 0;
-          margin-top: -10px;
-          margin-left: 20px;
-      //width: 1000px;
-      // display: flex;
+      margin-top: -10px;
+      margin-left: 20px;
       ion-item{
         display: inline-block;
         width: 132px;
@@ -417,8 +425,8 @@ ion-content.HomieBad{
         .radio-md, .radio-ios{
           margin: auto;
           .radio-icon, .radio-ios .radio-icon{
-          width: 132px;
-          height: 83px;
+            width: 132px;
+            height: 83px;
             border:0px;
 
             &::after{
@@ -427,15 +435,6 @@ ion-content.HomieBad{
               bottom: 6px;
               left: 6px;
               color: black;
-
-              // font-family: 'homright' !important;
-              // speak: none;
-              // font-style: normal;
-              // font-weight: normal;
-              // font-variant: normal;
-              // text-transform: none;
-              // line-height: 1;
-              // font-size: 30px;
             }
             .radio-inner, .radio-ios .radio-checked .radio-inner{
               width: 100%;
@@ -468,8 +467,8 @@ ion-content.HomieBad{
           .radio-md .radio-icon::after{
             content: 'Nuit';
             color: black;
+          }
         }
-      }
         &.matin{
           background: url("../assets/imgs/sun.png");
           .radio-md .radio-icon::after{
@@ -497,15 +496,14 @@ ion-content.HomieBad{
           .radio-md .radio-icon::after{
             content: 'Absent';
             color: black;          
+          }
         }
-        }
-
-
       }
     }
-  }}
+  }
+}
 
-    .fond-vague{
+  .fond-vague{
     height: 180px;
     .vague{
       top:179px;
@@ -525,6 +523,15 @@ ion-content.HomieBad{
     .title h1{
       margin-top: 0px !important;
     }
+  }
+
+  @media only screen and (max-width: 1100px){
+    ion-content.HomieGood ion-row.mascotte .lottie{
+      display: none;
+    }
+    ion-content.HomieGood ion-row.mascotte img:nth-child(1){
+        display: block;
+      }
   }
 
 }

@@ -5,7 +5,7 @@ import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { ToastController } from 'ionic-angular';
 import{TabsPage} from "../tabs/tabs";
 import{EventsPage} from "../events/events";
-
+import { LottieAnimationViewModule } from 'ng-lottie'; 
 
 @Component({
   selector: 'page-home',
@@ -16,8 +16,16 @@ export class HomePage {
 	orderBy:string;
   splash = true;
   userData = this.authServiceProvider.pseudo;
+  lottieConfig:any; 
 
   constructor(public navCtrl: NavController, public toastCtrl: ToastController,   public authServiceProvider : AuthServiceProvider) {
+    //Permet de mettre en place l'animation de Homie
+    LottieAnimationViewModule.forRoot(); 
+    this.lottieConfig={ 
+      path:'assets/imgs/reflexion/data.json', 
+      autoplay: true, 
+      loopt: true 
+    }
   }
 
   ionViewDidLoad() {

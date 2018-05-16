@@ -9,13 +9,15 @@
           <p class="analyseMessage"></p>
       </ion-row>
   		<ion-row class="mascotte" *ngIf="userData == 'r' || userData == 'sophie'" (click)="presentToast()">
-      		<img class="en-forme" alt="Homie est en forme" src="../assets/imgs/homie_good.png"/>
-          <img class="malade" alt="Homie est malade" src="../assets/imgs/recherche_compteur.png"/>
+      		<img class="en-forme" style="display: block !important;" alt="Homie est en forme" src="../assets/imgs/homie_good.png"/>
+          <img class="malade" alt="Homie est malade" src="../assets/imgs/homie_malade.png"/>
       </ion-row>
 
       <ion-row class="mascotte" (click)="presentToast()" *ngIf="userData != 'r' && userData != 'sophie' ">
-          <img class="en-forme" alt="Homie réflechit" src="../assets/imgs/recherche_compteur.png"/>
-          <img class="malade" alt="Homie est malade" src="../assets/imgs/recherche_compteur.png"/>
+          <img class="en-forme reflexion" alt="Homie réflechit" src="../assets/imgs/recherche_compteur.png" style="margin-bottom: 20px;" />
+          <img class="malade" alt="Homie est malade" src="../assets/imgs/homie_malade.png"/>
+          <lottie-animation-view class="en-forme lottie" [options]="lottieConfig">
+          </lottie-animation-view>
       </ion-row>
 
       <ion-row>
