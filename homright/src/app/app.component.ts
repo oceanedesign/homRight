@@ -14,7 +14,7 @@ import { LoginPage } from '../pages/login/login';
 })
 export class MyApp {
 
-  //rootPage:any = JeuModelisationPage;
+  //rootPage:any = ModelisationBienvenuePage;
   //rootPage:any = SignupPage;
   rootPage:any = LoginPage;
 

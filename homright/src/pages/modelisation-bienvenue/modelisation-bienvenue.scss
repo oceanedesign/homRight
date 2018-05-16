@@ -14,6 +14,13 @@ page-modelisation-bienvenue {
     }
   }
 
+  .lottie{
+    margin: auto;
+    max-width: 100px;
+    width: 50%;
+    height: 50%;
+  }
+
   .mascotte{
     width:50%;
     height: 50%;
@@ -69,13 +76,15 @@ page-modelisation-bienvenue {
       padding: 15px;
       border-radius: 4px;
       .explication{
-        margin: 20px 0px;
+        margin: 0px;
         .mascotte{
           max-width: 200px;
+          display: none;
         }
         p{
           max-width: 500px;
           font-size: 16px;
+          margin-top: 0px;
         }
         h2{
           font-family: 'Futura';
@@ -128,6 +137,18 @@ page-modelisation-bienvenue {
   @media screen and (max-height: 580px) {
     p{
       margin: 10px 0px;
+    }
+  }
+
+    @media screen and (max-width: 900px) {
+    lottie-animation-view{
+      display: none;
+    }
+    .fond-cache .lightbox-content .explication{
+      margin: 20px 0px;
+      .mascotte{
+        display: block;
+      }
     }
   }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { LottieAnimationViewModule } from 'ng-lottie'; 
 import { PreModelisationPage } from '../pre-modelisation/pre-modelisation';
 import { HomePage } from '../home/home';
 
@@ -13,7 +13,16 @@ declare var $:any;
 })
 export class ModelisationBienvenuePage {
 
+  lottieConfig:any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    //Permet de mettre en place l'animation de Homie
+    LottieAnimationViewModule.forRoot(); 
+    this.lottieConfig={ 
+      path:'assets/imgs/perdu/data.json', 
+      autoplay: true, 
+      loopt: true 
+    }
   }
 
 
