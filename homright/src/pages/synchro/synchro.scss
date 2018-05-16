@@ -33,10 +33,10 @@ page-synchro {
   ion-header h2{
   	font-family: "Futura";
   	font-weight: 600;
-	font-size: 50px;
-	text-align: center;
-	color: #FFFFFF;
-	margin: -10px auto;
+	  font-size: 50px;
+	  text-align: center;
+	  color: #FFFFFF;
+	  margin: -10px auto;
   }
 
   ion-header p{
@@ -79,7 +79,7 @@ page-synchro {
     }
   }
 
-    @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 700px) {
     .fond-vague {
       height: 40px;
       .vague {
@@ -92,13 +92,9 @@ page-synchro {
     }
   }
 
-
-    @media only screen and (max-height: 600px) {
-
-
+  @media only screen and (max-height: 600px) {
     .valider{
       margin-top: 15px;
     }
   }
-
 }

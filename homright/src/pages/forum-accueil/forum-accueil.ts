@@ -3,9 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import{TabsPage} from "../tabs/tabs";
 import { ForumChoixThemePage } from '../forum-choix-theme/forum-choix-theme';
 
-declare var jQuery:any;
-declare var $:any;
-
 @IonicPage()
 @Component({
   selector: 'page-forum-accueil',
@@ -16,11 +13,8 @@ export class ForumAccueilPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ForumAccueilPage');
-  }
-
   pushMenu(){
+    //Fonction permettant l'ouverture du menu
     this.navCtrl.push(TabsPage);
   }
   pushChoixTheme(typePiece){

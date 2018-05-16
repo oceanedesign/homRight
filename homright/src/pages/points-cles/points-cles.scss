@@ -79,17 +79,13 @@ page-points-cles {
     width:180px;
   }
 
-    @media screen and (min-height: 600px) {
-
-
+  @media screen and (min-height: 600px) {
     .slide-zoom h2{
       margin-top: 40px;
     }
   }
 
-    @media screen and (min-height: 1000px) {
-
-
+  @media screen and (min-height: 1000px) {
     ion-slide.swiper-slide .fond-vague{
       height: 100px;
     }
@@ -109,7 +105,7 @@ page-points-cles {
     }
   }
 
-    .slide-zoom h2{
+  .slide-zoom h2{
       margin-top: 30px;
     }
   }

@@ -1,148 +1,148 @@
 page-me-comparer {
 
-    ion-header{
-      background: none;
-      .toolbar-background{
-        border: 0px!important;
-        background: none!important;
-      }
-      ion-title{
-        background: map-get($colors, secondary);
-        .toolbar-title{
-          color: white!important;
-        }
-      }
-      button .button-inner{
-        color: white;
-      }
-      &.header-md::after{
-        height: 0px;
+  ion-header{
+    background: none;
+    .toolbar-background{
+      border: 0px!important;
+      background: none!important;
+    }
+    ion-title{
+      background: map-get($colors, secondary);
+      .toolbar-title{
+        color: white!important;
       }
     }
+    button .button-inner{
+      color: white;
+    }
+    &.header-md::after{
+      height: 0px;
+    }
+  }
 
-    ion-content{
-      .fond-vague {
-        background: #7686FF;
-        height: 1px;
-        width: 100%;
-        position: absolute;
-        margin-left: -16px;
-        margin-top: -16px;
-        .vague {
-            width: 100vw;
-            position: absolute;
-            top: 0px;
-            height: 30px;
-            margin-bottom: 20px;
+  ion-content{
+    .fond-vague {
+      background: #7686FF;
+      height: 1px;
+      width: 100%;
+      position: absolute;
+      margin-left: -16px;
+      margin-top: -16px;
+      .vague {
+          width: 100vw;
+          position: absolute;
+          top: 0px;
+          height: 30px;
+          margin-bottom: 20px;
+      }
+    }
+    .container{
+      max-width: 800px;
+      margin: 20px auto;
+    }
+    .centrage-vertical{
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      .centrage-vertical-inner{
+        justify-content: center;
+        margin: auto;
+      }
+    }
+    .profil-bon-eleve{
+      cursor: pointer;
+      box-shadow: 0px 8px 26px rgba(0, 0, 0, 0.12);
+      border-radius: 8px;
+      padding: 15px 0;
+      max-width: 600px;
+      margin: 30px auto;
+      .column-flex{
+        display: flex;
+      }
+      .column-left{
+        text-align: center;
+        width: 40%;
+        .avatar-circle{
+          padding: 10px;
+          border-radius: 50%;
+          display: inline-flex;
+          font-size: 12px;
+          width: 70px;
+          height: 70px;
+          &.8CD8AB{
+            background: #8CD8AB;
+          }
+          &.A775FF{
+            background: #A775FF;
+          }
+          &.D8A38C{
+            background: #D8A38C;
+          }
+          &.FFEDB8{
+            background: #FFEDB8;
+          }
+          .avatar{
+            margin: auto;
+            width: 100%;
+          }
+        }
+        h4{
+          font-size: 14px;
+          font-weight: bold;
+          span{
+            display: block;
+            font-size: 10px;
+            font-weight: normal;
+          }
         }
       }
-      .container{
-        max-width: 800px;
-        margin: 20px auto;
-      }
-      .centrage-vertical{
+      .column-right{
+        font-size: 15px;
         display: flex;
         justify-content: center;
-        height: 100%;
-        .centrage-vertical-inner{
-          justify-content: center;
-          margin: auto;
-        }
-      }
-      .profil-bon-eleve{
-        cursor: pointer;
-        box-shadow: 0px 8px 26px rgba(0, 0, 0, 0.12);
-        border-radius: 8px;
-        padding: 15px 0;
-        max-width: 600px;
-        margin: 30px auto;
-        .column-flex{
-          display: flex;
-        }
-        .column-left{
+        margin: auto;
+        margin-left: 10px;
+        .conso{
           text-align: center;
-          width: 40%;
-          .avatar-circle{
-            padding: 10px;
-            border-radius: 50%;
-            display: inline-flex;
-            font-size: 12px;
-            width: 70px;
-            height: 70px;
-            &.8CD8AB{
-              background: #8CD8AB;
-            }
-            &.A775FF{
-              background: #A775FF;
-            }
-            &.D8A38C{
-              background: #D8A38C;
-            }
-            &.FFEDB8{
-              background: #FFEDB8;
-            }
-            .avatar{
-              margin: auto;
-              width: 100%;
-            }
-          }
-          h4{
-            font-size: 14px;
-            font-weight: bold;
-            span{
-              display: block;
-              font-size: 10px;
-              font-weight: normal;
-            }
-          }
-        }
-        .column-right{
-          font-size: 15px;
-          display: flex;
-          justify-content: center;
-          margin: auto;
-          margin-left: 10px;
-          .conso{
-            text-align: center;
-            .valeurs{
-              font-weight: 800;
-              font-size: 40px;
-              span{
-                font-size: 16px;
-                margin-left: 5px;
-              }
-            }
-          }
-        }
-        .badges{
-          float: right;
-          color: map-get($colors, secondary);
-          margin-right: 10px;
-          span{
-            font-size: 20px;
+          .valeurs{
             font-weight: 800;
-            display: block;
-            text-align: center;
-          }
-        }
-        .lien-maison{
-          float: right;
-          display: flex;
-          color: map-get($colors, secondary);
-          margin-right: 15px;
-          margin-top: -15px;
-          ion-icon{
-            margin-left: 10px;
-            &::before{
-              font-size: 15px;
+            font-size: 40px;
+            span{
+              font-size: 16px;
+              margin-left: 5px;
             }
           }
         }
       }
-      .intro{
-        margin: 40px auto 30px auto;
-        text-align: center;
-        font-size: 20px;
+      .badges{
+        float: right;
+        color: map-get($colors, secondary);
+        margin-right: 10px;
+        span{
+          font-size: 20px;
+          font-weight: 800;
+          display: block;
+          text-align: center;
+        }
+      }
+      .lien-maison{
+        float: right;
+        display: flex;
+        color: map-get($colors, secondary);
+        margin-right: 15px;
+        margin-top: -15px;
+        ion-icon{
+          margin-left: 10px;
+          &::before{
+            font-size: 15px;
+          }
+        }
       }
     }
+    .intro{
+      margin: 40px auto 30px auto;
+      text-align: center;
+      font-size: 20px;
+    }
+  }
 }

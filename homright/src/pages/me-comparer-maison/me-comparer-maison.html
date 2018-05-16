@@ -1,14 +1,12 @@
 <ion-content padding>
   <div class="profil" (click)="openProfil()"><span>Axol</span></div>
   <div class="maison"><img class="maison-img" src="../assets/imgs/vue3D/3d.png"></div>
-
   <div class="profil-bon-eleve"  (click)="closeProfil()">
-        <div class="avatar-circle"><span>{{pseudo}}</span></div>
-
-        <div class="conso">
-          <div class="valeurs">{{consommation}}<span>KWH</span></div>
-          <div class="time-unity">/jour</div>
-        </div>
+    <div class="avatar-circle"><span>{{pseudo}}</span></div>
+    <div class="conso">
+      <div class="valeurs">{{consommation}}<span>KWH</span></div>
+      <div class="time-unity">/jour</div>
+    </div>
   </div>
   <button class="boutton-menuP" (click)="retourEcran()"><ion-icon name="icon-left-arrow-2"></ion-icon></button>
 </ion-content>

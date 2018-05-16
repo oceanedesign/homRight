@@ -137,13 +137,13 @@ page-stats-vue-3d {
             }
 
             button.piece-cuisine{
-                    background: #E05151;
-                    p{
-                        color: white;
-                    }
-                    ion-icon::before{
-                        color: white;
-                    }
+                background: #E05151;
+                p{
+                    color: white;
+                }
+                ion-icon::before{
+                    color: white;
+                }
             }
 
             h1{
@@ -155,7 +155,6 @@ page-stats-vue-3d {
             }
         }
     }
-
 
     .conso-nb{
         font-family: 'Futura';
@@ -181,11 +180,9 @@ page-stats-vue-3d {
         }
     }
 
-
 	@media only screen and (min-width: 500px) {
 		.edit{
     		left: 380px;
 		}
-
 	}
 }

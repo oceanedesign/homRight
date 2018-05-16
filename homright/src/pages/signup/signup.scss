@@ -23,40 +23,38 @@ page-signup {
   }
 
   .bouton-principal{
-	font-family: "Futura";
-	font-weight: 700;
-	border-radius: 30px;
-	width: 260px;
-	height: 45px;
-	margin: 0 auto;
-	margin-top: 20px;
+  	font-family: "Futura";
+  	font-weight: 700;
+  	border-radius: 30px;
+  	width: 260px;
+  	height: 45px;
+  	margin: 0 auto;
+  	margin-top: 20px;
 	}
 
   .bouton-contour, .bouton-contour:visited, .bouton-contour:active, .bouton-contour:hover, .bouton-contour:link, .button-ios.activated{
-	font-family: "Futura";
-	font-weight: 700;
-	border-radius: 30px;
-	width: 260px;
-	height: 45px;
-	margin: 0 auto;
-	margin-top: 20px;
+  	font-family: "Futura";
+  	font-weight: 700;
+  	border-radius: 30px;
+  	width: 260px;
+  	height: 45px;
+  	margin: 0 auto;
+  	margin-top: 20px;
 	}
 
 	.fond-vague{
-    	height: 180px;
-    	.vague{
-    		top:179px;
-    	}
-  	}
+    height: 180px;
+    .vague{
+    	top:179px;
+    }
+  }
 
   @media(max-width: 885px){
     lottie-animation-view{
-          display: none;
+      display: none;
     }
     .mascotte{
       display: block;
     }
-
   }
-
 }

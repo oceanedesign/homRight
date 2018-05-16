@@ -11,7 +11,6 @@
 	<div class="fond-vague"><img class="vague" src="../assets/imgs/vague_fine.png"/></div>
 </ion-header>
 
-
 <ion-content padding overflow-scroll="true">
 	<ion-grid class="container">
       	<form>
@@ -25,15 +24,13 @@
 			  	</ion-item>
 	    		<button *ngFor="let nameHouse of namesHouse" class="navigation" ion-item (click)="editionAdresseP()" icon-end>
 	    				<ion-icon name="icon-chevron"></ion-icon>
-    	  				<!-- <p>{{nameHouse.immeuble}}</p> -->
     	  				<p [innerHTML]="nameHouse.immeuble"></p>
 						<p [innerHTML]="nameHouse.bp"></p>
 						<p><span [innerHTML]="nameHouse.voie"></span>
 							<span [innerHTML]="nameHouse.cp"></span>
-							<span [innerHTML]="nameHouse.ville"></span></p>
-						
+							<span [innerHTML]="nameHouse.ville"></span>
+						</p>		
     			</button>
-
 			</ion-list>
 			<ion-row>
 	    		<ion-col col-12>

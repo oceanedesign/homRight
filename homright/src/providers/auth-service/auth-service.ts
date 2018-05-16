@@ -55,7 +55,6 @@ export class AuthServiceProvider {
             reject(err); 
             console.log("Petit probleme"); 
         }); 
-
     });
   }
 
@@ -79,12 +78,7 @@ export class AuthServiceProvider {
             console.log(err); 
             console.log("Petit probleme"); 
         }); 
-
     });
   }
-
-
-
-  
 
 }

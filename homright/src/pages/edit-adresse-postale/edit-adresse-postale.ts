@@ -22,6 +22,7 @@ export class EditAdressePostalePage {
 
 
   initializeNamesHouse() {
+    //Recupere l'adresse de l'utilisateur
     this.authServiceProvider.getAdress().subscribe(
       data=>{
         this.namesHouse=data.addresses;

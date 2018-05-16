@@ -1,8 +1,6 @@
 page-me-comparer-maison {
 
   ion-content{
-    // background-image: url("../assets/imgs/vue3D/3d.png");
-
     .boutton-menuP{
       background: map-get($colors, secondary);
       position: fixed;
@@ -53,43 +51,43 @@ page-me-comparer-maison {
       width: auto;
       margin: auto auto 20px auto;
       display: inline-flex;
-        .avatar-circle{
-          border: 2px solid map-get($colors, secondary);
-          padding: 10px;
-          border-radius: 50%;
-          display: inline-flex;
-          font-size: 12px;
-          width: 70px;
-          height: 70px;
+      .avatar-circle{
+        border: 2px solid map-get($colors, secondary);
+        padding: 10px;
+        border-radius: 50%;
+        display: inline-flex;
+        font-size: 12px;
+        width: 70px;
+        height: 70px;
+        span{
+          margin: auto;
+        }
+      }
+      h4{
+        font-size: 14px;
+        font-weight: bold;
+        margin: auto 20px;
+        span{
+          display: block;
+          font-size: 10px;
+          font-weight: normal;
+        }
+      }
+      .conso{
+        margin: auto 8px;
+        text-align: center;
+        .valeurs{
+          font-weight: 800;
+          font-size: 30px;
           span{
-            margin: auto;
+            font-size: 16px;
+            margin-left: 5px;
           }
         }
-        h4{
-          font-size: 14px;
-          font-weight: bold;
-          margin: auto 20px;
-          span{
-            display: block;
-            font-size: 10px;
-            font-weight: normal;
-          }
-        }
-        .conso{
-          margin: auto 8px;
-          text-align: center;
-          .valeurs{
-            font-weight: 800;
-            font-size: 30px;
-            span{
-              font-size: 16px;
-              margin-left: 5px;
-            }
-          }
-        }
-        &.hidden-profil{
-          display: none;
-        }
+      }
+      &.hidden-profil{
+        display: none;
+      }
     }
   }
 

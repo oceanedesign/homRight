@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import{TabsPage} from "../tabs/tabs";
 import { HomePage } from '../home/home';
 
 @IonicPage()
@@ -11,8 +10,6 @@ import { HomePage } from '../home/home';
 export class MonBudgetPage {
 
   budget: number= 30;
-  // valueObjet: String;
-  // budgetUser = {"budget":""};
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

@@ -1,9 +1,7 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title>Je déménage</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
@@ -19,13 +17,13 @@
 		      		<h1>Au revoir</h1>
 		      	</ion-col>      		
 		      	<ion-col col-12>
-		      		<p>
-		      			{{maisonData.immeuble}} - {{maisonData.bp}}
+		      		<p *ngFor="let nameHouse of namesHouse">
+		      			{{nameHouse.immeuble}} {{nameHouse.bp}}
 		      		</p>
 		      	</ion-col>
 		      	<ion-col col-12>
-		      		<p>
-		      			{{maisonData.voie}} {{maisonData.cp}} {{maisonData.ville}}
+		      		<p *ngFor="let nameHouse of namesHouse">
+		      			{{nameHouse.voie}} {{nameHouse.cp}} {{nameHouse.ville}}
 		      		</p>
 		      	</ion-col>
 		    </ion-row>

@@ -3,7 +3,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import{TabsPage} from "../tabs/tabs";
 import { ToastController } from 'ionic-angular';
 
-declare var jQuery:any;
 declare var $:any;
 
 @Component({

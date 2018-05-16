@@ -20,15 +20,15 @@ export class SynchroFaitePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SynchroFaitePage');
-    console.log("token : "+this.authServiceProvider.token);
+    //console.log("token : "+this.authServiceProvider.token);
   }
 
-
   initializeNamesHouse() {
+    //Recupere l'adresse de l'utilisateur en fonction de son token
     this.authServiceProvider.getAdress().subscribe(
       data=>{
         this.namesHouse=data.addresses;
-        console.log(data);
+        //console.log(data);
         console.log(this.namesHouse);
       },
       error=>{
@@ -37,10 +37,12 @@ export class SynchroFaitePage {
   }
 
   editionAdresseP(){
+    //Fonction permettant d'aller sur la page d'édition de l'adresse
   	this.navCtrl.push(EditAdressePostalePage);  	
   }
 
   directionPointsCles(){
+    //Fonction menant vers la page des récapitulatifs des hom'right
     this.navCtrl.push(PointsClesPage);    
   }
 

@@ -1,15 +1,12 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { JeuModelisationPage } from '../jeu-modelisation/jeu-modelisation';
-import {Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 
-declare var JQuery:any;
 declare var $:any;
 import 'jquery-ui-dist/jquery-ui';
-
-
 
 
 @IonicPage()
@@ -59,7 +56,6 @@ export class PreModelisationPage {
 
   onFournisseurChange(): void {
     $( "ion-list.transparency" ).removeClass("transparency");
-    console.log(this.regMaison.fournisseur);
 
     let fournisseur = this.form.get('fournisseur').value;
     this.contrats = this.contractsByFournisseurs[fournisseur];
@@ -70,20 +66,17 @@ export class PreModelisationPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PreModelisationPage');
     this.slides.lockSwipes(true);
-
-    console.log(this.pieces.length);
-    // $( ".swiper-pagination::before" ).click(function() {
-    //   console.log('ok');
-    // });
-
-    console.log(this.pieces);
+    //console.log(this.pieces.length);
+    //console.log(this.pieces);
   }
 
   voirVolet(){
+    //Permet de voir si la valeur choisie est en accord avec la valeur cliquée
     console.log(this.regMaison.volets_fermes);
   }
 
   voirChauffage(){
+    //Permet de voir si la valeur choisie est en accord avec la valeur cliquée
     console.log(this.regMaison.chauffage_reduit);
   }
 
@@ -94,10 +87,8 @@ export class PreModelisationPage {
   }
 
   editerPiece(event){
-      //Ouvre la pop up d'édition de la pièce
-
+    //Ouvre la pop up d'édition de la pièce
     $(".fond-cache").css("display", "flex");
-
 
     var bouton = event.target.closest('ion-item'); //Définit la variable bouton et attribut le bouton
     console.log($(bouton).attr('id')); //récupération de l'attribut "id" du bouton
@@ -107,7 +98,7 @@ export class PreModelisationPage {
   }
 
   returnChoose(){
-    //Ferme la pop up sans validation
+    //Ferme la pop up
     $(".fond-cache").css("display", "none");
     $(".fond-cache2").css("display", "none");
   }
@@ -120,25 +111,23 @@ export class PreModelisationPage {
   }
 
   ajoutPiece(){
+    //Active la pop up
     $(".fond-cache2").css("display", "flex");
     this.regPiece.nomPiece="";
   }
 
   validerAjoutPiece(){
+    //Push la piece dans le json
+
     $(".fond-cache2").css("display", "none");
     this.regPiece.temperature = this.temperature.toString();
 
-    
     this.countPiece = (this.countPiece +1);
     var idPiece= this.countPiece.toString();
+
+    //Ajout de la piece dans le json
     this.pieces.push({"piece_id":idPiece,"nomPiece":this.regPiece.nomPiece,"type":this.regPiece.type, "temperature":this.regPiece.temperature});
-
-    console.log(this.regPiece.type);
-    console.log(this.regPiece.nomPiece);
-    console.log(this.pieces);
   }
-
-  
 
   onChangeContrat(){
     $( ".right-arrow" ).removeClass("transparency");
@@ -146,38 +135,38 @@ export class PreModelisationPage {
   }
 
   goToPrev() {
-    this.slides.lockSwipes(false);
+    //Récupere le numéro de la slide précédente et l'attribue à la pagination
+    this.slides.lockSwipes(false);//Debloquer le swipe
     this.slides.slidePrev();
 
     let currentIndex = this.slides.getActiveIndex()+1;
-    if(currentIndex == 1){
-      $( ".left-arrow" ).addClass("transparency");
+    if(currentIndex == 1){ //Si on est sur la slide 1
+      $( ".left-arrow" ).addClass("transparency"); //Activer la transparence de la fleche de gauche
     }
-    if(currentIndex == 3){
-      $( ".right-arrow" ).removeClass("transparency");
+    if(currentIndex == 3){ //Si on est sur la slide 3
+      $( ".right-arrow" ).removeClass("transparency"); //Enlever la transparence de la fleche de droite
     }
 
-    $( ".pagination span" ).replaceWith( "<span>"+currentIndex+"</span>" );
-    this.slides.lockSwipes(true);
+    $( ".pagination span" ).replaceWith( "<span>"+currentIndex+"</span>" ); //Remplacer la valeur
+    this.slides.lockSwipes(true); //Bloquer le swipe
 
   }
   goToNext() {
-    this.slides.lockSwipes(false);
+    //Récupere le numéro de la slide suivante et l'attribue à la pagination
+    this.slides.lockSwipes(false); //Debloquer le swipe
     this.slides.slideNext();
 
     let currentIndex = this.slides.getActiveIndex()+1;
-    if(currentIndex == 4){
-      $( ".right-arrow" ).addClass("transparency");
+    if(currentIndex == 4){ //Si on est sur la slide 4
+      $( ".right-arrow" ).addClass("transparency"); //Activer la transparence de la fleche de droite
     }
-    if(currentIndex == 2){
-      $( ".left-arrow" ).removeClass("transparency");
+    if(currentIndex == 2){ //Si on est sur la slide 2
+      $( ".left-arrow" ).removeClass("transparency"); //Enlever la transparence de la fleche de gauche
     }
       //currentIndex +1;
-      $( ".pagination span" ).replaceWith( "<span>"+currentIndex+"</span>" );
-    this.slides.lockSwipes(true);
+      $( ".pagination span" ).replaceWith( "<span>"+currentIndex+"</span>" );//Remplacer la valeur
+    this.slides.lockSwipes(true);//Bloquer le swipe
   }
-
-
 
   slideChanged() {
     // let currentIndex = this.slides.getActiveIndex();

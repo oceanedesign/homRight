@@ -1,5 +1,4 @@
 page-modelisation-bienvenue {
-
   .container{
     display: block;
     max-width: 350px;
@@ -8,7 +7,6 @@ page-modelisation-bienvenue {
     padding-top : 0px ;
     padding-bottom : 0px ;
   }
-
   .scroll-content{
     display: flex;
     .container.grid{
@@ -111,10 +109,10 @@ page-modelisation-bienvenue {
         }
       }
       .arrow-return{
-      display: inline-block;
-      width: 100%;
-      margin: 0 auto;
-      p {
+        display: inline-block;
+        width: 100%;
+        margin: 0 auto;
+        p {
           text-align: center;
           font-size: 15px;
           display: inline-block;
@@ -127,9 +125,7 @@ page-modelisation-bienvenue {
       }
     }
   }
-
-
-      @media screen and (max-height: 580px) {
+  @media screen and (max-height: 580px) {
     p{
       margin: 10px 0px;
     }

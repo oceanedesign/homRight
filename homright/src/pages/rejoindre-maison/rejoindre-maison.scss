@@ -1,18 +1,18 @@
 page-rejoindre-maison {
 	.container{
-    display: block;
-    max-width: 400px;
-    margin: 0 auto;
-    position:relative !important;
-    padding-top : 0px ;
-    padding-bottom : 0px ;
-  }
+        display: block;
+        max-width: 400px;
+        margin: 0 auto;
+        position:relative !important;
+        padding-top : 0px ;
+        padding-bottom : 0px ;
+    }
 
-  .mascotte {
-    width: 60%;
-    height: 60%;
-    margin-bottom: 20px;
-	}
+    .mascotte {
+        width: 60%;
+        height: 60%;
+        margin-bottom: 20px;
+    }
 
 	.grid{
 		padding : 0px 25px;
@@ -24,8 +24,8 @@ page-rejoindre-maison {
 
     .item-ios.item-label-stacked .text-input, .item-ios.item-label-floating .text-input,
     .item-label-stacked .text-input-md, .item-label-floating .text-input-md {
-    margin-bottom: -6px;
-    padding-bottom: 14px;
+        margin-bottom: -6px;
+        padding-bottom: 14px;
     }
 
     .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before,
@@ -40,7 +40,7 @@ page-rejoindre-maison {
     }
 
     .list-md .item-block .item-inner {
-    border-bottom: 1px solid white;
+        border-bottom: 1px solid white;
     }
 
     .toolbar-title{
@@ -50,5 +50,4 @@ page-rejoindre-maison {
     ion-header .icon{
         color: white;
     }
-
 }

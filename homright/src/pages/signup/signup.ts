@@ -18,6 +18,7 @@ export class SignupPage {
 lottieConfig:any; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public authServiceProvider : AuthServiceProvider, private nativePageTransitions: NativePageTransitions) {
+    //Permet de mettre en place l'animation de Homie
     LottieAnimationViewModule.forRoot(); 
     this.lottieConfig={ 
       path:'assets/imgs/choix/data.json', 
@@ -26,12 +27,8 @@ lottieConfig:any;
     }
   }
 
-  ionViewDidLoad() {
-    console.log("Je suis dans la page sign up : je dois choisir si je crée ou construit une maison.")
-    console.log(this.authServiceProvider.token);
-  }
-
   creerMaison(){
+    //fonction menant vers l'écran de création de maison
     let options: NativeTransitionOptions={
     direction: 'up',
     duration: 500
@@ -41,6 +38,7 @@ lottieConfig:any;
   }
 
   rejoindreMaison(){
+    //fonction menant vers l'écran pour rejoindre une maison
   	this.navCtrl.push(RejoindreMaisonPage);
   }
 

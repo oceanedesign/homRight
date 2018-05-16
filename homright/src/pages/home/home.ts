@@ -7,8 +7,6 @@ import{TabsPage} from "../tabs/tabs";
 import{EventsPage} from "../events/events";
 
 
-declare var jQuery:any;
-declare var $:any;
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -24,8 +22,8 @@ export class HomePage {
 
   ionViewDidLoad() {
   	this.updateRoutines;
-    console.log(this.authServiceProvider.token);
-    console.log(this.authServiceProvider.pseudo);
+    //console.log(this.authServiceProvider.token);
+    //console.log(this.authServiceProvider.pseudo);
   }
 
   creerScene(){

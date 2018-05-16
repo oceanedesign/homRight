@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
-import { ConsoPage } from '../conso/conso';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
-import { ProfilPage } from '../profil/profil';
 import{EventsPage} from "../events/events";
 import { MonFournisseurPage } from '../mon-fournisseur/mon-fournisseur';
 import { ForumAccueilPage } from '../forum-accueil/forum-accueil';
@@ -16,7 +14,6 @@ import { DemenagementPage } from '../demenagement/demenagement';
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 import { ToastController } from 'ionic-angular';
 
-declare var jQuery:any;
 declare var $:any;
 
 @Component({

@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ForumDiscussionPage } from '../forum-discussion/forum-discussion';
 import{TabsPage} from "../tabs/tabs";
 
-declare var jQuery:any;
 declare var $:any;
 
 
@@ -28,13 +27,7 @@ export class ForumChoixThemePage {
   }
 
   nouveauTheme(){
-
     $(".fond-cache").css("display", "flex");
-
-    // var bouton = event.target.closest('button'); //Définit la variable bouton et attribut le bouton
-    // console.log($(bouton).attr('value')); //récupération de l'attribut "value" du bouton
-    // this.regPiece.nomPiece = $(bouton).attr('value') ; //Attribut la nouvelle valeur
-
   }
   returnChoose(){
     //Ferme la pop up sans validation
@@ -42,10 +35,12 @@ export class ForumChoixThemePage {
   }
 
   pushDiscussion(){
+    //Mene vers le forum partie discussion
     this.navCtrl.push(ForumDiscussionPage);
   }
 
   validerChoix(){
+    //Ferme le pop up apres validation
     $(".fond-cache").css("display", "none");
   }
   getTypepiece(){

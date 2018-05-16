@@ -1,6 +1,5 @@
 page-forum-choix-theme {
 
-
   ion-header{
     background: none;
         z-index: 1;
@@ -24,15 +23,15 @@ page-forum-choix-theme {
     }
   }
 
-    ion-content .fond-vague{
-      height: 60px;
-      .vague {
-        width: 100vw;
-        position: absolute;
-        top: 59px;
-        height: 38px;
-      }
+  ion-content .fond-vague{
+    height: 60px;
+    .vague {
+      width: 100vw;
+      position: absolute;
+      top: 59px;
+      height: 38px;
     }
+  }
 
   ion-content{
       .pasDePost{
@@ -260,7 +259,6 @@ page-forum-choix-theme {
       .checkbox-md .checkbox-checked .checkbox-inner{
         border: none;
       }
-
 
       button{
         min-width: 120px;

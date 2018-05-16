@@ -17,14 +17,13 @@ export class StatsVue_3dPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad StatsVue_3dPage');
-  }
-
   directionJeu(){
+    //Fonction menant vers la modélisation
 	this.navCtrl.push(JeuModelisationPage);  	
   }
+
   directionConsoTypePiece(typePiece){
+    //Fonction menant vers l'écran de consommation d'une piece avec comme parametre le type de la piece
     typePiece = typePiece;
     this.navCtrl.push(ConsoPage, {
       data:typePiece
@@ -32,6 +31,7 @@ export class StatsVue_3dPage {
   }
 
   pushMenu(){
+    //Fonction permettant l'ouverture du menu principal
     this.navCtrl.push(TabsPage);
   }
 }

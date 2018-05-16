@@ -20,7 +20,7 @@ export class CreerMaisonPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreerMaisonPage');
-    console.log(this.authServiceProvider.token);
+    //console.log(this.authServiceProvider.token);
   }
 
   creerMaison(){

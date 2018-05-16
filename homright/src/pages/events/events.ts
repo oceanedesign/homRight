@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import{TabsPage} from "../tabs/tabs";
 
-declare var jQuery:any;
 declare var $:any;
 
 @Component({
@@ -14,10 +13,6 @@ export class EventsPage {
 	eventType: string ="eventApp";
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EventsPage');
   }
 
   pushMenu(){
@@ -96,20 +91,20 @@ cardsHomright = [
     //Permet de changer l'intéret de l'utilisateur pour un évenement de la ville 
     let bouton = event.target;
     console.log(event.target);
-    let identifiant = $(event.target.closest('.card')).attr('id');
-    if($(bouton).attr('value') =='Pas intéressé(e)'){
-      console.log("changement : interet");
-      $(bouton).attr('value', 'Intéressé(e)');
+    let identifiant = $(event.target.closest('.card')).attr('id');//Récupere l'id de l'evenement
+    if($(bouton).attr('value') =='Pas intéressé(e)'){ //Si la valeur de l'attribut value était "pas intéressé(e)"
+      $(bouton).attr('value', 'Intéressé(e)'); //Alors changer en "interessé(e)"
       //bouton.innerHTML = 'Intéressé(e)';
-      this.cards[identifiant].interet = 'Intéressé(e)';
-    }else{
+      this.cards[identifiant].interet = 'Intéressé(e)'; //Mettre à jour le json
+
+    }else{ //sinon
       console.log("changement : pas interet");
-      $(bouton).attr('value', 'Pas intéressé(e)'); 
+      $(bouton).attr('value', 'Pas intéressé(e)'); //Alors changer en "pas interessé(e)"
       //bouton.innerHTML = 'Pas intéressé(e)';  
-      this.cards[identifiant].interet = 'Pas intéressé(e)';  
+      this.cards[identifiant].interet = 'Pas intéressé(e)';  //Mettre à jour le json
     }
     let card = $(event.target.closest('.card'));
-    card.removeClass("active");
+    card.removeClass("active"); //Fermer l'évenement
   }
 
 

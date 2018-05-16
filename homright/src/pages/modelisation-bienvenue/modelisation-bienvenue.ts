@@ -4,9 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PreModelisationPage } from '../pre-modelisation/pre-modelisation';
 import { HomePage } from '../home/home';
 
- declare var JQuery:any;
- declare var $:any;
- import 'jquery-ui-dist/jquery-ui';
+declare var $:any;
 
 @IonicPage()
 @Component({
@@ -18,10 +16,9 @@ export class ModelisationBienvenuePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ModelisationBienvenuePage');
-  }
+
   modeliserMaison(){
+    //Fonction permettant d'aller vers l'écran de construction des pieces
     this.navCtrl.push(PreModelisationPage);
   }
   pasModeliserMaison(){
@@ -34,6 +31,7 @@ export class ModelisationBienvenuePage {
     $(".fond-cache").css("display", "flex");
   }
   returnChoose(){
+    //Ferme pop up
     $(".fond-cache").css("display", "none");
   }
 

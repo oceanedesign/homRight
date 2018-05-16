@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-declare var jQuery:any;
 declare var $:any;
 
 @IonicPage()
@@ -30,7 +29,6 @@ export class MeComparerMaisonPage {
   closeProfil(){
     //Fonction permettant de fermer le profil du bon éleve
     console.log("ok");
-    // $(".profil-bon-eleve").css('display','none');
     $(".profil-bon-eleve").addClass("hidden-profil");
     $(".profil").css('z-index','2');
   }

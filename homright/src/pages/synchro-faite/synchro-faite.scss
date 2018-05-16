@@ -33,10 +33,10 @@ page-synchro-faite {
   ion-header h2{
     font-family: "Futura";
     font-weight: 600;
-  font-size: 50px;
-  text-align: center;
-  color: #FFFFFF;
-  margin: -10px auto;
+    font-size: 50px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: -10px auto;
   }
 
   ion-header p{
@@ -70,7 +70,7 @@ page-synchro-faite {
     }
   }
 
-  .inactif   ion-label{
+  .inactif ion-label{
     text-transform: uppercase;
     font-size: 12px;
   }
@@ -79,16 +79,16 @@ page-synchro-faite {
     margin-top: 0px;
   }
 
-   	ion-item.inactif, .list-md .item-input.inactif, .list-md .item-block .item-inner,
-   .list-ios .item-block.inactif .item-inner{
-  		border-bottom: 1px solid white;
-  	}
+ 	ion-item.inactif, .list-md .item-input.inactif, .list-md .item-block .item-inner,
+ .list-ios .item-block.inactif .item-inner{
+		border-bottom: 1px solid white;
+	}
 
-  	button p, button.item-md p, button.item-ios p{
-  		font-family: "Futura";
-  		font-weight: 700;
-  		color:black;
-  	}
+	button p, button.item-md p, button.item-ios p{
+		font-family: "Futura";
+		font-weight: 700;
+		color:black;
+	}
 
 	.inactif .label-md, .inactif .label-ios {
     	margin: 40px 8px 0px 0;
@@ -100,31 +100,24 @@ page-synchro-faite {
 		padding-bottom: 10px;
 	}
 
-      @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 700px) {
     .fond-vague {
       height: 40px;
       .vague {
-
         height: 30px;
       }
     }
     .mascotte {
       max-width: 120px;
     }
-
     .valider {
     margin-top: 0px;
     }
   }
 
-
-    @media only screen and (max-height: 600px) {
-
-
+  @media only screen and (max-height: 600px) {
     .valider{
       margin-top: 15px;
     }
   }
-
-
 }

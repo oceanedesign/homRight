@@ -17,6 +17,7 @@ export class PointsClesPage {
   }
 
   modelisationBienvenue(){
+    //Fonction menant sur l'écran demandant à l'utilisateur s'il veut modéliser sa maison
   	this.navCtrl.push(ModelisationBienvenuePage);
   }
 

@@ -9,8 +9,6 @@ import { Geolocation } from '@ionic-native/geolocation';
 //import { LottieAnimationViewModule } from 'ng-lottie';
 
 
-declare var $:any;
-
 @IonicPage({
   name: 'page-login',
   segment: 'page-login'
@@ -76,7 +74,6 @@ export class LoginPage {
           this.authServiceProvider.pseudo = pseudo;
           let headers = new Headers();
           headers.append('Token', this.authServiceProvider.token);
-
 
           this.navCtrl.push(SignupPage);
           //sinon passer à l'écran suivant
