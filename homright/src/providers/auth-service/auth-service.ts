@@ -3,7 +3,7 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 
 import 'rxjs/add/operator/map';
 
-let apiUrl = 'https://oceaneteyre.fr/homRight/api/';
+let apiUrl = 'https://oceaneteyre.fr/homright/api/';
 
 
 @Injectable()
@@ -17,9 +17,9 @@ export class AuthServiceProvider {
 
   constructor(public http: Http) {
     console.log('Hello AuthServiceProvider Provider');
-  	this.url ="https://oceaneteyre.fr/homRight/api/users/get.php";
-    this.urlHome ="https://oceaneteyre.fr/homRight/api/home/get_all.php";
-    this.urlAdress ="https://oceaneteyre.fr/homRight/api/home/get_address.php";
+  	this.url ="https://oceaneteyre.fr/homright/api/users/get.php";
+    this.urlHome ="https://oceaneteyre.fr/homright/api/home/get_all.php";
+    this.urlAdress ="https://oceaneteyre.fr/homright/api/home/get_address.php";
   }
 
   getUsers(){
